@@ -17,10 +17,76 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int add=0x7f020000;
+        public static final int back2=0x7f020001;
+        public static final int browseall=0x7f020002;
+        public static final int cancel=0x7f020003;
+        public static final int changebg=0x7f020004;
+        public static final int changebg_selected=0x7f020005;
+        public static final int checkmark_selected=0x7f020006;
+        public static final int ci=0x7f020007;
+        public static final int ci_hl=0x7f020008;
+        public static final int dict=0x7f020009;
+        public static final int done=0x7f02000a;
+        public static final int dust=0x7f02000b;
+        public static final int edit=0x7f02000c;
+        public static final int edit_selected=0x7f02000d;
+        public static final int edit_white=0x7f02000e;
+        public static final int errline2=0x7f02000f;
+        public static final int error01=0x7f020010;
+        public static final int error02=0x7f020011;
+        public static final int error03=0x7f020012;
+        public static final int error04=0x7f020013;
+        public static final int error_line=0x7f020014;
+        public static final int fangzheng_logo=0x7f020015;
+        public static final int gc_cover_switcher_dot=0x7f020016;
+        public static final int gc_main_dot=0x7f020017;
+        public static final int gc_main_dot_gray=0x7f020018;
+        public static final int ic_launcher=0x7f020019;
+        public static final int icon76=0x7f02001a;
+        public static final int info=0x7f02001b;
+        public static final int info2=0x7f02001c;
+        public static final int intro00=0x7f02001d;
+        public static final int intro01=0x7f02001e;
+        public static final int intro02=0x7f02001f;
+        public static final int intro03=0x7f020020;
+        public static final int intro04=0x7f020021;
+        public static final int intro05=0x7f020022;
+        public static final int keyboard=0x7f020023;
+        public static final int launch_image=0x7f020024;
+        public static final int layout_bg_album=0x7f020025;
+        public static final int layout_bg_album_sel=0x7f020026;
+        public static final int layout_bg_paper=0x7f020027;
+        public static final int layout_bg_paper_sel=0x7f020028;
+        public static final int layout_only_text=0x7f020029;
+        public static final int layout_only_text_unsel=0x7f02002a;
+        public static final int layout_only_title=0x7f02002b;
+        public static final int layout_only_title_unsel=0x7f02002c;
+        public static final int layout_title_text=0x7f02002d;
+        public static final int layout_title_text_unsel=0x7f02002e;
+        public static final int next=0x7f02002f;
+        public static final int next_hl=0x7f020030;
+        public static final int page_layout_design_icon=0x7f020031;
+        public static final int pic=0x7f020032;
+        public static final int prev=0x7f020033;
+        public static final int random=0x7f020034;
+        public static final int search=0x7f020035;
+        public static final int search2=0x7f020036;
+        public static final int share=0x7f020037;
+        public static final int share3=0x7f020038;
+        public static final int share3_sel=0x7f020039;
+        public static final int share3_white=0x7f02003a;
+        public static final int zuibaichi=0x7f02003b;
+    }
+    public static final class id {
+        public static final int gc_gallery_iv=0x7f070002;
+        public static final int gc_image_view_dot=0x7f070001;
+        public static final int gc_image_view_gallery=0x7f070000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int gc_image_view_activity=0x7f030001;
+        public static final int gc_main_gallery_item=0x7f030002;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;

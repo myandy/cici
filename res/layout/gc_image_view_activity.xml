@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gc_image_view_gallery"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <com.pplive.vas.gamecenter.widget.SwitchPoint
+        android:id="@+id/gc_image_view_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gc_image_view_gallery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" >
+    </com.pplive.vas.gamecenter.widget.SwitchPoint>
+
+</RelativeLayout>
