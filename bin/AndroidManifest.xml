@@ -9,14 +9,17 @@
         android:targetSdkVersion="21" />
 
     <application
+        android:name="com.myth.cici.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.myth.cici.activity.MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
+        <activity android:name=".activity.MainActivity" >
+             
+            
+        </activity>
+        <activity android:name=".activity.CipaiListActivity" >
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
