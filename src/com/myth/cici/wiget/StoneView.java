@@ -3,7 +3,6 @@ package com.myth.cici.wiget;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.shapes.Shape;
 import android.view.View;
 
 public class StoneView extends View
@@ -17,10 +16,13 @@ public class StoneView extends View
 
     private int mType;
 
-    public StoneView(Context context, int type)
+    private int mColor;
+
+    public StoneView(Context context, int type, int color)
     {
         super(context);
         mType = type;
+        mColor = color;
     }
 
     @Override
@@ -29,26 +31,25 @@ public class StoneView extends View
         super.onDraw(canvas);
 
         Paint paint = new Paint();
+        paint.setColor(mColor);
 
         if (mType == TYPE_CIRCLE)
         {
-            canvas.drawCircle(5, 5, 10, paint);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(40, 40, 38, paint);
         }
         else if (mType == TYPE_RING)
         {
-            canvas.drawCircle(5, 5, 10, paint);
-            canvas.drawCircle(5, 5, 7, paint);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(16);
+            canvas.drawCircle(40, 40, 30, paint);
         }
-        Shape shape = new Shape()
+        else if (mType == TYPE_PLUS)
         {
-
-            @Override
-            public void draw(Canvas canvas, Paint paint)
-            {
-                // TODO Auto-generated method stub
-
-            }
-        };
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawRect(35, 4, 45, 76, paint);
+            canvas.drawRect(4, 35, 76, 45, paint);
+        }
     }
 
 }

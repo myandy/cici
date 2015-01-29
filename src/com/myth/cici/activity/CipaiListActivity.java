@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
 import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.wiget.CipaiItem;
 
 public class CipaiListActivity extends BaseActivity
@@ -48,11 +49,15 @@ public class CipaiListActivity extends BaseActivity
         {
             if (i == 0 && ciList.size() % 2 != 0)
             {
-                linearLayout.addView(new CipaiItem(mActivity, ciList.get(0), null));
+                LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
+                params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
+                linearLayout.addView(new CipaiItem(mActivity, ciList.get(0), null), params);
             }
             else
             {
-                linearLayout.addView(new CipaiItem(mActivity, ciList.get(2 * i), ciList.get(2 * i + 1)));
+                LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
+                params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
+                linearLayout.addView(new CipaiItem(mActivity, ciList.get(2 * i), ciList.get(2 * i + 1)), params);
             }
         }
         new Handler().postDelayed(new Runnable()
@@ -64,30 +69,6 @@ public class CipaiListActivity extends BaseActivity
             }
         }, 50);
 
-    }
-
-    public static void scrollToBottom(final View scroll, final View inner)
-    {
-
-        Handler mHandler = new Handler();
-
-        mHandler.post(new Runnable()
-        {
-            public void run()
-            {
-                if (scroll == null || inner == null)
-                {
-                    return;
-                }
-                int offset = inner.getMeasuredHeight() - scroll.getHeight();
-                if (offset < 0)
-                {
-                    offset = 0;
-                }
-
-                scroll.scrollTo(0, offset);
-            }
-        });
     }
 
 }

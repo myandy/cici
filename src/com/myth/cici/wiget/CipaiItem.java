@@ -1,21 +1,29 @@
 package com.myth.cici.wiget;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.myth.cici.MyApplication;
 import com.myth.cici.R;
+import com.myth.cici.activity.CipaiActivity;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.ColorEntity;
 
 public class CipaiItem extends RelativeLayout
 {
 
-    private Cipai cipai1;
+    ViewHolder holder1;
 
-    private Cipai cipai2;
+    ViewHolder holder2;
+
+    private Context mContext;
 
     public CipaiItem(Context context, AttributeSet attrs, int defStyle)
     {
@@ -35,26 +43,91 @@ public class CipaiItem extends RelativeLayout
     public CipaiItem(Context context, Cipai cipai1, Cipai cipai2)
     {
         super(context);
-        this.cipai1 = cipai1;
-        this.cipai2 = cipai2;
-        initView(context);
+         holder1 = new ViewHolder();
+         holder2 = new ViewHolder();
+        holder1.cipai=cipai1;
+        holder2.cipai=cipai2;
+        mContext = context;
+        initView();
     }
 
-    private void initView(final Context context)
+
+    private void initView()
     {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View root = inflater.inflate(R.layout.layout_cipai_item, null);
 
-        View head1 = root.findViewById(R.id.head1);
-        ViewGroup middle1 = (ViewGroup) root.findViewById(R.id.middle1);
-        VerticalTextView num_1 = (VerticalTextView) root.findViewById(R.id.num_1);
-        VerticalTextView name1 = (VerticalTextView) root.findViewById(R.id.name1);
-        VerticalTextView enname1 = (VerticalTextView) root.findViewById(R.id.enname1);
+        holder1.item = root.findViewById(R.id.item1);
+        holder1.head = (RelativeLayout) root.findViewById(R.id.head1);
+        holder1.middle = (ViewGroup) root.findViewById(R.id.middle1);
+        holder1.num = (VerticalTextView) root.findViewById(R.id.num_1);
+        holder1.name = (TextView) root.findViewById(R.id.name1);
+        holder1.enname = (VerticalTextView) root.findViewById(R.id.enname1);
 
-        name1.setText(cipai1.getName() + "");
-        enname1.setText(cipai1.getEnname() + "");
+        holder2.item = root.findViewById(R.id.item2);
+        holder2.head = (RelativeLayout) root.findViewById(R.id.head2);
+        holder2.middle = (ViewGroup) root.findViewById(R.id.middle2);
+        holder2.num = (VerticalTextView) root.findViewById(R.id.num_2);
+        holder2.name = (TextView) root.findViewById(R.id.name2);
+        holder2.enname = (VerticalTextView) root.findViewById(R.id.enname2);
+
+        initHolderView(holder1);
+        initHolderView(holder2);
+
+
         addView(root);
 
+    }
+
+    private void initHolderView(final ViewHolder holder)
+    {
+
+        holder.item.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(mContext, CipaiActivity.class);
+                intent.putExtra("cipai", holder.cipai);
+                mContext.startActivity(intent);
+            }
+        });
+
+        ColorEntity colorEntity = MyApplication.getColorById(holder.cipai.getColor_id());
+        int color = 0xffffff;
+        if (colorEntity != null)
+        {
+            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
+        }
+        holder.head.setBackgroundColor(color);
+        holder.num.setTextColor(color);
+        holder.name.setTextColor(color);
+        holder.enname.setTextColor(color);
+
+        android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(100, 100);
+        holder.middle.addView(new StoneView(mContext, holder.cipai.getTone_type(), color), 0, layoutParams);
+        holder.num.setText("0" + holder.cipai.getId());
+        holder.name.setText(holder.cipai.getName() + "");
+        holder.enname.setText(holder.cipai.getEnname() + "");
+
+    }
+
+    public class ViewHolder
+    {
+        Cipai cipai;
+
+        View item;
+
+        RelativeLayout head;
+
+        ViewGroup middle;
+
+        VerticalTextView num;
+
+        TextView name;
+
+        VerticalTextView enname;
     }
 
 }

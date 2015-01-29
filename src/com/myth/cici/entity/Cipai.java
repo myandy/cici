@@ -1,7 +1,14 @@
 package com.myth.cici.entity;
 
-public class Cipai
+import java.io.Serializable;
+
+public class Cipai implements Serializable
 {
+
+    /**
+     * 注释内容
+     */
+    private static final long serialVersionUID = 1L;
 
     private int id;
 

@@ -113,32 +113,47 @@ in (inches), mm (millimeters).
         public static final int share3_white=0x7f02003a;
         public static final int sharp_circle=0x7f02003b;
         public static final int sharp_plus=0x7f02003c;
-        public static final int sharp_ring=0x7f02003d;
-        public static final int zuibaichi=0x7f02003e;
+        public static final int sharp_plus1=0x7f02003d;
+        public static final int sharp_plus2=0x7f02003e;
+        public static final int sharp_ring=0x7f02003f;
+        public static final int zuibaichi=0x7f020040;
     }
     public static final class id {
-        public static final int buttonText=0x7f090003;
+        public static final int buttonText=0x7f090007;
         public static final int downtoup=0x7f090000;
-        public static final int enname1=0x7f09000e;
-        public static final int gc_gallery_iv=0x7f090009;
-        public static final int gc_image_view_dot=0x7f090008;
-        public static final int gc_image_view_gallery=0x7f090007;
-        public static final int head1=0x7f09000b;
-        public static final int headText=0x7f090002;
-        public static final int horizontalScrollView=0x7f090004;
-        public static final int item1=0x7f09000a;
-        public static final int linearLayout=0x7f090005;
-        public static final int middle1=0x7f09000c;
-        public static final int name1=0x7f09000d;
-        public static final int num_1=0x7f090006;
+        public static final int enname1=0x7f090011;
+        public static final int enname2=0x7f090017;
+        public static final int gc_gallery_iv=0x7f09000d;
+        public static final int gc_image_view_dot=0x7f09000c;
+        public static final int gc_image_view_gallery=0x7f09000b;
+        public static final int gc_main_dot=0x7f090005;
+        public static final int gc_main_gallery=0x7f090004;
+        public static final int head1=0x7f09000f;
+        public static final int head2=0x7f090014;
+        public static final int headText=0x7f090006;
+        public static final int horizontalScrollView=0x7f090008;
+        public static final int item1=0x7f09000e;
+        public static final int item2=0x7f090013;
+        public static final int linearLayout=0x7f090009;
+        public static final int middle1=0x7f090010;
+        public static final int middle2=0x7f090015;
+        public static final int name1=0x7f090012;
+        public static final int name2=0x7f090018;
+        public static final int num_1=0x7f09000a;
+        public static final int num_2=0x7f090016;
+        public static final int textview=0x7f090019;
+        public static final int title=0x7f090003;
+        public static final int top=0x7f090002;
         public static final int uptodown=0x7f090001;
     }
     public static final class layout {
-        public static final int activity_cipai_list=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int gc_image_view_activity=0x7f030002;
-        public static final int gc_main_gallery_item=0x7f030003;
-        public static final int layout_cipai_item=0x7f030004;
+        public static final int activity_cipai=0x7f030000;
+        public static final int activity_cipai_list=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int gc_image_view_activity=0x7f030003;
+        public static final int gc_main_gallery_item=0x7f030004;
+        public static final int layout_cipai_item=0x7f030005;
+        public static final int layout_textview=0x7f030006;
     }
     public static final class raw {
         public static final int ci=0x7f040000;

@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/headText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="hello" />
 
     <TextView
@@ -28,6 +28,8 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
