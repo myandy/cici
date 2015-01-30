@@ -23,7 +23,7 @@ import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.CircleTextView;
 import com.myth.cici.wiget.SwitchPoint;
 
-public class CipaiActivity extends BaseActivity
+public class CiActivity extends BaseActivity
 {
 
     private ArrayList<Ci> ciList = new ArrayList<Ci>();

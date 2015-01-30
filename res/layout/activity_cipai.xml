@@ -1,16 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/launch_image"
-    android:orientation="vertical" >
+     >
 
     <LinearLayout
         android:id="@+id/top"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical" >
 
         <TextView
@@ -18,26 +18,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxEms="1"
+            android:text="2"
             android:layout_marginBottom="40dp" />
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@id/top" >
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/gc_main_gallery"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-
-        <com.myth.cici.wiget.SwitchPoint
+         <com.myth.cici.wiget.SwitchPoint
             android:id="@+id/gc_main_dot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/gc_main_gallery"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp" >
         </com.myth.cici.wiget.SwitchPoint>
+        
+        <android.support.v4.view.ViewPager
+            android:id="@+id/gc_main_gallery"
+            android:layout_above="@id/gc_main_dot"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+       
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
