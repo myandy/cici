@@ -44,7 +44,7 @@ public class CipaiListActivity extends BaseActivity
         scrollView = (HorizontalScrollView) findViewById(R.id.horizontalScrollView);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
-        int length = ciList.size() % 2 == 0 ? ciList.size() / 2 : ciList.size() / 2 + 1;
+        int length = ciList.size() % 2 == 0 ? (ciList.size() / 2 - 1) : ciList.size() / 2;
         for (int i = 0; i < length; i++)
         {
             if (i == 0 && ciList.size() % 2 != 0)

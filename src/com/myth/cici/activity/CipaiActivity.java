@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -122,11 +123,11 @@ public class CipaiActivity extends BaseActivity
         {
             View root = getLayoutInflater().inflate(R.layout.layout_textview, null);
 
-            // LayoutParams param = new LayoutParams(100, 100);
+            LayoutParams param = new LayoutParams(100, 100);
             // TextView textView = new TextView(mActivity);
             // container.addView(textView, param);
 
-            container.addView(root);
+            container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
             textView.setText(ciList.get(position % ciList.size()).getText() + "2222222");
 

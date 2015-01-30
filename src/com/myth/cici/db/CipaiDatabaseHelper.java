@@ -14,7 +14,7 @@ public class CipaiDatabaseHelper
     public static ArrayList<Cipai> getAllCipai()
     {
         SQLiteDatabase db = DBManager.getDatabase();
-        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null", null);
         return getCipaiListFromCursor(cursor);
     }
 

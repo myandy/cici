@@ -43,14 +43,13 @@ public class CipaiItem extends RelativeLayout
     public CipaiItem(Context context, Cipai cipai1, Cipai cipai2)
     {
         super(context);
-         holder1 = new ViewHolder();
-         holder2 = new ViewHolder();
-        holder1.cipai=cipai1;
-        holder2.cipai=cipai2;
+        holder1 = new ViewHolder();
+        holder2 = new ViewHolder();
+        holder1.cipai = cipai1;
+        holder2.cipai = cipai2;
         mContext = context;
         initView();
     }
-
 
     private void initView()
     {
@@ -74,7 +73,6 @@ public class CipaiItem extends RelativeLayout
         initHolderView(holder1);
         initHolderView(holder2);
 
-
         addView(root);
 
     }
@@ -82,35 +80,38 @@ public class CipaiItem extends RelativeLayout
     private void initHolderView(final ViewHolder holder)
     {
 
-        holder.item.setOnClickListener(new OnClickListener()
+        if (holder.cipai != null)
         {
-
-            @Override
-            public void onClick(View v)
+            holder.item.setOnClickListener(new OnClickListener()
             {
-                Intent intent = new Intent(mContext, CipaiActivity.class);
-                intent.putExtra("cipai", holder.cipai);
-                mContext.startActivity(intent);
+
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent(mContext, CipaiActivity.class);
+                    intent.putExtra("cipai", holder.cipai);
+                    mContext.startActivity(intent);
+                }
+            });
+
+            ColorEntity colorEntity = MyApplication.getColorById(holder.cipai.getColor_id());
+            int color = 0xffffff;
+            if (colorEntity != null)
+            {
+                color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
             }
-        });
+            holder.head.setBackgroundColor(color);
+            holder.num.setTextColor(color);
+            holder.name.setTextColor(color);
+            holder.enname.setTextColor(color);
 
-        ColorEntity colorEntity = MyApplication.getColorById(holder.cipai.getColor_id());
-        int color = 0xffffff;
-        if (colorEntity != null)
-        {
-            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
+            android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(100,
+                    100);
+            holder.middle.addView(new StoneView(mContext, holder.cipai.getTone_type(), color), 0, layoutParams);
+            holder.num.setText("0" + holder.cipai.getId());
+            holder.name.setText(holder.cipai.getName() + "");
+            holder.enname.setText(holder.cipai.getEnname() + "");
         }
-        holder.head.setBackgroundColor(color);
-        holder.num.setTextColor(color);
-        holder.name.setTextColor(color);
-        holder.enname.setTextColor(color);
-
-        android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(100, 100);
-        holder.middle.addView(new StoneView(mContext, holder.cipai.getTone_type(), color), 0, layoutParams);
-        holder.num.setText("0" + holder.cipai.getId());
-        holder.name.setText(holder.cipai.getName() + "");
-        holder.enname.setText(holder.cipai.getEnname() + "");
-
     }
 
     public class ViewHolder
