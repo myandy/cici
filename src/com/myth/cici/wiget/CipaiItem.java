@@ -108,7 +108,12 @@ public class CipaiItem extends RelativeLayout
             android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(100,
                     100);
             holder.middle.addView(new StoneView(mContext, holder.cipai.getTone_type(), color), 0, layoutParams);
-            holder.num.setText("0" + holder.cipai.getId());
+            String count = holder.cipai.getWordcount() + "";
+            if (holder.cipai.getWordcount() < 100)
+            {
+                count = "0" + holder.cipai.getWordcount();
+            }
+            holder.num.setText(count);
             holder.name.setText(holder.cipai.getName() + "");
             holder.enname.setText(holder.cipai.getEnname() + "");
         }

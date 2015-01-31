@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cloud_root_id"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/launch_image" >
+
+    <FrameLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true" >
+
+        <com.myth.cici.wiget.TouchEffectImageView
+            android:id="@+id/bottom_left"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/cancel" />
+        
+        <LinearLayout
+            android:id="@+id/bottom_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+           />
+        
+        <LinearLayout
+            android:id="@+id/bottom_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center|right"
+          />
+        
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/content_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottom_layout" >
+    </FrameLayout>
+
+</RelativeLayout>

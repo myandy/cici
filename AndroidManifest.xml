@@ -27,6 +27,8 @@
         </activity>
         
         <activity android:name=".activity.CipaiActivity" />
+        <activity android:name=".activity.CiActivity" />
+        <activity android:name=".activity.ShareActivity" />
     </application>
 
 </manifest>

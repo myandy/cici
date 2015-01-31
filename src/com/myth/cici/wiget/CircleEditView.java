@@ -1,24 +1,23 @@
 package com.myth.cici.wiget;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
 import com.myth.cici.R;
 
-public class CircleTextView extends View
+public class CircleEditView extends View
 {
 
     private int mColor;
 
-    private String mText;
 
-    public CircleTextView(Context context, String text, int color)
+    public CircleEditView(Context context, int color)
     {
         super(context);
         mColor = color;
-        mText = text;
     }
 
     @Override
@@ -30,10 +29,8 @@ public class CircleTextView extends View
         paint.setColor(mColor);
 
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(80, 80, 76, paint);
-        paint.setColor(R.color.white);
-        paint.setTextSize(40);
-        canvas.drawText(mText, 50, 90, paint);
+        canvas.drawCircle(120, 120, 116, paint);
+        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.edit_white), 40, 40, paint);
     }
 
 }

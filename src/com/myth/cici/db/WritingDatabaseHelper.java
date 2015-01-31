@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.myth.cici.entity.Cipai;
 
-public class CipaiDatabaseHelper
+public class WritingDatabaseHelper
 {
     private static String TABLE_NAME = "cipai";
 

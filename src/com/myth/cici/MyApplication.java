@@ -51,5 +51,9 @@ public class MyApplication extends Application
             return Typeface.createFromAsset(context.getAssets(), "fzsongkebenxiukai_fanti.ttf");
         }
     }
+    
+    public static int[] bgimgList = {R.drawable.dust, R.drawable.bg001, R.drawable.bg002, R.drawable.bg004,
+            R.drawable.bg006, R.drawable.bg007, R.drawable.bg011, R.drawable.bg013, R.drawable.bg072, R.drawable.bg084,
+            R.drawable.bg096, R.drawable.bg118};
 
 }

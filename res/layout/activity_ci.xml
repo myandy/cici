@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launch_image"
+    android:paddingTop="50dp" >
+
+    <LinearLayout
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="1"
+            android:text="2"
+            android:layout_gravity="right"
+            android:layout_marginBottom="30dp"
+            android:textSize="50sp" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_share3" />
+    </LinearLayout>
+
+    <com.myth.cici.wiget.VScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/right" 
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="30dp"
+            >
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:textSize="24dp"
+                android:lineSpacingMultiplier="1.5"
+                android:text="【《独醒杂志》卷四】政和间，置大晟乐府，建立长属。晁冲之叔用作梅词以见蔡攸，攸持以白其父曰：“今日于乐府中得一人。”元长（京）览之，即除大晟丞。词中云：“无情燕子，怕春寒、常失花期。惟有南来塞雁，年年长占开时。”时以为燕雁与梅不相关，而挽入，故见笔力。
+东君：①春神。②日神。
+练：素白未染之熟绢。" />
+        </RelativeLayout>
+    </com.myth.cici.wiget.VScrollView>
+
+</RelativeLayout>

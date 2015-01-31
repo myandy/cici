@@ -1,7 +1,14 @@
 package com.myth.cici.entity;
 
-public class Ci
+import java.io.Serializable;
+
+public class Ci implements Serializable
 {
+
+    /**
+     * 注释内容
+     */
+    private static final long serialVersionUID = 1L;
 
     private int id;
 

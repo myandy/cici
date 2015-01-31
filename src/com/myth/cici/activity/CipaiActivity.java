@@ -2,12 +2,14 @@ package com.myth.cici.activity;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -62,7 +64,7 @@ public class CipaiActivity extends BaseActivity
 
         LinearLayout topView = (LinearLayout) findViewById(R.id.top);
 
-        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(150, 150);
+        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(250, 250);
         topView.addView(new CircleTextView(mActivity, "0" + cipai.getId(), color), param);
 
         TextView title = (TextView) findViewById(R.id.title);
@@ -117,7 +119,7 @@ public class CipaiActivity extends BaseActivity
      */
     private PagerAdapter galleryAdapter = new PagerAdapter()
     {
-        public Object instantiateItem(android.view.ViewGroup container, int position)
+        public Object instantiateItem(android.view.ViewGroup container, final int position)
         {
             View root = getLayoutInflater().inflate(R.layout.layout_textview, null);
 
@@ -127,7 +129,22 @@ public class CipaiActivity extends BaseActivity
 
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
-            textView.setText(ciList.get(position % ciList.size()).getText() + "2222222");
+            textView.setText(ciList.get(position % ciList.size()).getText());
+
+            textView.setOnClickListener(new OnClickListener()
+            {
+
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent(mActivity, CiActivity.class);
+                    intent.putExtra("cilist", ciList);
+                    intent.putExtra("cipai", cipai);
+                    intent.putExtra("num", position);
+                    startActivity(intent);
+
+                }
+            });
 
             return root;
         };

@@ -30,7 +30,7 @@ public class CipaiListActivity extends BaseActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_cipai_list);
-        ciList = CipaiDatabaseHelper.getAllCipai();
+        ciList = CipaiDatabaseHelper.getAllCipaiByWordCount();
 
         if (ciList == null || ciList.size() == 0)
         {
@@ -44,21 +44,12 @@ public class CipaiListActivity extends BaseActivity
         scrollView = (HorizontalScrollView) findViewById(R.id.horizontalScrollView);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
-        int length = ciList.size() % 2 == 0 ? (ciList.size() / 2 - 1) : ciList.size() / 2;
+        int length = ciList.size() / 2;
         for (int i = 0; i < length; i++)
         {
-            if (i == 0 && ciList.size() % 2 != 0)
-            {
-                LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
-                params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
-                linearLayout.addView(new CipaiItem(mActivity, ciList.get(0), null), params);
-            }
-            else
-            {
                 LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
                 params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
                 linearLayout.addView(new CipaiItem(mActivity, ciList.get(2 * i), ciList.get(2 * i + 1)), params);
-            }
         }
         new Handler().postDelayed(new Runnable()
         {
