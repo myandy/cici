@@ -140,7 +140,7 @@ public class CipaiActivity extends BaseActivity
                     Intent intent = new Intent(mActivity, CiActivity.class);
                     intent.putExtra("cilist", ciList);
                     intent.putExtra("cipai", cipai);
-                    intent.putExtra("num", position);
+                    intent.putExtra("num", position % ciList.size());
                     startActivity(intent);
 
                 }

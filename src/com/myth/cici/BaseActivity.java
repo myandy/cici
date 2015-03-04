@@ -2,6 +2,8 @@ package com.myth.cici;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 
 public class BaseActivity extends Activity
@@ -26,6 +28,15 @@ public class BaseActivity extends Activity
         super.setContentView(R.layout.activity_base);
         mActivity = this;
         mBottomLayout = (FrameLayout) findViewById(R.id.bottom_layout);
+        findViewById(R.id.bottom_left).setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                finish();
+            }
+        });
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
     }
 

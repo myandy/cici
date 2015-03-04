@@ -16,6 +16,7 @@
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
             android:scaleType="fitXY"
+            android:clickable="true"
             android:layout_gravity="left|center_vertical"
             android:src="@drawable/cancel" />
         

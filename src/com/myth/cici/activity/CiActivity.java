@@ -58,7 +58,8 @@ public class CiActivity extends BaseActivity
         LinearLayout topView = (LinearLayout) findViewById(R.id.right);
 
         LayoutParams param = new LayoutParams(200, 300);
-        topView.addView(new CircleEditView(mActivity, color), 1, param);
+        CircleEditView editView = new CircleEditView(mActivity, color);
+        topView.addView(editView, 1, param);
 
         TextView title = (TextView) findViewById(R.id.title);
         title.setText(cipai.getName());
@@ -73,6 +74,17 @@ public class CiActivity extends BaseActivity
             {
                 Intent intent = new Intent(mActivity, ShareActivity.class);
 
+                startActivity(intent);
+            }
+        });
+        editView.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(mActivity, EditActivity.class);
+                intent.putExtra("cipai", cipai);
                 startActivity(intent);
             }
         });
