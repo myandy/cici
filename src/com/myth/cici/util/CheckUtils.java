@@ -14,9 +14,10 @@ public class CheckUtils
         {
             if (OthersUtils.isChinese(test.charAt(i)))
             {
-                if (getHanziCode(test.charAt(i)) == 1)
+            	pos++;
+                if (getHanziCode(test.charAt(i)) != s.charAt(pos))
                 {
-
+                	//设置删除线
                 }
             }
         }
