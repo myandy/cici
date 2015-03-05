@@ -1,6 +1,13 @@
 package com.myth.cici.util;
 
+import android.graphics.Color;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.StrikethroughSpan;
 import android.widget.EditText;
+
+import com.myth.cici.db.YunDatabaseHelper;
 
 public class CheckUtils
 {
@@ -8,26 +15,63 @@ public class CheckUtils
     public static void checkEditText(EditText edittext, String s)
     {
         String test = edittext.getEditableText().toString();
-        int pos = 0;
+        int pos = -1;
         s = s.replaceAll("\\D", "");
         for (int i = 0; i < test.length(); i++)
         {
             if (OthersUtils.isChinese(test.charAt(i)))
             {
-            	pos++;
-                if (getHanziCode(test.charAt(i)) != s.charAt(pos))
+                pos++;
+                if (pos >= s.length())
                 {
-                	//设置删除线
+                    break;
+                }
+                if (!checkPingze(test.charAt(i), s.charAt(pos)))
+                {
+                    // 设置删除线
+                    SpannableString ss = new SpannableString(edittext.getText());
+                    ss.setSpan(new StrikethroughSpan()
+                    {
+                        @Override
+                        public void updateDrawState(TextPaint ds)
+                        {
+                            super.updateDrawState(ds);
+                            ds.setColor(Color.RED);
+                        }
+                    }, i, i + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    edittext.setText(ss);
                 }
             }
         }
     }
 
-
-    public static int getHanziCode(char c)
+    private static boolean checkPingze(char hanzi, char code)
     {
+        int intCode = Integer.parseInt(code + "");
+        if (intCode > 3)
+        {
+            intCode -= 3;
+        }
+        if (intCode == 1 || intCode == 3)
+        {
+            return getHanziCode(hanzi) == intCode;
+        }
+        else
+        {
+            return true;
+        }
+    }
 
-        return 1;
+    private static int getHanziCode(char c)
+    {
+        if (YunDatabaseHelper.getWordStone(c + "") == 10)
+        {
+            return 1;
+        }
+        else
+        {
+            return 3;
+        }
 
     }
 

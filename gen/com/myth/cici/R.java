@@ -43,7 +43,11 @@ in (inches), mm (millimeters).
         public static final int textSize=0x7f010002;
     }
     public static final class color {
+        public static final int black=0x7f050001;
+        public static final int blue=0x7f050003;
+        public static final int red=0x7f050002;
         public static final int white=0x7f050000;
+        public static final int yun_white=0x7f050004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 

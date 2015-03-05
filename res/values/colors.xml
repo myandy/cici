@@ -3,4 +3,13 @@
     
     
     <color  name="white">#ffffff</color>
+    
+    <color  name="black">#666666</color>
+    
+    <color  name="red">#990000</color>
+    
+    <color  name="blue">#000099</color>
+    
+    <color  name="yun_white">#8e8e8e</color>
+    
 </resources>

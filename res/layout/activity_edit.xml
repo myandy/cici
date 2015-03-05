@@ -2,14 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/launch_image"
+    android:background="@drawable/dust"
     android:paddingTop="50dp" >
 
-    <LinearLayout
-        android:id="@+id/edit_content"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        android:orientation="vertical">
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
