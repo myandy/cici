@@ -26,6 +26,13 @@ public class YunDatabaseHelper
         }
     }
 
+    /**
+     * 获取字的平仄<一句话功能简述> <功能详细描述>
+     * 
+     * @param word
+     * @return
+     * @see [类、类#方法、类#成员]
+     */
     public static int getWordStone(String word)
     {
         for (int i = 0; i < yunList.size(); i++)
@@ -38,6 +45,32 @@ public class YunDatabaseHelper
         return 10;
     }
 
+    /**
+     * 获取同韵字<一句话功能简述> <功能详细描述>
+     * 
+     * @param word
+     * @return
+     * @see [类、类#方法、类#成员]
+     */
+    public static ArrayList<Yun> getSameYun(String word)
+    {
+        ArrayList<Yun> yuns = new ArrayList<Yun>();
+        for (int i = 0; i < yunList.size(); i++)
+        {
+            if (yunList.get(i).getGlys().contains(word))
+            {
+                for (int j = 0; j < yunList.size(); j++)
+                {
+                    if (yunList.get(i).getSection_desc().equals(yunList.get(j).getSection_desc()))
+                    {
+                        yuns.add(yunList.get(j));
+                    }
+                }
+            }
+        }
+        return yuns;
+    }
+
     private static ArrayList<Yun> getYunListFromCursor(Cursor cursor)
     {
         ArrayList<Yun> list = new ArrayList<Yun>();
@@ -46,6 +79,8 @@ public class YunDatabaseHelper
             Yun ci = new Yun();
             ci.setTone(cursor.getInt(cursor.getColumnIndex("tone")));
             ci.setGlys(cursor.getString(cursor.getColumnIndex("glys")));
+            ci.setSection_desc(cursor.getString(cursor.getColumnIndex("section_desc")));
+            ci.setTone_name(cursor.getString(cursor.getColumnIndex("tone_name")));
             list.add(ci);
         }
         return list;

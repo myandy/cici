@@ -4,27 +4,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/launch_image" >
 
-    <TextView
-        android:id="@+id/headText"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="hello" />
-
-    <TextView
-        android:id="@+id/buttonText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="hello" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/buttonText"
         android:scrollbars="none"
-        android:layout_below="@id/headText" >
-
+        >
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
