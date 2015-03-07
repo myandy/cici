@@ -48,7 +48,9 @@ public class CipaiActivity extends BaseActivity
         }
 
         ArrayList<Ci> cis = CiDatabaseHelper.getCiByCipaiId(cipai.getId());
-
+        Ci intro = new Ci();
+        intro.setText(cipai.getSource());
+        ciList.add(intro);
         ciList.addAll(cis);
         initView();
     }
@@ -68,6 +70,7 @@ public class CipaiActivity extends BaseActivity
         topView.addView(new CircleTextView(mActivity, "0" + cipai.getId(), color), param);
 
         TextView title = (TextView) findViewById(R.id.title);
+        title.setTypeface(MyApplication.typeface);
         title.setTextSize(50);
         title.setText(cipai.getName());
 
@@ -129,6 +132,7 @@ public class CipaiActivity extends BaseActivity
 
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
+            textView.setTypeface(MyApplication.typeface);
             textView.setText(ciList.get(position % ciList.size()).getText());
 
             textView.setOnClickListener(new OnClickListener()

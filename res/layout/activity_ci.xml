@@ -46,12 +46,17 @@
             <TextView
                 android:id="@+id/content"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
                 android:textSize="24dp"
                 android:lineSpacingMultiplier="1.5"
-                android:text="【《独醒杂志》卷四】政和间，置大晟乐府，建立长属。晁冲之叔用作梅词以见蔡攸，攸持以白其父曰：“今日于乐府中得一人。”元长（京）览之，即除大晟丞。词中云：“无情燕子，怕春寒、常失花期。惟有南来塞雁，年年长占开时。”时以为燕雁与梅不相关，而挽入，故见笔力。
-东君：①春神。②日神。
-练：素白未染之熟绢。" />
+                />
+            <TextView
+                android:layout_below="@id/content"
+                android:id="@+id/intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                />
         </RelativeLayout>
     </com.myth.cici.wiget.VScrollView>
 

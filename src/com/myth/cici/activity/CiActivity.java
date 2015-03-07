@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -17,6 +18,7 @@ import com.myth.cici.R;
 import com.myth.cici.entity.Ci;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
+import com.myth.cici.util.OthersUtils;
 import com.myth.cici.wiget.CircleEditView;
 
 public class CiActivity extends BaseActivity
@@ -30,6 +32,8 @@ public class CiActivity extends BaseActivity
 
     private TextView content;
 
+    private boolean isIntroduce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -41,6 +45,10 @@ public class CiActivity extends BaseActivity
             ciList = (ArrayList<Ci>) getIntent().getSerializableExtra("cilist");
             cipai = (Cipai) getIntent().getSerializableExtra("cipai");
             num = getIntent().getIntExtra("num", 0);
+            if (num == 0)
+            {
+                isIntroduce = true;
+            }
         }
 
         initView();
@@ -62,21 +70,29 @@ public class CiActivity extends BaseActivity
         topView.addView(editView, 1, param);
 
         TextView title = (TextView) findViewById(R.id.title);
+        title.setTypeface(MyApplication.typeface);
         title.setText(cipai.getName());
 
         content = (TextView) findViewById(R.id.content);
-
-        findViewById(R.id.share).setOnClickListener(new OnClickListener()
+        content.setTypeface(MyApplication.typeface);
+        if (isIntroduce)
         {
-
-            @Override
-            public void onClick(View v)
+            findViewById(R.id.share).setVisibility(View.GONE);
+        }
+        else
+        {
+            findViewById(R.id.share).setOnClickListener(new OnClickListener()
             {
-                Intent intent = new Intent(mActivity, ShareActivity.class);
 
-                startActivity(intent);
-            }
-        });
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent(mActivity, ShareActivity.class);
+
+                    startActivity(intent);
+                }
+            });
+        }
         editView.setOnClickListener(new OnClickListener()
         {
 
@@ -95,12 +111,22 @@ public class CiActivity extends BaseActivity
 
     private void initContentView()
     {
-        String note = ciList.get(num).getNote();
-        if (note == null)
+        if (isIntroduce)
         {
-            note = "";
+            String source = OthersUtils.readAssertResource(mActivity, "intro.html");
+            TextView intro = (TextView) findViewById(R.id.intro);
+            intro.setText(Html.fromHtml(source));
+            content.setText(cipai.getSource());
         }
-        content.setText(ciList.get(num).getAuthor() + "\n" + ciList.get(num).getText() + "\n" + note);
+        else
+        {
+            String note = ciList.get(num).getNote();
+            if (note == null)
+            {
+                note = "";
+            }
+            content.setText(ciList.get(num).getAuthor() + "\n" + ciList.get(num).getText() + "\n" + note);
+        }
     }
 
 }

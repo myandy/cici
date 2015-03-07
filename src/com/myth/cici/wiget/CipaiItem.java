@@ -70,6 +70,11 @@ public class CipaiItem extends RelativeLayout
         holder2.name = (TextView) root.findViewById(R.id.name2);
         holder2.enname = (VerticalTextView) root.findViewById(R.id.enname2);
 
+        holder1.name.setTypeface(MyApplication.typeface);
+        holder2.name.setTypeface(MyApplication.typeface);
+        holder1.enname.setTypeface(MyApplication.typeface);
+        holder2.enname.setTypeface(MyApplication.typeface);
+
         initHolderView(holder1);
         initHolderView(holder2);
 

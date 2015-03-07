@@ -7,18 +7,19 @@
 
     <LinearLayout
         android:id="@+id/top"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:maxEms="1"
-            android:text="2"
+            android:text="忆江南"
             android:layout_marginBottom="40dp" />
     </LinearLayout>
 
