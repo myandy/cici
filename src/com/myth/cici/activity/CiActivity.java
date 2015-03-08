@@ -40,7 +40,7 @@ public class CiActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ci);
 
-        if (getIntent().hasExtra("cilist"))
+        if (getIntent().hasExtra("cipai"))
         {
             ciList = (ArrayList<Ci>) getIntent().getSerializableExtra("cilist");
             cipai = (Cipai) getIntent().getSerializableExtra("cipai");

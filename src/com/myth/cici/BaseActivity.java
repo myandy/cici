@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 public class BaseActivity extends Activity
@@ -39,6 +40,10 @@ public class BaseActivity extends Activity
         });
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
     }
+    
+    protected void addBottomRightView(View view) {
+		((ViewGroup)findViewById(R.id.bottom_right)).addView(view);
+	}
 
     /**
      * 通过layout名称构建视图

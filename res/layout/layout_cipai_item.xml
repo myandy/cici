@@ -1,6 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/auto"
     android:layout_width="150dp"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -23,7 +22,7 @@
             android:orientation="horizontal"
             android:paddingTop="10dp" >
 
-            <com.myth.cici.wiget.VerticalTextView
+            <TextView
                 android:id="@+id/num_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +68,7 @@
             android:orientation="horizontal"
             android:paddingTop="10dp" >
 
-            <com.myth.cici.wiget.VerticalTextView
+            <TextView
                 android:id="@+id/num_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

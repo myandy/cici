@@ -57,6 +57,20 @@ public class CipaiActivity extends BaseActivity
 
     private void initView()
     {
+    	TextView writeTV=new TextView(mActivity);
+    	writeTV.setText("填词");
+    	writeTV.setTextSize(20);
+    	writeTV.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(mActivity, EditActivity.class);
+                intent.putExtra("cipai", cipai);
+                startActivity(intent);
+			}
+		});
+    	addBottomRightView(writeTV);
+    	
         ColorEntity colorEntity = MyApplication.getColorById(cipai.getColor_id());
         int color = 0xffffff;
         if (colorEntity != null)

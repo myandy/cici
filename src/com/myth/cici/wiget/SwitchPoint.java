@@ -29,7 +29,7 @@ public class SwitchPoint extends LinearLayout
     /** 按照海报个数，添加点 */
     public void addSwitchBtn(int size)
     {
-        addSwitchBtn(size, R.drawable.gc_cover_switcher_dot, 4, 4);
+        addSwitchBtn(size, R.drawable.gc_cover_switcher_dot, 6, 6);
     }
 
     public void addSwitchBtn(int size, int imageId, int width, int height)
@@ -46,7 +46,7 @@ public class SwitchPoint extends LinearLayout
         for (int i = 0; i < size; i++)
         {
             imageView = new ImageView(getContext());
-            params.setMargins(0, 0, 28, 0);
+            params.setMargins(0, 0, 20, 0);
             imageView.setLayoutParams(params);
             imageView.setBackgroundResource(imageId);
             imageView.setEnabled(false);

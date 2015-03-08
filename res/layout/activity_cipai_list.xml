@@ -4,20 +4,47 @@
     android:layout_height="match_parent"
     android:background="@drawable/launch_image" >
 
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/rect_left"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rect_left_selected"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="默認排序" />
+
+        <TextView
+            android:id="@+id/rect_right"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rect_right"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="按字數排序" />
+    </LinearLayout>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        >
+        android:layout_below="@id/head"
+        android:layout_marginTop="30dp"
+        android:scrollbars="none" >
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:orientation="horizontal" >
+            android:paddingRight="20dp" >
         </LinearLayout>
     </HorizontalScrollView>
 

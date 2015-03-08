@@ -1,5 +1,6 @@
 package com.myth.cici.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -88,7 +89,10 @@ public class EditActivity extends BaseActivity
             @Override
             public void onClick(View v)
             {
-
+            	Intent intent = new Intent(mActivity, CiActivity.class);
+                intent.putExtra("cipai", cipai);
+                intent.putExtra("num", 0);
+                startActivity(intent);
             }
         });
     }

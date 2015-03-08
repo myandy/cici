@@ -59,14 +59,14 @@ public class CipaiItem extends RelativeLayout
         holder1.item = root.findViewById(R.id.item1);
         holder1.head = (RelativeLayout) root.findViewById(R.id.head1);
         holder1.middle = (ViewGroup) root.findViewById(R.id.middle1);
-        holder1.num = (VerticalTextView) root.findViewById(R.id.num_1);
+        holder1.num = (TextView) root.findViewById(R.id.num_1);
         holder1.name = (TextView) root.findViewById(R.id.name1);
         holder1.enname = (VerticalTextView) root.findViewById(R.id.enname1);
 
         holder2.item = root.findViewById(R.id.item2);
         holder2.head = (RelativeLayout) root.findViewById(R.id.head2);
         holder2.middle = (ViewGroup) root.findViewById(R.id.middle2);
-        holder2.num = (VerticalTextView) root.findViewById(R.id.num_2);
+        holder2.num = (TextView) root.findViewById(R.id.num_2);
         holder2.name = (TextView) root.findViewById(R.id.name2);
         holder2.enname = (VerticalTextView) root.findViewById(R.id.enname2);
 
@@ -134,7 +134,7 @@ public class CipaiItem extends RelativeLayout
 
         ViewGroup middle;
 
-        VerticalTextView num;
+        TextView num;
 
         TextView name;
 

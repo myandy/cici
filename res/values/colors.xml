@@ -12,4 +12,6 @@
     
     <color  name="yun_white">#8e8e8e</color>
     
+    <color  name="selected">#b0000000</color>
+    
 </resources>
