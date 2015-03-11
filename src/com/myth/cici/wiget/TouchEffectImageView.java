@@ -7,7 +7,7 @@ import android.widget.ImageView;
 /**
  * User: youxueliu Date: 2014/6/23 Time: 14:40 有点击效果的ImageView
  */
-public final class TouchEffectImageView extends ImageView
+public class TouchEffectImageView extends ImageView
 {
 
     public final static int TOUCH_ALPHA = 100; // 点击的时候设置透明度

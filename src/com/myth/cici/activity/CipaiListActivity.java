@@ -39,13 +39,20 @@ public class CipaiListActivity extends BaseActivity
 
         setContentView(R.layout.activity_cipai_list);
         ciList1 = CipaiDatabaseHelper.getAllCipaiByWordCount();
-        ciList1 = CipaiDatabaseHelper.getAllCipai();
+        ciList2 = CipaiDatabaseHelper.getAllCipai();
         ciList=ciList1;
 
         if (ciList == null || ciList.size() == 0)
         {
             finish();
         }
+
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
         initView();
     }
 
@@ -80,8 +87,8 @@ public class CipaiListActivity extends BaseActivity
 					isDefault=true;
 					rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
 					rectRight.setBackgroundResource(R.drawable.rect_right);
-//					ciList=ciList1;
-//					initView();
+                    ciList = ciList1;
+                    onStart();
 				}
 			}
 		});
@@ -93,8 +100,8 @@ public class CipaiListActivity extends BaseActivity
 					isDefault=false;
 					rectLeft.setBackgroundResource(R.drawable.rect_left);
 					rectRight.setBackgroundResource(R.drawable.rect_right_selected);
-//					ciList=ciList2;
-//					initView();
+                    ciList = ciList2;
+                    onStart();
 				}
 			}
 		});

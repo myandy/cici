@@ -2,5 +2,7 @@
 <resources>
 
     <string name="app_name">词Ci</string>
+    
+    <string name="search_hint">在%1$s中搜索</string>
 
 </resources>

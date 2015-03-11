@@ -41,9 +41,19 @@ public class BaseActivity extends Activity
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
     }
     
+    protected void setBottomGone()
+    {
+        mBottomLayout.setVisibility(View.GONE);
+    }
+
     protected void addBottomRightView(View view) {
 		((ViewGroup)findViewById(R.id.bottom_right)).addView(view);
 	}
+
+    protected void addBottomCenterView(View view)
+    {
+        ((ViewGroup) findViewById(R.id.bottom_center)).addView(view);
+    }
 
     /**
      * 通过layout名称构建视图

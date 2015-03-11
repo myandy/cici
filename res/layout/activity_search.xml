@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:background="@color/back2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.myth.cici.wiget.TouchEffectImageView
+            android:id="@+id/exit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:padding="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cancel" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="34dp" >
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="fill_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/search_background"
+                android:textCursorDrawable="@null"
+                android:cursorVisible="true"
+                android:drawableLeft="@drawable/search"
+                android:drawablePadding="5dip"
+                android:gravity="center|left"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <com.myth.cici.wiget.TouchEffectImageView
+                android:id="@+id/clear"
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_alignRight="@+id/search"
+                android:layout_centerVertical="true"
+                android:padding="6dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cancel" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_line" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/back1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/yun_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/yun_zi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

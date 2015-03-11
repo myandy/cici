@@ -50,7 +50,7 @@
                 android:textSize="24dp"
                 android:lineSpacingMultiplier="1.5"
                 />
-            <TextView
+            <WebView
                 android:layout_below="@id/content"
                 android:id="@+id/intro"
                 android:layout_width="match_parent"

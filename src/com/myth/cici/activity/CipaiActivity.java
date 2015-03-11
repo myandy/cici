@@ -58,7 +58,7 @@ public class CipaiActivity extends BaseActivity
     private void initView()
     {
     	TextView writeTV=new TextView(mActivity);
-    	writeTV.setText("填词");
+        writeTV.setText("填词");
     	writeTV.setTextSize(20);
     	writeTV.setOnClickListener(new OnClickListener() {
 			

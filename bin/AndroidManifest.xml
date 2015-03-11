@@ -30,6 +30,7 @@
         <activity android:name=".activity.CiActivity" />
         <activity android:name=".activity.ShareActivity" />
         <activity android:name=".activity.EditActivity" />
+        <activity android:name=".activity.YunSearchActivity" />
     </application>
 
 </manifest>

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -114,8 +114,11 @@ public class CiActivity extends BaseActivity
         if (isIntroduce)
         {
             String source = OthersUtils.readAssertResource(mActivity, "intro.html");
-            TextView intro = (TextView) findViewById(R.id.intro);
-            intro.setText(Html.fromHtml(source));
+            // TextView intro = (TextView) findViewById(R.id.intro);
+            // intro.setText(Html.fromHtml(source));
+            WebView intro = (WebView) findViewById(R.id.intro);
+            intro.setBackgroundColor(0);
+            intro.loadUrl("file:///android_asset/intro.html");
             content.setText(cipai.getSource());
         }
         else

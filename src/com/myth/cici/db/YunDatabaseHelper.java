@@ -14,6 +14,8 @@ public class YunDatabaseHelper
 {
     private static String YUNSHU[] = {"zhonghuaxinyun", "pingshuiyun", "cilinzhenyun"};
 
+    public static String YUNString[] = {"中华新韵", "平水韵", "词林正韵"};
+
     private static ArrayList<Yun> yunList;
 
     public static void getYunList(Context context)
@@ -52,23 +54,16 @@ public class YunDatabaseHelper
      * @return
      * @see [类、类#方法、类#成员]
      */
-    public static ArrayList<Yun> getSameYun(String word)
+    public static Yun getSameYun(String word)
     {
-        ArrayList<Yun> yuns = new ArrayList<Yun>();
         for (int i = 0; i < yunList.size(); i++)
         {
             if (yunList.get(i).getGlys().contains(word))
             {
-                for (int j = 0; j < yunList.size(); j++)
-                {
-                    if (yunList.get(i).getSection_desc().equals(yunList.get(j).getSection_desc()))
-                    {
-                        yuns.add(yunList.get(j));
-                    }
-                }
+                return yunList.get(i);
             }
         }
-        return yuns;
+        return null;
     }
 
     private static ArrayList<Yun> getYunListFromCursor(Cursor cursor)

@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 
 import com.myth.cici.db.ColorDatabaseHelper;
 import com.myth.cici.db.DBManager;
+import com.myth.cici.db.YunDatabaseHelper;
 import com.myth.cici.entity.ColorEntity;
 
 public class MyApplication extends Application
@@ -23,6 +24,7 @@ public class MyApplication extends Application
     {
         super.onCreate();
         DBManager.initDatabase(getApplicationContext());
+        YunDatabaseHelper.getYunList(this);
         typeface = getTypeface(getApplicationContext(), 1);
     }
 

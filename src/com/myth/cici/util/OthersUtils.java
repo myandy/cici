@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.view.WindowManager;
 
 public class OthersUtils
 {
@@ -24,6 +26,19 @@ public class OthersUtils
             return true;
         }
         return false;
+    }
+
+    public static String getFirstChinese(String input)
+    {
+        for (int i = 0; i < input.length(); i++)
+        {
+            if (isChinese(input.charAt(i)))
+            {
+                return input.charAt(i) + "";
+            }
+        }
+        return "";
+
     }
 
     public static String readAssertResource(Context context, String strAssertFileName)
@@ -72,5 +87,53 @@ public class OthersUtils
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * 获取屏幕宽度
+     * 
+     * @param activity
+     * @return
+     */
+    public static int getDisplayWidth(Context context)
+    {
+        int width = 0;
+        if (context == null)
+        {
+            return 0;
+        }
+        // 如果context是Activity
+        if (context instanceof Activity)
+        {
+            width = ((Activity) context).getWindowManager().getDefaultDisplay().getWidth();
+        }
+        else
+        // 否则，通过系统服务来获取屏幕宽度
+        {
+            width = getDisplayWidthBySystemService(context);
+        }
+        return width;
+    }
+
+    /**
+     * 获取屏幕宽度(通过系统服务)
+     * 
+     * @param context
+     * @return
+     * @see [类、类#方法、类#成员]
+     */
+    private static int getDisplayWidthBySystemService(Context context)
+    {
+        int width = 0;
+        try
+        {
+            WindowManager wm = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE));
+            width = wm.getDefaultDisplay().getWidth();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return width;
     }
 }

@@ -6,12 +6,20 @@
     
     <color  name="black">#666666</color>
     
+    <color  name="black_hint">#b3b3b3</color>
+    
     <color  name="red">#990000</color>
     
     <color  name="blue">#000099</color>
     
     <color  name="yun_white">#8e8e8e</color>
     
-    <color  name="selected">#b0000000</color>
+    <color  name="selected">#66000000</color>
+    
+    <color  name="back1">#d8d8d8</color>
+    
+    <color  name="back2">#f1f1f1</color>
+    
+     <color  name="black_line">#cccccc</color>
     
 </resources>

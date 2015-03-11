@@ -1,31 +1,30 @@
 package com.myth.cici.activity;
 
-import android.content.Intent;
+import java.util.ArrayList;
+
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.myth.cici.BaseActivity;
-import com.myth.cici.MyApplication;
 import com.myth.cici.R;
-import com.myth.cici.db.YunDatabaseHelper;
 import com.myth.cici.entity.Cipai;
-import com.myth.cici.util.CheckUtils;
-import com.myth.cici.wiget.PingzeLinearlayout;
+import com.myth.cici.fragment.ChangeBackgroundFragment;
+import com.myth.cici.fragment.EditFragment;
+import com.myth.cici.wiget.SelectImageView;
 
 public class EditActivity extends BaseActivity
 {
 
-    private Cipai cipai;
+    public static Cipai cipai;
 
-    private LinearLayout editContent;
+    ChangeBackgroundFragment changeBackgroundFrament;
 
-    private String[] sList;
+    EditFragment editFragment;
+
+    ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,66 +34,55 @@ public class EditActivity extends BaseActivity
 
         cipai = (Cipai) getIntent().getSerializableExtra("cipai");
 
-        editContent = (LinearLayout) findViewById(R.id.edit_content);
-        String s = Html.fromHtml(cipai.getPingze()).toString();
-        Log.d("myth", s);
-        sList = CheckUtils.getCodeFormPingze(s.split("。"));
-
-        for (int i = 0; i < sList.length; i++)
-        {
-            View view = new PingzeLinearlayout(this, sList[i]);
-            view.setPadding(0, 20, 0, 0);
-            final EditText edittext = new EditText(this);
-            edittext.setTextColor(mActivity.getResources().getColor(R.color.black));
-
-            final int index = i;
-            edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
-            {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus)
-                {
-                    if (!hasFocus)
-                    {
-                        CheckUtils.checkEditText(edittext, sList[index]);
-                    }
-                }
-            });
-            editContent.addView(view);
-            editContent.addView(edittext);
-        }
-
-        YunDatabaseHelper.getYunList(mActivity);
-
         initView();
     }
 
     private void initView()
     {
-        TextView title = (TextView) findViewById(R.id.edit_title);
-        title.setText(cipai.getName());
-        title.setTypeface(MyApplication.typeface);
 
-        findViewById(R.id.edit_dict).setOnClickListener(new OnClickListener()
+        SelectImageView edit = new SelectImageView(mActivity, null);
+        edit.setImageResource(R.drawable.edit);
+        edit.setOnClickListener(new OnClickListener()
         {
 
             @Override
             public void onClick(View v)
             {
-
+                changeFragment(0);
             }
         });
-        findViewById(R.id.edit_info).setOnClickListener(new OnClickListener()
+
+        SelectImageView background = new SelectImageView(mActivity, null);
+        background.setImageResource(R.drawable.layout_bg_paper);
+
+        background.setOnClickListener(new OnClickListener()
         {
 
             @Override
             public void onClick(View v)
             {
-            	Intent intent = new Intent(mActivity, CiActivity.class);
-                intent.putExtra("cipai", cipai);
-                intent.putExtra("num", 0);
-                startActivity(intent);
+                changeFragment(1);
             }
         });
+
+        addBottomCenterView(edit);
+        addBottomCenterView(background);
+
+        // 创建修改实例
+        changeBackgroundFrament = new ChangeBackgroundFragment();
+        editFragment = new EditFragment();
+
+        fragments.add(editFragment);
+        fragments.add(changeBackgroundFrament);
+        changeFragment(0);
+    }
+
+    public void changeFragment(int pos)
+    {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragments.get(pos));
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 
