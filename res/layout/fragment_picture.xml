@@ -26,23 +26,24 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="212"
             android:gravity="left"
+            android:text="212"
             android:textColor="@color/black"
             android:textSize="20sp" />
     </LinearLayout>
 
-    <HorizontalScrollView
-        android:layout_width="fill_parent"
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" >
-
-        <LinearLayout
-            android:id="@+id/imgs"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-        </LinearLayout>
-    </HorizontalScrollView>
+        android:max="255"
+        android:progress="127" />
+    
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="24"
+        android:progress="0" />
 
 </LinearLayout>

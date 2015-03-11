@@ -4,7 +4,9 @@
     
     <color  name="white">#ffffff</color>
     
-    <color  name="black">#666666</color>
+    <color  name="black">#000000</color>
+    
+    <color  name="black_light">#666666</color>
     
     <color  name="black_hint">#b3b3b3</color>
     

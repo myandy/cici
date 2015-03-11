@@ -11,7 +11,9 @@ import android.view.View.OnClickListener;
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.Writing;
 import com.myth.cici.fragment.ChangeBackgroundFragment;
+import com.myth.cici.fragment.ChangePictureFragment;
 import com.myth.cici.fragment.EditFragment;
 import com.myth.cici.wiget.SelectImageView;
 
@@ -20,9 +22,13 @@ public class EditActivity extends BaseActivity
 
     public static Cipai cipai;
 
+    public static Writing writing = new Writing();
+
     ChangeBackgroundFragment changeBackgroundFrament;
 
     EditFragment editFragment;
+
+    ChangePictureFragment changePictureFragment;
 
     ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 
@@ -36,6 +42,7 @@ public class EditActivity extends BaseActivity
 
         initView();
     }
+
 
     private void initView()
     {
@@ -65,15 +72,31 @@ public class EditActivity extends BaseActivity
             }
         });
 
+        SelectImageView picture = new SelectImageView(mActivity, null);
+        picture.setImageResource(R.drawable.layout_bg_album);
+
+        picture.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                changeFragment(2);
+            }
+        });
+
         addBottomCenterView(edit);
         addBottomCenterView(background);
+        addBottomCenterView(picture);
 
         // 创建修改实例
         changeBackgroundFrament = new ChangeBackgroundFragment();
         editFragment = new EditFragment();
+        changePictureFragment = new ChangePictureFragment();
 
         fragments.add(editFragment);
         fragments.add(changeBackgroundFrament);
+        fragments.add(changePictureFragment);
         changeFragment(0);
     }
 

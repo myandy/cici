@@ -1,5 +1,7 @@
 package com.myth.cici.fragment;
 
+import java.util.ArrayList;
+
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +33,8 @@ public class EditFragment extends Fragment
     
     private Context mContext;
 
+    private ArrayList<EditText> editTexts = new ArrayList<EditText>();
+
     @Override
     public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
         
@@ -44,6 +48,19 @@ public class EditFragment extends Fragment
         
 
     }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < editTexts.size(); i++)
+        {
+            sb.append(editTexts.get(i).getEditableText().toString() + "\n");
+        }
+        EditActivity.writing.setText(sb.toString());
+    }
+
     private void initViews(View view)
     {
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
@@ -71,6 +88,7 @@ public class EditFragment extends Fragment
             });
             editContent.addView(view1);
             editContent.addView(edittext);
+            editTexts.add(edittext);
         }
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);
