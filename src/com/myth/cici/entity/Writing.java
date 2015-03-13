@@ -2,6 +2,8 @@ package com.myth.cici.entity;
 
 import java.io.Serializable;
 
+import android.graphics.Bitmap;
+
 public class Writing implements Serializable
 {
 
@@ -12,11 +14,9 @@ public class Writing implements Serializable
 
     private int id;
 
-    private String author;
-
     private String text;
 
-    private int c_id;
+    private int ci_id;
 
     private long create_dt;
 
@@ -25,6 +25,8 @@ public class Writing implements Serializable
     private String bgimg;
 
     private int layout;
+
+    private Bitmap bitmap;
 
     public int getId()
     {
@@ -36,15 +38,6 @@ public class Writing implements Serializable
         this.id = id;
     }
 
-    public String getAuthor()
-    {
-        return author;
-    }
-
-    public void setAuthor(String author)
-    {
-        this.author = author;
-    }
 
     public String getText()
     {
@@ -56,15 +49,6 @@ public class Writing implements Serializable
         this.text = text;
     }
 
-    public int getC_id()
-    {
-        return c_id;
-    }
-
-    public void setC_id(int c_id)
-    {
-        this.c_id = c_id;
-    }
 
     public long getCreate_dt()
     {
@@ -109,6 +93,26 @@ public class Writing implements Serializable
     public static long getSerialversionuid()
     {
         return serialVersionUID;
+    }
+
+    public int getCi_id()
+    {
+        return ci_id;
+    }
+
+    public void setCi_id(int ci_id)
+    {
+        this.ci_id = ci_id;
+    }
+
+    public Bitmap getBitmap()
+    {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap)
+    {
+        this.bitmap = bitmap;
     }
 
 }

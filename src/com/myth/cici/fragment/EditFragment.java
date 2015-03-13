@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -16,16 +17,16 @@ import android.widget.TextView;
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.activity.CiActivity;
-import com.myth.cici.activity.EditActivity;
 import com.myth.cici.activity.YunSearchActivity;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.Writing;
 import com.myth.cici.util.CheckUtils;
+import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.PingzeLinearlayout;
 
 public class EditFragment extends Fragment
 {
 
-    private Cipai cipai;
 
     private LinearLayout editContent;
 
@@ -35,18 +36,47 @@ public class EditFragment extends Fragment
 
     private ArrayList<EditText> editTexts = new ArrayList<EditText>();
 
+    private View root;
+
+    private Cipai cipai;
+
+    private Writing writing;
+
+    public void setData(Cipai cipai, Writing writing)
+    {
+        this.cipai = cipai;
+        this.writing = writing;
+    }
+
     @Override
     public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
         
         
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = inflater.getContext();
-        View view = inflater.inflate(R.layout.fragment_edit, null);
-        cipai = EditActivity.cipai;
-        initViews(view);
-        return view;
+        root = inflater.inflate(R.layout.fragment_edit, null);
+        initViews(root);
+        return root;
         
 
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        if (StringUtils.isNumeric(writing.getBgimg()))
+        {
+            root.setBackgroundResource(MyApplication.bgimgList[Integer.parseInt(writing.getBgimg())]);
+        }
+        else if (writing.getBitmap() != null)
+        {
+            root.setBackground(new BitmapDrawable(getResources(), writing.getBitmap()));
+        }
+        else
+        {
+            root.setBackground(new BitmapDrawable(getResources(), writing.getBgimg()));
+        }
     }
 
     @Override
@@ -58,7 +88,7 @@ public class EditFragment extends Fragment
         {
             sb.append(editTexts.get(i).getEditableText().toString() + "\n");
         }
-        EditActivity.writing.setText(sb.toString());
+        writing.setText(sb.toString());
     }
 
     private void initViews(View view)

@@ -1,5 +1,6 @@
 package com.myth.cici.activity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Fragment;
@@ -10,11 +11,14 @@ import android.view.View.OnClickListener;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
+import com.myth.cici.db.WritingDatabaseHelper;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.fragment.ChangeBackgroundFragment;
 import com.myth.cici.fragment.ChangePictureFragment;
 import com.myth.cici.fragment.EditFragment;
+import com.myth.cici.util.FileUtils;
+import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.SelectImageView;
 
 public class EditActivity extends BaseActivity
@@ -22,7 +26,7 @@ public class EditActivity extends BaseActivity
 
     public static Cipai cipai;
 
-    public static Writing writing = new Writing();
+    public static Writing writing;
 
     ChangeBackgroundFragment changeBackgroundFrament;
 
@@ -39,10 +43,41 @@ public class EditActivity extends BaseActivity
         setContentView(R.layout.activity_edit);
 
         cipai = (Cipai) getIntent().getSerializableExtra("cipai");
+        writing = (Writing) getIntent().getSerializableExtra("writing");
+
+        if (writing == null)
+        {
+            writing = new Writing();
+            writing.setId(writing.hashCode());
+            writing.setCi_id(cipai.getId());
+            writing.setBgimg("0");
+        }
 
         initView();
     }
 
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        if (!StringUtils.isEmpty(writing.getText()))
+        {
+            if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null)
+            {
+                try
+                {
+                    String fileName = FileUtils.saveFile(writing.getBitmap());
+                    writing.setBgimg(fileName);
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            WritingDatabaseHelper.saveWriting(mActivity, writing);
+
+        }
+    }
 
     private void initView()
     {
@@ -90,9 +125,13 @@ public class EditActivity extends BaseActivity
         addBottomCenterView(picture);
 
         // 创建修改实例
-        changeBackgroundFrament = new ChangeBackgroundFragment();
         editFragment = new EditFragment();
+        changeBackgroundFrament = new ChangeBackgroundFragment();
         changePictureFragment = new ChangePictureFragment();
+
+        editFragment.setData(cipai, writing);
+        changeBackgroundFrament.setData(cipai, writing);
+        changePictureFragment.setData(cipai, writing);
 
         fragments.add(editFragment);
         fragments.add(changeBackgroundFrament);
@@ -108,5 +147,10 @@ public class EditActivity extends BaseActivity
         transaction.commit();
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+    }
 
 }

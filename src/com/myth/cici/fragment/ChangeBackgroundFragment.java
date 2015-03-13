@@ -15,7 +15,8 @@ import android.widget.TextView;
 
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
-import com.myth.cici.activity.EditActivity;
+import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 
 public class ChangeBackgroundFragment extends Fragment
@@ -26,6 +27,19 @@ public class ChangeBackgroundFragment extends Fragment
     private LinearLayout content;
 
     private TextView text;
+
+    private Cipai cipai;
+
+    private Writing writing;
+
+    private int bg_index = 0;
+
+    public void setData(Cipai cipai, Writing writing)
+    {
+        this.cipai = cipai;
+        this.writing = writing;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -44,18 +58,17 @@ public class ChangeBackgroundFragment extends Fragment
         refresh();
     }
 
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        writing.setBgimg(bg_index + "");
+    }
+
     private void refresh()
     {
-        text.setText(EditActivity.writing.getText());
-        int i = 0;
-        try
-        {
-            i = Integer.parseInt(EditActivity.writing.getBgimg());
-        }
-        catch (Exception e)
-        {
-        }
-        content.setBackgroundResource(MyApplication.bgimgList[i]);
+        text.setText(writing.getText());
+        content.setBackgroundResource(MyApplication.bgimgList[bg_index]);
     }
 
     private void initViews(View view)
@@ -76,6 +89,7 @@ public class ChangeBackgroundFragment extends Fragment
                 @Override
                 public void onClick(View v)
                 {
+                    bg_index = index;
                     content.setBackgroundResource(MyApplication.bgimgList[index]);
                 }
             });
@@ -85,7 +99,7 @@ public class ChangeBackgroundFragment extends Fragment
         content = (LinearLayout) view.findViewById(R.id.content);
         layoutItemContainer(content);
         TextView title = (TextView) view.findViewById(R.id.title);
-        title.setText(EditActivity.cipai.getName());
+        title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
     }
 

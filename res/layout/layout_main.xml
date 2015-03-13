@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/show_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:text="浏览所有" />
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black_text"
+            android:background="@drawable/circle_background"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textSize="28dp"
+            android:text="词" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:text="牌" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/show_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/show_all"
+            android:textSize="26dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:text="随机一首词" />
+    
+    
+</RelativeLayout>

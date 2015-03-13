@@ -15,21 +15,28 @@ public class WritingDatabaseHelper
     public static ArrayList<Writing> getAllWriting(Context context)
     {
         SQLiteDatabase db = DBManager.getDatabase();
-        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + "order by update_dt desc", null);
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
         return getWritingFromCursor(cursor);
     }
 
     public static void saveWriting(Context context, Writing writing)
     {
+        deleteWriting(context, writing);
+
+        SQLiteDatabase db = DBManager.getDatabase();
+
+        String sqlStr = "insert into " + TABLE_NAME + " ( id,bgimg,ci_id,create_dt,text,update_dt) values ( "
+                + "?,hh, ?, ?, ?)";
+        db.execSQL(sqlStr,
+                new String[] {writing.getId() + "", writing.getBgimg(), writing.getCi_id() + "",
+                        writing.getCreate_dt() + "", writing.getText(), System.currentTimeMillis() + ""});
+    }
+
+    public static void deleteWriting(Context context, Writing writing)
+    {
         SQLiteDatabase db = DBManager.getDatabase();
 
         db.execSQL("delete from " + TABLE_NAME + " where " + "id" + " = " + writing.getId());
-
-        String sqlStr = "insert into " + TABLE_NAME + " ( id,author,bgimg,c_id,create_dt,text,update_dt) values ( "
-                + "?, ?, ?, ?, ?, ?, ?)";
-        db.execSQL(sqlStr,
-                new String[] {writing.getId() + "", writing.getAuthor(), writing.getBgimg(), writing.getC_id() + "",
-                        writing.getCreate_dt() + "", writing.getText(), System.currentTimeMillis() + ""});
     }
 
     private static ArrayList<Writing> getWritingFromCursor(Cursor cursor)
@@ -39,9 +46,8 @@ public class WritingDatabaseHelper
         {
             Writing data = new Writing();
             data.setId(cursor.getInt(cursor.getColumnIndex("id")));
-            data.setAuthor(cursor.getString(cursor.getColumnIndex("author")));
             data.setBgimg(cursor.getString(cursor.getColumnIndex("bgimg")));
-            data.setC_id(cursor.getInt(cursor.getColumnIndex("c_id")));
+            data.setCi_id(cursor.getInt(cursor.getColumnIndex("ci_id")));
             data.setCreate_dt(cursor.getLong(cursor.getColumnIndex("create_dt")));
             data.setText(cursor.getColumnName(cursor.getColumnIndex("text")));
             data.setUpdate_dt(cursor.getLong(cursor.getColumnIndex("update_dt")));

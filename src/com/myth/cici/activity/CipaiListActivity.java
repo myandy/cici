@@ -75,7 +75,7 @@ public class CipaiListActivity extends BaseActivity
             {
                 scrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
             }
-        }, 50);
+        }, 5);
         
         final View rectLeft=findViewById(R.id.rect_left);
         final View rectRight=findViewById(R.id.rect_right);

@@ -25,7 +25,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.myth.cici.R;
-import com.myth.cici.activity.EditActivity;
+import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 
 public class ChangePictureFragment extends Fragment
@@ -41,7 +42,19 @@ public class ChangePictureFragment extends Fragment
 
     private Bitmap srcBitmap;
 
+    private Bitmap destBitmap;
+
     private String pathName;
+
+    private Cipai cipai;
+
+    private Writing writing;
+
+    public void setData(Cipai cipai, Writing writing)
+    {
+        this.cipai = cipai;
+        this.writing = writing;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -60,10 +73,19 @@ public class ChangePictureFragment extends Fragment
         refresh();
     }
 
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        writing.setBitmap(destBitmap);
+        writing.setBgimg("");
+
+    }
+
     private void refresh()
     {
-        text.setText(EditActivity.writing.getText());
-        content.setBackgroundDrawable(new BitmapDrawable(srcBitmap));
+        text.setText(writing.getText());
+        content.setBackground(new BitmapDrawable(getResources(), destBitmap));
     }
 
     @Override
@@ -79,6 +101,7 @@ public class ChangePictureFragment extends Fragment
                 if (bmp != null)
                 {
                     srcBitmap = bmp;
+                    destBitmap = bmp;
                 }
             }
         }
@@ -105,13 +128,13 @@ public class ChangePictureFragment extends Fragment
         });
         layoutItemContainer(content);
         TextView title = (TextView) view.findViewById(R.id.title);
-        title.setText(EditActivity.cipai.getName());
+        title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
 
         // srcBitmap = BitmapFactory.decodeFile(pathName);
         srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zuibaichi);
 
-
+        destBitmap = srcBitmap;
 
         SeekBar seekBar1 = (SeekBar) view.findViewById(R.id.seekBar1);
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -150,7 +173,8 @@ public class ChangePictureFragment extends Fragment
                 Canvas canvas = new Canvas(bmp);
                 // 在Canvas上绘制一个已经存在的Bitmap。这样，dstBitmap就和srcBitmap一摸一样了
                 canvas.drawBitmap(srcBitmap, 0, 0, paint);
-                content.setBackground(new BitmapDrawable(bmp));
+                destBitmap = bmp;
+                content.setBackground(new BitmapDrawable(getResources(), bmp));
             }
         });
 
@@ -189,6 +213,7 @@ public class ChangePictureFragment extends Fragment
                 blur.setRadius(progress + 1);
                 blur.forEach(overlayAlloc);
                 overlayAlloc.copyTo(overlay);
+                destBitmap = overlay;
                 content.setBackground(new BitmapDrawable(getResources(), overlay));
                 rs.destroy();
             }

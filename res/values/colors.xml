@@ -4,6 +4,8 @@
     
     <color  name="white">#ffffff</color>
     
+    <color  name="white_light">#e7ede5</color>
+    
     <color  name="black">#000000</color>
     
     <color  name="black_light">#666666</color>
@@ -23,5 +25,7 @@
     <color  name="back2">#f1f1f1</color>
     
      <color  name="black_line">#cccccc</color>
+     
+     <color  name="black_text">#444847</color>
     
 </resources>
