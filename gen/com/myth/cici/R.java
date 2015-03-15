@@ -43,26 +43,26 @@ in (inches), mm (millimeters).
         public static final int textSize=0x7f010002;
     }
     public static final class color {
-        public static final int back1=0x7f050009;
-        public static final int back2=0x7f05000a;
-        public static final int black=0x7f050002;
-        public static final int black_hint=0x7f050004;
-        public static final int black_light=0x7f050003;
-        public static final int black_line=0x7f05000b;
-        public static final int black_text=0x7f05000c;
-        public static final int blue=0x7f050006;
-        public static final int red=0x7f050005;
-        public static final int selected=0x7f050008;
-        public static final int white=0x7f050000;
-        public static final int white_light=0x7f050001;
-        public static final int yun_white=0x7f050007;
+        public static final int back1=0x7f060009;
+        public static final int back2=0x7f06000a;
+        public static final int black=0x7f060002;
+        public static final int black_hint=0x7f060004;
+        public static final int black_light=0x7f060003;
+        public static final int black_line=0x7f06000b;
+        public static final int black_text=0x7f06000c;
+        public static final int blue=0x7f060006;
+        public static final int red=0x7f060005;
+        public static final int selected=0x7f060008;
+        public static final int white=0x7f060000;
+        public static final int white_light=0x7f060001;
+        public static final int yun_white=0x7f060007;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
          */
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
-        public static final int page_margin=0x7f060002;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        public static final int page_margin=0x7f070002;
     }
     public static final class drawable {
         public static final int appicon=0x7f020000;
@@ -124,63 +124,64 @@ in (inches), mm (millimeters).
         public static final int zuibaichi=0x7f020038;
     }
     public static final class id {
-        public static final int bottom_center=0x7f090005;
-        public static final int bottom_layout=0x7f090003;
-        public static final int bottom_left=0x7f090004;
-        public static final int bottom_right=0x7f090006;
-        public static final int clear=0x7f09001a;
-        public static final int cloud_root_id=0x7f090002;
-        public static final int content=0x7f09000b;
-        public static final int content_layout=0x7f090007;
-        public static final int downtoup=0x7f090000;
-        public static final int edit_content=0x7f090023;
-        public static final int edit_dict=0x7f090021;
-        public static final int edit_info=0x7f090022;
-        public static final int edit_title=0x7f090020;
-        public static final int edit_top=0x7f09001f;
-        public static final int enname1=0x7f09002d;
-        public static final int enname2=0x7f090033;
-        public static final int exit=0x7f090018;
-        public static final int fragment_container=0x7f090015;
-        public static final int gc_gallery_iv=0x7f090028;
-        public static final int gc_image_view_dot=0x7f090027;
-        public static final int gc_image_view_gallery=0x7f090026;
-        public static final int gc_main_dot=0x7f09000f;
-        public static final int gc_main_gallery=0x7f09000e;
-        public static final int head=0x7f090010;
-        public static final int head1=0x7f09002a;
-        public static final int head2=0x7f090030;
-        public static final int horizontalScrollView=0x7f090013;
-        public static final int imgs=0x7f09001d;
-        public static final int intro=0x7f09000c;
-        public static final int item1=0x7f090029;
-        public static final int item2=0x7f09002f;
-        public static final int linearLayout=0x7f090014;
-        public static final int middle1=0x7f09002b;
-        public static final int middle2=0x7f090031;
-        public static final int name1=0x7f09002e;
-        public static final int name2=0x7f090034;
-        public static final int num_1=0x7f09002c;
-        public static final int num_2=0x7f090032;
-        public static final int pager_layout=0x7f090016;
-        public static final int rect_left=0x7f090011;
-        public static final int rect_right=0x7f090012;
-        public static final int right=0x7f090008;
-        public static final int search=0x7f090019;
-        public static final int seekBar1=0x7f090024;
-        public static final int seekBar2=0x7f090025;
-        public static final int share=0x7f09000a;
-        public static final int show_all=0x7f090036;
-        public static final int show_one=0x7f090037;
-        public static final int stack_view=0x7f090035;
-        public static final int text=0x7f09001e;
-        public static final int textview=0x7f090038;
-        public static final int title=0x7f090009;
-        public static final int top=0x7f09000d;
-        public static final int uptodown=0x7f090001;
-        public static final int view_pager=0x7f090017;
-        public static final int yun_title=0x7f09001b;
-        public static final int yun_zi=0x7f09001c;
+        public static final int bottom_center=0x7f050005;
+        public static final int bottom_layout=0x7f050003;
+        public static final int bottom_left=0x7f050004;
+        public static final int bottom_right=0x7f050006;
+        public static final int clear=0x7f05001a;
+        public static final int cloud_root_id=0x7f050002;
+        public static final int content=0x7f05000b;
+        public static final int content_layout=0x7f050007;
+        public static final int downtoup=0x7f050001;
+        public static final int edit_content=0x7f050023;
+        public static final int edit_dict=0x7f050021;
+        public static final int edit_info=0x7f050022;
+        public static final int edit_title=0x7f050020;
+        public static final int edit_top=0x7f05001f;
+        public static final int enname1=0x7f05002d;
+        public static final int enname2=0x7f050033;
+        public static final int exit=0x7f050018;
+        public static final int fragment_container=0x7f050015;
+        public static final int gc_gallery_iv=0x7f050028;
+        public static final int gc_image_view_dot=0x7f050027;
+        public static final int gc_image_view_gallery=0x7f050026;
+        public static final int gc_main_dot=0x7f05000f;
+        public static final int gc_main_gallery=0x7f05000e;
+        public static final int head=0x7f050010;
+        public static final int head1=0x7f05002a;
+        public static final int head2=0x7f050030;
+        public static final int horizontalScrollView=0x7f050013;
+        public static final int imgs=0x7f05001d;
+        public static final int intro=0x7f05000c;
+        public static final int item1=0x7f050029;
+        public static final int item2=0x7f05002f;
+        public static final int linearLayout=0x7f050014;
+        public static final int middle1=0x7f05002b;
+        public static final int middle2=0x7f050031;
+        public static final int name1=0x7f05002e;
+        public static final int name2=0x7f050034;
+        public static final int num_1=0x7f05002c;
+        public static final int num_2=0x7f050032;
+        public static final int pager_layout=0x7f050016;
+        public static final int rect_left=0x7f050011;
+        public static final int rect_right=0x7f050012;
+        public static final int right=0x7f050008;
+        public static final int search=0x7f050019;
+        public static final int seekBar1=0x7f050024;
+        public static final int seekBar2=0x7f050025;
+        public static final int share=0x7f05000a;
+        public static final int show_all=0x7f050036;
+        public static final int show_one=0x7f050037;
+        public static final int stack_view=0x7f050035;
+        public static final int text=0x7f05001e;
+        public static final int textview=0x7f050038;
+        public static final int time=0x7f050039;
+        public static final int title=0x7f050009;
+        public static final int top=0x7f05000d;
+        public static final int uptodown=0x7f050000;
+        public static final int view_pager=0x7f050017;
+        public static final int yun_title=0x7f05001b;
+        public static final int yun_zi=0x7f05001c;
     }
     public static final class layout {
         public static final int activity_base=0x7f030000;
@@ -200,13 +201,14 @@ in (inches), mm (millimeters).
         public static final int layout_intro=0x7f03000e;
         public static final int layout_main=0x7f03000f;
         public static final int layout_textview=0x7f030010;
+        public static final int layout_writing=0x7f030011;
     }
     public static final class raw {
         public static final int ci=0x7f040000;
     }
     public static final class string {
-        public static final int app_name=0x7f070000;
-        public static final int search_hint=0x7f070001;
+        public static final int app_name=0x7f080000;
+        public static final int search_hint=0x7f080001;
     }
     public static final class style {
         /** 
@@ -215,7 +217,7 @@ in (inches), mm (millimeters).
     
  Application theme. 
          */
-        public static final int AppTheme=0x7f080000;
+        public static final int AppTheme=0x7f090000;
     }
     public static final class styleable {
         /** Attributes that can be used with a verticaltextview.

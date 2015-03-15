@@ -46,14 +46,14 @@ public class CipaiListActivity extends BaseActivity
         {
             finish();
         }
-
+        initView();
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-        initView();
+        
     }
 
     private void initView()
@@ -88,7 +88,7 @@ public class CipaiListActivity extends BaseActivity
 					rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
 					rectRight.setBackgroundResource(R.drawable.rect_right);
                     ciList = ciList1;
-                    onStart();
+                    initView();
 				}
 			}
 		});
@@ -101,7 +101,7 @@ public class CipaiListActivity extends BaseActivity
 					rectLeft.setBackgroundResource(R.drawable.rect_left);
 					rectRight.setBackgroundResource(R.drawable.rect_right_selected);
                     ciList = ciList2;
-                    onStart();
+                    initView();
 				}
 			}
 		});

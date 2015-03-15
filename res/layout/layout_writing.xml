@@ -4,6 +4,17 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
+   <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="2015-3-15"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    
+    
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="fill_parent"
@@ -31,18 +42,5 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="255"
-        android:progress="127" />
-    
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="24"
-        android:progress="0" />
 
 </LinearLayout>

@@ -26,7 +26,7 @@ public class WritingDatabaseHelper
         SQLiteDatabase db = DBManager.getDatabase();
 
         String sqlStr = "insert into " + TABLE_NAME + " ( id,bgimg,ci_id,create_dt,text,update_dt) values ( "
-                + "?,hh, ?, ?, ?)";
+                + "?,?,?, ?, ?, ?)";
         db.execSQL(sqlStr,
                 new String[] {writing.getId() + "", writing.getBgimg(), writing.getCi_id() + "",
                         writing.getCreate_dt() + "", writing.getText(), System.currentTimeMillis() + ""});
