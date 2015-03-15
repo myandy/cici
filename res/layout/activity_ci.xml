@@ -47,15 +47,22 @@
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
-                android:lineSpacingMultiplier="1.5"
+                android:textSize="22dp"
+                />
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/white_hint"
+                android:layout_below="@id/content"
+                android:layout_marginTop="10dp"
                 />
             <WebView
                 android:layout_below="@id/content"
                 android:id="@+id/intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
                 />
         </RelativeLayout>
     </com.myth.cici.wiget.VScrollView>

@@ -18,6 +18,20 @@ public class Ci implements Serializable
 
     private String note;
 
+    private int ci_id;
+
+    private Cipai cipai;
+
+    public Cipai getCipai()
+    {
+        return cipai;
+    }
+
+    public void setCipai(Cipai cipai)
+    {
+        this.cipai = cipai;
+    }
+
     public int getId()
     {
         return id;
@@ -58,5 +72,14 @@ public class Ci implements Serializable
         this.note = note;
     }
 
+    public int getCi_id()
+    {
+        return ci_id;
+    }
+
+    public void setCi_id(int ci_id)
+    {
+        this.ci_id = ci_id;
+    }
 
 }

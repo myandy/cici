@@ -101,6 +101,8 @@ public class ChangeBackgroundFragment extends Fragment
         TextView title = (TextView) view.findViewById(R.id.title);
         title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
+        title.setTypeface(MyApplication.typeface);
+        text.setTypeface(MyApplication.typeface);
     }
 
     private void layoutItemContainer(View itemContainer)

@@ -2,6 +2,7 @@ package com.myth.cici.fragment;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +11,12 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.myth.cici.BaseActivity;
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.activity.CiActivity;
@@ -27,11 +30,10 @@ import com.myth.cici.wiget.PingzeLinearlayout;
 public class EditFragment extends Fragment
 {
 
-
     private LinearLayout editContent;
 
     private String[] sList;
-    
+
     private Context mContext;
 
     private ArrayList<EditText> editTexts = new ArrayList<EditText>();
@@ -49,15 +51,16 @@ public class EditFragment extends Fragment
     }
 
     @Override
-    public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
-        
-        
+    public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container,
+            Bundle savedInstanceState)
+    {
+
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = inflater.getContext();
         root = inflater.inflate(R.layout.fragment_edit, null);
         initViews(root);
+        ((BaseActivity) mContext).setBottomVisible();
         return root;
-        
 
     }
 
@@ -93,9 +96,16 @@ public class EditFragment extends Fragment
 
     private void initViews(View view)
     {
+        final View keyboard = view.findViewById(R.id.edit_keyboard);
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
         String s = Html.fromHtml(cipai.getPingze()).toString();
         sList = CheckUtils.getCodeFormPingze(s.split("。"));
+
+        String[] tList = null;
+        if (writing.getText() != null)
+        {
+            tList = writing.getText().split("\n");
+        }
 
         for (int i = 0; i < sList.length; i++)
         {
@@ -119,6 +129,27 @@ public class EditFragment extends Fragment
             editContent.addView(view1);
             editContent.addView(edittext);
             editTexts.add(edittext);
+
+            edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
+            {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus)
+                {
+                    if (hasFocus)
+                    {
+                        keyboard.setVisibility(View.VISIBLE);
+                        ((BaseActivity) mContext).setBottomGone();
+                    }
+                    else
+                    {
+                    }
+                }
+            });
+
+            if (tList != null && tList.length > i)
+            {
+                edittext.setText(tList[i]);
+            }
         }
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);
@@ -147,7 +178,27 @@ public class EditFragment extends Fragment
                 startActivity(intent);
             }
         });
+        keyboard.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                keyboard.setVisibility(View.GONE);
+                ((BaseActivity) mContext).setBottomVisible();
+                hideSoftInputFromWindow();
+            }
+        });
     }
 
+    private void hideSoftInputFromWindow()
+    {
+        View view = ((Activity) mContext).getWindow().peekDecorView();
+        if (view != null)
+        {
+            InputMethodManager inputmanger = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputmanger.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
 
 }

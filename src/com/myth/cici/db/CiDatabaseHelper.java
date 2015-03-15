@@ -25,12 +25,20 @@ public class CiDatabaseHelper
         {
             Ci ci = new Ci();
             ci.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            ci.setCi_id(cursor.getInt(cursor.getColumnIndex("ci_id")));
             ci.setAuthor(cursor.getString(cursor.getColumnIndex("author")));
             ci.setNote(cursor.getString(cursor.getColumnIndex("note")));
             ci.setText(cursor.getString(cursor.getColumnIndex("text")));
             list.add(ci);
         }
         return list;
+    }
+
+    public static ArrayList<Ci> getAllCi()
+    {
+        SQLiteDatabase db = DBManager.getDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
+        return getCipaiListFromCursor(cursor);
     }
 
 }

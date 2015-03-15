@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="155dp"
+    android:layout_gravity="center"
+    android:background="@drawable/live_alarm_bg"
+    android:orientation="vertical" >
+
+    <!-- 直播提醒框标题：PPTV提醒您 -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/simple_dialog_title_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/simple_dialog_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="7dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#e2e4e5" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/simple_dialog_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/simple_dialog_buttons"
+            android:layout_below="@id/simple_dialog_title_layout"
+            android:gravity="center"
+            android:padding="7dp"
+            android:textColor="@color/black_light"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/simple_dialog_content"
+            android:background="#e2e4e5" />
+
+        <LinearLayout
+            android:id="@+id/simple_dialog_buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical" >
+
+            <!-- 取消 -->
+
+            <TextView
+                android:id="@+id/simple_dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="#1887dc"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/simple_dialog_divide_line"
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/simple_dialog_content"
+                android:background="#e2e4e5" />
+
+            <!-- 立即观看 -->
+
+            <TextView
+                android:id="@+id/simple_dialog_confirm"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="#1887dc"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

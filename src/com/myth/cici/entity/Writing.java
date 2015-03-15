@@ -28,6 +28,8 @@ public class Writing implements Serializable
 
     private Bitmap bitmap;
 
+    private Cipai cipai;
+
     public int getId()
     {
         return id;
@@ -113,6 +115,16 @@ public class Writing implements Serializable
     public void setBitmap(Bitmap bitmap)
     {
         this.bitmap = bitmap;
+    }
+
+    public Cipai getCipai()
+    {
+        return cipai;
+    }
+
+    public void setCipai(Cipai cipai)
+    {
+        this.cipai = cipai;
     }
 
 }

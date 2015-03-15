@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
@@ -130,6 +131,8 @@ public class ChangePictureFragment extends Fragment
         TextView title = (TextView) view.findViewById(R.id.title);
         title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
+        title.setTypeface(MyApplication.typeface);
+        text.setTypeface(MyApplication.typeface);
 
         // srcBitmap = BitmapFactory.decodeFile(pathName);
         srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zuibaichi);

@@ -14,11 +14,22 @@ public class CircleEditView extends View
     private int mColor;
 
 
-    public CircleEditView(Context context, int color)
+    public int getmColor()
+    {
+        return mColor;
+    }
+
+    public void setmColor(int mColor)
+    {
+        this.mColor = mColor;
+        invalidate();
+    }
+
+    public CircleEditView(Context context)
     {
         super(context);
-        mColor = color;
     }
+
 
     @Override
     protected void onDraw(Canvas canvas)

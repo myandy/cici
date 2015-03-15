@@ -12,7 +12,6 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 
 import com.myth.cici.BaseActivity;
@@ -22,6 +21,7 @@ import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.IntroductionView;
 import com.myth.cici.wiget.MainView;
+import com.myth.cici.wiget.WritingView;
 
 /**
  * ViewPager实现画廊效果
@@ -53,8 +53,6 @@ public class MainActivity extends BaseActivity
         layoutItemContainer(viewPager);
         viewPagerContainer = (RelativeLayout) findViewById(R.id.pager_layout);
 
-        pagerAdapter = new MyPagerAdapter();
-        viewPager.setAdapter(pagerAdapter);
         viewPager.setOffscreenPageLimit(count);
 
         // to cache all page, or we will see the right item delayed
@@ -88,6 +86,11 @@ public class MainActivity extends BaseActivity
     protected void onResume()
     {
         super.onResume();
+        refresh();
+    }
+
+    public void refresh()
+    {
         writings = WritingDatabaseHelper.getAllWriting(mActivity);
         if (writings.size() == 0)
         {
@@ -99,7 +102,9 @@ public class MainActivity extends BaseActivity
             noWriting = false;
             count = writings.size() + 1;
         }
+        pagerAdapter = new MyPagerAdapter();
         pagerAdapter.notifyDataSetChanged();
+        viewPager.setAdapter(pagerAdapter);
         viewPager.setCurrentItem(count - 1);
     }
 
@@ -132,16 +137,13 @@ public class MainActivity extends BaseActivity
             {
                 view = new MainView(mActivity);
             }
-            else if (position == 1)
+            else if (noWriting)
             {
                 view = new IntroductionView(mActivity);
             }
             else
             {
-                ImageView imageView = new ImageView(mActivity);
-                imageView.setImageResource(R.drawable.bg001);
-                imageView.setScaleType(ScaleType.FIT_XY);
-                view = imageView;
+                view = new WritingView(mActivity, writings.get(position));
             }
             ((ViewPager) container).addView(view, 0);
             return view;

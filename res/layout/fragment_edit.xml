@@ -11,32 +11,45 @@
         android:layout_width="match_parent"
         android:layout_height="35dp" >
 
+        <com.myth.cici.wiget.TouchEffectImageView
+            android:id="@+id/edit_keyboard"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:padding="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/keyboard" />
+
         <TextView
             android:id="@+id/edit_title"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:gravity="center_vertical"
-            android:textSize="26dp"
-            android:text="临江仙" />
+            android:text="临江仙"
+            android:layout_toRightOf="@id/edit_keyboard"
+            android:textColor="@color/black_text"
+            android:textSize="28dp" />
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_dict"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
             android:clickable="true"
-            android:layout_centerVertical="true"
             android:scaleType="fitXY"
             android:src="@drawable/dict" />
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_info"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@id/edit_dict"
-            android:layout_centerVertical="true"
             android:clickable="true"
             android:scaleType="fitXY"
             android:src="@drawable/info" />

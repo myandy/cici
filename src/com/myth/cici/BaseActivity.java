@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
 public class BaseActivity extends Activity
@@ -40,15 +41,26 @@ public class BaseActivity extends Activity
         });
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
     }
-    
-    protected void setBottomGone()
+
+    public void setBottomGone()
     {
         mBottomLayout.setVisibility(View.GONE);
     }
 
-    protected void addBottomRightView(View view) {
-		((ViewGroup)findViewById(R.id.bottom_right)).addView(view);
-	}
+    public void setBottomVisible()
+    {
+        mBottomLayout.setVisibility(View.VISIBLE);
+    }
+
+    protected void addBottomRightView(View view, LayoutParams lps)
+    {
+        ((ViewGroup) findViewById(R.id.bottom_right)).addView(view, lps);
+    }
+
+    protected void addBottomCenterView(View view, LayoutParams lps)
+    {
+        ((ViewGroup) findViewById(R.id.bottom_center)).addView(view, lps);
+    }
 
     protected void addBottomCenterView(View view)
     {

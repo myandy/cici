@@ -14,8 +14,7 @@ public class CipaiDatabaseHelper
     public static ArrayList<Cipai> getAllCipai()
     {
         SQLiteDatabase db = DBManager.getDatabase();
-        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null order by color_id",
-                null);
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null order by color_id", null);
         return getCipaiListFromCursor(cursor);
     }
 
@@ -25,6 +24,27 @@ public class CipaiDatabaseHelper
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null order by wordcount desc",
                 null);
         return getCipaiListFromCursor(cursor);
+    }
+
+    public static Cipai getCipaiById(int id)
+    {
+        SQLiteDatabase db = DBManager.getDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where id= " + id, null);
+        ArrayList<Cipai> list = getCipaiListFromCursor(cursor);
+        if (list.size() > 0)
+        {
+            return list.get(0);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static void deleteCipaiById(int id)
+    {
+        SQLiteDatabase db = DBManager.getDatabase();
+        db.rawQuery("delete * from " + TABLE_NAME + " where id= " + id, null);
     }
 
     private static ArrayList<Cipai> getCipaiListFromCursor(Cursor cursor)

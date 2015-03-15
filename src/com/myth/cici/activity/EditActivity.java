@@ -8,6 +8,9 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
@@ -19,14 +22,14 @@ import com.myth.cici.fragment.ChangePictureFragment;
 import com.myth.cici.fragment.EditFragment;
 import com.myth.cici.util.FileUtils;
 import com.myth.cici.util.StringUtils;
-import com.myth.cici.wiget.SelectImageView;
+import com.myth.cici.wiget.TouchEffectImageView;
 
 public class EditActivity extends BaseActivity
 {
 
-    public static Cipai cipai;
+    private Cipai cipai;
 
-    public static Writing writing;
+    private Writing writing;
 
     ChangeBackgroundFragment changeBackgroundFrament;
 
@@ -51,6 +54,10 @@ public class EditActivity extends BaseActivity
             writing.setId(writing.hashCode());
             writing.setCi_id(cipai.getId());
             writing.setBgimg("0");
+        }
+        else
+        {
+            cipai = writing.getCipai();
         }
 
         initView();
@@ -82,8 +89,18 @@ public class EditActivity extends BaseActivity
     private void initView()
     {
 
-        SelectImageView edit = new SelectImageView(mActivity, null);
-        edit.setImageResource(R.drawable.edit);
+        final ImageView edit = new TouchEffectImageView(mActivity, null);
+        edit.setScaleType(ScaleType.FIT_XY);
+        edit.setImageResource(R.drawable.layout_bg_edit);
+
+        final ImageView background = new TouchEffectImageView(mActivity, null);
+        background.setScaleType(ScaleType.FIT_XY);
+        background.setImageResource(R.drawable.layout_bg_paper);
+
+        final ImageView picture = new TouchEffectImageView(mActivity, null);
+        picture.setScaleType(ScaleType.FIT_XY);
+        picture.setImageResource(R.drawable.layout_bg_album);
+
         edit.setOnClickListener(new OnClickListener()
         {
 
@@ -91,11 +108,12 @@ public class EditActivity extends BaseActivity
             public void onClick(View v)
             {
                 changeFragment(0);
+                edit.setImageResource(R.drawable.layout_bg_edit_selected);
+                background.setImageResource(R.drawable.layout_bg_paper);
+                picture.setImageResource(R.drawable.layout_bg_album);
+
             }
         });
-
-        SelectImageView background = new SelectImageView(mActivity, null);
-        background.setImageResource(R.drawable.layout_bg_paper);
 
         background.setOnClickListener(new OnClickListener()
         {
@@ -104,11 +122,11 @@ public class EditActivity extends BaseActivity
             public void onClick(View v)
             {
                 changeFragment(1);
+                edit.setImageResource(R.drawable.layout_bg_edit);
+                background.setImageResource(R.drawable.layout_bg_paper_selected);
+                picture.setImageResource(R.drawable.layout_bg_album);
             }
         });
-
-        SelectImageView picture = new SelectImageView(mActivity, null);
-        picture.setImageResource(R.drawable.layout_bg_album);
 
         picture.setOnClickListener(new OnClickListener()
         {
@@ -117,12 +135,16 @@ public class EditActivity extends BaseActivity
             public void onClick(View v)
             {
                 changeFragment(2);
+                edit.setImageResource(R.drawable.layout_bg_edit);
+                background.setImageResource(R.drawable.layout_bg_paper);
+                picture.setImageResource(R.drawable.layout_bg_album_sel);
             }
         });
 
-        addBottomCenterView(edit);
-        addBottomCenterView(background);
-        addBottomCenterView(picture);
+        LayoutParams lps = new LayoutParams(99, 114);
+        addBottomCenterView(edit, lps);
+        addBottomCenterView(background, lps);
+        addBottomCenterView(picture, lps);
 
         // 创建修改实例
         editFragment = new EditFragment();

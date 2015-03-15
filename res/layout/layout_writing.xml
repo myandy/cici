@@ -8,10 +8,11 @@
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp"
             android:gravity="center"
             android:text="2015-3-15"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     
     

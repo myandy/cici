@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
+import com.myth.cici.activity.CiActivity;
 import com.myth.cici.activity.CipaiListActivity;
 
 public class MainView extends RelativeLayout
@@ -64,6 +65,8 @@ public class MainView extends RelativeLayout
             @Override
             public void onClick(View v)
             {
+                Intent intent = new Intent(mContext, CiActivity.class);
+                mContext.startActivity(intent);
 
             }
         });
