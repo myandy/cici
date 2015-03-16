@@ -37,7 +37,7 @@ public class CipaiDatabaseHelper
         }
         else
         {
-            return null;
+            return new Cipai();
         }
     }
 

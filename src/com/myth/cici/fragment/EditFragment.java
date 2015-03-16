@@ -82,10 +82,8 @@ public class EditFragment extends Fragment
         }
     }
 
-    @Override
-    public void onStop()
+    public void save()
     {
-        super.onStop();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < editTexts.size(); i++)
         {
@@ -124,27 +122,16 @@ public class EditFragment extends Fragment
                     {
                         CheckUtils.checkEditText(edittext, sList[index]);
                     }
+                    else
+                    {
+                        keyboard.setVisibility(View.VISIBLE);
+                        ((BaseActivity) mContext).setBottomGone();
+                    }
                 }
             });
             editContent.addView(view1);
             editContent.addView(edittext);
             editTexts.add(edittext);
-
-            edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
-            {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus)
-                {
-                    if (hasFocus)
-                    {
-                        keyboard.setVisibility(View.VISIBLE);
-                        ((BaseActivity) mContext).setBottomGone();
-                    }
-                    else
-                    {
-                    }
-                }
-            });
 
             if (tList != null && tList.length > i)
             {

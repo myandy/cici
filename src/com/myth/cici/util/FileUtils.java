@@ -43,6 +43,31 @@ public class FileUtils
 
     }
 
+    /**
+     * 保存文件
+     * 
+     * @param bm
+     * @param fileName
+     * @throws IOException
+     */
+    public static String saveFile(Bitmap bm, String fileName) throws IOException
+    {
+        File root = new File(ROOT_DIR);
+        if (!root.exists())
+        {
+            root.mkdir();
+        }
+        File myCaptureFile = new File(ROOT_DIR + "/" + fileName + ".jpg");
+        if (!myCaptureFile.exists())
+        {
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
+            bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+            bos.flush();
+            bos.close();
+        }
+        return myCaptureFile.getAbsolutePath();
+    }
+
     public static byte[] Bitmap2Bytes(Bitmap bm)
     {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

@@ -19,14 +19,13 @@ public class WritingDatabaseHelper
         return getWritingFromCursor(cursor);
     }
 
-    public static void saveWriting(Context context, Writing writing)
+    public static synchronized void saveWriting(Context context, Writing writing)
     {
         deleteWriting(context, writing);
 
         SQLiteDatabase db = DBManager.getDatabase();
-
         String sqlStr = "insert into " + TABLE_NAME + " ( id,bgimg,ci_id,create_dt,text,update_dt) values ( "
-                + "?,?,?, ?, ?, ?)";
+                + "?,?,?,?,?,?)";
         db.execSQL(sqlStr,
                 new String[] {writing.getId() + "", writing.getBgimg(), writing.getCi_id() + "",
                         writing.getCreate_dt() + "", writing.getText(), System.currentTimeMillis() + ""});
@@ -49,7 +48,7 @@ public class WritingDatabaseHelper
             data.setBgimg(cursor.getString(cursor.getColumnIndex("bgimg")));
             data.setCi_id(cursor.getInt(cursor.getColumnIndex("ci_id")));
             data.setCreate_dt(cursor.getLong(cursor.getColumnIndex("create_dt")));
-            data.setText(cursor.getColumnName(cursor.getColumnIndex("text")));
+            data.setText(cursor.getString(cursor.getColumnIndex("text")));
             data.setUpdate_dt(cursor.getLong(cursor.getColumnIndex("update_dt")));
             list.add(data);
         }

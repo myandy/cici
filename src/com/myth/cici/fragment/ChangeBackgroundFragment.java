@@ -62,6 +62,11 @@ public class ChangeBackgroundFragment extends Fragment
     public void onStop()
     {
         super.onStop();
+        save();
+    }
+
+    public void save()
+    {
         writing.setBgimg(bg_index + "");
     }
 

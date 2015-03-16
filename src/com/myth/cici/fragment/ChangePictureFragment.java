@@ -45,8 +45,6 @@ public class ChangePictureFragment extends Fragment
 
     private Bitmap destBitmap;
 
-    private String pathName;
-
     private Cipai cipai;
 
     private Writing writing;
@@ -78,9 +76,13 @@ public class ChangePictureFragment extends Fragment
     public void onStop()
     {
         super.onStop();
+        save();
+    }
+
+    public void save()
+    {
         writing.setBitmap(destBitmap);
         writing.setBgimg("");
-
     }
 
     private void refresh()

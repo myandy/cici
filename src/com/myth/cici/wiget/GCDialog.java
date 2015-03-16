@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 import com.myth.cici.R;
 
-
 public class GCDialog extends Dialog
 {
 
     public static final String DATA_TITLE = "title";
 
     public static final String DATA_CONTENT = "content";
+
+    public static final String CANCEL_TEXT = "extra_cancel_text";
 
     public static final String CANCEL_ENABLED = "cancel";
 
@@ -32,7 +33,7 @@ public class GCDialog extends Dialog
 
     private TextView confirmView;
 
-    private View cancelView;
+    private TextView cancelView;
 
     private View devideLine;
 
@@ -73,7 +74,7 @@ public class GCDialog extends Dialog
         titleView = (TextView) findViewById(R.id.simple_dialog_title);
         confirmView = (TextView) findViewById(R.id.simple_dialog_confirm);
 
-        cancelView = findViewById(R.id.simple_dialog_cancel);
+        cancelView = (TextView) findViewById(R.id.simple_dialog_cancel);
         contentView = (TextView) findViewById(R.id.simple_dialog_content);
         devideLine = findViewById(R.id.simple_dialog_divide_line);
 
@@ -90,6 +91,13 @@ public class GCDialog extends Dialog
             {
                 titleLayout.setVisibility(View.GONE);
             }
+            String cancel = bundle.getString(CANCEL_TEXT);
+            if (cancel != null)
+            {
+                // 取消
+                cancelView.setText(cancel);
+            }
+
             String content = bundle.getString(DATA_CONTENT);
             if (content != null)
             {

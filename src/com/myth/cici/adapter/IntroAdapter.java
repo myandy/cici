@@ -1,15 +1,14 @@
 package com.myth.cici.adapter;
 
-import com.myth.cici.util.ResizeUtil;
-
 import android.content.Context;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+
+import com.myth.cici.util.ResizeUtil;
 
 public class IntroAdapter extends BaseAdapter
 {
@@ -39,15 +38,36 @@ public class IntroAdapter extends BaseAdapter
         return position;
     }
 
-    public View getView(int position, View cacheView, ViewGroup parent)
+    public View getView(int position, View convertView, ViewGroup parent)
     {
-        LinearLayout.LayoutParams colorLayoutParams = new LinearLayout.LayoutParams(ResizeUtil.resize(mContext, 650), ResizeUtil.resize(mContext, 800));
-        ImageView imageview = new ImageView(mContext);
-        imageview.setImageResource(mColors[position]);
-        imageview.setScaleType(ScaleType.FIT_XY);
-        imageview.setLayoutParams(colorLayoutParams);
+        ViewHolder holder;
+        if (convertView == null)
+        {
+            holder = new ViewHolder();
+            LinearLayout.LayoutParams colorLayoutParams = new LinearLayout.LayoutParams(
+                    ResizeUtil.resize(mContext, 450), ResizeUtil.resize(mContext, 540));
 
-        return imageview;
+            convertView = new LinearLayout(mContext);
+            holder.imageview = new ImageView(mContext);
+
+            holder.imageview.setScaleType(ScaleType.FIT_XY);
+            holder.imageview.setLayoutParams(colorLayoutParams);
+            ((LinearLayout) convertView).addView(holder.imageview);
+            convertView.setTag(holder);
+        }
+        else
+        {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        holder.imageview.setImageResource(mColors[position]);
+
+        return convertView;
+    }
+
+    public class ViewHolder
+    {
+        ImageView imageview;
     }
 
 }

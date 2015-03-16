@@ -42,12 +42,19 @@
             android:paddingLeft="20dp"
             android:paddingRight="30dp"
             >
-
+			
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                />
             <TextView
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22dp"
+                android:textSize="20dp"
+                android:layout_below="@id/author"
                 />
             <TextView
                 android:id="@+id/note"

@@ -102,6 +102,7 @@ public class CiActivity extends BaseActivity
         title.setText(cipai.getName());
 
         content = (TextView) findViewById(R.id.content);
+        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.typeface);
         if (isIntroduce)
         {
             findViewById(R.id.share).setVisibility(View.GONE);
@@ -114,8 +115,9 @@ public class CiActivity extends BaseActivity
                 @Override
                 public void onClick(View v)
                 {
-                    Intent intent = new Intent(mActivity, ShareActivity.class);
-
+                    Intent intent = new Intent(mActivity, ShareEditActivity.class);
+                    ci.setCipai(cipai);
+                    intent.putExtra("ci", ci);
                     startActivity(intent);
                 }
             });
@@ -149,6 +151,7 @@ public class CiActivity extends BaseActivity
             ImageView view = new TouchEffectImageView(mActivity, null);
             view.setImageResource(R.drawable.random);
             view.setScaleType(ScaleType.FIT_XY);
+            view.setPadding(5, 5, 5, 5);
             addBottomRightView(view, new LayoutParams(76, 60));
             view.setOnClickListener(new OnClickListener()
             {
@@ -158,6 +161,11 @@ public class CiActivity extends BaseActivity
                 {
                     ci = ciList.get(new Random().nextInt(ciList.size()));
                     cipai = CipaiDatabaseHelper.getCipaiById(ci.getCi_id());
+                    if (cipai.getParent_id() > 0)
+                    {
+                        Cipai cipai1 = CipaiDatabaseHelper.getCipaiById(cipai.getParent_id());
+                        cipai.setColor_id(cipai1.getColor_id());
+                    }
                     refreshRandomView();
                 }
             });
@@ -167,7 +175,7 @@ public class CiActivity extends BaseActivity
             ImageView prev = new TouchEffectImageView(mActivity, null);
             prev.setImageResource(R.drawable.prev);
             prev.setScaleType(ScaleType.FIT_XY);
-            addBottomRightView(prev, new LayoutParams(76, 76));
+            addBottomRightView(prev, new LayoutParams(106, 106));
             prev.setOnClickListener(new OnClickListener()
             {
 
@@ -186,7 +194,7 @@ public class CiActivity extends BaseActivity
             ImageView next = new TouchEffectImageView(mActivity, null);
             next.setImageResource(R.drawable.next);
             next.setScaleType(ScaleType.FIT_XY);
-            addBottomRightView(next, new LayoutParams(76, 76));
+            addBottomRightView(next, new LayoutParams(106, 106));
             next.setOnClickListener(new OnClickListener()
             {
 
@@ -224,13 +232,15 @@ public class CiActivity extends BaseActivity
         }
         else
         {
+
             String note = ci.getNote();
             if (note == null)
             {
                 note = "";
             }
-            content.setText(ci.getAuthor() + "\n" + "\n" + ci.getText());
+            content.setText(ci.getText());
             ((TextView) findViewById(R.id.note)).setText(note);
+            ((TextView) findViewById(R.id.author)).setText(ci.getAuthor() + "\n");
         }
     }
 

@@ -4,38 +4,14 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/content"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="212"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="left"
-            android:text="212"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <include layout="@layout/layout_share" />
 
     <SeekBar
         android:id="@+id/seekBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="255"
+        android:layout_marginTop="10dp"
         android:progress="127" />
     
     <SeekBar
@@ -43,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="24"
+        android:layout_marginTop="10dp"
         android:progress="0" />
 
 </LinearLayout>

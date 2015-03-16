@@ -32,6 +32,8 @@
         <activity android:name=".activity.ShareActivity" />
         <activity android:name=".activity.EditActivity" />
         <activity android:name=".activity.YunSearchActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.ShareEditActivity" />
     </application>
 
 </manifest>

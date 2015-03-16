@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 public class BaseActivity extends Activity
 {
@@ -40,6 +41,11 @@ public class BaseActivity extends Activity
             }
         });
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
+    }
+
+    protected ImageView getBottomLeftView()
+    {
+        return (ImageView) findViewById(R.id.bottom_left);
     }
 
     public void setBottomGone()

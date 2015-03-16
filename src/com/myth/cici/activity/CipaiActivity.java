@@ -149,7 +149,8 @@ public class CipaiActivity extends BaseActivity
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
             // textView.setTypeface(MyApplication.typeface);
-            textView.setText(ciList.get(position % ciList.size()).getText());
+            textView.setText(ciList.get(position % ciList.size()).getAuthor() + "\n"
+                    + ciList.get(position % ciList.size()).getText());
 
             textView.setOnClickListener(new OnClickListener()
             {
@@ -162,7 +163,6 @@ public class CipaiActivity extends BaseActivity
                     intent.putExtra("cipai", cipai);
                     intent.putExtra("num", position % ciList.size());
                     startActivity(intent);
-
                 }
             });
 

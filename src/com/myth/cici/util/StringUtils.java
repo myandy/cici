@@ -8,7 +8,7 @@ public class StringUtils
     public static boolean isEmpty(String s)
     {
 
-        if (TextUtils.isEmpty(s.replaceAll("\n", "").replaceAll(" ", "")))
+        if (TextUtils.isEmpty(s) || TextUtils.isEmpty(s.replaceAll("\n", "").replaceAll(" ", "")))
         {
             return true;
         }
