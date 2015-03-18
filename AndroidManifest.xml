@@ -15,7 +15,6 @@
 
     <application
         android:name="com.myth.cici.MyApplication"
-        android:allowBackup="true"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -33,6 +32,7 @@
         <activity android:name=".activity.EditActivity" />
         <activity android:name=".activity.YunSearchActivity" />
         <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.AboutActivity" />
         <activity android:name=".activity.ShareEditActivity" />
     </application>
 

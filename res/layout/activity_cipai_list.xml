@@ -8,7 +8,7 @@
         android:id="@+id/head"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:gravity="center" >
 
         <TextView
@@ -18,7 +18,7 @@
             android:background="@drawable/rect_left_selected"
             android:gravity="center"
             android:textSize="14dp"
-            android:text="默認排序" />
+            android:text="@string/sort_default" />
 
         <TextView
             android:id="@+id/rect_right"
@@ -27,7 +27,7 @@
             android:background="@drawable/rect_right"
             android:gravity="center"
             android:textSize="14dp"
-            android:text="按字數排序" />
+            android:text="@string/sort_count" />
     </LinearLayout>
 
     <HorizontalScrollView

@@ -129,7 +129,7 @@ public class ShareActivity extends BaseActivity
     {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) itemContainer.getLayoutParams();
         params.width = ResizeUtil.resize(mActivity, 600);
-        params.height = ResizeUtil.resize(mActivity, 900);
+        params.height = ResizeUtil.resize(mActivity, 600);
         itemContainer.setLayoutParams(params);
     }
 

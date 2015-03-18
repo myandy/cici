@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -82,6 +83,13 @@ public class EditFragment extends Fragment
         }
     }
 
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        save();
+    }
+
     public void save()
     {
         StringBuilder sb = new StringBuilder();
@@ -94,6 +102,7 @@ public class EditFragment extends Fragment
 
     private void initViews(View view)
     {
+        editTexts.clear();
         final View keyboard = view.findViewById(R.id.edit_keyboard);
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
         String s = Html.fromHtml(cipai.getPingze()).toString();
@@ -104,14 +113,12 @@ public class EditFragment extends Fragment
         {
             tList = writing.getText().split("\n");
         }
-
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         for (int i = 0; i < sList.length; i++)
         {
             View view1 = new PingzeLinearlayout(mContext, sList[i]);
-            view1.setPadding(0, 20, 0, 0);
-            final EditText edittext = new EditText(mContext);
-            edittext.setTextColor(mContext.getResources().getColor(R.color.black));
-
+            view1.setPadding(0, 30, 0, 30);
+            final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
             final int index = i;
             edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
             {

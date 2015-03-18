@@ -15,7 +15,13 @@ public class FileUtils
 
     /** 根目录 */
     public static final String ROOT_DIR = Environment.getExternalStorageDirectory() + "/cici";
-    
+
+    /** 背景目录 */
+    public static final String BACKGROUND_DIR = ROOT_DIR + "/background";
+
+    /** 分享目录 */
+    public static final String SHARE_DIR = ROOT_DIR + "/share";
+
     /**
      * 保存文件
      * 
@@ -25,13 +31,10 @@ public class FileUtils
      */
     public static String saveFile(Bitmap bm) throws IOException
     {
-        File root = new File(ROOT_DIR);
-        if (!root.exists())
-        {
-            root.mkdir();
-        }
+        createDir(ROOT_DIR);
+        createDir(BACKGROUND_DIR);
         String fileName = MD5.MD5_16(Bitmap2Bytes(bm));
-        File myCaptureFile = new File(ROOT_DIR + "/" + fileName + ".jpg");
+        File myCaptureFile = new File(BACKGROUND_DIR + "/" + fileName + ".jpg");
         if (!myCaptureFile.exists())
         {
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
@@ -43,6 +46,15 @@ public class FileUtils
 
     }
 
+    private static void createDir(String dir)
+    {
+        File root = new File(dir);
+        if (!root.exists())
+        {
+            root.mkdir();
+        }
+    }
+
     /**
      * 保存文件
      * 
@@ -52,12 +64,9 @@ public class FileUtils
      */
     public static String saveFile(Bitmap bm, String fileName) throws IOException
     {
-        File root = new File(ROOT_DIR);
-        if (!root.exists())
-        {
-            root.mkdir();
-        }
-        File myCaptureFile = new File(ROOT_DIR + "/" + fileName + ".jpg");
+        createDir(ROOT_DIR);
+        createDir(SHARE_DIR);
+        File myCaptureFile = new File(SHARE_DIR + "/" + fileName + ".jpg");
         if (!myCaptureFile.exists())
         {
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));

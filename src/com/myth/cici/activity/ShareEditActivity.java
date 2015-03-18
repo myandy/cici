@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
@@ -85,6 +86,7 @@ public class ShareEditActivity extends BaseActivity
                     }
                 }
                 writing.setBitmap(null);
+                writing.setUpdate_dt(ci.getId());
                 Intent intent = new Intent(mActivity, ShareActivity.class);
                 intent.putExtra("writing", writing);
                 startActivity(intent);
@@ -130,7 +132,8 @@ public class ShareEditActivity extends BaseActivity
             }
         });
 
-        LayoutParams lps = new LayoutParams(99, 114);
+        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(99, 114);
+        lps.leftMargin = 20;
         addBottomCenterView(background, lps);
         addBottomCenterView(picture, lps);
 

@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
@@ -44,6 +45,8 @@ public class EditActivity extends BaseActivity
 
     private int currentIndex = 0;
 
+    private String oldText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -66,6 +69,8 @@ public class EditActivity extends BaseActivity
         {
             cipai = writing.getCipai();
         }
+
+        oldText = writing.getText();
 
         getBottomLeftView().setOnClickListener(new OnClickListener()
         {
@@ -127,7 +132,7 @@ public class EditActivity extends BaseActivity
 
         final ImageView edit = new TouchEffectImageView(mActivity, null);
         edit.setScaleType(ScaleType.FIT_XY);
-        edit.setImageResource(R.drawable.layout_bg_edit);
+        edit.setImageResource(R.drawable.layout_bg_edit_selected);
 
         final ImageView background = new TouchEffectImageView(mActivity, null);
         background.setScaleType(ScaleType.FIT_XY);
@@ -177,7 +182,8 @@ public class EditActivity extends BaseActivity
             }
         });
 
-        LayoutParams lps = new LayoutParams(99, 114);
+        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(99, 114);
+        lps.leftMargin = 20;
         addBottomCenterView(edit, lps);
         addBottomCenterView(background, lps);
         addBottomCenterView(picture, lps);
@@ -209,9 +215,8 @@ public class EditActivity extends BaseActivity
     public void exit()
     {
         editFragment.save();
-        if (!StringUtils.isEmpty(writing.getText()))
+        if (!StringUtils.isEmpty(writing.getText()) && !writing.getText().equals(oldText))
         {
-
             Bundle bundle = new Bundle();
             bundle.putString(GCDialog.DATA_CONTENT, mActivity.getString(R.string.save_content));
             bundle.putString(GCDialog.DATA_TITLE, mActivity.getString(R.string.save_title));

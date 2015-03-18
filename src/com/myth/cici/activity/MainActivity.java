@@ -115,7 +115,7 @@ public class MainActivity extends BaseActivity
         ImageView setting = new TouchEffectImageView(mActivity, null);
         setting.setImageResource(R.drawable.setting);
         setting.setScaleType(ScaleType.FIT_XY);
-        addBottomRightView(setting, new LayoutParams(120, 120));
+        addBottomRightView(setting, new LayoutParams(130, 130));
         setting.setOnClickListener(new OnClickListener()
         {
 

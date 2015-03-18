@@ -25,12 +25,12 @@ public class CipaiListActivity extends BaseActivity
     private LinearLayout linearLayout;
 
     private ArrayList<Cipai> ciList;
-    
+
     private ArrayList<Cipai> ciList1;
-    
+
     private ArrayList<Cipai> ciList2;
-    
-    private boolean isDefault=true;
+
+    private boolean isDefault = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,9 +38,9 @@ public class CipaiListActivity extends BaseActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_cipai_list);
-        ciList1 = CipaiDatabaseHelper.getAllCipaiByWordCount();
-        ciList2 = CipaiDatabaseHelper.getAllCipai();
-        ciList=ciList1;
+        ciList1 = CipaiDatabaseHelper.getAllCipai();
+        ciList2 = CipaiDatabaseHelper.getAllCipaiByWordCount();
+        ciList = ciList1;
 
         if (ciList == null || ciList.size() == 0)
         {
@@ -53,7 +53,7 @@ public class CipaiListActivity extends BaseActivity
     protected void onStart()
     {
         super.onStart();
-        
+
     }
 
     private void initView()
@@ -64,9 +64,9 @@ public class CipaiListActivity extends BaseActivity
         int length = ciList.size() / 2;
         for (int i = 0; i < length; i++)
         {
-                LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
-                params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
-                linearLayout.addView(new CipaiItem(mActivity, ciList.get(2 * i), ciList.get(2 * i + 1)), params);
+            LayoutParams params = new LayoutParams(DisplayUtil.dip2px(mActivity, 70), -1);
+            params.setMargins(DisplayUtil.dip2px(mActivity, 12), 0, 0, 0);
+            linearLayout.addView(new CipaiItem(mActivity, ciList.get(2 * i), ciList.get(2 * i + 1)), params);
         }
         new Handler().postDelayed(new Runnable()
         {
@@ -76,35 +76,41 @@ public class CipaiListActivity extends BaseActivity
                 scrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
             }
         }, 5);
-        
-        final View rectLeft=findViewById(R.id.rect_left);
-        final View rectRight=findViewById(R.id.rect_right);
-        rectLeft.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				if(!isDefault){
-					isDefault=true;
-					rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
-					rectRight.setBackgroundResource(R.drawable.rect_right);
+
+        final View rectLeft = findViewById(R.id.rect_left);
+        final View rectRight = findViewById(R.id.rect_right);
+        rectLeft.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View arg0)
+            {
+                if (!isDefault)
+                {
+                    isDefault = true;
+                    rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
+                    rectRight.setBackgroundResource(R.drawable.rect_right);
                     ciList = ciList1;
                     initView();
-				}
-			}
-		});
-        rectRight.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				if(isDefault){
-					isDefault=false;
-					rectLeft.setBackgroundResource(R.drawable.rect_left);
-					rectRight.setBackgroundResource(R.drawable.rect_right_selected);
+                }
+            }
+        });
+        rectRight.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View arg0)
+            {
+                if (isDefault)
+                {
+                    isDefault = false;
+                    rectLeft.setBackgroundResource(R.drawable.rect_left);
+                    rectRight.setBackgroundResource(R.drawable.rect_right_selected);
                     ciList = ciList2;
                     initView();
-				}
-			}
-		});
+                }
+            }
+        });
 
     }
 

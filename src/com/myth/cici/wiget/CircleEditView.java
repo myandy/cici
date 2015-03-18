@@ -38,7 +38,7 @@ public class CircleEditView extends View
 
         Paint paint = new Paint();
         paint.setColor(mColor);
-
+        paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(120, 120, 116, paint);
         canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.edit_white), 40, 40, paint);

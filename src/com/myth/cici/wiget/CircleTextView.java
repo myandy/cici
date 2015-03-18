@@ -28,7 +28,7 @@ public class CircleTextView extends View
 
         Paint paint = new Paint();
         paint.setColor(mColor);
-
+        paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(80, 80, 76, paint);
         paint.setColor(R.color.white);

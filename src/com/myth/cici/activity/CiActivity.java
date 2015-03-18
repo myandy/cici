@@ -71,11 +71,22 @@ public class CiActivity extends BaseActivity
         {
             isRandom = true;
             ciList = CiDatabaseHelper.getAllCi();
-            ci = ciList.get(new Random().nextInt(ciList.size()));
-            cipai = CipaiDatabaseHelper.getCipaiById(ci.getCi_id());
+            getRandomCi();
         }
 
         initView();
+    }
+
+    private void getRandomCi()
+    {
+        ci = ciList.get(new Random().nextInt(ciList.size()));
+        cipai = CipaiDatabaseHelper.getCipaiById(ci.getCi_id());
+        if (cipai.getParent_id() > 0)
+        {
+            Cipai cipai1 = CipaiDatabaseHelper.getCipaiById(cipai.getParent_id());
+            cipai.setColor_id(cipai1.getColor_id());
+            cipai.setSource(cipai1.getSource());
+        }
     }
 
     private void setColor()
@@ -159,13 +170,7 @@ public class CiActivity extends BaseActivity
                 @Override
                 public void onClick(View v)
                 {
-                    ci = ciList.get(new Random().nextInt(ciList.size()));
-                    cipai = CipaiDatabaseHelper.getCipaiById(ci.getCi_id());
-                    if (cipai.getParent_id() > 0)
-                    {
-                        Cipai cipai1 = CipaiDatabaseHelper.getCipaiById(cipai.getParent_id());
-                        cipai.setColor_id(cipai1.getColor_id());
-                    }
+                    getRandomCi();
                     refreshRandomView();
                 }
             });

@@ -14,4 +14,15 @@
     <string name="give_up">放弃</string>
     <string name="copy_text_done">文本已复制到剪切板</string>
 
+    
+    <string name="setting_yun">韵典</string>
+    <string name="setting_typeface">简繁切换</string>
+    <string name="setting_about">关于词Ci</string>
+    
+    <string name="sort_default">默认排序</string>
+    <string name="sort_count">按字数排序</string>
+    
+    <string name="about_text">Android版词Ci从IOS同名应用模仿而成。\n原应用的介绍：\nApp来自朋友42|o-@douban的需求，UI设计借鉴了Bamboo Loop、http://niponcolors.com/ 和上海松江醉白池。\n大部分词牌平仄、例词选编、例词注解来自龙榆生纪念网站，龙榆生先生所著的《唐宋词格律》：http://longyusheng.org/cipai/index.html</string>
+    
+    
 </resources>

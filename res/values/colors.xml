@@ -14,9 +14,13 @@
     
     <color  name="black_hint">#b3b3b3</color>
     
-    <color  name="red">#990000</color>
+    <color  name="pingze_red">#b03b28</color>
     
-    <color  name="blue">#000099</color>
+    <color  name="pingze_blue">#0070fb</color>
+    
+    <color  name="pingze_green">#8dc63f</color>
+    
+    <color  name="blue">#0000ff</color>
     
     <color  name="yun_white">#8e8e8e</color>
     
@@ -29,5 +33,11 @@
      <color  name="black_line">#cccccc</color>
      
      <color  name="black_text">#444847</color>
+     
+     <color  name="setting_back">#333333</color>
+     
+     <color  name="setting_line">#222222</color>
+     
+     <color  name="edittext_line">#D2D2D2</color>
     
 </resources>

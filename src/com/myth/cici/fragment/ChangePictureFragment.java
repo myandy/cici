@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -12,7 +13,9 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.renderscript.Allocation;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
@@ -48,6 +51,10 @@ public class ChangePictureFragment extends Fragment
     private Cipai cipai;
 
     private Writing writing;
+
+    private int bright = 127;
+
+    private int radius = 0;
 
     public void setData(Cipai cipai, Writing writing)
     {
@@ -100,12 +107,26 @@ public class ChangePictureFragment extends Fragment
         {
             if (resultCode == Activity.RESULT_OK && data != null)
             {
-                final Bitmap bmp = data.getParcelableExtra("data");
-                if (bmp != null)
-                {
-                    srcBitmap = bmp;
-                    destBitmap = bmp;
-                }
+                // final Bitmap bmp = data.getParcelableExtra("data");
+                // if (bmp != null)
+                // {
+                // srcBitmap = bmp;
+                // destBitmap = bmp;
+                // }
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = ((Activity) mContext).getContentResolver().query(selectedImage, filePathColumn, null,
+                        null, null);
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
+
+                Bitmap bmp = BitmapFactory.decodeFile(picturePath);
+                srcBitmap = bmp;
+                destBitmap = bmp;
             }
         }
     }
@@ -122,9 +143,9 @@ public class ChangePictureFragment extends Fragment
             {
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.setType("image/*");
-                intent.putExtra("crop", "true");
-                intent.putExtra("return-data", true);
+                // intent.setType("image/*");
+                // intent.putExtra("crop", "true");
+                // intent.putExtra("return-data", true);
                 startActivityForResult(intent, REQUEST_PICK_IMG);
 
             }
@@ -150,6 +171,7 @@ public class ChangePictureFragment extends Fragment
             @Override
             public void onStopTrackingTouch(SeekBar seekBar)
             {
+                drawPicture(bright, radius);
             }
 
             /**
@@ -166,20 +188,8 @@ public class ChangePictureFragment extends Fragment
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
-                Bitmap bmp = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Config.ARGB_8888);
-                int brightness = progress - 127;
-                ColorMatrix cMatrix = new ColorMatrix();
-                cMatrix.set(new float[] {1, 0, 0, 0, brightness, 0, 1, 0, 0, brightness,// 改变亮度
-                        0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
+                bright = progress;
 
-                Paint paint = new Paint();
-                paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-
-                Canvas canvas = new Canvas(bmp);
-                // 在Canvas上绘制一个已经存在的Bitmap。这样，dstBitmap就和srcBitmap一摸一样了
-                canvas.drawBitmap(srcBitmap, 0, 0, paint);
-                destBitmap = bmp;
-                content.setBackground(new BitmapDrawable(getResources(), bmp));
             }
         });
 
@@ -192,6 +202,7 @@ public class ChangePictureFragment extends Fragment
             @Override
             public void onStopTrackingTouch(SeekBar seekBar)
             {
+                drawPicture(bright, radius);
             }
 
             /**
@@ -208,22 +219,36 @@ public class ChangePictureFragment extends Fragment
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
-                Bitmap overlay = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Config.ARGB_8888);
-                Canvas canvas = new Canvas(overlay);
-                canvas.drawBitmap(srcBitmap, 0, 0, null);
-                RenderScript rs = RenderScript.create(getActivity());
-                Allocation overlayAlloc = Allocation.createFromBitmap(rs, overlay);
-                ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
-                blur.setInput(overlayAlloc);
-                blur.setRadius(progress + 1);
-                blur.forEach(overlayAlloc);
-                overlayAlloc.copyTo(overlay);
-                destBitmap = overlay;
-                content.setBackground(new BitmapDrawable(getResources(), overlay));
-                rs.destroy();
+                radius = progress;
             }
         });
 
+    }
+
+    private void drawPicture(int bright, int radius)
+    {
+        Bitmap bmp = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Config.ARGB_8888);
+
+        int brightness = bright - 127;
+        ColorMatrix cMatrix = new ColorMatrix();
+        cMatrix.set(new float[] {1, 0, 0, 0, brightness, 0, 1, 0, 0, brightness,// 改变亮度
+                0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
+
+        Paint paint = new Paint();
+        paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
+        Canvas canvas = new Canvas(bmp);
+        canvas.drawBitmap(srcBitmap, 0, 0, paint);
+
+        RenderScript rs = RenderScript.create(getActivity());
+        Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
+        ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
+        blur.setInput(overlayAlloc);
+        blur.setRadius(radius + 1);
+        blur.forEach(overlayAlloc);
+        overlayAlloc.copyTo(bmp);
+
+        destBitmap = bmp;
+        content.setBackground(new BitmapDrawable(getResources(), bmp));
     }
 
     private void layoutItemContainer(View itemContainer)

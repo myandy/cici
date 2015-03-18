@@ -32,7 +32,7 @@ public class StoneView extends View
 
         Paint paint = new Paint();
         paint.setColor(mColor);
-
+        paint.setAntiAlias(true);
         if (mType == TYPE_CIRCLE)
         {
             paint.setStyle(Paint.Style.FILL);

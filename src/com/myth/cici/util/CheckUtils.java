@@ -48,7 +48,7 @@ public class CheckUtils
     private static boolean checkPingze(char hanzi, char code)
     {
         int intCode = Integer.parseInt(code + "");
-        if (intCode > 3)
+        while (intCode > 3)
         {
             intCode -= 3;
         }
@@ -102,7 +102,14 @@ public class CheckUtils
                         int x = Integer.parseInt(codes[i].charAt(codes[i].length() - 1) + "") + 3;
                         codes[i] = codes[i].substring(0, codes[i].length() - 1) + x;
                     }
-                    else if (list[i].charAt(j) == '（' || list[i].charAt(j) == '韵' || list[i].charAt(j) == '）')
+                    else if (list[i].charAt(j) == '（' && list[i].charAt(j + 1) == '增' && list[i].charAt(j + 2) == '韵'
+                            && list[i].charAt(j + 3) == '）')
+                    {
+                        int x = Integer.parseInt(codes[i].charAt(codes[i].length() - 1) + "") + 6;
+                        codes[i] = codes[i].substring(0, codes[i].length() - 1) + x;
+                    }
+                    else if (list[i].charAt(j) == '（' || list[i].charAt(j) == '韵' || list[i].charAt(j) == '增'
+                            || list[i].charAt(j) == '）')
                     {
 
                     }
