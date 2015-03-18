@@ -60,7 +60,6 @@ public class EditFragment extends Fragment
         mContext = inflater.getContext();
         root = inflater.inflate(R.layout.fragment_edit, null);
         initViews(root);
-        ((BaseActivity) mContext).setBottomVisible();
         return root;
 
     }
@@ -119,6 +118,7 @@ public class EditFragment extends Fragment
             View view1 = new PingzeLinearlayout(mContext, sList[i]);
             view1.setPadding(0, 30, 0, 30);
             final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
+            edittext.setTypeface(MyApplication.typeface);
             final int index = i;
             edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
             {
@@ -139,6 +139,11 @@ public class EditFragment extends Fragment
             editContent.addView(view1);
             editContent.addView(edittext);
             editTexts.add(edittext);
+
+            if (i == 0)
+            {
+                edittext.requestFocus();
+            }
 
             if (tList != null && tList.length > i)
             {
@@ -172,6 +177,10 @@ public class EditFragment extends Fragment
                 startActivity(intent);
             }
         });
+        final View getfocus = view.findViewById(R.id.getfocus);
+        getfocus.setFocusable(true);
+        getfocus.setFocusableInTouchMode(true);
+
         keyboard.setOnClickListener(new OnClickListener()
         {
 
@@ -181,6 +190,8 @@ public class EditFragment extends Fragment
                 keyboard.setVisibility(View.GONE);
                 ((BaseActivity) mContext).setBottomVisible();
                 hideSoftInputFromWindow();
+                getfocus.requestFocus();
+                getfocus.requestFocusFromTouch();
             }
         });
     }

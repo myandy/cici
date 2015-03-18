@@ -2,8 +2,6 @@ package com.myth.cici.activity;
 
 import java.util.ArrayList;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -21,9 +19,7 @@ import android.widget.RelativeLayout;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
-import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.db.WritingDatabaseHelper;
-import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.IntroductionView;
@@ -90,26 +86,8 @@ public class MainActivity extends BaseActivity
             @Override
             public void onClick(View v)
             {
-                final ArrayList<Cipai> ciList = CipaiDatabaseHelper.getAllCipai();
-                String[] strings = new String[ciList.size()];
-                for (int i = 0; i < ciList.size(); i++)
-                {
-                    strings[i] = ciList.get(i).getName() + " " + ciList.get(i).getWordcount();
-                }
-                new AlertDialog.Builder(mActivity).setTitle("请选择一个词牌").setItems(strings,
-                        new DialogInterface.OnClickListener()
-                        {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                Intent intent = new Intent(mActivity, EditActivity.class);
-                                intent.putExtra("cipai", ciList.get(which));
-                                startActivity(intent);
-                            }
-
-                        }).show();
-
+                Intent intent = new Intent(mActivity, CipaiSearchActivity.class);
+                startActivity(intent);
             }
         });
         ImageView setting = new TouchEffectImageView(mActivity, null);

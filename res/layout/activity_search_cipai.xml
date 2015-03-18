@@ -68,23 +68,10 @@
         android:background="@color/back1"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/yun_title"
+        <ListView
+            android:id="@+id/listview"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/yun_zi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

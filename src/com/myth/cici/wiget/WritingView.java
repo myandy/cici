@@ -159,8 +159,8 @@ public class WritingView extends RelativeLayout
     private void layoutItemContainer(View itemContainer)
     {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) itemContainer.getLayoutParams();
-        params.width = ResizeUtil.resize(mContext, 720);
-        params.height = ResizeUtil.resize(mContext, 720);
+        params.width = ResizeUtil.resize(mContext, 540);
+        params.height = ResizeUtil.resize(mContext, 540);
         itemContainer.setLayoutParams(params);
     }
 

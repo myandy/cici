@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
+import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 
 public class CircleTextView extends View
@@ -32,8 +33,9 @@ public class CircleTextView extends View
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(80, 80, 76, paint);
         paint.setColor(R.color.white);
-        paint.setTextSize(40);
-        canvas.drawText(mText, 50, 90, paint);
+        paint.setTextSize(44);
+        paint.setTypeface(MyApplication.typeface);
+        canvas.drawText(mText, 53, 93, paint);
     }
 
 }

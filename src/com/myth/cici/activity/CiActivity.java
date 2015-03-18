@@ -113,6 +113,8 @@ public class CiActivity extends BaseActivity
         title.setText(cipai.getName());
 
         content = (TextView) findViewById(R.id.content);
+        content.setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication.typeface);
         ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.typeface);
         if (isIntroduce)
         {

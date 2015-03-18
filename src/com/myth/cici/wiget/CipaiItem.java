@@ -74,6 +74,8 @@ public class CipaiItem extends RelativeLayout
         holder2.name.setTypeface(MyApplication.typeface);
         holder1.enname.setTypeface(MyApplication.typeface);
         holder2.enname.setTypeface(MyApplication.typeface);
+        holder1.num.setTypeface(MyApplication.typeface);
+        holder2.num.setTypeface(MyApplication.typeface);
 
         initHolderView(holder1);
         initHolderView(holder2);

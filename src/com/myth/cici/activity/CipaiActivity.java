@@ -61,6 +61,7 @@ public class CipaiActivity extends BaseActivity
         TextView writeTV = new TextView(mActivity);
         writeTV.setText("填词");
         writeTV.setTextSize(20);
+        writeTV.setTypeface(MyApplication.typeface);
         writeTV.setOnClickListener(new OnClickListener()
         {
 
@@ -83,8 +84,14 @@ public class CipaiActivity extends BaseActivity
 
         LinearLayout topView = (LinearLayout) findViewById(R.id.top);
 
-        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(250, 250);
-        topView.addView(new CircleTextView(mActivity, "0" + cipai.getId(), color), param);
+        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(160, 160);
+        
+        String count = cipai.getWordcount() + "";
+        if (cipai.getWordcount() < 100)
+        {
+            count = "0" + cipai.getWordcount();
+        }
+        topView.addView(new CircleTextView(mActivity, count, color), param);
 
         TextView title = (TextView) findViewById(R.id.title);
         title.setTypeface(MyApplication.typeface);
@@ -149,11 +156,11 @@ public class CipaiActivity extends BaseActivity
 
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
-            // textView.setTypeface(MyApplication.typeface);
+            textView.setTypeface(MyApplication.typeface);
             String text = ciList.get(position % ciList.size()).getText();
             if (!TextUtils.isEmpty(ciList.get(position % ciList.size()).getAuthor()))
             {
-                text = ciList.get(position % ciList.size()).getAuthor() + "\n" + text;
+                text = ciList.get(position % ciList.size()).getAuthor() + "\n" + "\n" + text;
             }
             textView.setText(text);
 

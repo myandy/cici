@@ -26,7 +26,9 @@
                 android:id="@+id/num_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:paddingTop="2dp"
+                android:textSize="18dp" />
         </LinearLayout>
 
         <RelativeLayout
@@ -36,7 +38,11 @@
             <com.myth.cici.wiget.VerticalTextView
                 android:id="@+id/enname1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                 android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="30"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/name1"
@@ -44,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:maxEms="1"
-                android:textSize="34sp" />
+                android:textSize="34dp" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -72,7 +78,9 @@
                 android:id="@+id/num_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                 android:paddingTop="2dp"
+                android:textSize="18dp"  />
         </LinearLayout>
 
         <RelativeLayout
@@ -86,7 +94,7 @@
                 android:ellipsize="end"
                 android:lines="1"
                 android:maxLength="30"
-                android:textSize="16sp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/name2"
@@ -95,7 +103,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
                 android:maxEms="1"
-                android:textSize="34sp" />
+                android:textSize="34dp" />
         </RelativeLayout>
     </LinearLayout>
 

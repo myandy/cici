@@ -11,7 +11,7 @@ public class CipaiDatabaseHelper
 {
     private static String TABLE_NAME = "cipai";
 
-    public static ArrayList<Cipai> getAllCipai()
+    public static ArrayList<Cipai> getAllShowCipai()
     {
         SQLiteDatabase db = DBManager.getDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME
@@ -24,6 +24,13 @@ public class CipaiDatabaseHelper
         SQLiteDatabase db = DBManager.getDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null order by wordcount desc",
                 null);
+        return getCipaiListFromCursor(cursor);
+    }
+
+    public static ArrayList<Cipai> getAllCipai()
+    {
+        SQLiteDatabase db = DBManager.getDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
         return getCipaiListFromCursor(cursor);
     }
 

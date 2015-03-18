@@ -11,10 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="35dp" >
 
+        <EditText
+            android:id="@+id/getfocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:visibility="visible" />
+
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_keyboard"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:clickable="true"
@@ -26,9 +33,9 @@
             android:id="@+id/edit_title"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/edit_keyboard"
             android:gravity="center_vertical"
             android:text="临江仙"
-            android:layout_toRightOf="@id/edit_keyboard"
             android:textColor="@color/black_text"
             android:textSize="28dp" />
 

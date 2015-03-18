@@ -28,6 +28,13 @@ public class SettingActivity extends BaseActivity
     {
         refreshYun();
         refreshTypeface();
+
+        ((TextView) findViewById(R.id.yun_title)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.yun_value)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.typeface_value)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.typeface_title)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.about_title)).setTypeface(MyApplication.typeface);
+
         findViewById(R.id.item_yun).setOnClickListener(new OnClickListener()
         {
 
@@ -43,6 +50,7 @@ public class SettingActivity extends BaseActivity
                             {
                                 YunDatabaseHelper.setDefaultYunShu(mActivity, which);
                                 refreshYun();
+                                dialog.dismiss();
                             }
                         }).show();
             }
@@ -63,6 +71,7 @@ public class SettingActivity extends BaseActivity
                                 MyApplication.setDefaultTypeface(mActivity, which);
                                 MyApplication.setTypeface(mActivity, MyApplication.getDefaulTypeface(mActivity));
                                 refreshTypeface();
+                                dialog.dismiss();
                             }
                         }).show();
             }

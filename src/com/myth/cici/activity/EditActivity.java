@@ -63,6 +63,7 @@ public class EditActivity extends BaseActivity
             writing.setId(writing.hashCode());
             writing.setCi_id(cipai.getId());
             writing.setBgimg("0");
+            writing.setCipai(cipai);
         }
         // 旧词编辑
         else if (writing != null)
@@ -81,6 +82,7 @@ public class EditActivity extends BaseActivity
                 exit();
             }
         });
+        setBottomGone();
 
         ImageView down = new TouchEffectImageView(mActivity, null);
         down.setImageResource(R.drawable.done);

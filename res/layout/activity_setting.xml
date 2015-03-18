@@ -18,6 +18,7 @@
             android:layout_height="60dp" >
 
             <TextView
+                android:id="@+id/yun_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="@string/setting_yun"
@@ -49,6 +50,7 @@
             android:layout_height="60dp" >
 
             <TextView
+                android:id="@+id/typeface_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="@string/setting_typeface"
@@ -80,6 +82,7 @@
             android:layout_height="60dp" >
 
             <TextView
+                android:id="@+id/about_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="@string/setting_about"

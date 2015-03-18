@@ -1,11 +1,16 @@
 package com.myth.cici.activity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -39,6 +44,22 @@ public class YunSearchActivity extends BaseActivity
     private void initView()
     {
         final EditText search = (EditText) findViewById(R.id.search);
+        search.setFocusableInTouchMode(true);
+        search.setFocusable(true);
+        search.requestFocus();
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask()
+        {
+
+            public void run()
+            {
+                InputMethodManager inputManager = (InputMethodManager) search.getContext().getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                inputManager.showSoftInput(search, 0);
+            }
+
+        }, 50);
+
         search.setHint(String.format(getResources().getString(R.string.search_hint),
                 YunDatabaseHelper.YUNString[YunDatabaseHelper.getDefaultYunShu(mActivity)]));
         search.setHintTextColor(getResources().getColor(R.color.black_hint));
