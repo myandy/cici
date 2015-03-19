@@ -16,7 +16,7 @@ public class StoneView extends View
 
     private static final int TYPE_PLUS1 = 40;
 
-    private static String[] typeString = {"平韵", "仄韵", "平仄错叶格", "平仄错叶格1"};
+    private static String[] typeString = {"平韵", "仄韵", "平仄错叶格", "平仄通韵格"};
 
     private int mType;
 

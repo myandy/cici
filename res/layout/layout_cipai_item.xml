@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:paddingTop="2dp"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <RelativeLayout
@@ -42,7 +42,7 @@
                  android:ellipsize="end"
                 android:lines="1"
                 android:maxLength="30"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/name1"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:maxEms="1"
-                android:textSize="34dp" />
+                android:textSize="34sp" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                  android:paddingTop="2dp"
-                android:textSize="18dp"  />
+                android:textSize="18sp"  />
         </LinearLayout>
 
         <RelativeLayout
@@ -94,7 +94,7 @@
                 android:ellipsize="end"
                 android:lines="1"
                 android:maxLength="30"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/name2"
@@ -103,7 +103,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
                 android:maxEms="1"
-                android:textSize="34dp" />
+                android:textSize="34sp" />
         </RelativeLayout>
     </LinearLayout>
 

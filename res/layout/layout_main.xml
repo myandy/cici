@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="28dp"
+            android:textSize="28sp"
             android:text="浏览所有" />
         <TextView
             android:layout_width="40dp"
@@ -25,13 +25,13 @@
             android:background="@drawable/circle_background"
             android:padding="5dp"
             android:gravity="center"
-            android:textSize="28dp"
+            android:textSize="28sp"
             android:text="词" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="28dp"
+            android:textSize="28sp"
             android:text="牌" />
     </LinearLayout>
 
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:layout_below="@id/show_all"
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
             android:layout_centerInParent="true"

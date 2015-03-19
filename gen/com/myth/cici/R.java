@@ -205,8 +205,8 @@ in (inches), mm (millimeters).
         public static final int show_all=0x7f090044;
         public static final int show_one=0x7f090045;
         public static final int simple_dialog_buttons=0x7f09004c;
-        public static final int simple_dialog_cancel=0x7f09004d;
-        public static final int simple_dialog_confirm=0x7f09004f;
+        public static final int simple_dialog_cancel=0x7f09004f;
+        public static final int simple_dialog_confirm=0x7f09004d;
         public static final int simple_dialog_content=0x7f09004b;
         public static final int simple_dialog_divide_line=0x7f09004e;
         public static final int simple_dialog_title=0x7f09004a;

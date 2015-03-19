@@ -1,5 +1,6 @@
 package com.myth.cici.fragment;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.renderscript.Allocation;
@@ -31,6 +33,7 @@ import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
+import com.myth.cici.util.Fastblur;
 import com.myth.cici.util.ResizeUtil;
 
 public class ChangePictureFragment extends Fragment
@@ -95,7 +98,7 @@ public class ChangePictureFragment extends Fragment
     private void refresh()
     {
         text.setText(writing.getText());
-        content.setBackground(new BitmapDrawable(getResources(), destBitmap));
+        content.setBackgroundDrawable(new BitmapDrawable(getResources(), destBitmap));
     }
 
     @Override
@@ -225,6 +228,7 @@ public class ChangePictureFragment extends Fragment
 
     }
 
+    @TargetApi(11)
     private void drawPicture(int bright, int radius)
     {
         Bitmap bmp = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Config.ARGB_8888);
@@ -239,16 +243,24 @@ public class ChangePictureFragment extends Fragment
         Canvas canvas = new Canvas(bmp);
         canvas.drawBitmap(srcBitmap, 0, 0, paint);
 
-        RenderScript rs = RenderScript.create(getActivity());
-        Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
-        ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
-        blur.setInput(overlayAlloc);
-        blur.setRadius(radius + 1);
-        blur.forEach(overlayAlloc);
-        overlayAlloc.copyTo(bmp);
+        if (Build.VERSION.SDK_INT > 16)
+        {
+            RenderScript rs = RenderScript.create(getActivity());
+            Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
+            ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
+            blur.setInput(overlayAlloc);
+            blur.setRadius(radius + 1);
+            blur.forEach(overlayAlloc);
+            overlayAlloc.copyTo(bmp);
+        }
+        else
+        {
+            // 低版本的折衷处理方法
+            bmp = Fastblur.fastblur(mContext, bmp, radius);
+        }
 
         destBitmap = bmp;
-        content.setBackground(new BitmapDrawable(getResources(), bmp));
+        content.setBackgroundDrawable(new BitmapDrawable(getResources(), bmp));
     }
 
     private void layoutItemContainer(View itemContainer)

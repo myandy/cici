@@ -68,7 +68,7 @@ public class WritingView extends RelativeLayout
         }
         else
         {
-            content.setBackground(new BitmapDrawable(getResources(), writing.getBgimg()));
+            content.setBackgroundDrawable(new BitmapDrawable(getResources(), writing.getBgimg()));
         }
 
         layoutItemContainer(content);
@@ -82,7 +82,6 @@ public class WritingView extends RelativeLayout
         time.setText(DateUtils.longToFormat(writing.getUpdate_dt(), DateUtils.YMD_HM_FORMAT));
 
         title.setText(writing.getCipai().getName());
-
         text.setText(writing.getText());
 
         title.setTypeface(MyApplication.typeface);

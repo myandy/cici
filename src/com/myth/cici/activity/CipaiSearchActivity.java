@@ -90,6 +90,7 @@ public class CipaiSearchActivity extends BaseActivity
                 Intent intent = new Intent(mActivity, EditActivity.class);
                 intent.putExtra("cipai", sortList.get(position));
                 startActivity(intent);
+                finish();
             }
         });
 

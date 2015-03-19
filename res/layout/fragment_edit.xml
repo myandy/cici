@@ -37,7 +37,7 @@
             android:gravity="center_vertical"
             android:text="临江仙"
             android:textColor="@color/black_text"
-            android:textSize="28dp" />
+            android:textSize="28sp" />
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_dict"

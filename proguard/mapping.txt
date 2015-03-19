@@ -1,0 +1,1509 @@
+android.support.v4.os.ParcelableCompat -> android.support.v4.a.a:
+    android.os.Parcelable$Creator newCreator(android.support.v4.os.ParcelableCompatCreatorCallbacks) -> a
+android.support.v4.os.ParcelableCompat$CompatCreator -> android.support.v4.a.b:
+    android.support.v4.os.ParcelableCompatCreatorCallbacks mCallbacks -> a
+    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    java.lang.Object[] newArray(int) -> newArray
+android.support.v4.os.ParcelableCompatCreatorCallbacks -> android.support.v4.a.c:
+    java.lang.Object createFromParcel(android.os.Parcel,java.lang.ClassLoader) -> a
+    java.lang.Object[] newArray(int) -> a
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2 -> android.support.v4.a.d:
+    android.support.v4.os.ParcelableCompatCreatorCallbacks mCallbacks -> a
+    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    java.lang.Object createFromParcel(android.os.Parcel,java.lang.ClassLoader) -> createFromParcel
+    java.lang.Object[] newArray(int) -> newArray
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2Stub -> android.support.v4.a.e:
+    android.os.Parcelable$Creator instantiate(android.support.v4.os.ParcelableCompatCreatorCallbacks) -> a
+android.support.v4.view.AccessibilityDelegateCompat -> android.support.v4.view.a:
+    android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateImpl IMPL -> b
+    java.lang.Object DEFAULT_DELEGATE -> c
+    java.lang.Object mBridge -> a
+    java.lang.Object getBridge() -> a
+    void sendAccessibilityEvent(android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat) -> a
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(android.view.View) -> a
+    boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl -> android.support.v4.view.b:
+    java.lang.Object newAccessiblityDelegateDefaultImpl() -> a
+    java.lang.Object newAccessiblityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompat) -> a
+    boolean dispatchPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(java.lang.Object,android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat) -> a
+    void onPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(java.lang.Object,android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(java.lang.Object,android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl$1 -> android.support.v4.view.c:
+    android.support.v4.view.AccessibilityDelegateCompat val$compat -> a
+    android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl this$0 -> b
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object) -> a
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateImpl -> android.support.v4.view.d:
+    java.lang.Object newAccessiblityDelegateDefaultImpl() -> a
+    java.lang.Object newAccessiblityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompat) -> a
+    boolean dispatchPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(java.lang.Object,android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat) -> a
+    void onPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(java.lang.Object,android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(java.lang.Object,android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(java.lang.Object,android.view.View) -> a
+    boolean performAccessibilityAction(java.lang.Object,android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl -> android.support.v4.view.e:
+    java.lang.Object newAccessiblityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompat) -> a
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(java.lang.Object,android.view.View) -> a
+    boolean performAccessibilityAction(java.lang.Object,android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl$1 -> android.support.v4.view.f:
+    android.support.v4.view.AccessibilityDelegateCompat val$compat -> a
+    android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl this$0 -> b
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object) -> a
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    java.lang.Object getAccessibilityNodeProvider(android.view.View) -> a
+    boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateStubImpl -> android.support.v4.view.g:
+    java.lang.Object newAccessiblityDelegateDefaultImpl() -> a
+    java.lang.Object newAccessiblityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompat) -> a
+    boolean dispatchPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(java.lang.Object,android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat) -> a
+    void onPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(java.lang.Object,android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(java.lang.Object,android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(java.lang.Object,android.view.View) -> a
+    boolean performAccessibilityAction(java.lang.Object,android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompatIcs -> android.support.v4.view.h:
+    java.lang.Object newAccessibilityDelegateDefaultImpl() -> a
+    java.lang.Object newAccessibilityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompatIcs$AccessibilityDelegateBridge) -> a
+    boolean dispatchPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(java.lang.Object,android.view.View,java.lang.Object) -> a
+    void onPopulateAccessibilityEvent(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(java.lang.Object,android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(java.lang.Object,android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(java.lang.Object,android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+android.support.v4.view.AccessibilityDelegateCompatIcs$1 -> android.support.v4.view.i:
+    android.support.v4.view.AccessibilityDelegateCompatIcs$AccessibilityDelegateBridge val$bridge -> a
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> dispatchPopulateAccessibilityEvent
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onInitializeAccessibilityEvent
+    void onInitializeAccessibilityNodeInfo(android.view.View,android.view.accessibility.AccessibilityNodeInfo) -> onInitializeAccessibilityNodeInfo
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onPopulateAccessibilityEvent
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> onRequestSendAccessibilityEvent
+    void sendAccessibilityEvent(android.view.View,int) -> sendAccessibilityEvent
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> sendAccessibilityEventUnchecked
+android.support.v4.view.AccessibilityDelegateCompatIcs$AccessibilityDelegateBridge -> android.support.v4.view.j:
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object) -> a
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+android.support.v4.view.AccessibilityDelegateCompatJellyBean -> android.support.v4.view.k:
+    java.lang.Object newAccessibilityDelegateBridge(android.support.v4.view.AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean) -> a
+    java.lang.Object getAccessibilityNodeProvider(java.lang.Object,android.view.View) -> a
+    boolean performAccessibilityAction(java.lang.Object,android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.AccessibilityDelegateCompatJellyBean$1 -> android.support.v4.view.l:
+    android.support.v4.view.AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean val$bridge -> a
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> dispatchPopulateAccessibilityEvent
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onInitializeAccessibilityEvent
+    void onInitializeAccessibilityNodeInfo(android.view.View,android.view.accessibility.AccessibilityNodeInfo) -> onInitializeAccessibilityNodeInfo
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onPopulateAccessibilityEvent
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> onRequestSendAccessibilityEvent
+    void sendAccessibilityEvent(android.view.View,int) -> sendAccessibilityEvent
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> sendAccessibilityEventUnchecked
+    android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider(android.view.View) -> getAccessibilityNodeProvider
+    boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> performAccessibilityAction
+android.support.v4.view.AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean -> android.support.v4.view.m:
+    boolean dispatchPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> b
+    void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object) -> a
+    void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> c
+    boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent) -> a
+    void sendAccessibilityEvent(android.view.View,int) -> a
+    void sendAccessibilityEventUnchecked(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    java.lang.Object getAccessibilityNodeProvider(android.view.View) -> a
+    boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> a
+android.support.v4.view.KeyEventCompat -> android.support.v4.view.n:
+    android.support.v4.view.KeyEventCompat$KeyEventVersionImpl IMPL -> a
+    boolean hasModifiers(android.view.KeyEvent,int) -> a
+    boolean hasNoModifiers(android.view.KeyEvent) -> a
+android.support.v4.view.KeyEventCompat$BaseKeyEventVersionImpl -> android.support.v4.view.o:
+    int metaStateFilterDirectionalModifiers(int,int,int,int,int) -> a
+    int normalizeMetaState(int) -> a
+    boolean metaStateHasModifiers(int,int) -> a
+    boolean metaStateHasNoModifiers(int) -> b
+android.support.v4.view.KeyEventCompat$EclairKeyEventVersionImpl -> android.support.v4.view.p:
+android.support.v4.view.KeyEventCompat$HoneycombKeyEventVersionImpl -> android.support.v4.view.q:
+    int normalizeMetaState(int) -> a
+    boolean metaStateHasModifiers(int,int) -> a
+    boolean metaStateHasNoModifiers(int) -> b
+android.support.v4.view.KeyEventCompat$KeyEventVersionImpl -> android.support.v4.view.r:
+    boolean metaStateHasModifiers(int,int) -> a
+    boolean metaStateHasNoModifiers(int) -> b
+android.support.v4.view.KeyEventCompatHoneycomb -> android.support.v4.view.s:
+    int normalizeMetaState(int) -> a
+    boolean metaStateHasModifiers(int,int) -> a
+    boolean metaStateHasNoModifiers(int) -> b
+android.support.v4.view.MotionEventCompat -> android.support.v4.view.t:
+    android.support.v4.view.MotionEventCompat$MotionEventVersionImpl IMPL -> a
+    int getActionIndex(android.view.MotionEvent) -> a
+    int findPointerIndex(android.view.MotionEvent,int) -> a
+    int getPointerId(android.view.MotionEvent,int) -> b
+    float getX(android.view.MotionEvent,int) -> c
+    float getY(android.view.MotionEvent,int) -> d
+android.support.v4.view.MotionEventCompat$BaseMotionEventVersionImpl -> android.support.v4.view.u:
+    int findPointerIndex(android.view.MotionEvent,int) -> a
+    int getPointerId(android.view.MotionEvent,int) -> b
+    float getX(android.view.MotionEvent,int) -> c
+    float getY(android.view.MotionEvent,int) -> d
+android.support.v4.view.MotionEventCompat$EclairMotionEventVersionImpl -> android.support.v4.view.v:
+    int findPointerIndex(android.view.MotionEvent,int) -> a
+    int getPointerId(android.view.MotionEvent,int) -> b
+    float getX(android.view.MotionEvent,int) -> c
+    float getY(android.view.MotionEvent,int) -> d
+android.support.v4.view.MotionEventCompat$MotionEventVersionImpl -> android.support.v4.view.w:
+    int findPointerIndex(android.view.MotionEvent,int) -> a
+    int getPointerId(android.view.MotionEvent,int) -> b
+    float getX(android.view.MotionEvent,int) -> c
+    float getY(android.view.MotionEvent,int) -> d
+android.support.v4.view.MotionEventCompatEclair -> android.support.v4.view.x:
+    int findPointerIndex(android.view.MotionEvent,int) -> a
+    int getPointerId(android.view.MotionEvent,int) -> b
+    float getX(android.view.MotionEvent,int) -> c
+    float getY(android.view.MotionEvent,int) -> d
+android.support.v4.view.PagerAdapter -> android.support.v4.view.y:
+    android.database.DataSetObservable mObservable -> a
+    int getCount() -> a
+    void startUpdate(android.view.ViewGroup) -> a
+    java.lang.Object instantiateItem(android.view.ViewGroup,int) -> a
+    void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> a
+    void setPrimaryItem(android.view.ViewGroup,int,java.lang.Object) -> b
+    void finishUpdate(android.view.ViewGroup) -> b
+    void startUpdate(android.view.View) -> a
+    java.lang.Object instantiateItem(android.view.View,int) -> a
+    void destroyItem(android.view.View,int,java.lang.Object) -> a
+    void setPrimaryItem(android.view.View,int,java.lang.Object) -> b
+    void finishUpdate(android.view.View) -> b
+    boolean isViewFromObject(android.view.View,java.lang.Object) -> a
+    android.os.Parcelable saveState() -> b
+    void restoreState(android.os.Parcelable,java.lang.ClassLoader) -> a
+    int getItemPosition(java.lang.Object) -> a
+    void notifyDataSetChanged() -> c
+    void registerDataSetObserver(android.database.DataSetObserver) -> a
+    void unregisterDataSetObserver(android.database.DataSetObserver) -> b
+    float getPageWidth(int) -> a
+android.support.v4.view.VelocityTrackerCompat -> android.support.v4.view.z:
+    android.support.v4.view.VelocityTrackerCompat$VelocityTrackerVersionImpl IMPL -> a
+    float getXVelocity(android.view.VelocityTracker,int) -> a
+android.support.v4.view.VelocityTrackerCompat$BaseVelocityTrackerVersionImpl -> android.support.v4.view.aa:
+    float getXVelocity(android.view.VelocityTracker,int) -> a
+android.support.v4.view.VelocityTrackerCompat$HoneycombVelocityTrackerVersionImpl -> android.support.v4.view.ab:
+    float getXVelocity(android.view.VelocityTracker,int) -> a
+android.support.v4.view.VelocityTrackerCompat$VelocityTrackerVersionImpl -> android.support.v4.view.ac:
+    float getXVelocity(android.view.VelocityTracker,int) -> a
+android.support.v4.view.VelocityTrackerCompatHoneycomb -> android.support.v4.view.ad:
+    float getXVelocity(android.view.VelocityTracker,int) -> a
+android.support.v4.view.ViewCompat -> android.support.v4.view.ae:
+    android.support.v4.view.ViewCompat$ViewCompatImpl IMPL -> a
+    boolean canScrollHorizontally(android.view.View,int) -> a
+    int getOverScrollMode(android.view.View) -> a
+    void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat) -> a
+    void postInvalidateOnAnimation(android.view.View) -> b
+    void postOnAnimation(android.view.View,java.lang.Runnable) -> a
+    int getImportantForAccessibility(android.view.View) -> c
+    void setImportantForAccessibility(android.view.View,int) -> b
+    void setLayerType(android.view.View,int,android.graphics.Paint) -> a
+android.support.v4.view.ViewCompat$Api21ViewCompatImpl -> android.support.v4.view.af:
+android.support.v4.view.ViewCompat$BaseViewCompatImpl -> android.support.v4.view.ag:
+    java.util.WeakHashMap mViewPropertyAnimatorCompatMap -> a
+    boolean canScrollHorizontally(android.view.View,int) -> a
+    int getOverScrollMode(android.view.View) -> a
+    void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat) -> a
+    void postInvalidateOnAnimation(android.view.View) -> b
+    void postOnAnimation(android.view.View,java.lang.Runnable) -> a
+    long getFrameTime() -> a
+    int getImportantForAccessibility(android.view.View) -> c
+    void setImportantForAccessibility(android.view.View,int) -> b
+    void setLayerType(android.view.View,int,android.graphics.Paint) -> a
+android.support.v4.view.ViewCompat$EclairMr1ViewCompatImpl -> android.support.v4.view.ah:
+android.support.v4.view.ViewCompat$GBViewCompatImpl -> android.support.v4.view.ai:
+    int getOverScrollMode(android.view.View) -> a
+android.support.v4.view.ViewCompat$HCViewCompatImpl -> android.support.v4.view.aj:
+    long getFrameTime() -> a
+    void setLayerType(android.view.View,int,android.graphics.Paint) -> a
+android.support.v4.view.ViewCompat$ICSViewCompatImpl -> android.support.v4.view.ak:
+    boolean accessibilityDelegateCheckFailed -> b
+    boolean canScrollHorizontally(android.view.View,int) -> a
+    void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat) -> a
+android.support.v4.view.ViewCompat$JBViewCompatImpl -> android.support.v4.view.al:
+    void postInvalidateOnAnimation(android.view.View) -> b
+    void postOnAnimation(android.view.View,java.lang.Runnable) -> a
+    int getImportantForAccessibility(android.view.View) -> c
+    void setImportantForAccessibility(android.view.View,int) -> b
+android.support.v4.view.ViewCompat$JbMr1ViewCompatImpl -> android.support.v4.view.am:
+android.support.v4.view.ViewCompat$KitKatViewCompatImpl -> android.support.v4.view.an:
+    void setImportantForAccessibility(android.view.View,int) -> b
+android.support.v4.view.ViewCompat$ViewCompatImpl -> android.support.v4.view.ao:
+    boolean canScrollHorizontally(android.view.View,int) -> a
+    int getOverScrollMode(android.view.View) -> a
+    void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat) -> a
+    void postInvalidateOnAnimation(android.view.View) -> b
+    void postOnAnimation(android.view.View,java.lang.Runnable) -> a
+    int getImportantForAccessibility(android.view.View) -> c
+    void setImportantForAccessibility(android.view.View,int) -> b
+    void setLayerType(android.view.View,int,android.graphics.Paint) -> a
+android.support.v4.view.ViewCompatGingerbread -> android.support.v4.view.ap:
+    int getOverScrollMode(android.view.View) -> a
+android.support.v4.view.ViewCompatHC -> android.support.v4.view.aq:
+    long getFrameTime() -> a
+    void setLayerType(android.view.View,int,android.graphics.Paint) -> a
+android.support.v4.view.ViewCompatICS -> android.support.v4.view.ar:
+    boolean canScrollHorizontally(android.view.View,int) -> a
+    void setAccessibilityDelegate(android.view.View,java.lang.Object) -> a
+android.support.v4.view.ViewCompatJB -> android.support.v4.view.as:
+    void postInvalidateOnAnimation(android.view.View) -> a
+    void postOnAnimation(android.view.View,java.lang.Runnable) -> a
+    int getImportantForAccessibility(android.view.View) -> b
+    void setImportantForAccessibility(android.view.View,int) -> a
+android.support.v4.view.ViewConfigurationCompat -> android.support.v4.view.at:
+    android.support.v4.view.ViewConfigurationCompat$ViewConfigurationVersionImpl IMPL -> a
+    int getScaledPagingTouchSlop(android.view.ViewConfiguration) -> a
+android.support.v4.view.ViewConfigurationCompat$BaseViewConfigurationVersionImpl -> android.support.v4.view.au:
+    int getScaledPagingTouchSlop(android.view.ViewConfiguration) -> a
+android.support.v4.view.ViewConfigurationCompat$FroyoViewConfigurationVersionImpl -> android.support.v4.view.av:
+    int getScaledPagingTouchSlop(android.view.ViewConfiguration) -> a
+android.support.v4.view.ViewConfigurationCompat$HoneycombViewConfigurationVersionImpl -> android.support.v4.view.aw:
+android.support.v4.view.ViewConfigurationCompat$IcsViewConfigurationVersionImpl -> android.support.v4.view.ax:
+android.support.v4.view.ViewConfigurationCompat$ViewConfigurationVersionImpl -> android.support.v4.view.ay:
+    int getScaledPagingTouchSlop(android.view.ViewConfiguration) -> a
+android.support.v4.view.ViewConfigurationCompatFroyo -> android.support.v4.view.az:
+    int getScaledPagingTouchSlop(android.view.ViewConfiguration) -> a
+android.support.v4.view.ViewPager -> android.support.v4.view.ViewPager:
+    int[] LAYOUT_ATTRS -> a
+    int mExpectedAdapterCount -> b
+    java.util.Comparator COMPARATOR -> c
+    android.view.animation.Interpolator sInterpolator -> d
+    java.util.ArrayList mItems -> e
+    android.support.v4.view.ViewPager$ItemInfo mTempItem -> f
+    android.graphics.Rect mTempRect -> g
+    android.support.v4.view.PagerAdapter mAdapter -> h
+    int mCurItem -> i
+    int mRestoredCurItem -> j
+    android.os.Parcelable mRestoredAdapterState -> k
+    java.lang.ClassLoader mRestoredClassLoader -> l
+    android.widget.Scroller mScroller -> m
+    android.support.v4.view.ViewPager$PagerObserver mObserver -> n
+    int mPageMargin -> o
+    android.graphics.drawable.Drawable mMarginDrawable -> p
+    int mTopPageBounds -> q
+    int mBottomPageBounds -> r
+    float mFirstOffset -> s
+    float mLastOffset -> t
+    int mChildWidthMeasureSpec -> u
+    int mChildHeightMeasureSpec -> v
+    boolean mInLayout -> w
+    boolean mScrollingCacheEnabled -> x
+    boolean mPopulatePending -> y
+    int mOffscreenPageLimit -> z
+    boolean mIsBeingDragged -> A
+    boolean mIsUnableToDrag -> B
+    int mDefaultGutterSize -> C
+    int mGutterSize -> D
+    int mTouchSlop -> E
+    float mLastMotionX -> F
+    float mLastMotionY -> G
+    float mInitialMotionX -> H
+    float mInitialMotionY -> I
+    int mActivePointerId -> J
+    android.view.VelocityTracker mVelocityTracker -> K
+    int mMinimumVelocity -> L
+    int mMaximumVelocity -> M
+    int mFlingDistance -> N
+    int mCloseEnough -> O
+    boolean mFakeDragging -> P
+    android.support.v4.widget.EdgeEffectCompat mLeftEdge -> Q
+    android.support.v4.widget.EdgeEffectCompat mRightEdge -> R
+    boolean mFirstLayout -> S
+    boolean mNeedCalculatePageOffsets -> T
+    boolean mCalledSuper -> U
+    int mDecorChildCount -> V
+    android.support.v4.view.ViewPager$OnPageChangeListener mOnPageChangeListener -> W
+    android.support.v4.view.ViewPager$OnPageChangeListener mInternalPageChangeListener -> Z
+    android.support.v4.view.ViewPager$OnAdapterChangeListener mAdapterChangeListener -> aa
+    android.support.v4.view.ViewPager$PageTransformer mPageTransformer -> ab
+    int mDrawingOrder -> ac
+    java.util.ArrayList mDrawingOrderedChildren -> ad
+    android.support.v4.view.ViewPager$ViewPositionComparator sPositionComparator -> ae
+    java.lang.Runnable mEndScrollRunnable -> af
+    int mScrollState -> ag
+    void initViewPager() -> a
+    void onDetachedFromWindow() -> onDetachedFromWindow
+    void setScrollState(int) -> g
+    void setAdapter(android.support.v4.view.PagerAdapter) -> a
+    void removeNonDecorViews() -> g
+    int getClientWidth() -> h
+    void setCurrentItem(int) -> a
+    void setCurrentItem(int,boolean) -> a
+    void setCurrentItemInternal(int,boolean,boolean) -> a
+    void setCurrentItemInternal(int,boolean,boolean,int) -> a
+    void scrollToItem(int,boolean,int,boolean) -> a
+    void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener) -> a
+    int getChildDrawingOrder(int,int) -> getChildDrawingOrder
+    void setOffscreenPageLimit(int) -> b
+    void setPageMargin(int) -> c
+    boolean verifyDrawable(android.graphics.drawable.Drawable) -> verifyDrawable
+    void drawableStateChanged() -> drawableStateChanged
+    float distanceInfluenceForSnapDuration(float) -> a
+    void smoothScrollTo(int,int,int) -> a
+    android.support.v4.view.ViewPager$ItemInfo addNewItem(int,int) -> a
+    void dataSetChanged() -> b
+    void populate() -> c
+    void populate(int) -> d
+    void sortChildDrawingOrder() -> i
+    void calculatePageOffsets(android.support.v4.view.ViewPager$ItemInfo,int,android.support.v4.view.ViewPager$ItemInfo) -> a
+    android.os.Parcelable onSaveInstanceState() -> onSaveInstanceState
+    void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
+    void addView(android.view.View,int,android.view.ViewGroup$LayoutParams) -> addView
+    void removeView(android.view.View) -> removeView
+    android.support.v4.view.ViewPager$ItemInfo infoForChild(android.view.View) -> a
+    android.support.v4.view.ViewPager$ItemInfo infoForAnyChild(android.view.View) -> b
+    android.support.v4.view.ViewPager$ItemInfo infoForPosition(int) -> e
+    void onAttachedToWindow() -> onAttachedToWindow
+    void onMeasure(int,int) -> onMeasure
+    void onSizeChanged(int,int,int,int) -> onSizeChanged
+    void recomputeScrollPosition(int,int,int,int) -> a
+    void onLayout(boolean,int,int,int,int) -> onLayout
+    void computeScroll() -> computeScroll
+    boolean pageScrolled(int) -> h
+    void onPageScrolled(int,float,int) -> a
+    void completeScroll(boolean) -> a
+    boolean isGutterDrag(float,float) -> a
+    void enableLayers(boolean) -> b
+    boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void requestParentDisallowInterceptTouchEvent(boolean) -> c
+    boolean performDrag(float) -> b
+    android.support.v4.view.ViewPager$ItemInfo infoForCurrentScrollPosition() -> j
+    int determineTargetPage(int,float,int,int) -> a
+    void draw(android.graphics.Canvas) -> draw
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void onSecondaryPointerUp(android.view.MotionEvent) -> a
+    void endDrag() -> k
+    void setScrollingCacheEnabled(boolean) -> d
+    boolean canScrollHorizontally(int) -> canScrollHorizontally
+    boolean canScroll(android.view.View,boolean,int,int,int) -> a
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    boolean executeKeyEvent(android.view.KeyEvent) -> a
+    boolean arrowScroll(int) -> f
+    android.graphics.Rect getChildRectInPagerCoordinates(android.graphics.Rect,android.view.View) -> a
+    boolean pageLeft() -> d
+    boolean pageRight() -> e
+    void addFocusables(java.util.ArrayList,int,int) -> addFocusables
+    void addTouchables(java.util.ArrayList) -> addTouchables
+    boolean onRequestFocusInDescendants(int,android.graphics.Rect) -> onRequestFocusInDescendants
+    boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent) -> dispatchPopulateAccessibilityEvent
+    android.view.ViewGroup$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
+    android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> generateLayoutParams
+    boolean checkLayoutParams(android.view.ViewGroup$LayoutParams) -> checkLayoutParams
+    android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet) -> generateLayoutParams
+    void access$000(android.support.v4.view.ViewPager,int) -> a
+    android.support.v4.view.PagerAdapter access$200(android.support.v4.view.ViewPager) -> a
+    int access$300(android.support.v4.view.ViewPager) -> b
+    int[] access$400() -> f
+android.support.v4.view.ViewPager$1 -> android.support.v4.view.ba:
+    int compare(android.support.v4.view.ViewPager$ItemInfo,android.support.v4.view.ViewPager$ItemInfo) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+android.support.v4.view.ViewPager$2 -> android.support.v4.view.bb:
+    float getInterpolation(float) -> getInterpolation
+android.support.v4.view.ViewPager$3 -> android.support.v4.view.bc:
+    android.support.v4.view.ViewPager this$0 -> a
+    void run() -> run
+android.support.v4.view.ViewPager$Decor -> android.support.v4.view.bd:
+android.support.v4.view.ViewPager$ItemInfo -> android.support.v4.view.be:
+    java.lang.Object object -> a
+    int position -> b
+    boolean scrolling -> c
+    float widthFactor -> d
+    float offset -> e
+android.support.v4.view.ViewPager$LayoutParams -> android.support.v4.view.bf:
+    boolean isDecor -> a
+    int gravity -> b
+    float widthFactor -> c
+    boolean needsMeasure -> d
+    int position -> e
+    int childIndex -> f
+android.support.v4.view.ViewPager$MyAccessibilityDelegate -> android.support.v4.view.bg:
+    android.support.v4.view.ViewPager this$0 -> b
+    void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> d
+    void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat) -> a
+    boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> a
+    boolean canScroll() -> b
+android.support.v4.view.ViewPager$OnAdapterChangeListener -> android.support.v4.view.bh:
+    void onAdapterChanged(android.support.v4.view.PagerAdapter,android.support.v4.view.PagerAdapter) -> a
+android.support.v4.view.ViewPager$OnPageChangeListener -> android.support.v4.view.bi:
+    void onPageScrolled(int,float,int) -> a
+    void onPageSelected(int) -> a
+    void onPageScrollStateChanged(int) -> b
+android.support.v4.view.ViewPager$PageTransformer -> android.support.v4.view.bj:
+    void transformPage(android.view.View,float) -> a
+android.support.v4.view.ViewPager$PagerObserver -> android.support.v4.view.bk:
+    android.support.v4.view.ViewPager this$0 -> a
+    void onChanged() -> onChanged
+    void onInvalidated() -> onInvalidated
+android.support.v4.view.ViewPager$SavedState -> android.support.v4.view.bl:
+    int position -> a
+    android.os.Parcelable adapterState -> b
+    java.lang.ClassLoader loader -> c
+    android.os.Parcelable$Creator CREATOR -> d
+    void writeToParcel(android.os.Parcel,int) -> writeToParcel
+    java.lang.String toString() -> toString
+android.support.v4.view.ViewPager$SavedState$1 -> android.support.v4.view.bm:
+    android.support.v4.view.ViewPager$SavedState createFromParcel(android.os.Parcel,java.lang.ClassLoader) -> b
+    android.support.v4.view.ViewPager$SavedState[] newArray(int) -> b
+    java.lang.Object[] newArray(int) -> a
+    java.lang.Object createFromParcel(android.os.Parcel,java.lang.ClassLoader) -> a
+android.support.v4.view.ViewPager$ViewPositionComparator -> android.support.v4.view.bn:
+    int compare(android.view.View,android.view.View) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat -> android.support.v4.view.a.a:
+    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl IMPL -> a
+    java.lang.Object mInfo -> b
+    java.lang.Object getInfo() -> a
+    int getActions() -> b
+    void addAction(int) -> a
+    void getBoundsInParent(android.graphics.Rect) -> a
+    void getBoundsInScreen(android.graphics.Rect) -> b
+    boolean isCheckable() -> c
+    boolean isChecked() -> d
+    boolean isFocusable() -> e
+    boolean isFocused() -> f
+    boolean isSelected() -> g
+    boolean isClickable() -> h
+    boolean isLongClickable() -> i
+    boolean isEnabled() -> j
+    boolean isPassword() -> k
+    boolean isScrollable() -> l
+    void setScrollable(boolean) -> a
+    java.lang.CharSequence getPackageName() -> m
+    java.lang.CharSequence getClassName() -> n
+    void setClassName(java.lang.CharSequence) -> a
+    java.lang.CharSequence getText() -> o
+    java.lang.CharSequence getContentDescription() -> p
+    java.lang.String getViewIdResourceName() -> q
+    int hashCode() -> hashCode
+    boolean equals(java.lang.Object) -> equals
+    java.lang.String toString() -> toString
+    java.lang.String getActionSymbolicName(int) -> b
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoApi21Impl -> android.support.v4.view.a.b:
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl -> android.support.v4.view.a.c:
+    void addAction(java.lang.Object,int) -> a
+    int getActions(java.lang.Object) -> a
+    void getBoundsInParent(java.lang.Object,android.graphics.Rect) -> a
+    void getBoundsInScreen(java.lang.Object,android.graphics.Rect) -> b
+    java.lang.CharSequence getClassName(java.lang.Object) -> b
+    java.lang.CharSequence getContentDescription(java.lang.Object) -> c
+    java.lang.CharSequence getPackageName(java.lang.Object) -> d
+    java.lang.CharSequence getText(java.lang.Object) -> e
+    boolean isCheckable(java.lang.Object) -> f
+    boolean isChecked(java.lang.Object) -> g
+    boolean isClickable(java.lang.Object) -> h
+    boolean isEnabled(java.lang.Object) -> i
+    boolean isFocusable(java.lang.Object) -> j
+    boolean isFocused(java.lang.Object) -> k
+    boolean isLongClickable(java.lang.Object) -> l
+    boolean isPassword(java.lang.Object) -> m
+    boolean isScrollable(java.lang.Object) -> n
+    boolean isSelected(java.lang.Object) -> o
+    void setClassName(java.lang.Object,java.lang.CharSequence) -> a
+    void setScrollable(java.lang.Object,boolean) -> a
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl -> android.support.v4.view.a.d:
+    int getActions(java.lang.Object) -> a
+    void addAction(java.lang.Object,int) -> a
+    void getBoundsInParent(java.lang.Object,android.graphics.Rect) -> a
+    void getBoundsInScreen(java.lang.Object,android.graphics.Rect) -> b
+    boolean isCheckable(java.lang.Object) -> f
+    boolean isChecked(java.lang.Object) -> g
+    boolean isFocusable(java.lang.Object) -> j
+    boolean isFocused(java.lang.Object) -> k
+    boolean isSelected(java.lang.Object) -> o
+    boolean isClickable(java.lang.Object) -> h
+    boolean isLongClickable(java.lang.Object) -> l
+    boolean isEnabled(java.lang.Object) -> i
+    boolean isPassword(java.lang.Object) -> m
+    boolean isScrollable(java.lang.Object) -> n
+    void setScrollable(java.lang.Object,boolean) -> a
+    java.lang.CharSequence getPackageName(java.lang.Object) -> d
+    java.lang.CharSequence getClassName(java.lang.Object) -> b
+    void setClassName(java.lang.Object,java.lang.CharSequence) -> a
+    java.lang.CharSequence getText(java.lang.Object) -> e
+    java.lang.CharSequence getContentDescription(java.lang.Object) -> c
+    java.lang.String getViewIdResourceName(java.lang.Object) -> p
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl -> android.support.v4.view.a.e:
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl -> android.support.v4.view.a.f:
+    java.lang.String getViewIdResourceName(java.lang.Object) -> p
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoKitKatImpl -> android.support.v4.view.a.g:
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoStubImpl -> android.support.v4.view.a.h:
+    void addAction(java.lang.Object,int) -> a
+    int getActions(java.lang.Object) -> a
+    void getBoundsInParent(java.lang.Object,android.graphics.Rect) -> a
+    void getBoundsInScreen(java.lang.Object,android.graphics.Rect) -> b
+    java.lang.CharSequence getClassName(java.lang.Object) -> b
+    java.lang.CharSequence getContentDescription(java.lang.Object) -> c
+    java.lang.CharSequence getPackageName(java.lang.Object) -> d
+    java.lang.CharSequence getText(java.lang.Object) -> e
+    boolean isCheckable(java.lang.Object) -> f
+    boolean isChecked(java.lang.Object) -> g
+    boolean isClickable(java.lang.Object) -> h
+    boolean isEnabled(java.lang.Object) -> i
+    boolean isFocusable(java.lang.Object) -> j
+    boolean isFocused(java.lang.Object) -> k
+    boolean isLongClickable(java.lang.Object) -> l
+    boolean isPassword(java.lang.Object) -> m
+    boolean isScrollable(java.lang.Object) -> n
+    boolean isSelected(java.lang.Object) -> o
+    void setClassName(java.lang.Object,java.lang.CharSequence) -> a
+    void setScrollable(java.lang.Object,boolean) -> a
+    java.lang.String getViewIdResourceName(java.lang.Object) -> p
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs -> android.support.v4.view.a.i:
+    void addAction(java.lang.Object,int) -> a
+    int getActions(java.lang.Object) -> a
+    void getBoundsInParent(java.lang.Object,android.graphics.Rect) -> a
+    void getBoundsInScreen(java.lang.Object,android.graphics.Rect) -> b
+    java.lang.CharSequence getClassName(java.lang.Object) -> b
+    java.lang.CharSequence getContentDescription(java.lang.Object) -> c
+    java.lang.CharSequence getPackageName(java.lang.Object) -> d
+    java.lang.CharSequence getText(java.lang.Object) -> e
+    boolean isCheckable(java.lang.Object) -> f
+    boolean isChecked(java.lang.Object) -> g
+    boolean isClickable(java.lang.Object) -> h
+    boolean isEnabled(java.lang.Object) -> i
+    boolean isFocusable(java.lang.Object) -> j
+    boolean isFocused(java.lang.Object) -> k
+    boolean isLongClickable(java.lang.Object) -> l
+    boolean isPassword(java.lang.Object) -> m
+    boolean isScrollable(java.lang.Object) -> n
+    boolean isSelected(java.lang.Object) -> o
+    void setClassName(java.lang.Object,java.lang.CharSequence) -> a
+    void setScrollable(java.lang.Object,boolean) -> a
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatJellybeanMr2 -> android.support.v4.view.a.j:
+    java.lang.String getViewIdResourceName(java.lang.Object) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat -> android.support.v4.view.a.k:
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl IMPL -> a
+    java.lang.Object mProvider -> b
+    java.lang.Object getProvider() -> a
+    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int) -> a
+    boolean performAction(int,int,android.os.Bundle) -> a
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl -> android.support.v4.view.a.l:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompat) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl -> android.support.v4.view.a.m:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompat) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1 -> android.support.v4.view.a.n:
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat val$compat -> a
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl this$0 -> b
+    boolean performAction(int,int,android.os.Bundle) -> a
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> a
+    java.lang.Object createAccessibilityNodeInfo(int) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl -> android.support.v4.view.a.o:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompat) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1 -> android.support.v4.view.a.p:
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat val$compat -> a
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl this$0 -> b
+    boolean performAction(int,int,android.os.Bundle) -> a
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> a
+    java.lang.Object createAccessibilityNodeInfo(int) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl -> android.support.v4.view.a.q:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompat) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean -> android.support.v4.view.a.r:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$1 -> android.support.v4.view.a.s:
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge val$bridge -> a
+    android.view.accessibility.AccessibilityNodeInfo createAccessibilityNodeInfo(int) -> createAccessibilityNodeInfo
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> findAccessibilityNodeInfosByText
+    boolean performAction(int,int,android.os.Bundle) -> performAction
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge -> android.support.v4.view.a.t:
+    java.lang.Object createAccessibilityNodeInfo(int) -> a
+    boolean performAction(int,int,android.os.Bundle) -> a
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat -> android.support.v4.view.a.u:
+    java.lang.Object newAccessibilityNodeProviderBridge(android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge) -> a
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$1 -> android.support.v4.view.a.v:
+    android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge val$bridge -> a
+    android.view.accessibility.AccessibilityNodeInfo createAccessibilityNodeInfo(int) -> createAccessibilityNodeInfo
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> findAccessibilityNodeInfosByText
+    boolean performAction(int,int,android.os.Bundle) -> performAction
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge -> android.support.v4.view.a.w:
+    java.lang.Object createAccessibilityNodeInfo(int) -> a
+    boolean performAction(int,int,android.os.Bundle) -> a
+    java.util.List findAccessibilityNodeInfosByText(java.lang.String,int) -> a
+android.support.v4.view.accessibility.AccessibilityRecordCompat -> android.support.v4.view.a.x:
+    android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordImpl IMPL -> a
+    java.lang.Object mRecord -> b
+    android.support.v4.view.accessibility.AccessibilityRecordCompat obtain() -> a
+    void setScrollable(boolean) -> a
+    void setItemCount(int) -> a
+    void setFromIndex(int) -> b
+    void setToIndex(int) -> c
+    int hashCode() -> hashCode
+    boolean equals(java.lang.Object) -> equals
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordIcsImpl -> android.support.v4.view.a.y:
+    java.lang.Object obtain() -> a
+    void setFromIndex(java.lang.Object,int) -> a
+    void setItemCount(java.lang.Object,int) -> b
+    void setScrollable(java.lang.Object,boolean) -> a
+    void setToIndex(java.lang.Object,int) -> c
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl -> android.support.v4.view.a.z:
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordImpl -> android.support.v4.view.a.aa:
+    java.lang.Object obtain() -> a
+    void setScrollable(java.lang.Object,boolean) -> a
+    void setItemCount(java.lang.Object,int) -> b
+    void setFromIndex(java.lang.Object,int) -> a
+    void setToIndex(java.lang.Object,int) -> c
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl -> android.support.v4.view.a.ab:
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordStubImpl -> android.support.v4.view.a.ac:
+    java.lang.Object obtain() -> a
+    void setFromIndex(java.lang.Object,int) -> a
+    void setItemCount(java.lang.Object,int) -> b
+    void setScrollable(java.lang.Object,boolean) -> a
+    void setToIndex(java.lang.Object,int) -> c
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcs -> android.support.v4.view.a.ad:
+    java.lang.Object obtain() -> a
+    void setFromIndex(java.lang.Object,int) -> a
+    void setItemCount(java.lang.Object,int) -> b
+    void setScrollable(java.lang.Object,boolean) -> a
+    void setToIndex(java.lang.Object,int) -> c
+android.support.v4.widget.EdgeEffectCompat -> android.support.v4.b.a:
+    java.lang.Object mEdgeEffect -> a
+    android.support.v4.widget.EdgeEffectCompat$EdgeEffectImpl IMPL -> b
+    void setSize(int,int) -> a
+    boolean isFinished() -> a
+    void finish() -> b
+    boolean onPull(float) -> a
+    boolean onRelease() -> c
+    boolean draw(android.graphics.Canvas) -> a
+android.support.v4.widget.EdgeEffectCompat$BaseEdgeEffectImpl -> android.support.v4.b.b:
+    java.lang.Object newEdgeEffect(android.content.Context) -> a
+    void setSize(java.lang.Object,int,int) -> a
+    boolean isFinished(java.lang.Object) -> a
+    void finish(java.lang.Object) -> b
+    boolean onPull(java.lang.Object,float) -> a
+    boolean onRelease(java.lang.Object) -> c
+    boolean draw(java.lang.Object,android.graphics.Canvas) -> a
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectIcsImpl -> android.support.v4.b.c:
+    java.lang.Object newEdgeEffect(android.content.Context) -> a
+    void setSize(java.lang.Object,int,int) -> a
+    boolean isFinished(java.lang.Object) -> a
+    void finish(java.lang.Object) -> b
+    boolean onPull(java.lang.Object,float) -> a
+    boolean onRelease(java.lang.Object) -> c
+    boolean draw(java.lang.Object,android.graphics.Canvas) -> a
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectImpl -> android.support.v4.b.d:
+    java.lang.Object newEdgeEffect(android.content.Context) -> a
+    void setSize(java.lang.Object,int,int) -> a
+    boolean isFinished(java.lang.Object) -> a
+    void finish(java.lang.Object) -> b
+    boolean onPull(java.lang.Object,float) -> a
+    boolean onRelease(java.lang.Object) -> c
+    boolean draw(java.lang.Object,android.graphics.Canvas) -> a
+android.support.v4.widget.EdgeEffectCompatIcs -> android.support.v4.b.e:
+    java.lang.Object newEdgeEffect(android.content.Context) -> a
+    void setSize(java.lang.Object,int,int) -> a
+    boolean isFinished(java.lang.Object) -> a
+    void finish(java.lang.Object) -> b
+    boolean onPull(java.lang.Object,float) -> a
+    boolean onRelease(java.lang.Object) -> c
+    boolean draw(java.lang.Object,android.graphics.Canvas) -> a
+com.myth.cici.BaseActivity -> com.myth.cici.a:
+    android.app.Activity mActivity -> a
+    android.widget.FrameLayout mContentLayout -> b
+    android.widget.FrameLayout mBottomLayout -> c
+    void onCreate(android.os.Bundle) -> onCreate
+    android.widget.ImageView getBottomLeftView() -> a
+    void setBottomGone() -> b
+    void setBottomVisible() -> c
+    void addBottomRightView(android.view.View,android.view.ViewGroup$LayoutParams) -> a
+    void addBottomCenterView(android.view.View,android.view.ViewGroup$LayoutParams) -> b
+    void setContentView(int) -> setContentView
+com.myth.cici.BaseActivity$1 -> com.myth.cici.b:
+    com.myth.cici.BaseActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
+    java.util.HashMap colorMap -> d
+    android.graphics.Typeface typeface -> a
+    java.lang.String[] TypefaceString -> b
+    int[] bgimgList -> c
+    void onCreate() -> onCreate
+    com.myth.cici.entity.ColorEntity getColorById(int) -> a
+    void setTypeface(android.content.Context,int) -> a
+    void setDefaultTypeface(android.content.Context,int) -> b
+    int getDefaulTypeface(android.content.Context) -> a
+com.myth.cici.activity.AboutActivity -> com.myth.cici.activity.AboutActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+com.myth.cici.activity.CiActivity -> com.myth.cici.activity.CiActivity:
+    java.util.ArrayList ciList -> d
+    com.myth.cici.entity.Cipai cipai -> e
+    int num -> f
+    android.widget.TextView content -> g
+    boolean isIntroduce -> h
+    boolean isRandom -> i
+    com.myth.cici.entity.Ci ci -> j
+    android.widget.TextView title -> k
+    com.myth.cici.wiget.CircleEditView editView -> l
+    void onCreate(android.os.Bundle) -> onCreate
+    void getRandomCi() -> d
+    void setColor() -> e
+    void initView() -> f
+    void initBottomRightView() -> g
+    void refreshRandomView() -> h
+    void initContentView() -> i
+    android.app.Activity access$0(com.myth.cici.activity.CiActivity) -> a
+    com.myth.cici.entity.Ci access$1(com.myth.cici.activity.CiActivity) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.activity.CiActivity) -> c
+    void access$3(com.myth.cici.activity.CiActivity) -> d
+    void access$4(com.myth.cici.activity.CiActivity) -> e
+    int access$5(com.myth.cici.activity.CiActivity) -> f
+    void access$6(com.myth.cici.activity.CiActivity,int) -> a
+    java.util.ArrayList access$7(com.myth.cici.activity.CiActivity) -> g
+    void access$8(com.myth.cici.activity.CiActivity,com.myth.cici.entity.Ci) -> a
+    void access$9(com.myth.cici.activity.CiActivity) -> h
+com.myth.cici.activity.CiActivity$1 -> com.myth.cici.activity.a:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$2 -> com.myth.cici.activity.b:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$3 -> com.myth.cici.activity.c:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$4 -> com.myth.cici.activity.d:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$5 -> com.myth.cici.activity.e:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity -> com.myth.cici.activity.CipaiActivity:
+    java.util.ArrayList ciList -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    android.support.v4.view.ViewPager gallery -> g
+    com.myth.cici.wiget.SwitchPoint switchPoint -> d
+    android.support.v4.view.PagerAdapter galleryAdapter -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    java.util.ArrayList access$0(com.myth.cici.activity.CipaiActivity) -> a
+    android.app.Activity access$1(com.myth.cici.activity.CipaiActivity) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.activity.CipaiActivity) -> c
+    android.support.v4.view.ViewPager access$3(com.myth.cici.activity.CipaiActivity) -> d
+com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.f:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    java.lang.Object instantiateItem(android.view.ViewGroup,int) -> a
+    void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> a
+    boolean isViewFromObject(android.view.View,java.lang.Object) -> a
+    int getItemPosition(java.lang.Object) -> a
+    int getCount() -> a
+    com.myth.cici.activity.CipaiActivity access$0(com.myth.cici.activity.CipaiActivity$1) -> a
+com.myth.cici.activity.CipaiActivity$1$1 -> com.myth.cici.activity.g:
+    com.myth.cici.activity.CipaiActivity$1 this$1 -> a
+    int val$position -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity$2 -> com.myth.cici.activity.h:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity$3 -> com.myth.cici.activity.i:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    void onPageSelected(int) -> a
+    void onPageScrolled(int,float,int) -> a
+    void onPageScrollStateChanged(int) -> b
+com.myth.cici.activity.CipaiListActivity -> com.myth.cici.activity.CipaiListActivity:
+    android.widget.HorizontalScrollView scrollView -> d
+    android.widget.LinearLayout linearLayout -> e
+    java.util.ArrayList ciList -> f
+    java.util.ArrayList ciList1 -> g
+    java.util.ArrayList ciList2 -> h
+    boolean isDefault -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void onStart() -> onStart
+    void initView() -> d
+    void addView() -> e
+    boolean access$0(com.myth.cici.activity.CipaiListActivity) -> a
+    void access$1(com.myth.cici.activity.CipaiListActivity,boolean) -> a
+    java.util.ArrayList access$2(com.myth.cici.activity.CipaiListActivity) -> b
+    void access$3(com.myth.cici.activity.CipaiListActivity,java.util.ArrayList) -> a
+    void access$4(com.myth.cici.activity.CipaiListActivity) -> c
+    java.util.ArrayList access$5(com.myth.cici.activity.CipaiListActivity) -> d
+    android.widget.HorizontalScrollView access$6(com.myth.cici.activity.CipaiListActivity) -> e
+com.myth.cici.activity.CipaiListActivity$1 -> com.myth.cici.activity.j:
+    com.myth.cici.activity.CipaiListActivity this$0 -> a
+    android.widget.TextView val$rectLeft -> b
+    android.widget.TextView val$rectRight -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiListActivity$2 -> com.myth.cici.activity.k:
+    com.myth.cici.activity.CipaiListActivity this$0 -> a
+    android.widget.TextView val$rectLeft -> b
+    android.widget.TextView val$rectRight -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiListActivity$3 -> com.myth.cici.activity.l:
+    com.myth.cici.activity.CipaiListActivity this$0 -> a
+    void run() -> run
+com.myth.cici.activity.CipaiSearchActivity -> com.myth.cici.activity.CipaiSearchActivity:
+    android.view.View clear -> e
+    android.widget.ListView listview -> f
+    com.myth.cici.adapter.CipaiAdapter adapter -> g
+    java.util.ArrayList ciList -> h
+    java.util.ArrayList sortList -> i
+    android.widget.EditText search -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void refreshData() -> d
+    java.util.ArrayList searchCipai(java.lang.String) -> a
+    void initView() -> e
+    android.app.Activity access$0(com.myth.cici.activity.CipaiSearchActivity) -> a
+    java.util.ArrayList access$1(com.myth.cici.activity.CipaiSearchActivity) -> b
+    android.view.View access$2(com.myth.cici.activity.CipaiSearchActivity) -> c
+    void access$3(com.myth.cici.activity.CipaiSearchActivity) -> d
+com.myth.cici.activity.CipaiSearchActivity$1 -> com.myth.cici.activity.m:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.myth.cici.activity.CipaiSearchActivity$2 -> com.myth.cici.activity.n:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiSearchActivity$3 -> com.myth.cici.activity.o:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiSearchActivity$4 -> com.myth.cici.activity.p:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.myth.cici.activity.EditActivity -> com.myth.cici.activity.EditActivity:
+    com.myth.cici.entity.Cipai cipai -> h
+    com.myth.cici.entity.Writing writing -> i
+    com.myth.cici.fragment.ChangeBackgroundFragment changeBackgroundFrament -> d
+    com.myth.cici.fragment.EditFragment editFragment -> e
+    com.myth.cici.fragment.ChangePictureFragment changePictureFragment -> f
+    java.util.ArrayList fragments -> g
+    int currentIndex -> j
+    java.lang.String oldText -> k
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> e
+    void changeFragment(int) -> a
+    void exit() -> d
+    void onBackPressed() -> onBackPressed
+    int access$0(com.myth.cici.activity.EditActivity) -> a
+    com.myth.cici.entity.Writing access$1(com.myth.cici.activity.EditActivity) -> b
+    android.app.Activity access$2(com.myth.cici.activity.EditActivity) -> c
+com.myth.cici.activity.EditActivity$1 -> com.myth.cici.activity.q:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$2 -> com.myth.cici.activity.r:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$3 -> com.myth.cici.activity.s:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$4 -> com.myth.cici.activity.t:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$5 -> com.myth.cici.activity.u:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$6 -> com.myth.cici.activity.v:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.activity.MainActivity -> com.myth.cici.activity.MainActivity:
+    android.widget.RelativeLayout viewPagerContainer -> d
+    android.support.v4.view.ViewPager viewPager -> e
+    java.util.ArrayList writings -> f
+    com.myth.cici.activity.MainActivity$MyPagerAdapter pagerAdapter -> g
+    int currentpage -> h
+    boolean firstIn -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void layoutItemContainer(android.view.View) -> a
+    void onResume() -> onResume
+    void refresh() -> d
+    android.app.Activity access$0(com.myth.cici.activity.MainActivity) -> a
+    void access$1(com.myth.cici.activity.MainActivity,int) -> a
+    android.widget.RelativeLayout access$2(com.myth.cici.activity.MainActivity) -> b
+    android.support.v4.view.ViewPager access$3(com.myth.cici.activity.MainActivity) -> c
+com.myth.cici.activity.MainActivity$1 -> com.myth.cici.activity.w:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.myth.cici.activity.MainActivity$2 -> com.myth.cici.activity.x:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.MainActivity$3 -> com.myth.cici.activity.y:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.MainActivity$MyOnPageChangeListener -> com.myth.cici.activity.z:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onPageSelected(int) -> a
+    void onPageScrolled(int,float,int) -> a
+    void onPageScrollStateChanged(int) -> b
+com.myth.cici.activity.MainActivity$MyPagerAdapter -> com.myth.cici.activity.aa:
+    java.util.ArrayList datas -> b
+    com.myth.cici.activity.MainActivity this$0 -> a
+    int getCount() -> a
+    boolean isNoWriting() -> d
+    void setWritings(java.util.ArrayList) -> a
+    boolean isViewFromObject(android.view.View,java.lang.Object) -> a
+    java.lang.Object instantiateItem(android.view.ViewGroup,int) -> a
+    void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> a
+    int getItemPosition(java.lang.Object) -> a
+com.myth.cici.activity.SettingActivity -> com.myth.cici.activity.SettingActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void refreshYun() -> e
+    void refreshTypeface() -> f
+    android.app.Activity access$0(com.myth.cici.activity.SettingActivity) -> a
+    void access$1(com.myth.cici.activity.SettingActivity) -> b
+    void access$2(com.myth.cici.activity.SettingActivity) -> c
+com.myth.cici.activity.SettingActivity$1 -> com.myth.cici.activity.ab:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$1) -> a
+com.myth.cici.activity.SettingActivity$1$1 -> com.myth.cici.activity.ac:
+    com.myth.cici.activity.SettingActivity$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.SettingActivity$2 -> com.myth.cici.activity.ad:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$2) -> a
+com.myth.cici.activity.SettingActivity$2$1 -> com.myth.cici.activity.ae:
+    com.myth.cici.activity.SettingActivity$2 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.SettingActivity$3 -> com.myth.cici.activity.af:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareActivity -> com.myth.cici.activity.ShareActivity:
+    com.myth.cici.entity.Cipai cipai -> e
+    com.myth.cici.entity.Writing writing -> f
+    android.widget.LinearLayout content -> g
+    int rela1 -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void layoutItemContainer(android.view.View) -> a
+    void scaleRotateIn(android.view.View,long,long) -> a
+    java.lang.String saveImage() -> e
+    android.app.Activity access$0(com.myth.cici.activity.ShareActivity) -> a
+    java.lang.String access$1(com.myth.cici.activity.ShareActivity) -> b
+com.myth.cici.activity.ShareActivity$1 -> com.myth.cici.activity.ag:
+    com.myth.cici.activity.ShareActivity this$0 -> a
+    android.widget.TextView val$title -> b
+    android.widget.TextView val$text -> c
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.ShareActivity access$0(com.myth.cici.activity.ShareActivity$1) -> a
+com.myth.cici.activity.ShareActivity$1$1 -> com.myth.cici.activity.ah:
+    com.myth.cici.activity.ShareActivity$1 this$1 -> a
+    android.widget.TextView val$title -> b
+    android.widget.TextView val$text -> c
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.ShareEditActivity -> com.myth.cici.activity.ShareEditActivity:
+    com.myth.cici.entity.Cipai cipai -> g
+    com.myth.cici.entity.Writing writing -> h
+    com.myth.cici.entity.Ci ci -> i
+    com.myth.cici.fragment.ChangeBackgroundFragment changeBackgroundFrament -> d
+    com.myth.cici.fragment.ChangePictureFragment changePictureFragment -> e
+    java.util.ArrayList fragments -> f
+    int currentIndex -> j
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void changeFragment(int) -> a
+    void onBackPressed() -> onBackPressed
+    int access$0(com.myth.cici.activity.ShareEditActivity) -> a
+    com.myth.cici.entity.Writing access$1(com.myth.cici.activity.ShareEditActivity) -> b
+    com.myth.cici.entity.Ci access$2(com.myth.cici.activity.ShareEditActivity) -> c
+    android.app.Activity access$3(com.myth.cici.activity.ShareEditActivity) -> d
+com.myth.cici.activity.ShareEditActivity$1 -> com.myth.cici.activity.ai:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareEditActivity$2 -> com.myth.cici.activity.aj:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    android.widget.ImageView val$background -> b
+    android.widget.ImageView val$picture -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareEditActivity$3 -> com.myth.cici.activity.ak:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    android.widget.ImageView val$background -> b
+    android.widget.ImageView val$picture -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity -> com.myth.cici.activity.YunSearchActivity:
+    com.myth.cici.entity.Yun yun -> d
+    android.widget.TextView yunTitle -> e
+    android.widget.TextView yunzi -> f
+    android.view.View clear -> g
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    android.view.View access$0(com.myth.cici.activity.YunSearchActivity) -> a
+    void access$1(com.myth.cici.activity.YunSearchActivity,com.myth.cici.entity.Yun) -> a
+    com.myth.cici.entity.Yun access$2(com.myth.cici.activity.YunSearchActivity) -> b
+    android.widget.TextView access$3(com.myth.cici.activity.YunSearchActivity) -> c
+    android.widget.TextView access$4(com.myth.cici.activity.YunSearchActivity) -> d
+com.myth.cici.activity.YunSearchActivity$1 -> com.myth.cici.activity.al:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    android.widget.EditText val$search -> b
+    void run() -> run
+com.myth.cici.activity.YunSearchActivity$2 -> com.myth.cici.activity.am:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity$3 -> com.myth.cici.activity.an:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    android.widget.EditText val$search -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity$4 -> com.myth.cici.activity.ao:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.myth.cici.adapter.CipaiAdapter -> com.myth.cici.a.a:
+    android.content.Context mContext -> a
+    java.util.List list -> b
+    void setList(java.util.List) -> a
+    int getCount() -> getCount
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    java.lang.Object getItem(int) -> getItem
+com.myth.cici.adapter.CipaiAdapter$ViewHolder -> com.myth.cici.a.b:
+    android.widget.TextView name -> a
+    android.widget.TextView tag -> b
+    com.myth.cici.adapter.CipaiAdapter this$0 -> c
+com.myth.cici.adapter.IntroAdapter -> com.myth.cici.a.c:
+    android.content.Context mContext -> a
+    int[] mColors -> b
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.myth.cici.adapter.IntroAdapter$ViewHolder -> com.myth.cici.a.d:
+    android.widget.ImageView imageview -> a
+    com.myth.cici.adapter.IntroAdapter this$0 -> b
+com.myth.cici.db.CiDatabaseHelper -> com.myth.cici.b.a:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getCiByCipaiId(int) -> a
+    java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
+    java.util.ArrayList getAllCi() -> a
+com.myth.cici.db.CipaiDatabaseHelper -> com.myth.cici.b.b:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllShowCipai() -> a
+    java.util.ArrayList getAllCipaiByWordCount() -> b
+    java.util.ArrayList getAllCipai() -> c
+    com.myth.cici.entity.Cipai getCipaiById(int) -> a
+    java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.ColorDatabaseHelper -> com.myth.cici.b.c:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllColor() -> a
+    java.util.ArrayList getColorListFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.DBManager -> com.myth.cici.b.d:
+    java.lang.String DB_PATH -> a
+    void initDatabase(android.content.Context) -> a
+    android.database.sqlite.SQLiteDatabase getDatabase() -> a
+com.myth.cici.db.WritingDatabaseHelper -> com.myth.cici.b.e:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllWriting(android.content.Context) -> a
+    void saveWriting(android.content.Context,com.myth.cici.entity.Writing) -> a
+    void deleteWriting(android.content.Context,com.myth.cici.entity.Writing) -> b
+    java.util.ArrayList getWritingFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.YunDatabaseHelper -> com.myth.cici.b.f:
+    java.lang.String[] YUNSHU -> b
+    java.lang.String[] YUNString -> a
+    java.util.ArrayList yunList -> c
+    void getYunList(android.content.Context) -> a
+    int getWordStone(java.lang.String) -> a
+    com.myth.cici.entity.Yun getSameYun(java.lang.String) -> b
+    java.util.ArrayList getYunListFromCursor(android.database.Cursor) -> a
+    void setDefaultYunShu(android.content.Context,int) -> a
+    int getDefaultYunShu(android.content.Context) -> b
+com.myth.cici.entity.Ci -> com.myth.cici.c.a:
+    int id -> a
+    java.lang.String author -> b
+    java.lang.String text -> c
+    java.lang.String note -> d
+    int ci_id -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Cipai getCipai() -> a
+    void setCipai(com.myth.cici.entity.Cipai) -> a
+    int getId() -> b
+    void setId(int) -> a
+    java.lang.String getAuthor() -> c
+    void setAuthor(java.lang.String) -> a
+    java.lang.String getText() -> d
+    void setText(java.lang.String) -> b
+    java.lang.String getNote() -> e
+    void setNote(java.lang.String) -> c
+    int getCi_id() -> f
+    void setCi_id(int) -> b
+com.myth.cici.entity.Cipai -> com.myth.cici.c.b:
+    int id -> a
+    java.lang.String name -> b
+    java.lang.String enname -> c
+    java.lang.String alias -> d
+    java.lang.String source -> e
+    int wordcount -> f
+    int tone_type -> g
+    int color_id -> h
+    java.lang.String pingze -> i
+    int parent_id -> j
+    int getId() -> a
+    void setId(int) -> a
+    java.lang.String getName() -> b
+    void setName(java.lang.String) -> a
+    java.lang.String getEnname() -> c
+    void setEnname(java.lang.String) -> b
+    void setAlias(java.lang.String) -> c
+    java.lang.String getSource() -> d
+    void setSource(java.lang.String) -> d
+    int getWordcount() -> e
+    void setWordcount(int) -> b
+    int getTone_type() -> f
+    void setTone_type(int) -> c
+    int getColor_id() -> g
+    void setColor_id(int) -> d
+    java.lang.String getPingze() -> h
+    void setPingze(java.lang.String) -> e
+    int getParent_id() -> i
+    void setParent_id(int) -> e
+com.myth.cici.entity.ColorEntity -> com.myth.cici.c.c:
+    int id -> a
+    java.lang.String name -> b
+    int red -> c
+    int green -> d
+    int blue -> e
+    int getId() -> a
+    void setId(int) -> a
+    void setName(java.lang.String) -> a
+    int getRed() -> b
+    void setRed(int) -> b
+    int getGreen() -> c
+    void setGreen(int) -> c
+    int getBlue() -> d
+    void setBlue(int) -> d
+com.myth.cici.entity.Writing -> com.myth.cici.c.d:
+    int id -> a
+    java.lang.String text -> b
+    int ci_id -> c
+    long create_dt -> d
+    long update_dt -> e
+    java.lang.String bgimg -> f
+    android.graphics.Bitmap bitmap -> g
+    com.myth.cici.entity.Cipai cipai -> h
+    int getId() -> a
+    void setId(int) -> a
+    java.lang.String getText() -> b
+    void setText(java.lang.String) -> a
+    long getCreate_dt() -> c
+    void setCreate_dt(long) -> a
+    long getUpdate_dt() -> d
+    void setUpdate_dt(long) -> b
+    java.lang.String getBgimg() -> e
+    void setBgimg(java.lang.String) -> b
+    int getCi_id() -> f
+    void setCi_id(int) -> b
+    android.graphics.Bitmap getBitmap() -> g
+    void setBitmap(android.graphics.Bitmap) -> a
+    com.myth.cici.entity.Cipai getCipai() -> h
+    void setCipai(com.myth.cici.entity.Cipai) -> a
+com.myth.cici.entity.Yun -> com.myth.cici.c.e:
+    int tone -> a
+    java.lang.String glys -> b
+    java.lang.String section_desc -> c
+    java.lang.String tone_name -> d
+    int getTone() -> a
+    void setTone(int) -> a
+    java.lang.String getGlys() -> b
+    void setGlys(java.lang.String) -> a
+    java.lang.String getTone_name() -> c
+    void setTone_name(java.lang.String) -> b
+    java.lang.String getSection_desc() -> d
+    void setSection_desc(java.lang.String) -> c
+com.myth.cici.fragment.ChangeBackgroundFragment -> com.myth.cici.d.a:
+    android.content.Context mContext -> a
+    android.widget.LinearLayout content -> b
+    android.widget.TextView text -> c
+    com.myth.cici.entity.Cipai cipai -> d
+    com.myth.cici.entity.Writing writing -> e
+    int bg_index -> f
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void refresh() -> b
+    void initViews(android.view.View) -> a
+    void layoutItemContainer(android.view.View) -> b
+    void access$0(com.myth.cici.fragment.ChangeBackgroundFragment,int) -> a
+    android.widget.LinearLayout access$1(com.myth.cici.fragment.ChangeBackgroundFragment) -> a
+com.myth.cici.fragment.ChangeBackgroundFragment$1 -> com.myth.cici.d.b:
+    com.myth.cici.fragment.ChangeBackgroundFragment this$0 -> a
+    int val$index -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.ChangePictureFragment -> com.myth.cici.d.c:
+    android.content.Context mContext -> a
+    android.widget.LinearLayout content -> b
+    android.widget.TextView text -> c
+    android.graphics.Bitmap srcBitmap -> d
+    android.graphics.Bitmap destBitmap -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Writing writing -> g
+    int bright -> h
+    int radius -> i
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void refresh() -> b
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void initViews(android.view.View) -> a
+    void drawPicture(int,int) -> a
+    void layoutItemContainer(android.view.View) -> b
+    int access$0(com.myth.cici.fragment.ChangePictureFragment) -> a
+    int access$1(com.myth.cici.fragment.ChangePictureFragment) -> b
+    void access$2(com.myth.cici.fragment.ChangePictureFragment,int,int) -> a
+    void access$3(com.myth.cici.fragment.ChangePictureFragment,int) -> a
+    void access$4(com.myth.cici.fragment.ChangePictureFragment,int) -> b
+com.myth.cici.fragment.ChangePictureFragment$1 -> com.myth.cici.d.d:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.ChangePictureFragment$2 -> com.myth.cici.d.e:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.myth.cici.fragment.ChangePictureFragment$3 -> com.myth.cici.d.f:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.myth.cici.fragment.EditFragment -> com.myth.cici.d.g:
+    android.widget.LinearLayout editContent -> a
+    java.lang.String[] sList -> b
+    android.content.Context mContext -> c
+    java.util.ArrayList editTexts -> d
+    android.view.View root -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Writing writing -> g
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void initViews(android.view.View) -> a
+    void hideSoftInputFromWindow() -> b
+    java.lang.String[] access$0(com.myth.cici.fragment.EditFragment) -> a
+    android.content.Context access$1(com.myth.cici.fragment.EditFragment) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.fragment.EditFragment) -> c
+    void access$3(com.myth.cici.fragment.EditFragment) -> d
+com.myth.cici.fragment.EditFragment$1 -> com.myth.cici.d.h:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    android.widget.EditText val$edittext -> b
+    int val$index -> c
+    android.view.View val$keyboard -> d
+    void onFocusChange(android.view.View,boolean) -> onFocusChange
+com.myth.cici.fragment.EditFragment$2 -> com.myth.cici.d.i:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.EditFragment$3 -> com.myth.cici.d.j:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.EditFragment$4 -> com.myth.cici.d.k:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    android.view.View val$keyboard -> b
+    android.view.View val$getfocus -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.util.CheckUtils -> com.myth.cici.e.a:
+    void checkEditText(android.widget.EditText,java.lang.String) -> a
+    boolean checkPingze(char,char) -> a
+    int getHanziCode(char) -> a
+    java.lang.String[] getCodeFormPingze(java.lang.String[]) -> a
+com.myth.cici.util.CheckUtils$1 -> com.myth.cici.e.b:
+    void updateDrawState(android.text.TextPaint) -> updateDrawState
+com.myth.cici.util.DateUtils -> com.myth.cici.e.c:
+    java.lang.String longToFormat(long,java.lang.String) -> a
+    java.lang.String dateToString(java.util.Date,java.lang.String) -> a
+com.myth.cici.util.DisplayUtil -> com.myth.cici.e.d:
+    int dip2px(android.content.Context,double) -> a
+com.myth.cici.util.Fastblur -> com.myth.cici.e.e:
+    android.graphics.Bitmap fastblur(android.content.Context,android.graphics.Bitmap,int) -> a
+com.myth.cici.util.FileUtils -> com.myth.cici.e.f:
+    java.lang.String ROOT_DIR -> a
+    java.lang.String BACKGROUND_DIR -> b
+    java.lang.String SHARE_DIR -> c
+    java.lang.String saveFile(android.graphics.Bitmap) -> a
+    void createDir(java.lang.String) -> a
+    java.lang.String saveFile(android.graphics.Bitmap,java.lang.String) -> a
+    byte[] Bitmap2Bytes(android.graphics.Bitmap) -> b
+com.myth.cici.util.Logs -> com.myth.cici.e.g:
+    boolean isDebuggable() -> a
+    void error(java.lang.String) -> a
+    java.lang.String getTag() -> b
+com.myth.cici.util.Logs$LogException -> com.myth.cici.e.h:
+com.myth.cici.util.MD5 -> com.myth.cici.e.i:
+    java.lang.String byte2Hex(byte) -> a
+    java.lang.String MD5_32(byte[]) -> a
+    java.lang.String MD5_16(byte[]) -> b
+com.myth.cici.util.OthersUtils -> com.myth.cici.e.j:
+    void copy(java.lang.String,android.content.Context) -> a
+    void shareMsg(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    android.graphics.Bitmap createViewBitmap(android.view.View) -> a
+    boolean isChinese(char) -> a
+    java.lang.String getFirstChinese(java.lang.String) -> a
+    int getDisplayWidth(android.content.Context) -> a
+    int getDisplayWidthBySystemService(android.content.Context) -> b
+com.myth.cici.util.ResizeUtil -> com.myth.cici.e.k:
+    float sysWidth -> a
+    int resize(android.content.Context,float) -> a
+com.myth.cici.util.StringUtils -> com.myth.cici.e.l:
+    boolean isEmpty(java.lang.String) -> a
+    boolean isNumeric(java.lang.String) -> b
+com.myth.cici.wiget.CipaiItem -> com.myth.cici.wiget.a:
+    com.myth.cici.wiget.CipaiItem$ViewHolder holder1 -> a
+    com.myth.cici.wiget.CipaiItem$ViewHolder holder2 -> b
+    android.content.Context mContext -> c
+    void initView() -> a
+    void initHolderView(com.myth.cici.wiget.CipaiItem$ViewHolder) -> a
+    android.content.Context access$0(com.myth.cici.wiget.CipaiItem) -> a
+com.myth.cici.wiget.CipaiItem$1 -> com.myth.cici.wiget.b:
+    com.myth.cici.wiget.CipaiItem this$0 -> a
+    com.myth.cici.wiget.CipaiItem$ViewHolder val$holder -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.CipaiItem$ViewHolder -> com.myth.cici.wiget.c:
+    com.myth.cici.entity.Cipai cipai -> a
+    android.view.View item -> b
+    android.widget.RelativeLayout head -> c
+    android.view.ViewGroup middle -> d
+    android.widget.TextView num -> e
+    android.widget.TextView name -> f
+    com.myth.cici.wiget.VerticalTextView enname -> g
+    com.myth.cici.wiget.CipaiItem this$0 -> h
+com.myth.cici.wiget.CircleEditView -> com.myth.cici.wiget.d:
+    int mColor -> a
+    void setmColor(int) -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.CircleTextView -> com.myth.cici.wiget.e:
+    int mColor -> a
+    java.lang.String mText -> b
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.GCDialog -> com.myth.cici.wiget.f:
+    android.view.View titleLayout -> b
+    android.widget.TextView titleView -> c
+    android.widget.TextView contentView -> d
+    android.widget.TextView confirmView -> e
+    android.widget.TextView cancelView -> f
+    android.view.View devideLine -> g
+    android.content.Context context -> a
+    com.myth.cici.wiget.GCDialog$OnCustomDialogListener listener -> h
+    android.os.Bundle bundle -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    com.myth.cici.wiget.GCDialog$OnCustomDialogListener access$0(com.myth.cici.wiget.GCDialog) -> a
+com.myth.cici.wiget.GCDialog$1 -> com.myth.cici.wiget.g:
+    com.myth.cici.wiget.GCDialog this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.GCDialog$2 -> com.myth.cici.wiget.h:
+    com.myth.cici.wiget.GCDialog this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.GCDialog$OnCustomDialogListener -> com.myth.cici.wiget.i:
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.wiget.IntroductionView -> com.myth.cici.wiget.j:
+    android.content.Context mContext -> b
+    int[] mColors -> a
+    void layoutItemContainer(android.view.View) -> a
+    void initView() -> a
+com.myth.cici.wiget.MainView -> com.myth.cici.wiget.k:
+    android.content.Context mContext -> a
+    void initView() -> a
+    android.content.Context access$0(com.myth.cici.wiget.MainView) -> a
+com.myth.cici.wiget.MainView$1 -> com.myth.cici.wiget.l:
+    com.myth.cici.wiget.MainView this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.MainView$2 -> com.myth.cici.wiget.m:
+    com.myth.cici.wiget.MainView this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.PingzeLinearlayout -> com.myth.cici.wiget.n:
+com.myth.cici.wiget.PingzeView -> com.myth.cici.wiget.o:
+    int mType -> a
+    android.content.Context mContext -> b
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.StoneView -> com.myth.cici.wiget.p:
+    java.lang.String[] typeString -> a
+    int mType -> b
+    int mColor -> c
+    java.lang.String getYunString(int) -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.SwitchPoint -> com.myth.cici.wiget.SwitchPoint:
+    android.content.Context context -> a
+    void addSwitchBtn(int,int,int,int) -> a
+    void setSelectedSwitchBtn(int) -> a
+com.myth.cici.wiget.TouchEffectImageView -> com.myth.cici.wiget.TouchEffectImageView:
+    boolean mDoesntSetAlpha -> a
+    void drawableStateChanged() -> drawableStateChanged
+com.myth.cici.wiget.VScrollView -> com.myth.cici.wiget.VScrollView:
+    android.content.Context mContext -> a
+    android.view.View mView -> c
+    float touchY -> d
+    int scrollY -> e
+    boolean handleStop -> f
+    int eachStep -> g
+    android.os.Handler resetPositionHandler -> b
+    void onFinishInflate() -> onFinishInflate
+    boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void commonOnTouchEvent(android.view.MotionEvent) -> a
+    boolean isNeedMove() -> a
+    void animation() -> b
+    int access$0(com.myth.cici.wiget.VScrollView) -> a
+    boolean access$1(com.myth.cici.wiget.VScrollView) -> b
+    int access$2(com.myth.cici.wiget.VScrollView) -> c
+    void access$3(com.myth.cici.wiget.VScrollView,int) -> a
+    android.view.View access$4(com.myth.cici.wiget.VScrollView) -> d
+com.myth.cici.wiget.VScrollView$1 -> com.myth.cici.wiget.q:
+    com.myth.cici.wiget.VScrollView this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.myth.cici.wiget.VerticalTextView -> com.myth.cici.wiget.VerticalTextView:
+    boolean topDown -> a
+    void onMeasure(int,int) -> onMeasure
+    boolean setFrame(int,int,int,int) -> setFrame
+    void draw(android.graphics.Canvas) -> draw
+com.myth.cici.wiget.WritingView -> com.myth.cici.wiget.r:
+    android.content.Context mContext -> a
+    com.myth.cici.entity.Writing writing -> b
+    void initView() -> a
+    void layoutItemContainer(android.view.View) -> a
+    android.content.Context access$0(com.myth.cici.wiget.WritingView) -> a
+    com.myth.cici.entity.Writing access$1(com.myth.cici.wiget.WritingView) -> b
+com.myth.cici.wiget.WritingView$1 -> com.myth.cici.wiget.s:
+    com.myth.cici.wiget.WritingView this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+    com.myth.cici.wiget.WritingView access$0(com.myth.cici.wiget.WritingView$1) -> a
+com.myth.cici.wiget.WritingView$1$1 -> com.myth.cici.wiget.t:
+    com.myth.cici.wiget.WritingView$1 this$1 -> a
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.wiget.WritingView$2 -> com.myth.cici.wiget.u:
+    com.myth.cici.wiget.WritingView this$0 -> a
+    android.app.AlertDialog val$dialog -> b
+    void onClick(android.view.View) -> onClick

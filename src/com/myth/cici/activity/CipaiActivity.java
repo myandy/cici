@@ -37,6 +37,8 @@ public class CipaiActivity extends BaseActivity
 
     SwitchPoint switchPoint;
 
+    private int maxLines;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -98,6 +100,15 @@ public class CipaiActivity extends BaseActivity
         title.setTextSize(50);
         title.setText(cipai.getName());
 
+        if (cipai.getName().length() == 4)
+        {
+            maxLines = 7;
+        }
+        else
+        {
+            maxLines = 9;
+        }
+
         gallery = (ViewPager) findViewById(R.id.gc_main_gallery);
 
         switchPoint = (SwitchPoint) findViewById(R.id.gc_main_dot);
@@ -150,7 +161,7 @@ public class CipaiActivity extends BaseActivity
         {
             View root = getLayoutInflater().inflate(R.layout.layout_textview, null);
 
-            LayoutParams param = new LayoutParams(100, 100);
+            LayoutParams param = new LayoutParams(-1, -1);
             // TextView textView = new TextView(mActivity);
             // container.addView(textView, param);
 
@@ -160,10 +171,10 @@ public class CipaiActivity extends BaseActivity
             String text = ciList.get(position % ciList.size()).getText();
             if (!TextUtils.isEmpty(ciList.get(position % ciList.size()).getAuthor()))
             {
-                text = ciList.get(position % ciList.size()).getAuthor() + "\n" + "\n" + text;
+                text = ciList.get(position % ciList.size()).getAuthor() + "\n" + text;
             }
             textView.setText(text);
-
+            textView.setMaxLines(maxLines);
             textView.setOnClickListener(new OnClickListener()
             {
 

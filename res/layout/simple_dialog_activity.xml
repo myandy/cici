@@ -58,16 +58,16 @@
             android:layout_alignParentBottom="true"
             android:gravity="center_vertical" >
 
-            <!-- 取消 -->
+            <!-- 立即观看 -->
 
             <TextView
-                android:id="@+id/simple_dialog_cancel"
+                android:id="@+id/simple_dialog_confirm"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/cancel"
+                android:text="@string/confirm"
                 android:textColor="#1887dc"
                 android:textSize="16sp" />
 
@@ -78,15 +78,15 @@
                 android:layout_below="@id/simple_dialog_content"
                 android:background="#e2e4e5" />
 
-            <!-- 立即观看 -->
+            <!-- 取消 -->
 
             <TextView
-                android:id="@+id/simple_dialog_confirm"
+                android:id="@+id/simple_dialog_cancel"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/confirm"
+                android:text="@string/cancel"
                 android:textColor="#1887dc"
                 android:textSize="16sp" />
         </LinearLayout>

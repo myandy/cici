@@ -48,22 +48,24 @@
                 android:id="@+id/author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 />
             <TextView
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
+                android:lineSpacingMultiplier="1.2"
                 android:layout_below="@id/author"
                 />
             <TextView
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/white_hint"
                 android:layout_below="@id/content"
+                android:lineSpacingMultiplier="1.2"
                 android:layout_marginTop="10dp"
                 />
             <WebView

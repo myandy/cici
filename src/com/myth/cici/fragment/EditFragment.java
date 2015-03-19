@@ -74,11 +74,11 @@ public class EditFragment extends Fragment
         }
         else if (writing.getBitmap() != null)
         {
-            root.setBackground(new BitmapDrawable(getResources(), writing.getBitmap()));
+            root.setBackgroundDrawable(new BitmapDrawable(getResources(), writing.getBitmap()));
         }
         else
         {
-            root.setBackground(new BitmapDrawable(getResources(), writing.getBgimg()));
+            root.setBackgroundDrawable(new BitmapDrawable(getResources(), writing.getBgimg()));
         }
     }
 
