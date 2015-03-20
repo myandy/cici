@@ -9,6 +9,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.umeng.analytics.MobclickAgent;
+
 public class BaseActivity extends Activity
 {
 
@@ -41,6 +43,20 @@ public class BaseActivity extends Activity
             }
         });
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     protected ImageView getBottomLeftView()

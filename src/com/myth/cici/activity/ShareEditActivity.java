@@ -102,7 +102,7 @@ public class ShareEditActivity extends BaseActivity
 
         final ImageView background = new TouchEffectImageView(mActivity, null);
         background.setScaleType(ScaleType.FIT_XY);
-        background.setImageResource(R.drawable.layout_bg_paper);
+        background.setImageResource(R.drawable.layout_bg_paper_selected);
 
         final ImageView picture = new TouchEffectImageView(mActivity, null);
         picture.setScaleType(ScaleType.FIT_XY);
