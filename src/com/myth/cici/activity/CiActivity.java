@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -23,6 +24,7 @@ import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.entity.Ci;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
+import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.wiget.CircleEditView;
 import com.myth.cici.wiget.TouchEffectImageView;
 
@@ -103,7 +105,7 @@ public class CiActivity extends BaseActivity
     private void initView()
     {
         LinearLayout topView = (LinearLayout) findViewById(R.id.right);
-        LayoutParams param = new LayoutParams(200, 300);
+        LayoutParams param = new LayoutParams(DisplayUtil.dip2px(mActivity, 80), DisplayUtil.dip2px(mActivity, 120));
         editView = new CircleEditView(mActivity);
         topView.addView(editView, 1, param);
         setColor();
@@ -165,7 +167,8 @@ public class CiActivity extends BaseActivity
             view.setImageResource(R.drawable.random);
             view.setScaleType(ScaleType.FIT_XY);
             view.setPadding(5, 5, 5, 5);
-            addBottomRightView(view, new LayoutParams(76, 60));
+            addBottomRightView(view,
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 30.4), DisplayUtil.dip2px(mActivity, 24)));
             view.setOnClickListener(new OnClickListener()
             {
 
@@ -182,7 +185,8 @@ public class CiActivity extends BaseActivity
             ImageView prev = new TouchEffectImageView(mActivity, null);
             prev.setImageResource(R.drawable.prev);
             prev.setScaleType(ScaleType.FIT_XY);
-            addBottomRightView(prev, new LayoutParams(106, 106));
+            addBottomRightView(prev,
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42), DisplayUtil.dip2px(mActivity, 42)));
             prev.setOnClickListener(new OnClickListener()
             {
 
@@ -201,7 +205,8 @@ public class CiActivity extends BaseActivity
             ImageView next = new TouchEffectImageView(mActivity, null);
             next.setImageResource(R.drawable.next);
             next.setScaleType(ScaleType.FIT_XY);
-            addBottomRightView(next, new LayoutParams(106, 106));
+            addBottomRightView(next,
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42), DisplayUtil.dip2px(mActivity, 42)));
             next.setOnClickListener(new OnClickListener()
             {
 
@@ -234,6 +239,9 @@ public class CiActivity extends BaseActivity
         {
             WebView intro = (WebView) findViewById(R.id.intro);
             intro.setBackgroundColor(0);
+            intro.setVisibility(View.VISIBLE);
+            WebSettings settings = intro.getSettings();
+            settings.setDefaultTextEncodingName("UTF-8");
             intro.loadUrl("file:///android_asset/intro.html");
             content.setText(cipai.getSource());
         }

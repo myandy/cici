@@ -22,6 +22,7 @@ import com.myth.cici.db.CiDatabaseHelper;
 import com.myth.cici.entity.Ci;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
+import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.CircleTextView;
 import com.myth.cici.wiget.SwitchPoint;
@@ -62,7 +63,7 @@ public class CipaiActivity extends BaseActivity
     {
         TextView writeTV = new TextView(mActivity);
         writeTV.setText("填词");
-        writeTV.setTextSize(20);
+        writeTV.setTextSize(18);
         writeTV.setTypeface(MyApplication.typeface);
         writeTV.setOnClickListener(new OnClickListener()
         {
@@ -86,7 +87,8 @@ public class CipaiActivity extends BaseActivity
 
         LinearLayout topView = (LinearLayout) findViewById(R.id.top);
 
-        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(160, 160);
+        android.widget.LinearLayout.LayoutParams param = new android.widget.LinearLayout.LayoutParams(
+                DisplayUtil.dip2px(mActivity, 64), DisplayUtil.dip2px(mActivity, 64));
         
         String count = cipai.getWordcount() + "";
         if (cipai.getWordcount() < 100)
@@ -97,16 +99,16 @@ public class CipaiActivity extends BaseActivity
 
         TextView title = (TextView) findViewById(R.id.title);
         title.setTypeface(MyApplication.typeface);
-        title.setTextSize(50);
+        title.setTextSize(48);
         title.setText(cipai.getName());
 
         if (cipai.getName().length() == 4)
         {
-            maxLines = 7;
+            maxLines = 3;
         }
         else
         {
-            maxLines = 9;
+            maxLines = 6;
         }
 
         gallery = (ViewPager) findViewById(R.id.gc_main_gallery);

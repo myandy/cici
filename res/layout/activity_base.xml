@@ -9,16 +9,16 @@
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" >
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/bottom_left"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_gravity="left|center_vertical"
             android:clickable="true"
-            android:padding="2dp"
+            android:padding="7dp"
             android:scaleType="fitXY"
             android:src="@drawable/cancel" />
 

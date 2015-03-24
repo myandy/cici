@@ -21,6 +21,7 @@ import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
 import com.myth.cici.db.WritingDatabaseHelper;
 import com.myth.cici.entity.Writing;
+import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.IntroductionView;
 import com.myth.cici.wiget.MainView;
@@ -93,7 +94,8 @@ public class MainActivity extends BaseActivity
         ImageView setting = new TouchEffectImageView(mActivity, null);
         setting.setImageResource(R.drawable.setting);
         setting.setScaleType(ScaleType.FIT_XY);
-        addBottomRightView(setting, new LayoutParams(130, 130));
+        addBottomRightView(setting,
+                new LayoutParams(DisplayUtil.dip2px(mActivity, 50), DisplayUtil.dip2px(mActivity, 50)));
         setting.setOnClickListener(new OnClickListener()
         {
 

@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
+import com.myth.cici.util.DisplayUtil;
 
 public class CircleTextView extends View
 {
@@ -15,9 +16,12 @@ public class CircleTextView extends View
 
     private String mText;
 
+    private Context mContext;
+
     public CircleTextView(Context context, String text, int color)
     {
         super(context);
+        mContext = context;
         mColor = color;
         mText = text;
     }
@@ -31,11 +35,12 @@ public class CircleTextView extends View
         paint.setColor(mColor);
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(80, 80, 76, paint);
+        canvas.drawCircle(DisplayUtil.dip2px(mContext, 32), DisplayUtil.dip2px(mContext, 32),
+                DisplayUtil.dip2px(mContext, 30), paint);
         paint.setColor(R.color.white);
-        paint.setTextSize(44);
+        paint.setTextSize(DisplayUtil.dip2px(mContext, 16));
         paint.setTypeface(MyApplication.typeface);
-        canvas.drawText(mText, 53, 93, paint);
+        canvas.drawText(mText, DisplayUtil.dip2px(mContext, 21), DisplayUtil.dip2px(mContext, 37), paint);
     }
 
 }

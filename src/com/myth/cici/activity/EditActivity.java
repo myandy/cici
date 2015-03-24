@@ -22,6 +22,7 @@ import com.myth.cici.entity.Writing;
 import com.myth.cici.fragment.ChangeBackgroundFragment;
 import com.myth.cici.fragment.ChangePictureFragment;
 import com.myth.cici.fragment.EditFragment;
+import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.util.FileUtils;
 import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.GCDialog;
@@ -87,7 +88,7 @@ public class EditActivity extends BaseActivity
         ImageView down = new TouchEffectImageView(mActivity, null);
         down.setImageResource(R.drawable.done);
         down.setScaleType(ScaleType.FIT_XY);
-        addBottomRightView(down, new LayoutParams(60, 60));
+        addBottomRightView(down, new LayoutParams(50, 50));
         down.setOnClickListener(new OnClickListener()
         {
 
@@ -184,7 +185,8 @@ public class EditActivity extends BaseActivity
             }
         });
 
-        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(99, 114);
+        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(DisplayUtil.dip2px(mActivity, 40),
+                DisplayUtil.dip2px(mActivity, 45));
         lps.leftMargin = 20;
         addBottomCenterView(edit, lps);
         addBottomCenterView(background, lps);

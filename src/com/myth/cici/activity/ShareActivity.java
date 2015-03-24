@@ -128,8 +128,8 @@ public class ShareActivity extends BaseActivity
     private void layoutItemContainer(View itemContainer)
     {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) itemContainer.getLayoutParams();
-        params.width = ResizeUtil.resize(mActivity, 600);
-        params.height = ResizeUtil.resize(mActivity, 600);
+        params.width = ResizeUtil.resize(mActivity, 640);
+        params.height = ResizeUtil.resize(mActivity, 640);
         itemContainer.setLayoutParams(params);
     }
 
@@ -139,7 +139,7 @@ public class ShareActivity extends BaseActivity
     {
         view.setVisibility(View.VISIBLE);
         ScaleAnimation animation1 = new ScaleAnimation(0, 1, 0, 1, rela1, 0.5f, rela1, 0.5f);
-        RotateAnimation animation2 = new RotateAnimation(0, 354, rela1, 0.5f, rela1, 0.5f);
+        RotateAnimation animation2 = new RotateAnimation(0, 357, rela1, 0.5f, rela1, 0.5f);
         AnimationSet animation = new AnimationSet(false);
         animation.addAnimation(animation1);
         animation.addAnimation(animation2);

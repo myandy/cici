@@ -5,14 +5,18 @@ import android.text.TextUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.myth.cici.util.DisplayUtil;
+
 public class PingzeLinearlayout extends LinearLayout
 {
 
     public PingzeLinearlayout(Context context, String code)
     {
         super(context);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(50, 50);
-        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(25, 50);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(DisplayUtil.dip2px(context, 20),
+                DisplayUtil.dip2px(context, 20));
+        LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(DisplayUtil.dip2px(context, 10),
+                DisplayUtil.dip2px(context, 20));
         setVerticalGravity(HORIZONTAL);
         for (int i = 0; i < code.length(); i++)
         {

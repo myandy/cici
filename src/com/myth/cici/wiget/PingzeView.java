@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 
 import com.myth.cici.R;
+import com.myth.cici.util.DisplayUtil;
 
 public class PingzeView extends View
 {
@@ -47,47 +48,55 @@ public class PingzeView extends View
         {
             paint.setColor(mContext.getResources().getColor(R.color.yun_white));
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(2);
-            canvas.drawCircle(25, 25, 13, paint);
+            paint.setStrokeWidth(DisplayUtil.dip2px(mContext, 1));
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
         else if (mType == TYPE_ZE)
         {
             paint.setColor(mContext.getResources().getColor(R.color.black_light));
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(25, 25, 13, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
         else if (mType == TYPE_ZHONG)
         {
             paint.setColor(mContext.getResources().getColor(R.color.yun_white));
-            paint.setStrokeWidth(2);
+            paint.setStrokeWidth(DisplayUtil.dip2px(mContext, 1));
             paint.setStyle(Paint.Style.STROKE);
-            canvas.drawCircle(25, 25, 7, paint);
-            canvas.drawCircle(25, 25, 16, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 3), paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 6), paint);
         }
         else if (mType == TYPE_ZE_YUN)
         {
             paint.setColor(mContext.getResources().getColor(R.color.pingze_red));
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(25, 25, 13, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
         else if (mType == TYPE_PING_YUN)
         {
             paint.setColor(mContext.getResources().getColor(R.color.pingze_blue));
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(25, 25, 13, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
         else if (mType == TYPE_PING_YUN_CAN)
         {
             paint.setColor(mContext.getResources().getColor(R.color.pingze_green));
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(2);
-            canvas.drawCircle(25, 25, 13, paint);
+            paint.setStrokeWidth(DisplayUtil.dip2px(mContext, 1));
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
         else if (mType == TYPE_ZE_YUN_CAN)
         {
             paint.setColor(mContext.getResources().getColor(R.color.pingze_green));
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(25, 25, 13, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10),
+                    DisplayUtil.dip2px(mContext, 5), paint);
         }
     }
 

@@ -5,6 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
+import com.myth.cici.util.DisplayUtil;
+
 public class StoneView extends View
 {
 
@@ -21,6 +23,8 @@ public class StoneView extends View
     private int mType;
 
     private int mColor;
+
+    private Context mContext;
 
     public static String getYunString(int type)
     {
@@ -51,6 +55,19 @@ public class StoneView extends View
         super(context);
         mType = type;
         mColor = color;
+        mContext = context;
+    }
+
+    public StoneView(Context context)
+    {
+        super(context);
+    }
+
+    public void setType(int type, int color)
+    {
+        mType = type;
+        mColor = color;
+        invalidate();
     }
 
     @Override
@@ -64,25 +81,31 @@ public class StoneView extends View
         if (mType == TYPE_CIRCLE)
         {
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(30, 30, 26, paint);
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 12), DisplayUtil.dip2px(mContext, 12),
+                    DisplayUtil.dip2px(mContext, 10), paint);
         }
         else if (mType == TYPE_RING)
         {
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(6);
-            canvas.drawCircle(30, 30, 22, paint);
+            paint.setStrokeWidth(DisplayUtil.dip2px(mContext, 2));
+            canvas.drawCircle(DisplayUtil.dip2px(mContext, 12), DisplayUtil.dip2px(mContext, 12),
+                    DisplayUtil.dip2px(mContext, 9), paint);
         }
         else if (mType == TYPE_PLUS)
         {
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawRect(27, 4, 33, 56, paint);
-            canvas.drawRect(4, 27, 56, 33, paint);
+            canvas.drawRect(DisplayUtil.dip2px(mContext, 11), DisplayUtil.dip2px(mContext, 2),
+                    DisplayUtil.dip2px(mContext, 13), DisplayUtil.dip2px(mContext, 22), paint);
+            canvas.drawRect(DisplayUtil.dip2px(mContext, 2), DisplayUtil.dip2px(mContext, 11),
+                    DisplayUtil.dip2px(mContext, 22), DisplayUtil.dip2px(mContext, 13), paint);
         }
         else if (mType == TYPE_PLUS1)
         {
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawRect(27, 4, 33, 56, paint);
-            canvas.drawRect(4, 27, 56, 33, paint);
+            canvas.drawRect(DisplayUtil.dip2px(mContext, 11), DisplayUtil.dip2px(mContext, 2),
+                    DisplayUtil.dip2px(mContext, 13), DisplayUtil.dip2px(mContext, 22), paint);
+            canvas.drawRect(DisplayUtil.dip2px(mContext, 2), DisplayUtil.dip2px(mContext, 11),
+                    DisplayUtil.dip2px(mContext, 22), DisplayUtil.dip2px(mContext, 13), paint);
         }
     }
 

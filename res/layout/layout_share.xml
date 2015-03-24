@@ -14,11 +14,13 @@
         android:layout_height="wrap_content"
         android:text="212"
         android:textColor="@color/black"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="300dp"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ellipsize="end"
@@ -27,6 +29,6 @@
         android:maxLines="12"
         android:text="212"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
 </LinearLayout>

@@ -15,6 +15,6 @@
         android:lineSpacingMultiplier="1.2"
         android:maxLines="9"
         android:text="22"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
 </LinearLayout>

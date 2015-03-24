@@ -7,12 +7,14 @@ import android.graphics.Paint;
 import android.view.View;
 
 import com.myth.cici.R;
+import com.myth.cici.util.DisplayUtil;
 
 public class CircleEditView extends View
 {
 
     private int mColor;
 
+    private Context mContext;
 
     public int getmColor()
     {
@@ -28,6 +30,7 @@ public class CircleEditView extends View
     public CircleEditView(Context context)
     {
         super(context);
+        mContext = context;
     }
 
 
@@ -40,8 +43,10 @@ public class CircleEditView extends View
         paint.setColor(mColor);
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(120, 120, 116, paint);
-        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.edit_white), 40, 40, paint);
+        canvas.drawCircle(DisplayUtil.dip2px(mContext, 48), DisplayUtil.dip2px(mContext, 48),
+                DisplayUtil.dip2px(mContext, 46), paint);
+        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.edit_white),
+                DisplayUtil.dip2px(mContext, 16), DisplayUtil.dip2px(mContext, 16), paint);
     }
 
 }

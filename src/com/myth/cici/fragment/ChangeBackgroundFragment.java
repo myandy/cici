@@ -5,19 +5,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
+import com.myth.cici.adapter.ImageAdapter;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
+import com.myth.cici.wiget.HorizontalListView;
 
 public class ChangeBackgroundFragment extends Fragment
 {
@@ -78,29 +77,21 @@ public class ChangeBackgroundFragment extends Fragment
 
     private void initViews(View view)
     {
-        LinearLayout imgsLayout = (LinearLayout) view.findViewById(R.id.imgs);
-
-        for (int i = 0; i < MyApplication.bgimgList.length; i++)
+        HorizontalListView imgs = (HorizontalListView) view.findViewById(R.id.imgs);
+        
+        ImageAdapter adapter=new ImageAdapter(mContext);
+        imgs.setAdapter( adapter);
+        imgs.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
-            ImageView imageView = new ImageView(mContext);
-            imageView.setScaleType(ScaleType.FIT_XY);
-            LinearLayout.LayoutParams layoutParams = new LayoutParams(300, 300);
-            imageView.setImageResource(MyApplication.bgimgList[i]);
-            imgsLayout.addView(imageView, layoutParams);
-            final int index = i;
-            imageView.setOnClickListener(new OnClickListener()
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-
-                @Override
-                public void onClick(View v)
-                {
-                    bg_index = index;
-                    content.setBackgroundResource(MyApplication.bgimgList[index]);
-                }
-            });
-
-        }
-
+                bg_index = position;
+                content.setBackgroundResource(MyApplication.bgimgList[position]);
+            }
+        });
+        
         content = (LinearLayout) view.findViewById(R.id.content);
         layoutItemContainer(content);
         TextView title = (TextView) view.findViewById(R.id.title);

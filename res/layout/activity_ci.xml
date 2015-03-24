@@ -20,13 +20,14 @@
             android:text="2"
             android:layout_gravity="right"
             android:layout_marginBottom="30dp"
-            android:textSize="50sp" />
+            android:textSize="48sp" />
 
         <ImageView
             android:id="@+id/share"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:scaleType="fitXY"
+            android:layout_gravity="right"
             android:src="@drawable/bt_share3" />
     </LinearLayout>
 
@@ -48,13 +49,13 @@
                 android:id="@+id/author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 />
             <TextView
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:lineSpacingMultiplier="1.2"
                 android:layout_below="@id/author"
                 />
@@ -62,7 +63,7 @@
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/white_hint"
                 android:layout_below="@id/content"
                 android:lineSpacingMultiplier="1.2"
@@ -73,6 +74,7 @@
                 android:id="@+id/intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 />
         </RelativeLayout>
     </com.myth.cici.wiget.VScrollView>
