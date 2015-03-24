@@ -6,7 +6,7 @@
     -->
 
     <!-- Application theme. -->
-    <style name="AppTheme"  parent="@android:style/Theme.Light">
+    <style name="AppTheme" >
         <item name="android:windowNoTitle">true</item>
     </style>
     
