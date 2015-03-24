@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity
         setting.setImageResource(R.drawable.setting);
         setting.setScaleType(ScaleType.FIT_XY);
         addBottomRightView(setting,
-                new LayoutParams(DisplayUtil.dip2px(mActivity, 50), DisplayUtil.dip2px(mActivity, 50)));
+                new LayoutParams(DisplayUtil.dip2px(mActivity, 48), DisplayUtil.dip2px(mActivity, 48)));
         setting.setOnClickListener(new OnClickListener()
         {
 

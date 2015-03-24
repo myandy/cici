@@ -47,14 +47,15 @@
             android:paddingLeft="10dp"
             android:paddingRight="20dp" >
         </LinearLayout>
-    </HorizontalScrollView>
+    </HorizontalScrollView>
     -->
 
-    <com.myth.cici.wiget.HorizontalListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/head"
         android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:scrollbars="none"  />
 
 </RelativeLayout>

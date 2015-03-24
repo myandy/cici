@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -14,12 +16,11 @@ import com.myth.cici.R;
 import com.myth.cici.adapter.CipaiListAdapter;
 import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.entity.Cipai;
-import com.myth.cici.wiget.HorizontalListView;
 
 public class CipaiListActivity extends BaseActivity
 {
 
-    private HorizontalListView listview;
+    private RecyclerView listview;
 
     private ArrayList<Cipai> ciList;
 
@@ -51,7 +52,13 @@ public class CipaiListActivity extends BaseActivity
 
     private void initView()
     {
-        listview = (HorizontalListView) findViewById(R.id.listview);
+        listview = (RecyclerView) findViewById(R.id.listview);
+
+        listview.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mActivity);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        listview.setLayoutManager(linearLayoutManager);
+
         adapter = new CipaiListAdapter(mActivity);
         listview.setAdapter(adapter);
         final TextView rectLeft = (TextView) findViewById(R.id.rect_left);
@@ -92,17 +99,7 @@ public class CipaiListActivity extends BaseActivity
         });
         addView();
 
-        new Handler().postDelayed(new Runnable()
-        {
-
-            @Override
-            public void run()
-            {
-                listview.scrollToRight();
-
-            }
-        }, 50);
-        // listview.scrollToRight();
+        listview.smoothScrollToPosition(ciList.size());
     }
 
     private void addView()

@@ -115,11 +115,11 @@ public class ShareActivity extends BaseActivity
         }
         else if (writing.getBitmap() != null)
         {
-            content.setBackground(new BitmapDrawable(getResources(), writing.getBitmap()));
+            content.setBackgroundDrawable(new BitmapDrawable(getResources(), writing.getBitmap()));
         }
         else
         {
-            content.setBackground(new BitmapDrawable(getResources(), writing.getBgimg()));
+            content.setBackgroundDrawable(new BitmapDrawable(getResources(), writing.getBgimg()));
         }
 
         scaleRotateIn(content, 1000, 0);

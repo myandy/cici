@@ -5,11 +5,11 @@ import java.util.List;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,111 +17,122 @@ import android.widget.TextView;
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.activity.CipaiActivity;
+import com.myth.cici.adapter.CipaiListAdapter.ViewHolder.ViewHolderItem;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
 import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.wiget.StoneView;
 import com.myth.cici.wiget.VerticalTextView;
 
-public class CipaiListAdapter extends BaseAdapter
+public class CipaiListAdapter extends RecyclerView.Adapter<CipaiListAdapter.ViewHolder>
 {
-
-    ViewHolder holder1;
-
-    ViewHolder holder2;
-
     private Context mContext;
 
     private List<Cipai> list;
-
-    public CipaiListAdapter(Context context)
-    {
-        mContext = context;
-    }
-
-    public int getCount()
-    {
-        return list == null ? 0 : list.size() / 2;
-    }
-
-    public List<Cipai> getList()
-    {
-        return list;
-    }
 
     public void setList(List<Cipai> list)
     {
         this.list = list;
     }
 
-    public long getItemId(int position)
+    public CipaiListAdapter(Context context)
     {
-        return position;
+        mContext = context;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
-        ViewHolder holder;
-        if (convertView == null)
-        {
-            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.layout_cipai_item, null);
-            holder = new ViewHolder();
-            View view = convertView.findViewById(R.id.content);
-            view.setLayoutParams(new LinearLayout.LayoutParams(-2, parent.getMeasuredHeight()));
-            holder.holder1 = new ViewHolderItem();
-            holder.holder2 = new ViewHolderItem();
-            holder.holder1.item = convertView.findViewById(R.id.item1);
-            holder.holder1.head = (RelativeLayout) convertView.findViewById(R.id.head1);
-            holder.holder1.middle = (ViewGroup) convertView.findViewById(R.id.middle1);
-            holder.holder1.num = (TextView) convertView.findViewById(R.id.num_1);
-            holder.holder1.name = (TextView) convertView.findViewById(R.id.name1);
-            holder.holder1.enname = (VerticalTextView) convertView.findViewById(R.id.enname1);
-            holder.holder1.stoneView = new StoneView(mContext);
-            android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(
-                    DisplayUtil.dip2px(mContext, 40), DisplayUtil.dip2px(mContext, 40));
-            holder.holder1.middle.addView(holder.holder1.stoneView, layoutParams);
-
-            holder.holder2.item = convertView.findViewById(R.id.item2);
-            holder.holder2.head = (RelativeLayout) convertView.findViewById(R.id.head2);
-            holder.holder2.middle = (ViewGroup) convertView.findViewById(R.id.middle2);
-            holder.holder2.num = (TextView) convertView.findViewById(R.id.num_2);
-            holder.holder2.name = (TextView) convertView.findViewById(R.id.name2);
-            holder.holder2.enname = (VerticalTextView) convertView.findViewById(R.id.enname2);
-            holder.holder2.stoneView = new StoneView(mContext);
-            holder.holder2.middle.addView(holder.holder2.stoneView, layoutParams);
-
-            holder.holder1.name.setTypeface(MyApplication.typeface);
-            holder.holder2.name.setTypeface(MyApplication.typeface);
-            holder.holder1.enname.setTypeface(MyApplication.typeface);
-            holder.holder2.enname.setTypeface(MyApplication.typeface);
-            holder.holder1.num.setTypeface(MyApplication.typeface);
-            holder.holder2.num.setTypeface(MyApplication.typeface);
-
-            convertView.setTag(holder);
-        }
-        else
-        {
-            holder = (ViewHolder) convertView.getTag();
-        }
-
-        initHolderView(holder.holder1, 2 * position);
-        initHolderView(holder.holder2, 2 * position + 1);
-
-        return convertView;
-    }
-
-    public class ViewHolder
+    // Provide a reference to the type of views that you are using
+    // (custom viewholder)
+    public static class ViewHolder extends RecyclerView.ViewHolder
     {
         ViewHolderItem holder1;
 
         ViewHolderItem holder2;
+
+        public class ViewHolderItem
+        {
+            Cipai cipai;
+
+            View item;
+
+            RelativeLayout head;
+
+            ViewGroup middle;
+
+            TextView num;
+
+            TextView name;
+
+            VerticalTextView enname;
+
+            StoneView stoneView;
+        }
+
+        public ViewHolder(View convertView, ViewGroup parent)
+        {
+            super(convertView);
+            View view = convertView.findViewById(R.id.content);
+            view.setLayoutParams(new LinearLayout.LayoutParams(-2, parent.getMeasuredHeight()));
+            holder1 = new ViewHolderItem();
+            holder2 = new ViewHolderItem();
+            holder1.item = convertView.findViewById(R.id.item1);
+            holder1.head = (RelativeLayout) convertView.findViewById(R.id.head1);
+            holder1.middle = (ViewGroup) convertView.findViewById(R.id.middle1);
+            holder1.num = (TextView) convertView.findViewById(R.id.num_1);
+            holder1.name = (TextView) convertView.findViewById(R.id.name1);
+            holder1.enname = (VerticalTextView) convertView.findViewById(R.id.enname1);
+            holder1.stoneView = new StoneView(parent.getContext());
+            android.widget.LinearLayout.LayoutParams layoutParams = new android.widget.LinearLayout.LayoutParams(
+                    DisplayUtil.dip2px(parent.getContext(), 40), DisplayUtil.dip2px(parent.getContext(), 40));
+            holder1.middle.addView(holder1.stoneView, layoutParams);
+
+            holder2.item = convertView.findViewById(R.id.item2);
+            holder2.head = (RelativeLayout) convertView.findViewById(R.id.head2);
+            holder2.middle = (ViewGroup) convertView.findViewById(R.id.middle2);
+            holder2.num = (TextView) convertView.findViewById(R.id.num_2);
+            holder2.name = (TextView) convertView.findViewById(R.id.name2);
+            holder2.enname = (VerticalTextView) convertView.findViewById(R.id.enname2);
+            holder2.stoneView = new StoneView(parent.getContext());
+            holder2.middle.addView(holder2.stoneView, layoutParams);
+
+            holder1.name.setTypeface(MyApplication.typeface);
+            holder2.name.setTypeface(MyApplication.typeface);
+            holder1.enname.setTypeface(MyApplication.typeface);
+            holder2.enname.setTypeface(MyApplication.typeface);
+            holder1.num.setTypeface(MyApplication.typeface);
+            holder2.num.setTypeface(MyApplication.typeface);
+        }
+
+        TextView name;
+
+        TextView tag;
     }
 
+    // Create new views (invoked by the layout manager)
     @Override
-    public Object getItem(int position)
+    public CipaiListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return null;
+        // create a new view
+        mContext = parent.getContext();
+        View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_cipai_item, parent, false);
+        // set the view's size, margins, paddings and layout parameters
+        ViewHolder holder = new ViewHolder(convertView, parent);
+        return holder;
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position)
+    {
+        initHolderView(holder.holder1, 2 * position);
+        initHolderView(holder.holder2, 2 * position + 1);
+
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount()
+    {
+        return list == null ? 0 : list.size() / 2;
     }
 
     private void initHolderView(final ViewHolderItem holder, int pos)
@@ -162,25 +173,6 @@ public class CipaiListAdapter extends BaseAdapter
             holder.name.setText(holder.cipai.getName() + "");
             holder.enname.setText(holder.cipai.getEnname() + "");
         }
-    }
-
-    public class ViewHolderItem
-    {
-        Cipai cipai;
-
-        View item;
-
-        RelativeLayout head;
-
-        ViewGroup middle;
-
-        TextView num;
-
-        TextView name;
-
-        VerticalTextView enname;
-
-        StoneView stoneView;
     }
 
 }

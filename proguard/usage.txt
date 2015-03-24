@@ -23,6 +23,175 @@ android.support.annotation.StringRes
 android.support.annotation.StyleRes
 android.support.annotation.StyleableRes
 android.support.annotation.XmlRes
+android.support.v7.recyclerview.BuildConfig
+android.support.v7.widget.LinearLayoutManager:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    public static final int HORIZONTAL
+    public static final int VERTICAL
+    public static final int INVALID_OFFSET
+    private static final float MAX_SCROLL_FACTOR
+    222:222:public boolean getStackFromEnd()
+    233:233:public int getOrientation()
+    279:279:public boolean getReverseLayout()
+    728:731:public void scrollToPositionWithOffset(int,int)
+    1160:1160:public int findFirstVisibleItemPosition()
+    1175:1175:public int findFirstCompletelyVisibleItemPosition()
+    1196:1196:public int findLastVisibleItemPosition()
+    1211:1211:public int findLastCompletelyVisibleItemPosition()
+    1215:1232:int findOneVisibleChild(int,int,boolean)
+    1277:1284:private void logChildren()
+    1297:1334:private void validateChildOrder()
+android.support.v7.widget.LinearLayoutManager$RenderState:
+    static final java.lang.String TAG
+    static final int LAYOUT_START
+    static final int LAYOUT_END
+    static final int INVALID_LAYOUT
+    static final int ITEM_DIRECTION_HEAD
+    static final int ITEM_DIRECTION_TAIL
+    static final int SCOLLING_OFFSET_NaN
+    1466:1468:void log()
+android.support.v7.widget.LinearSmoothScroller:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final float MILLISECONDS_PER_INCH
+    private static final int TARGET_SEEK_SCROLL_DISTANCE_PX
+    public static final int SNAP_TO_START
+    public static final int SNAP_TO_END
+    public static final int SNAP_TO_ANY
+    private static final float TARGET_SEEK_EXTRA_SCROLL_RATIO
+android.support.v7.widget.PositionMap
+android.support.v7.widget.PositionMap$ContainerHelpers
+android.support.v7.widget.RecyclerView:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final boolean ENABLE_PREDICTIVE_ANIMATIONS
+    private static final boolean DISPATCH_TEMP_DETACH
+    public static final int HORIZONTAL
+    public static final int VERTICAL
+    public static final int NO_POSITION
+    public static final long NO_ID
+    public static final int INVALID_TYPE
+    private static final int MAX_SCROLL_DURATION
+    private static final int INVALID_POINTER
+    public static final int SCROLL_STATE_IDLE
+    public static final int SCROLL_STATE_DRAGGING
+    public static final int SCROLL_STATE_SETTLING
+    247:247:public boolean hasFixedSize()
+    306:307:public void setRecyclerListener(android.support.v7.widget.RecyclerView$RecyclerListener)
+    441:441:public android.support.v7.widget.RecyclerView$LayoutManager getLayoutManager()
+    453:453:public android.support.v7.widget.RecyclerView$RecycledViewPool getRecycledViewPool()
+    465:466:public void setRecycledViewPool(android.support.v7.widget.RecyclerView$RecycledViewPool)
+    480:481:public void setItemViewCacheSize(int)
+    490:490:public int getScrollState()
+    521:531:public void addItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration,int)
+    546:547:public void addItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration)
+    559:565:public void removeItemDecoration(android.support.v7.widget.RecyclerView$ItemDecoration)
+    573:574:public void setOnScrollListener(android.support.v7.widget.RecyclerView$OnScrollListener)
+    1045:1046:public void addOnItemTouchListener(android.support.v7.widget.RecyclerView$OnItemTouchListener)
+    1054:1058:public void removeOnItemTouchListener(android.support.v7.widget.RecyclerView$OnItemTouchListener)
+    1333:1340:public void setItemAnimator(android.support.v7.widget.RecyclerView$ItemAnimator)
+    1352:1352:public android.support.v7.widget.RecyclerView$ItemAnimator getItemAnimator()
+    1367:1367:private boolean predictiveItemAnimationsEnabled()
+    1615:1620:void markItemDecorInsetsDirty()
+    1887:1896:void postAdapterUpdate(android.support.v7.widget.RecyclerView$UpdateOp)
+    1938:1942:public long getChildItemId(android.view.View)
+    1952:1952:public android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForPosition(int)
+    1982:1989:public android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForItemId(long)
+    2000:2012:public android.view.View findChildViewUnder(float,float)
+    4906:4914:android.support.v7.widget.RecyclerView$UpdateOp obtainUpdateOp(int,int,int)
+    78:78:static synthetic void access$2900(android.support.v7.widget.RecyclerView,android.view.View)
+    78:78:static synthetic void access$3100(android.support.v7.widget.RecyclerView,android.view.View,int,android.view.ViewGroup$LayoutParams)
+    78:78:static synthetic void access$3200(android.support.v7.widget.RecyclerView,android.view.View,boolean)
+android.support.v7.widget.RecyclerView$Adapter:
+    2947:2952:public void setHasStableIds(boolean)
+    3024:3024:public final boolean hasObservers()
+    3106:3107:public final void notifyItemChanged(int)
+    3123:3124:public final void notifyItemRangeChanged(int,int)
+    3140:3141:public final void notifyItemInserted(int)
+    3159:3160:public final void notifyItemRangeInserted(int,int)
+    3176:3177:public final void notifyItemRemoved(int)
+    3193:3194:public final void notifyItemRangeRemoved(int,int)
+android.support.v7.widget.RecyclerView$AdapterDataObservable:
+    5384:5384:public boolean hasObservers()
+    5402:5405:public void notifyItemRangeChanged(int,int)
+    5412:5415:public void notifyItemRangeInserted(int,int)
+    5422:5425:public void notifyItemRangeRemoved(int,int)
+android.support.v7.widget.RecyclerView$AdapterDataObserver:
+    5004:5004:public void onItemRangeChanged(int,int)
+    5008:5008:public void onItemRangeInserted(int,int)
+    5012:5012:public void onItemRangeRemoved(int,int)
+android.support.v7.widget.RecyclerView$ItemAnimator:
+    5673:5674:public void setMoveDuration(long)
+    5691:5692:public void setAddDuration(long)
+    5709:5710:public void setRemoveDuration(long)
+    public abstract boolean isRunning()
+    5888:5896:public final boolean isRunning(android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorFinishedListener)
+android.support.v7.widget.RecyclerView$LayoutManager:
+    3493:3493:public boolean isSmoothScrolling()
+    3571:3580:public void removeView(android.view.View)
+    3610:3628:public void removeAllViews()
+    3680:3681:public void detachView(android.view.View)
+    3718:3725:public void attachView(android.view.View,int,android.support.v7.widget.RecyclerView$LayoutParams)
+    3736:3737:public void attachView(android.view.View,int)
+    3747:3748:public void attachView(android.view.View)
+    3757:3758:public void removeDetachedView(android.view.View)
+    3770:3772:public void detachAndScrapView(android.view.View,android.support.v7.widget.RecyclerView$Recycler)
+    3784:3787:public void detachAndScrapViewAt(int,android.support.v7.widget.RecyclerView$Recycler)
+    3796:3798:public void removeAndRecycleView(android.view.View,android.support.v7.widget.RecyclerView$Recycler)
+    3892:3892:public int getPaddingStart()
+    3901:3901:public int getPaddingEnd()
+    3911:3911:public boolean isFocused()
+    3921:3921:public boolean hasFocus()
+    3930:3931:public int getItemCount()
+    4013:4026:public void measureChild(android.view.View,int,int)
+android.support.v7.widget.RecyclerView$LayoutParams:
+    4959:4959:public boolean viewNeedsUpdate()
+    4969:4969:public boolean isViewInvalid()
+android.support.v7.widget.RecyclerView$RecycledViewPool:
+    private static final int DEFAULT_MAX_SCRAP
+    2315:2322:public void setMaxRecycledViews(int,int)
+    2350:2351:void attach(android.support.v7.widget.RecyclerView$Adapter)
+    2354:2355:void detach()
+android.support.v7.widget.RecyclerView$Recycler:
+    private static final int DEFAULT_CACHE_SIZE
+    2419:2423:public void setViewCacheSize(int)
+    2822:2829:void setRecycledViewPool(android.support.v7.widget.RecyclerView$RecycledViewPool)
+    2851:2863:android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForItemId(long)
+android.support.v7.widget.RecyclerView$RecyclerViewDataObserver:
+    2288:2289:public void onItemRangeChanged(int,int)
+    2293:2294:public void onItemRangeInserted(int,int)
+    2298:2299:public void onItemRangeRemoved(int,int)
+android.support.v7.widget.RecyclerView$SmoothScroller$Action:
+    public static final int UNDEFINED_DURATION
+    5272:5273:public RecyclerView$SmoothScroller$Action(int,int,int)
+    5323:5323:public int getDx()
+    5327:5329:public void setDx(int)
+    5332:5332:public int getDy()
+    5336:5338:public void setDy(int)
+    5341:5341:public int getDuration()
+    5345:5347:public void setDuration(int)
+    5350:5350:public android.view.animation.Interpolator getInterpolator()
+    5360:5362:public void setInterpolator(android.view.animation.Interpolator)
+android.support.v7.widget.RecyclerView$State:
+    private android.util.SparseArray mData
+    5511:5517:android.support.v7.widget.RecyclerView$State reset()
+    5530:5534:public void remove(int)
+    5545:5548:public java.lang.Object get(int)
+    5560:5564:public void put(int,java.lang.Object)
+    5591:5591:public boolean didStructureChange()
+android.support.v7.widget.RecyclerView$UpdateOp:
+    public static final int ADD
+    public static final int REMOVE
+    public static final int UPDATE
+    static final int POOL_SIZE
+    4898:4902:public RecyclerView$UpdateOp(int,int,int)
+android.support.v7.widget.RecyclerView$ViewHolder:
+    static final int FLAG_BOUND
+    static final int FLAG_UPDATE
+    static final int FLAG_INVALID
+    static final int FLAG_REMOVED
+    static final int FLAG_NOT_RECYCLABLE
 com.myth.cici.BaseActivity:
     89:90:protected void addBottomCenterView(android.view.View)
 com.myth.cici.BuildConfig
@@ -37,8 +206,16 @@ com.myth.cici.R$raw
 com.myth.cici.R$string
 com.myth.cici.R$style
 com.myth.cici.R$styleable
+com.myth.cici.activity.GCImageViewActivity
+com.myth.cici.activity.GCImageViewActivity$1
+com.myth.cici.activity.GCImageViewActivity$2
 com.myth.cici.activity.MainActivity$MyPagerAdapter:
-    170:170:public java.util.ArrayList getWritings()
+    172:172:public java.util.ArrayList getWritings()
+com.myth.cici.adapter.CipaiAdapter$ViewHolder:
+    64:65:public void setMyListener(com.myth.cici.listener.MyListener)
+com.myth.cici.adapter.CipaiListAdapter$ViewHolder:
+    android.widget.TextView name
+    android.widget.TextView tag
 com.myth.cici.db.CiDatabaseHelper:
     10:10:public CiDatabaseHelper()
 com.myth.cici.db.CipaiDatabaseHelper:
@@ -90,9 +267,9 @@ com.myth.cici.util.DateUtils:
     19:21:private DateUtils()
 com.myth.cici.util.DisplayUtil:
     5:5:public DisplayUtil()
-    15:16:public static int px2dip(android.content.Context,double)
-    28:30:public static int screenWidthPx(android.content.Context)
-    40:42:public static int screenHeightPx(android.content.Context)
+    21:25:public static int px2dip(android.content.Context,double)
+    37:39:public static int screenWidthPx(android.content.Context)
+    50:52:public static int screenHeightPx(android.content.Context)
 com.myth.cici.util.Fastblur:
     7:7:public Fastblur()
 com.myth.cici.util.FileUtils:
@@ -122,15 +299,12 @@ com.myth.cici.util.ResizeUtil:
     5:5:public ResizeUtil()
 com.myth.cici.util.StringUtils:
     5:5:public StringUtils()
-com.myth.cici.wiget.CipaiItem:
-    30:31:public CipaiItem(android.content.Context,android.util.AttributeSet,int)
-    35:36:public CipaiItem(android.content.Context,android.util.AttributeSet)
-    40:41:public CipaiItem(android.content.Context)
+com.myth.cici.wiget.CipaiItem
+com.myth.cici.wiget.CipaiItem$1
+com.myth.cici.wiget.CipaiItem$ViewHolder
 com.myth.cici.wiget.CircleEditView:
-    19:19:public int getmColor()
-com.myth.cici.wiget.CustomImageView:
-    18:19:public CustomImageView(android.content.Context,android.util.AttributeSet)
-    22:23:public CustomImageView(android.content.Context)
+    21:21:public int getmColor()
+com.myth.cici.wiget.CustomImageView
 com.myth.cici.wiget.GCDialog:
     public static final java.lang.String DATA_TITLE
     public static final java.lang.String DATA_CONTENT
@@ -139,19 +313,12 @@ com.myth.cici.wiget.GCDialog:
     public static final java.lang.String CONFIRM_TEXT
     public static final java.lang.String TOUCH_OUT_SIDE
     63:65:public GCDialog(android.content.Context,int)
-com.myth.cici.wiget.HorizonEditView:
-    com.myth.cici.wiget.HorizonEditView$ViewHolder holder1
-    com.myth.cici.wiget.HorizonEditView$ViewHolder holder2
-    private android.content.Context mContext
-    30:31:public HorizonEditView(android.content.Context,android.util.AttributeSet,int)
-    35:36:public HorizonEditView(android.content.Context,android.util.AttributeSet)
-    40:41:public HorizonEditView(android.content.Context)
-    45:52:public HorizonEditView(android.content.Context,com.myth.cici.entity.Cipai,com.myth.cici.entity.Cipai)
-    56:78:private void initView()
-    83:120:private void initHolderView(com.myth.cici.wiget.HorizonEditView$ViewHolder)
-    26:26:static synthetic android.content.Context access$0(com.myth.cici.wiget.HorizonEditView)
+com.myth.cici.wiget.HorizonEditView
 com.myth.cici.wiget.HorizonEditView$1
 com.myth.cici.wiget.HorizonEditView$ViewHolder
+com.myth.cici.wiget.HorizontalListView:
+    178:186:public void scrollToRight()
+    355:357:public synchronized void scrollTo(int)
 com.myth.cici.wiget.IntroductionView:
     26:27:public IntroductionView(android.content.Context,android.util.AttributeSet,int)
     31:32:public IntroductionView(android.content.Context,android.util.AttributeSet)
@@ -166,16 +333,15 @@ com.myth.cici.wiget.PingzeView:
     private static final int TYPE_ZE_YUN
     private static final int TYPE_PING_YUN_CAN
     private static final int TYPE_ZE_YUN_CAN
-com.myth.cici.wiget.SelectImageView:
-    15:16:public SelectImageView(android.content.Context,android.util.AttributeSet)
-    20:28:public void setSelect(boolean)
+com.myth.cici.wiget.SelectImageView
 com.myth.cici.wiget.StoneView:
     private static final int TYPE_CIRCLE
     private static final int TYPE_RING
     private static final int TYPE_PLUS
     private static final int TYPE_PLUS1
+    55:59:public StoneView(android.content.Context,int,int)
 com.myth.cici.wiget.SwitchPoint:
-    32:33:public void addSwitchBtn(int)
+    33:35:public void addSwitchBtn(int)
 com.myth.cici.wiget.TouchEffectImageView:
     public static final int TOUCH_ALPHA
     public static final int UP_ALPHA

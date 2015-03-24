@@ -15,7 +15,7 @@ public class WritingDatabaseHelper
     public static ArrayList<Writing> getAllWriting(Context context)
     {
         SQLiteDatabase db = DBManager.getDatabase();
-        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + "  order by update_dt ", null);
         return getWritingFromCursor(cursor);
     }
 

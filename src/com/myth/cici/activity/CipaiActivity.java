@@ -110,7 +110,6 @@ public class CipaiActivity extends BaseActivity
         {
             maxLines = 6;
         }
-
         gallery = (ViewPager) findViewById(R.id.gc_main_gallery);
 
         switchPoint = (SwitchPoint) findViewById(R.id.gc_main_dot);

@@ -73,7 +73,6 @@ public class EditActivity extends BaseActivity
         }
 
         oldText = writing.getText();
-
         getBottomLeftView().setOnClickListener(new OnClickListener()
         {
 
@@ -107,18 +106,7 @@ public class EditActivity extends BaseActivity
                 {
                     editFragment.save();
                 }
-                if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null)
-                {
-                    try
-                    {
-                        String fileName = FileUtils.saveFile(writing.getBitmap());
-                        writing.setBgimg(fileName);
-                    }
-                    catch (IOException e)
-                    {
-                        e.printStackTrace();
-                    }
-                }
+                save();
                 writing.setBitmap(null);
                 Intent intent = new Intent(mActivity, ShareActivity.class);
                 intent.putExtra("writing", writing);
@@ -218,6 +206,14 @@ public class EditActivity extends BaseActivity
 
     public void exit()
     {
+        if (currentIndex == 1)
+        {
+            changeBackgroundFrament.save();
+        }
+        else if (currentIndex == 2)
+        {
+            changePictureFragment.save();
+        }
         editFragment.save();
         if (!StringUtils.isEmpty(writing.getText()) && !writing.getText().equals(oldText))
         {
@@ -232,19 +228,7 @@ public class EditActivity extends BaseActivity
                 @Override
                 public void onConfirm()
                 {
-                    if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null)
-                    {
-                        try
-                        {
-                            String fileName = FileUtils.saveFile(writing.getBitmap());
-                            writing.setBgimg(fileName);
-                        }
-                        catch (IOException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                    WritingDatabaseHelper.saveWriting(mActivity, writing);
+                    save();
                     finish();
                 }
 
@@ -259,6 +243,23 @@ public class EditActivity extends BaseActivity
         {
             finish();
         }
+    }
+
+    private void save()
+    {
+        if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null)
+        {
+            try
+            {
+                String fileName = FileUtils.saveFile(writing.getBitmap());
+                writing.setBgimg(fileName);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        WritingDatabaseHelper.saveWriting(mActivity, writing);
     }
 
     @Override

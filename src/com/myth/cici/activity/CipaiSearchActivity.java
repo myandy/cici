@@ -4,28 +4,28 @@ import java.util.ArrayList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
 import com.myth.cici.adapter.CipaiAdapter;
 import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.listener.MyListener;
 
 public class CipaiSearchActivity extends BaseActivity
 {
 
     private View clear;
 
-    private ListView listview;
+    private RecyclerView listview;
 
     private CipaiAdapter adapter;
 
@@ -77,15 +77,18 @@ public class CipaiSearchActivity extends BaseActivity
 
     private void initView()
     {
-        listview = (ListView) findViewById(R.id.listview);
-        adapter = new CipaiAdapter(mActivity);
-        listview.setAdapter(adapter);
+        listview = (RecyclerView) findViewById(R.id.listview);
 
-        listview.setOnItemClickListener(new OnItemClickListener()
+        listview.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mActivity);
+        listview.setLayoutManager(linearLayoutManager);
+
+        adapter = new CipaiAdapter();
+        adapter.setMyListener(new MyListener()
         {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            public void onItemClick(int position)
             {
                 Intent intent = new Intent(mActivity, EditActivity.class);
                 intent.putExtra("cipai", sortList.get(position));
@@ -93,6 +96,21 @@ public class CipaiSearchActivity extends BaseActivity
                 finish();
             }
         });
+        listview.setAdapter(adapter);
+
+        // listview.setOnItemClickListener(new OnItemClickListener()
+        // {
+        //
+        // @Override
+        // public void onItemClick(AdapterView<?> parent, View view, int
+        // position, long id)
+        // {
+        // Intent intent = new Intent(mActivity, EditActivity.class);
+        // intent.putExtra("cipai", sortList.get(position));
+        // startActivity(intent);
+        // finish();
+        // }
+        // });
 
         search = (EditText) findViewById(R.id.search);
 
