@@ -18,6 +18,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.renderscript.Allocation;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -242,14 +245,13 @@ public class ChangePictureFragment extends Fragment
 
         if (Build.VERSION.SDK_INT > 16)
         {
-            // RenderScript rs = RenderScript.create(getActivity());
-            // Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
-            // ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs,
-            // overlayAlloc.getElement());
-            // blur.setInput(overlayAlloc);
-            // blur.setRadius(radius + 1);
-            // blur.forEach(overlayAlloc);
-            // overlayAlloc.copyTo(bmp);
+            RenderScript rs = RenderScript.create(getActivity());
+            Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
+            ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
+            blur.setInput(overlayAlloc);
+            blur.setRadius(radius + 1);
+            blur.forEach(overlayAlloc);
+            overlayAlloc.copyTo(bmp);
         }
         else
         {
