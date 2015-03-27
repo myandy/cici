@@ -62,6 +62,11 @@ public class MyApplication extends Application
             R.drawable.bg006, R.drawable.bg007, R.drawable.bg011, R.drawable.bg013, R.drawable.bg072, R.drawable.bg084,
             R.drawable.bg096, R.drawable.bg118};
 
+    public static int[] bgSmallimgList = {R.drawable.dust, R.drawable.bg001_small, R.drawable.bg002_small,
+            R.drawable.bg004_small, R.drawable.bg006_small, R.drawable.bg007_small, R.drawable.bg011_small,
+            R.drawable.bg013_small, R.drawable.bg072_small, R.drawable.bg084_small, R.drawable.bg096_small,
+            R.drawable.bg118_small};
+
     public static void setDefaultTypeface(Context context, int i)
     {
         if (i < 2 && i >= 0)

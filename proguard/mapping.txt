@@ -295,7 +295,7 @@ android.support.v4.app.BackStackRecord -> android.support.v4.app.BackStackRecord
     java.lang.Object getEnterTransition(android.support.v4.app.Fragment,boolean) -> getEnterTransition
     java.lang.Object getExitTransition(android.support.v4.app.Fragment,boolean) -> getExitTransition
     java.lang.Object getSharedElementTransition(android.support.v4.app.Fragment,android.support.v4.app.Fragment,boolean) -> getSharedElementTransition
-    java.lang.Object captureExitingViews(java.lang.Object,android.support.v4.app.Fragment,java.util.ArrayList,android.support.v4.util.ArrayMap,android.view.View) -> captureExitingViews
+    java.lang.Object captureExitingViews(java.lang.Object,android.support.v4.app.Fragment,java.util.ArrayList,android.support.v4.util.ArrayMap) -> captureExitingViews
     android.support.v4.util.ArrayMap remapSharedElements(android.support.v4.app.BackStackRecord$TransitionState,android.support.v4.app.Fragment,boolean) -> remapSharedElements
     boolean configureTransitions(int,android.support.v4.app.BackStackRecord$TransitionState,boolean,android.util.SparseArray,android.util.SparseArray) -> configureTransitions
     void prepareSharedElementTransition(android.support.v4.app.BackStackRecord$TransitionState,android.view.View,java.lang.Object,android.support.v4.app.Fragment,android.support.v4.app.Fragment,boolean,java.util.ArrayList) -> prepareSharedElementTransition
@@ -1014,7 +1014,7 @@ android.support.v4.app.FragmentTransaction$Transit -> android.support.v4.app.Fra
 android.support.v4.app.FragmentTransitionCompat21 -> android.support.v4.app.FragmentTransitionCompat21:
     java.lang.String getTransitionName(android.view.View) -> getTransitionName
     java.lang.Object cloneTransition(java.lang.Object) -> cloneTransition
-    java.lang.Object captureExitingViews(java.lang.Object,android.view.View,java.util.ArrayList,java.util.Map,android.view.View) -> captureExitingViews
+    java.lang.Object captureExitingViews(java.lang.Object,android.view.View,java.util.ArrayList,java.util.Map) -> captureExitingViews
     void excludeTarget(java.lang.Object,android.view.View,boolean) -> excludeTarget
     void beginDelayedTransition(android.view.ViewGroup,java.lang.Object) -> beginDelayedTransition
     void setEpicenter(java.lang.Object,android.view.View) -> setEpicenter
@@ -1027,8 +1027,6 @@ android.support.v4.app.FragmentTransitionCompat21 -> android.support.v4.app.Frag
     void cleanupTransitions(android.view.View,android.view.View,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.util.Map) -> cleanupTransitions
     void removeTargets(java.lang.Object,java.util.ArrayList) -> removeTargets
     void addTargets(java.lang.Object,java.util.ArrayList) -> addTargets
-    boolean hasSimpleTarget(android.transition.Transition) -> hasSimpleTarget
-    boolean isNullOrEmpty(java.util.List) -> isNullOrEmpty
     void access$000(java.util.ArrayList,android.view.View) -> access$000
     android.graphics.Rect access$100(android.view.View) -> access$100
 android.support.v4.app.FragmentTransitionCompat21$1 -> android.support.v4.app.FragmentTransitionCompat21$1:
@@ -1041,7 +1039,6 @@ android.support.v4.app.FragmentTransitionCompat21$2 -> android.support.v4.app.Fr
     java.util.Map val$renamedViews -> val$renamedViews
     android.transition.Transition val$enterTransition -> val$enterTransition
     java.util.ArrayList val$enteringViews -> val$enteringViews
-    android.view.View val$nonExistentView -> val$nonExistentView
     boolean onPreDraw() -> onPreDraw
 android.support.v4.app.FragmentTransitionCompat21$3 -> android.support.v4.app.FragmentTransitionCompat21$3:
     android.graphics.Rect mEpicenter -> mEpicenter
@@ -1589,8 +1586,6 @@ android.support.v4.app.NotificationCompat$WearableExtender -> android.support.v4
     int SIZE_MEDIUM -> SIZE_MEDIUM
     int SIZE_LARGE -> SIZE_LARGE
     int SIZE_FULL_SCREEN -> SIZE_FULL_SCREEN
-    int SCREEN_TIMEOUT_SHORT -> SCREEN_TIMEOUT_SHORT
-    int SCREEN_TIMEOUT_LONG -> SCREEN_TIMEOUT_LONG
     java.lang.String EXTRA_WEARABLE_EXTENSIONS -> EXTRA_WEARABLE_EXTENSIONS
     java.lang.String KEY_ACTIONS -> KEY_ACTIONS
     java.lang.String KEY_FLAGS -> KEY_FLAGS
@@ -1603,12 +1598,10 @@ android.support.v4.app.NotificationCompat$WearableExtender -> android.support.v4
     java.lang.String KEY_CUSTOM_SIZE_PRESET -> KEY_CUSTOM_SIZE_PRESET
     java.lang.String KEY_CUSTOM_CONTENT_HEIGHT -> KEY_CUSTOM_CONTENT_HEIGHT
     java.lang.String KEY_GRAVITY -> KEY_GRAVITY
-    java.lang.String KEY_HINT_SCREEN_TIMEOUT -> KEY_HINT_SCREEN_TIMEOUT
     int FLAG_CONTENT_INTENT_AVAILABLE_OFFLINE -> FLAG_CONTENT_INTENT_AVAILABLE_OFFLINE
     int FLAG_HINT_HIDE_ICON -> FLAG_HINT_HIDE_ICON
     int FLAG_HINT_SHOW_BACKGROUND_ONLY -> FLAG_HINT_SHOW_BACKGROUND_ONLY
     int FLAG_START_SCROLL_BOTTOM -> FLAG_START_SCROLL_BOTTOM
-    int FLAG_HINT_AVOID_BACKGROUND_CLIPPING -> FLAG_HINT_AVOID_BACKGROUND_CLIPPING
     int DEFAULT_FLAGS -> DEFAULT_FLAGS
     int DEFAULT_CONTENT_ICON_GRAVITY -> DEFAULT_CONTENT_ICON_GRAVITY
     int DEFAULT_GRAVITY -> DEFAULT_GRAVITY
@@ -1623,7 +1616,6 @@ android.support.v4.app.NotificationCompat$WearableExtender -> android.support.v4
     int mCustomSizePreset -> mCustomSizePreset
     int mCustomContentHeight -> mCustomContentHeight
     int mGravity -> mGravity
-    int mHintScreenTimeout -> mHintScreenTimeout
     android.support.v4.app.NotificationCompat$Builder extend(android.support.v4.app.NotificationCompat$Builder) -> extend
     android.support.v4.app.NotificationCompat$WearableExtender clone() -> clone
     android.support.v4.app.NotificationCompat$WearableExtender addAction(android.support.v4.app.NotificationCompat$Action) -> addAction
@@ -1658,10 +1650,6 @@ android.support.v4.app.NotificationCompat$WearableExtender -> android.support.v4
     boolean getHintHideIcon() -> getHintHideIcon
     android.support.v4.app.NotificationCompat$WearableExtender setHintShowBackgroundOnly(boolean) -> setHintShowBackgroundOnly
     boolean getHintShowBackgroundOnly() -> getHintShowBackgroundOnly
-    android.support.v4.app.NotificationCompat$WearableExtender setHintAvoidBackgroundClipping(boolean) -> setHintAvoidBackgroundClipping
-    boolean getHintAvoidBackgroundClipping() -> getHintAvoidBackgroundClipping
-    android.support.v4.app.NotificationCompat$WearableExtender setHintScreenTimeout(int) -> setHintScreenTimeout
-    int getHintScreenTimeout() -> getHintScreenTimeout
     void setFlag(int,boolean) -> setFlag
     java.lang.Object clone() -> clone
 android.support.v4.app.NotificationCompatApi20 -> android.support.v4.app.NotificationCompatApi20:
@@ -2084,16 +2072,11 @@ android.support.v4.app.ShareCompatJB -> android.support.v4.app.ShareCompatJB:
     java.lang.String escapeHtml(java.lang.CharSequence) -> escapeHtml
 android.support.v4.app.SharedElementCallback -> android.support.v4.app.SharedElementCallback:
     android.graphics.Matrix mTempMatrix -> mTempMatrix
-    int MAX_IMAGE_SIZE -> MAX_IMAGE_SIZE
-    java.lang.String BUNDLE_SNAPSHOT_BITMAP -> BUNDLE_SNAPSHOT_BITMAP
-    java.lang.String BUNDLE_SNAPSHOT_IMAGE_SCALETYPE -> BUNDLE_SNAPSHOT_IMAGE_SCALETYPE
-    java.lang.String BUNDLE_SNAPSHOT_IMAGE_MATRIX -> BUNDLE_SNAPSHOT_IMAGE_MATRIX
     void onSharedElementStart(java.util.List,java.util.List,java.util.List) -> onSharedElementStart
     void onSharedElementEnd(java.util.List,java.util.List,java.util.List) -> onSharedElementEnd
     void onRejectSharedElements(java.util.List) -> onRejectSharedElements
     void onMapSharedElements(java.util.List,java.util.Map) -> onMapSharedElements
     android.os.Parcelable onCaptureSharedElementSnapshot(android.view.View,android.graphics.Matrix,android.graphics.RectF) -> onCaptureSharedElementSnapshot
-    android.graphics.Bitmap createDrawableBitmap(android.graphics.drawable.Drawable) -> createDrawableBitmap
     android.view.View onCreateSnapshotView(android.content.Context,android.os.Parcelable) -> onCreateSnapshotView
 android.support.v4.app.SuperNotCalledException -> android.support.v4.app.SuperNotCalledException:
 android.support.v4.app.TaskStackBuilder -> android.support.v4.app.TaskStackBuilder:
@@ -2432,12 +2415,8 @@ android.support.v4.content.pm.ActivityInfoCompat -> android.support.v4.content.p
     int CONFIG_UI_MODE -> CONFIG_UI_MODE
 android.support.v4.content.res.ResourcesCompat -> android.support.v4.content.res.ResourcesCompat:
     android.graphics.drawable.Drawable getDrawable(android.content.res.Resources,int,android.content.res.Resources$Theme) -> getDrawable
-    android.graphics.drawable.Drawable getDrawableForDensity(android.content.res.Resources,int,int,android.content.res.Resources$Theme) -> getDrawableForDensity
 android.support.v4.content.res.ResourcesCompatApi21 -> android.support.v4.content.res.ResourcesCompatApi21:
     android.graphics.drawable.Drawable getDrawable(android.content.res.Resources,int,android.content.res.Resources$Theme) -> getDrawable
-    android.graphics.drawable.Drawable getDrawableForDensity(android.content.res.Resources,int,int,android.content.res.Resources$Theme) -> getDrawableForDensity
-android.support.v4.content.res.ResourcesCompatIcsMr1 -> android.support.v4.content.res.ResourcesCompatIcsMr1:
-    android.graphics.drawable.Drawable getDrawableForDensity(android.content.res.Resources,int,int) -> getDrawableForDensity
 android.support.v4.database.DatabaseUtilsCompat -> android.support.v4.database.DatabaseUtilsCompat:
     java.lang.String concatenateWhere(java.lang.String,java.lang.String) -> concatenateWhere
     java.lang.String[] appendSelectionArgs(java.lang.String[],java.lang.String[]) -> appendSelectionArgs
@@ -2617,69 +2596,6 @@ android.support.v4.internal.view.SupportMenuItem -> android.support.v4.internal.
     boolean isActionViewExpanded() -> isActionViewExpanded
     android.support.v4.internal.view.SupportMenuItem setSupportOnActionExpandListener(android.support.v4.view.MenuItemCompat$OnActionExpandListener) -> setSupportOnActionExpandListener
 android.support.v4.internal.view.SupportSubMenu -> android.support.v4.internal.view.SupportSubMenu:
-android.support.v4.media.MediaDescriptionCompat -> android.support.v4.media.MediaDescriptionCompat:
-    java.lang.String mMediaId -> mMediaId
-    java.lang.CharSequence mTitle -> mTitle
-    java.lang.CharSequence mSubtitle -> mSubtitle
-    java.lang.CharSequence mDescription -> mDescription
-    android.graphics.Bitmap mIcon -> mIcon
-    android.net.Uri mIconUri -> mIconUri
-    android.os.Bundle mExtras -> mExtras
-    java.lang.Object mDescriptionObj -> mDescriptionObj
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    java.lang.String getMediaId() -> getMediaId
-    java.lang.CharSequence getTitle() -> getTitle
-    java.lang.CharSequence getSubtitle() -> getSubtitle
-    java.lang.CharSequence getDescription() -> getDescription
-    android.graphics.Bitmap getIconBitmap() -> getIconBitmap
-    android.net.Uri getIconUri() -> getIconUri
-    android.os.Bundle getExtras() -> getExtras
-    int describeContents() -> describeContents
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-    java.lang.String toString() -> toString
-    java.lang.Object getMediaDescription() -> getMediaDescription
-    android.support.v4.media.MediaDescriptionCompat fromMediaDescription(java.lang.Object) -> fromMediaDescription
-android.support.v4.media.MediaDescriptionCompat$1 -> android.support.v4.media.MediaDescriptionCompat$1:
-    android.support.v4.media.MediaDescriptionCompat createFromParcel(android.os.Parcel) -> createFromParcel
-    android.support.v4.media.MediaDescriptionCompat[] newArray(int) -> newArray
-    java.lang.Object[] newArray(int) -> newArray
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.media.MediaDescriptionCompat$Builder -> android.support.v4.media.MediaDescriptionCompat$Builder:
-    java.lang.String mMediaId -> mMediaId
-    java.lang.CharSequence mTitle -> mTitle
-    java.lang.CharSequence mSubtitle -> mSubtitle
-    java.lang.CharSequence mDescription -> mDescription
-    android.graphics.Bitmap mIcon -> mIcon
-    android.net.Uri mIconUri -> mIconUri
-    android.os.Bundle mExtras -> mExtras
-    android.support.v4.media.MediaDescriptionCompat$Builder setMediaId(java.lang.String) -> setMediaId
-    android.support.v4.media.MediaDescriptionCompat$Builder setTitle(java.lang.CharSequence) -> setTitle
-    android.support.v4.media.MediaDescriptionCompat$Builder setSubtitle(java.lang.CharSequence) -> setSubtitle
-    android.support.v4.media.MediaDescriptionCompat$Builder setDescription(java.lang.CharSequence) -> setDescription
-    android.support.v4.media.MediaDescriptionCompat$Builder setIconBitmap(android.graphics.Bitmap) -> setIconBitmap
-    android.support.v4.media.MediaDescriptionCompat$Builder setIconUri(android.net.Uri) -> setIconUri
-    android.support.v4.media.MediaDescriptionCompat$Builder setExtras(android.os.Bundle) -> setExtras
-    android.support.v4.media.MediaDescriptionCompat build() -> build
-android.support.v4.media.MediaDescriptionCompatApi21 -> android.support.v4.media.MediaDescriptionCompatApi21:
-    java.lang.String getMediaId(java.lang.Object) -> getMediaId
-    java.lang.CharSequence getTitle(java.lang.Object) -> getTitle
-    java.lang.CharSequence getSubtitle(java.lang.Object) -> getSubtitle
-    java.lang.CharSequence getDescription(java.lang.Object) -> getDescription
-    android.graphics.Bitmap getIconBitmap(java.lang.Object) -> getIconBitmap
-    android.net.Uri getIconUri(java.lang.Object) -> getIconUri
-    android.os.Bundle getExtras(java.lang.Object) -> getExtras
-    void writeToParcel(java.lang.Object,android.os.Parcel,int) -> writeToParcel
-    java.lang.Object fromParcel(android.os.Parcel) -> fromParcel
-android.support.v4.media.MediaDescriptionCompatApi21$Builder -> android.support.v4.media.MediaDescriptionCompatApi21$Builder:
-    java.lang.Object newInstance() -> newInstance
-    void setMediaId(java.lang.Object,java.lang.String) -> setMediaId
-    void setTitle(java.lang.Object,java.lang.CharSequence) -> setTitle
-    void setSubtitle(java.lang.Object,java.lang.CharSequence) -> setSubtitle
-    void setDescription(java.lang.Object,java.lang.CharSequence) -> setDescription
-    void setIconBitmap(java.lang.Object,android.graphics.Bitmap) -> setIconBitmap
-    void setIconUri(java.lang.Object,android.net.Uri) -> setIconUri
-    void setExtras(java.lang.Object,android.os.Bundle) -> setExtras
-    java.lang.Object build(java.lang.Object) -> build
 android.support.v4.media.MediaMetadataCompat -> android.support.v4.media.MediaMetadataCompat:
     java.lang.String TAG -> TAG
     java.lang.String METADATA_KEY_TITLE -> METADATA_KEY_TITLE
@@ -2708,18 +2624,13 @@ android.support.v4.media.MediaMetadataCompat -> android.support.v4.media.MediaMe
     java.lang.String METADATA_KEY_DISPLAY_DESCRIPTION -> METADATA_KEY_DISPLAY_DESCRIPTION
     java.lang.String METADATA_KEY_DISPLAY_ICON -> METADATA_KEY_DISPLAY_ICON
     java.lang.String METADATA_KEY_DISPLAY_ICON_URI -> METADATA_KEY_DISPLAY_ICON_URI
-    java.lang.String METADATA_KEY_MEDIA_ID -> METADATA_KEY_MEDIA_ID
     int METADATA_TYPE_LONG -> METADATA_TYPE_LONG
     int METADATA_TYPE_TEXT -> METADATA_TYPE_TEXT
     int METADATA_TYPE_BITMAP -> METADATA_TYPE_BITMAP
     int METADATA_TYPE_RATING -> METADATA_TYPE_RATING
     android.support.v4.util.ArrayMap METADATA_KEYS_TYPE -> METADATA_KEYS_TYPE
-    java.lang.String[] PREFERRED_DESCRIPTION_ORDER -> PREFERRED_DESCRIPTION_ORDER
-    java.lang.String[] PREFERRED_BITMAP_ORDER -> PREFERRED_BITMAP_ORDER
-    java.lang.String[] PREFERRED_URI_ORDER -> PREFERRED_URI_ORDER
     android.os.Bundle mBundle -> mBundle
     java.lang.Object mMetadataObj -> mMetadataObj
-    android.support.v4.media.MediaDescriptionCompat mDescription -> mDescription
     android.os.Parcelable$Creator CREATOR -> CREATOR
     boolean containsKey(java.lang.String) -> containsKey
     java.lang.CharSequence getText(java.lang.String) -> getText
@@ -2727,12 +2638,10 @@ android.support.v4.media.MediaMetadataCompat -> android.support.v4.media.MediaMe
     long getLong(java.lang.String) -> getLong
     android.support.v4.media.RatingCompat getRating(java.lang.String) -> getRating
     android.graphics.Bitmap getBitmap(java.lang.String) -> getBitmap
-    android.support.v4.media.MediaDescriptionCompat getDescription() -> getDescription
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     int size() -> size
     java.util.Set keySet() -> keySet
-    android.os.Bundle getBundle() -> getBundle
     android.support.v4.media.MediaMetadataCompat fromMediaMetadata(java.lang.Object) -> fromMediaMetadata
     java.lang.Object getMediaMetadata() -> getMediaMetadata
     android.os.Bundle access$100(android.support.v4.media.MediaMetadataCompat) -> access$100
@@ -3096,215 +3005,32 @@ android.support.v4.media.routing.MediaRouterJellybeanMr2$RouteInfo -> android.su
     boolean isConnecting(java.lang.Object) -> isConnecting
 android.support.v4.media.routing.MediaRouterJellybeanMr2$UserRouteInfo -> android.support.v4.media.routing.MediaRouterJellybeanMr2$UserRouteInfo:
     void setDescription(java.lang.Object,java.lang.CharSequence) -> setDescription
-android.support.v4.media.session.IMediaControllerCallback -> android.support.v4.media.session.IMediaControllerCallback:
-    void onEvent(java.lang.String,android.os.Bundle) -> onEvent
-    void onSessionDestroyed() -> onSessionDestroyed
-    void onPlaybackStateChanged(android.support.v4.media.session.PlaybackStateCompat) -> onPlaybackStateChanged
-    void onMetadataChanged(android.support.v4.media.MediaMetadataCompat) -> onMetadataChanged
-    void onQueueChanged(java.util.List) -> onQueueChanged
-    void onQueueTitleChanged(java.lang.CharSequence) -> onQueueTitleChanged
-    void onExtrasChanged(android.os.Bundle) -> onExtrasChanged
-    void onVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo) -> onVolumeInfoChanged
-android.support.v4.media.session.IMediaControllerCallback$Stub -> android.support.v4.media.session.IMediaControllerCallback$Stub:
-    java.lang.String DESCRIPTOR -> DESCRIPTOR
-    int TRANSACTION_onEvent -> TRANSACTION_onEvent
-    int TRANSACTION_onSessionDestroyed -> TRANSACTION_onSessionDestroyed
-    int TRANSACTION_onPlaybackStateChanged -> TRANSACTION_onPlaybackStateChanged
-    int TRANSACTION_onMetadataChanged -> TRANSACTION_onMetadataChanged
-    int TRANSACTION_onQueueChanged -> TRANSACTION_onQueueChanged
-    int TRANSACTION_onQueueTitleChanged -> TRANSACTION_onQueueTitleChanged
-    int TRANSACTION_onExtrasChanged -> TRANSACTION_onExtrasChanged
-    int TRANSACTION_onVolumeInfoChanged -> TRANSACTION_onVolumeInfoChanged
-    android.support.v4.media.session.IMediaControllerCallback asInterface(android.os.IBinder) -> asInterface
-    android.os.IBinder asBinder() -> asBinder
-    boolean onTransact(int,android.os.Parcel,android.os.Parcel,int) -> onTransact
-android.support.v4.media.session.IMediaControllerCallback$Stub$Proxy -> android.support.v4.media.session.IMediaControllerCallback$Stub$Proxy:
-    android.os.IBinder mRemote -> mRemote
-    android.os.IBinder asBinder() -> asBinder
-    java.lang.String getInterfaceDescriptor() -> getInterfaceDescriptor
-    void onEvent(java.lang.String,android.os.Bundle) -> onEvent
-    void onSessionDestroyed() -> onSessionDestroyed
-    void onPlaybackStateChanged(android.support.v4.media.session.PlaybackStateCompat) -> onPlaybackStateChanged
-    void onMetadataChanged(android.support.v4.media.MediaMetadataCompat) -> onMetadataChanged
-    void onQueueChanged(java.util.List) -> onQueueChanged
-    void onQueueTitleChanged(java.lang.CharSequence) -> onQueueTitleChanged
-    void onExtrasChanged(android.os.Bundle) -> onExtrasChanged
-    void onVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo) -> onVolumeInfoChanged
-android.support.v4.media.session.IMediaSession -> android.support.v4.media.session.IMediaSession:
-    void sendCommand(java.lang.String,android.os.Bundle,android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper) -> sendCommand
-    boolean sendMediaButton(android.view.KeyEvent) -> sendMediaButton
-    void registerCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> registerCallbackListener
-    void unregisterCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> unregisterCallbackListener
-    boolean isTransportControlEnabled() -> isTransportControlEnabled
-    java.lang.String getPackageName() -> getPackageName
-    java.lang.String getTag() -> getTag
-    android.app.PendingIntent getLaunchPendingIntent() -> getLaunchPendingIntent
-    long getFlags() -> getFlags
-    android.support.v4.media.session.ParcelableVolumeInfo getVolumeAttributes() -> getVolumeAttributes
-    void adjustVolume(int,int,java.lang.String) -> adjustVolume
-    void setVolumeTo(int,int,java.lang.String) -> setVolumeTo
-    void play() -> play
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
-    void pause() -> pause
-    void stop() -> stop
-    void next() -> next
-    void previous() -> previous
-    void fastForward() -> fastForward
-    void rewind() -> rewind
-    void seekTo(long) -> seekTo
-    void rate(android.support.v4.media.RatingCompat) -> rate
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
-    android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
-    int getRatingType() -> getRatingType
-android.support.v4.media.session.IMediaSession$Stub -> android.support.v4.media.session.IMediaSession$Stub:
-    java.lang.String DESCRIPTOR -> DESCRIPTOR
-    int TRANSACTION_sendCommand -> TRANSACTION_sendCommand
-    int TRANSACTION_sendMediaButton -> TRANSACTION_sendMediaButton
-    int TRANSACTION_registerCallbackListener -> TRANSACTION_registerCallbackListener
-    int TRANSACTION_unregisterCallbackListener -> TRANSACTION_unregisterCallbackListener
-    int TRANSACTION_isTransportControlEnabled -> TRANSACTION_isTransportControlEnabled
-    int TRANSACTION_getPackageName -> TRANSACTION_getPackageName
-    int TRANSACTION_getTag -> TRANSACTION_getTag
-    int TRANSACTION_getLaunchPendingIntent -> TRANSACTION_getLaunchPendingIntent
-    int TRANSACTION_getFlags -> TRANSACTION_getFlags
-    int TRANSACTION_getVolumeAttributes -> TRANSACTION_getVolumeAttributes
-    int TRANSACTION_adjustVolume -> TRANSACTION_adjustVolume
-    int TRANSACTION_setVolumeTo -> TRANSACTION_setVolumeTo
-    int TRANSACTION_play -> TRANSACTION_play
-    int TRANSACTION_playFromMediaId -> TRANSACTION_playFromMediaId
-    int TRANSACTION_playFromSearch -> TRANSACTION_playFromSearch
-    int TRANSACTION_skipToQueueItem -> TRANSACTION_skipToQueueItem
-    int TRANSACTION_pause -> TRANSACTION_pause
-    int TRANSACTION_stop -> TRANSACTION_stop
-    int TRANSACTION_next -> TRANSACTION_next
-    int TRANSACTION_previous -> TRANSACTION_previous
-    int TRANSACTION_fastForward -> TRANSACTION_fastForward
-    int TRANSACTION_rewind -> TRANSACTION_rewind
-    int TRANSACTION_seekTo -> TRANSACTION_seekTo
-    int TRANSACTION_rate -> TRANSACTION_rate
-    int TRANSACTION_sendCustomAction -> TRANSACTION_sendCustomAction
-    int TRANSACTION_getMetadata -> TRANSACTION_getMetadata
-    int TRANSACTION_getPlaybackState -> TRANSACTION_getPlaybackState
-    int TRANSACTION_getQueue -> TRANSACTION_getQueue
-    int TRANSACTION_getQueueTitle -> TRANSACTION_getQueueTitle
-    int TRANSACTION_getExtras -> TRANSACTION_getExtras
-    int TRANSACTION_getRatingType -> TRANSACTION_getRatingType
-    android.support.v4.media.session.IMediaSession asInterface(android.os.IBinder) -> asInterface
-    android.os.IBinder asBinder() -> asBinder
-    boolean onTransact(int,android.os.Parcel,android.os.Parcel,int) -> onTransact
-android.support.v4.media.session.IMediaSession$Stub$Proxy -> android.support.v4.media.session.IMediaSession$Stub$Proxy:
-    android.os.IBinder mRemote -> mRemote
-    android.os.IBinder asBinder() -> asBinder
-    java.lang.String getInterfaceDescriptor() -> getInterfaceDescriptor
-    void sendCommand(java.lang.String,android.os.Bundle,android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper) -> sendCommand
-    boolean sendMediaButton(android.view.KeyEvent) -> sendMediaButton
-    void registerCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> registerCallbackListener
-    void unregisterCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> unregisterCallbackListener
-    boolean isTransportControlEnabled() -> isTransportControlEnabled
-    java.lang.String getPackageName() -> getPackageName
-    java.lang.String getTag() -> getTag
-    android.app.PendingIntent getLaunchPendingIntent() -> getLaunchPendingIntent
-    long getFlags() -> getFlags
-    android.support.v4.media.session.ParcelableVolumeInfo getVolumeAttributes() -> getVolumeAttributes
-    void adjustVolume(int,int,java.lang.String) -> adjustVolume
-    void setVolumeTo(int,int,java.lang.String) -> setVolumeTo
-    void play() -> play
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
-    void pause() -> pause
-    void stop() -> stop
-    void next() -> next
-    void previous() -> previous
-    void fastForward() -> fastForward
-    void rewind() -> rewind
-    void seekTo(long) -> seekTo
-    void rate(android.support.v4.media.RatingCompat) -> rate
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
-    android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
-    int getRatingType() -> getRatingType
 android.support.v4.media.session.MediaControllerCompat -> android.support.v4.media.session.MediaControllerCompat:
-    java.lang.String TAG -> TAG
     android.support.v4.media.session.MediaControllerCompat$MediaControllerImpl mImpl -> mImpl
-    android.support.v4.media.session.MediaSessionCompat$Token mToken -> mToken
     android.support.v4.media.session.MediaControllerCompat$TransportControls getTransportControls() -> getTransportControls
     boolean dispatchMediaButtonEvent(android.view.KeyEvent) -> dispatchMediaButtonEvent
     android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
     android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
     int getRatingType() -> getRatingType
-    long getFlags() -> getFlags
     android.support.v4.media.session.MediaControllerCompat$PlaybackInfo getPlaybackInfo() -> getPlaybackInfo
-    android.app.PendingIntent getSessionActivity() -> getSessionActivity
-    android.support.v4.media.session.MediaSessionCompat$Token getSessionToken() -> getSessionToken
-    void setVolumeTo(int,int) -> setVolumeTo
-    void adjustVolume(int,int) -> adjustVolume
     void registerCallback(android.support.v4.media.session.MediaControllerCompat$Callback) -> registerCallback
     void registerCallback(android.support.v4.media.session.MediaControllerCompat$Callback,android.os.Handler) -> registerCallback
     void unregisterCallback(android.support.v4.media.session.MediaControllerCompat$Callback) -> unregisterCallback
     void sendCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> sendCommand
-    java.lang.String getPackageName() -> getPackageName
     java.lang.Object getMediaController() -> getMediaController
 android.support.v4.media.session.MediaControllerCompat$1 -> android.support.v4.media.session.MediaControllerCompat$1:
 android.support.v4.media.session.MediaControllerCompat$Callback -> android.support.v4.media.session.MediaControllerCompat$Callback:
     java.lang.Object mCallbackObj -> mCallbackObj
-    android.support.v4.media.session.MediaControllerCompat$Callback$MessageHandler mHandler -> mHandler
-    boolean mRegistered -> mRegistered
     void onSessionDestroyed() -> onSessionDestroyed
     void onSessionEvent(java.lang.String,android.os.Bundle) -> onSessionEvent
     void onPlaybackStateChanged(android.support.v4.media.session.PlaybackStateCompat) -> onPlaybackStateChanged
     void onMetadataChanged(android.support.v4.media.MediaMetadataCompat) -> onMetadataChanged
-    void onQueueChanged(java.util.List) -> onQueueChanged
-    void onQueueTitleChanged(java.lang.CharSequence) -> onQueueTitleChanged
-    void onExtrasChanged(android.os.Bundle) -> onExtrasChanged
-    void onAudioInfoChanged(android.support.v4.media.session.MediaControllerCompat$PlaybackInfo) -> onAudioInfoChanged
-    void binderDied() -> binderDied
-    void setHandler(android.os.Handler) -> setHandler
-    android.support.v4.media.session.MediaControllerCompat$Callback$MessageHandler access$200(android.support.v4.media.session.MediaControllerCompat$Callback) -> access$200
-    boolean access$300(android.support.v4.media.session.MediaControllerCompat$Callback) -> access$300
-    java.lang.Object access$400(android.support.v4.media.session.MediaControllerCompat$Callback) -> access$400
-    void access$500(android.support.v4.media.session.MediaControllerCompat$Callback,android.os.Handler) -> access$500
-    boolean access$302(android.support.v4.media.session.MediaControllerCompat$Callback,boolean) -> access$302
-android.support.v4.media.session.MediaControllerCompat$Callback$MessageHandler -> android.support.v4.media.session.MediaControllerCompat$Callback$MessageHandler:
-    int MSG_EVENT -> MSG_EVENT
-    int MSG_UPDATE_PLAYBACK_STATE -> MSG_UPDATE_PLAYBACK_STATE
-    int MSG_UPDATE_METADATA -> MSG_UPDATE_METADATA
-    int MSG_UPDATE_VOLUME -> MSG_UPDATE_VOLUME
-    int MSG_UPDATE_QUEUE -> MSG_UPDATE_QUEUE
-    int MSG_UPDATE_QUEUE_TITLE -> MSG_UPDATE_QUEUE_TITLE
-    int MSG_UPDATE_EXTRAS -> MSG_UPDATE_EXTRAS
-    int MSG_DESTROYED -> MSG_DESTROYED
-    android.support.v4.media.session.MediaControllerCompat$Callback this$0 -> this$0
-    void handleMessage(android.os.Message) -> handleMessage
-    void post(int,java.lang.Object,android.os.Bundle) -> post
 android.support.v4.media.session.MediaControllerCompat$Callback$StubApi21 -> android.support.v4.media.session.MediaControllerCompat$Callback$StubApi21:
     android.support.v4.media.session.MediaControllerCompat$Callback this$0 -> this$0
     void onSessionDestroyed() -> onSessionDestroyed
     void onSessionEvent(java.lang.String,android.os.Bundle) -> onSessionEvent
     void onPlaybackStateChanged(java.lang.Object) -> onPlaybackStateChanged
     void onMetadataChanged(java.lang.Object) -> onMetadataChanged
-android.support.v4.media.session.MediaControllerCompat$Callback$StubCompat -> android.support.v4.media.session.MediaControllerCompat$Callback$StubCompat:
-    android.support.v4.media.session.MediaControllerCompat$Callback this$0 -> this$0
-    void onEvent(java.lang.String,android.os.Bundle) -> onEvent
-    void onSessionDestroyed() -> onSessionDestroyed
-    void onPlaybackStateChanged(android.support.v4.media.session.PlaybackStateCompat) -> onPlaybackStateChanged
-    void onMetadataChanged(android.support.v4.media.MediaMetadataCompat) -> onMetadataChanged
-    void onQueueChanged(java.util.List) -> onQueueChanged
-    void onQueueTitleChanged(java.lang.CharSequence) -> onQueueTitleChanged
-    void onExtrasChanged(android.os.Bundle) -> onExtrasChanged
-    void onVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo) -> onVolumeInfoChanged
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImpl -> android.support.v4.media.session.MediaControllerCompat$MediaControllerImpl:
     void registerCallback(android.support.v4.media.session.MediaControllerCompat$Callback,android.os.Handler) -> registerCallback
     void unregisterCallback(android.support.v4.media.session.MediaControllerCompat$Callback) -> unregisterCallback
@@ -3312,17 +3038,9 @@ android.support.v4.media.session.MediaControllerCompat$MediaControllerImpl -> an
     android.support.v4.media.session.MediaControllerCompat$TransportControls getTransportControls() -> getTransportControls
     android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
     android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
     int getRatingType() -> getRatingType
-    long getFlags() -> getFlags
     android.support.v4.media.session.MediaControllerCompat$PlaybackInfo getPlaybackInfo() -> getPlaybackInfo
-    android.app.PendingIntent getSessionActivity() -> getSessionActivity
-    void setVolumeTo(int,int) -> setVolumeTo
-    void adjustVolume(int,int) -> adjustVolume
     void sendCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> sendCommand
-    java.lang.String getPackageName() -> getPackageName
     java.lang.Object getMediaController() -> getMediaController
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21 -> android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21:
     java.lang.Object mControllerObj -> mControllerObj
@@ -3332,39 +3050,20 @@ android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21 
     android.support.v4.media.session.MediaControllerCompat$TransportControls getTransportControls() -> getTransportControls
     android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
     android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
     int getRatingType() -> getRatingType
-    long getFlags() -> getFlags
     android.support.v4.media.session.MediaControllerCompat$PlaybackInfo getPlaybackInfo() -> getPlaybackInfo
-    android.app.PendingIntent getSessionActivity() -> getSessionActivity
-    void setVolumeTo(int,int) -> setVolumeTo
-    void adjustVolume(int,int) -> adjustVolume
     void sendCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> sendCommand
-    java.lang.String getPackageName() -> getPackageName
     java.lang.Object getMediaController() -> getMediaController
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplBase -> android.support.v4.media.session.MediaControllerCompat$MediaControllerImplBase:
-    android.support.v4.media.session.MediaSessionCompat$Token mToken -> mToken
-    android.support.v4.media.session.IMediaSession mBinder -> mBinder
-    android.support.v4.media.session.MediaControllerCompat$TransportControls mTransportControls -> mTransportControls
     void registerCallback(android.support.v4.media.session.MediaControllerCompat$Callback,android.os.Handler) -> registerCallback
     void unregisterCallback(android.support.v4.media.session.MediaControllerCompat$Callback) -> unregisterCallback
     boolean dispatchMediaButtonEvent(android.view.KeyEvent) -> dispatchMediaButtonEvent
     android.support.v4.media.session.MediaControllerCompat$TransportControls getTransportControls() -> getTransportControls
     android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
     android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
     int getRatingType() -> getRatingType
-    long getFlags() -> getFlags
     android.support.v4.media.session.MediaControllerCompat$PlaybackInfo getPlaybackInfo() -> getPlaybackInfo
-    android.app.PendingIntent getSessionActivity() -> getSessionActivity
-    void setVolumeTo(int,int) -> setVolumeTo
-    void adjustVolume(int,int) -> adjustVolume
     void sendCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> sendCommand
-    java.lang.String getPackageName() -> getPackageName
     java.lang.Object getMediaController() -> getMediaController
 android.support.v4.media.session.MediaControllerCompat$PlaybackInfo -> android.support.v4.media.session.MediaControllerCompat$PlaybackInfo:
     int PLAYBACK_TYPE_LOCAL -> PLAYBACK_TYPE_LOCAL
@@ -3381,9 +3080,6 @@ android.support.v4.media.session.MediaControllerCompat$PlaybackInfo -> android.s
     int getCurrentVolume() -> getCurrentVolume
 android.support.v4.media.session.MediaControllerCompat$TransportControls -> android.support.v4.media.session.MediaControllerCompat$TransportControls:
     void play() -> play
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
     void pause() -> pause
     void stop() -> stop
     void seekTo(long) -> seekTo
@@ -3392,8 +3088,6 @@ android.support.v4.media.session.MediaControllerCompat$TransportControls -> andr
     void rewind() -> rewind
     void skipToPrevious() -> skipToPrevious
     void setRating(android.support.v4.media.RatingCompat) -> setRating
-    void sendCustomAction(android.support.v4.media.session.PlaybackStateCompat$CustomAction,android.os.Bundle) -> sendCustomAction
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
 android.support.v4.media.session.MediaControllerCompat$TransportControlsApi21 -> android.support.v4.media.session.MediaControllerCompat$TransportControlsApi21:
     java.lang.Object mControlsObj -> mControlsObj
     void play() -> play
@@ -3405,27 +3099,6 @@ android.support.v4.media.session.MediaControllerCompat$TransportControlsApi21 ->
     void skipToNext() -> skipToNext
     void skipToPrevious() -> skipToPrevious
     void setRating(android.support.v4.media.RatingCompat) -> setRating
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
-    void sendCustomAction(android.support.v4.media.session.PlaybackStateCompat$CustomAction,android.os.Bundle) -> sendCustomAction
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
-android.support.v4.media.session.MediaControllerCompat$TransportControlsBase -> android.support.v4.media.session.MediaControllerCompat$TransportControlsBase:
-    android.support.v4.media.session.IMediaSession mBinder -> mBinder
-    void play() -> play
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
-    void pause() -> pause
-    void stop() -> stop
-    void seekTo(long) -> seekTo
-    void fastForward() -> fastForward
-    void skipToNext() -> skipToNext
-    void rewind() -> rewind
-    void skipToPrevious() -> skipToPrevious
-    void setRating(android.support.v4.media.RatingCompat) -> setRating
-    void sendCustomAction(android.support.v4.media.session.PlaybackStateCompat$CustomAction,android.os.Bundle) -> sendCustomAction
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
 android.support.v4.media.session.MediaControllerCompatApi21 -> android.support.v4.media.session.MediaControllerCompatApi21:
     java.lang.Object fromToken(android.content.Context,java.lang.Object) -> fromToken
     java.lang.Object createCallback(android.support.v4.media.session.MediaControllerCompatApi21$Callback) -> createCallback
@@ -3434,18 +3107,10 @@ android.support.v4.media.session.MediaControllerCompatApi21 -> android.support.v
     java.lang.Object getTransportControls(java.lang.Object) -> getTransportControls
     java.lang.Object getPlaybackState(java.lang.Object) -> getPlaybackState
     java.lang.Object getMetadata(java.lang.Object) -> getMetadata
-    java.util.List getQueue(java.lang.Object) -> getQueue
-    java.lang.CharSequence getQueueTitle(java.lang.Object) -> getQueueTitle
-    android.os.Bundle getExtras(java.lang.Object) -> getExtras
     int getRatingType(java.lang.Object) -> getRatingType
-    long getFlags(java.lang.Object) -> getFlags
     java.lang.Object getPlaybackInfo(java.lang.Object) -> getPlaybackInfo
-    android.app.PendingIntent getSessionActivity(java.lang.Object) -> getSessionActivity
     boolean dispatchMediaButtonEvent(java.lang.Object,android.view.KeyEvent) -> dispatchMediaButtonEvent
-    void setVolumeTo(java.lang.Object,int,int) -> setVolumeTo
-    void adjustVolume(java.lang.Object,int,int) -> adjustVolume
     void sendCommand(java.lang.Object,java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> sendCommand
-    java.lang.String getPackageName(java.lang.Object) -> getPackageName
 android.support.v4.media.session.MediaControllerCompatApi21$Callback -> android.support.v4.media.session.MediaControllerCompatApi21$Callback:
     void onSessionDestroyed() -> onSessionDestroyed
     void onSessionEvent(java.lang.String,android.os.Bundle) -> onSessionEvent
@@ -3478,20 +3143,12 @@ android.support.v4.media.session.MediaControllerCompatApi21$TransportControls ->
     void skipToNext(java.lang.Object) -> skipToNext
     void skipToPrevious(java.lang.Object) -> skipToPrevious
     void setRating(java.lang.Object,java.lang.Object) -> setRating
-    void playFromMediaId(java.lang.Object,java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.Object,java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(java.lang.Object,long) -> skipToQueueItem
-    void sendCustomAction(java.lang.Object,java.lang.String,android.os.Bundle) -> sendCustomAction
 android.support.v4.media.session.MediaSessionCompat -> android.support.v4.media.session.MediaSessionCompat:
     android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl mImpl -> mImpl
-    android.support.v4.media.session.MediaControllerCompat mController -> mController
-    java.util.ArrayList mActiveListeners -> mActiveListeners
     int FLAG_HANDLES_MEDIA_BUTTONS -> FLAG_HANDLES_MEDIA_BUTTONS
     int FLAG_HANDLES_TRANSPORT_CONTROLS -> FLAG_HANDLES_TRANSPORT_CONTROLS
     void setCallback(android.support.v4.media.session.MediaSessionCompat$Callback) -> setCallback
     void setCallback(android.support.v4.media.session.MediaSessionCompat$Callback,android.os.Handler) -> setCallback
-    void setSessionActivity(android.app.PendingIntent) -> setSessionActivity
-    void setMediaButtonReceiver(android.app.PendingIntent) -> setMediaButtonReceiver
     void setFlags(int) -> setFlags
     void setPlaybackToLocal(int) -> setPlaybackToLocal
     void setPlaybackToRemote(android.support.v4.media.VolumeProviderCompat) -> setPlaybackToRemote
@@ -3500,27 +3157,16 @@ android.support.v4.media.session.MediaSessionCompat -> android.support.v4.media.
     void sendSessionEvent(java.lang.String,android.os.Bundle) -> sendSessionEvent
     void release() -> release
     android.support.v4.media.session.MediaSessionCompat$Token getSessionToken() -> getSessionToken
-    android.support.v4.media.session.MediaControllerCompat getController() -> getController
     void setPlaybackState(android.support.v4.media.session.PlaybackStateCompat) -> setPlaybackState
     void setMetadata(android.support.v4.media.MediaMetadataCompat) -> setMetadata
-    void setQueue(java.util.List) -> setQueue
-    void setQueueTitle(java.lang.CharSequence) -> setQueueTitle
-    void setRatingType(int) -> setRatingType
-    void setExtras(android.os.Bundle) -> setExtras
     java.lang.Object getMediaSession() -> getMediaSession
-    java.lang.Object getRemoteControlClient() -> getRemoteControlClient
-    void addOnActiveChangeListener(android.support.v4.media.session.MediaSessionCompat$OnActiveChangeListener) -> addOnActiveChangeListener
-    void removeOnActiveChangeListener(android.support.v4.media.session.MediaSessionCompat$OnActiveChangeListener) -> removeOnActiveChangeListener
-    android.support.v4.media.session.MediaSessionCompat obtain(android.content.Context,java.lang.Object) -> obtain
+    android.support.v4.media.session.MediaSessionCompat obtain(java.lang.Object) -> obtain
 android.support.v4.media.session.MediaSessionCompat$1 -> android.support.v4.media.session.MediaSessionCompat$1:
 android.support.v4.media.session.MediaSessionCompat$Callback -> android.support.v4.media.session.MediaSessionCompat$Callback:
     java.lang.Object mCallbackObj -> mCallbackObj
     void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
     boolean onMediaButtonEvent(android.content.Intent) -> onMediaButtonEvent
     void onPlay() -> onPlay
-    void onPlayFromMediaId(java.lang.String,android.os.Bundle) -> onPlayFromMediaId
-    void onPlayFromSearch(java.lang.String,android.os.Bundle) -> onPlayFromSearch
-    void onSkipToQueueItem(long) -> onSkipToQueueItem
     void onPause() -> onPause
     void onSkipToNext() -> onSkipToNext
     void onSkipToPrevious() -> onSkipToPrevious
@@ -3529,15 +3175,11 @@ android.support.v4.media.session.MediaSessionCompat$Callback -> android.support.
     void onStop() -> onStop
     void onSeekTo(long) -> onSeekTo
     void onSetRating(android.support.v4.media.RatingCompat) -> onSetRating
-    void onCustomAction(java.lang.String,android.os.Bundle) -> onCustomAction
 android.support.v4.media.session.MediaSessionCompat$Callback$StubApi21 -> android.support.v4.media.session.MediaSessionCompat$Callback$StubApi21:
     android.support.v4.media.session.MediaSessionCompat$Callback this$0 -> this$0
     void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
     boolean onMediaButtonEvent(android.content.Intent) -> onMediaButtonEvent
     void onPlay() -> onPlay
-    void onPlayFromMediaId(java.lang.String,android.os.Bundle) -> onPlayFromMediaId
-    void onPlayFromSearch(java.lang.String,android.os.Bundle) -> onPlayFromSearch
-    void onSkipToQueueItem(long) -> onSkipToQueueItem
     void onPause() -> onPause
     void onSkipToNext() -> onSkipToNext
     void onSkipToPrevious() -> onSkipToPrevious
@@ -3546,7 +3188,6 @@ android.support.v4.media.session.MediaSessionCompat$Callback$StubApi21 -> androi
     void onStop() -> onStop
     void onSeekTo(long) -> onSeekTo
     void onSetRating(java.lang.Object) -> onSetRating
-    void onCustomAction(java.lang.String,android.os.Bundle) -> onCustomAction
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl:
     void setCallback(android.support.v4.media.session.MediaSessionCompat$Callback,android.os.Handler) -> setCallback
     void setFlags(int) -> setFlags
@@ -3559,18 +3200,10 @@ android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl -> android.
     android.support.v4.media.session.MediaSessionCompat$Token getSessionToken() -> getSessionToken
     void setPlaybackState(android.support.v4.media.session.PlaybackStateCompat) -> setPlaybackState
     void setMetadata(android.support.v4.media.MediaMetadataCompat) -> setMetadata
-    void setSessionActivity(android.app.PendingIntent) -> setSessionActivity
-    void setMediaButtonReceiver(android.app.PendingIntent) -> setMediaButtonReceiver
-    void setQueue(java.util.List) -> setQueue
-    void setQueueTitle(java.lang.CharSequence) -> setQueueTitle
-    void setRatingType(int) -> setRatingType
-    void setExtras(android.os.Bundle) -> setExtras
     java.lang.Object getMediaSession() -> getMediaSession
-    java.lang.Object getRemoteControlClient() -> getRemoteControlClient
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21 -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21:
     java.lang.Object mSessionObj -> mSessionObj
     android.support.v4.media.session.MediaSessionCompat$Token mToken -> mToken
-    android.app.PendingIntent mMediaButtonIntent -> mMediaButtonIntent
     void setCallback(android.support.v4.media.session.MediaSessionCompat$Callback,android.os.Handler) -> setCallback
     void setFlags(int) -> setFlags
     void setPlaybackToLocal(int) -> setPlaybackToLocal
@@ -3582,44 +3215,8 @@ android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21 -> and
     android.support.v4.media.session.MediaSessionCompat$Token getSessionToken() -> getSessionToken
     void setPlaybackState(android.support.v4.media.session.PlaybackStateCompat) -> setPlaybackState
     void setMetadata(android.support.v4.media.MediaMetadataCompat) -> setMetadata
-    void setSessionActivity(android.app.PendingIntent) -> setSessionActivity
-    void setMediaButtonReceiver(android.app.PendingIntent) -> setMediaButtonReceiver
-    void setQueue(java.util.List) -> setQueue
-    void setQueueTitle(java.lang.CharSequence) -> setQueueTitle
-    void setRatingType(int) -> setRatingType
-    void setExtras(android.os.Bundle) -> setExtras
     java.lang.Object getMediaSession() -> getMediaSession
-    java.lang.Object getRemoteControlClient() -> getRemoteControlClient
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase:
-    android.content.Context mContext -> mContext
-    android.content.ComponentName mComponentName -> mComponentName
-    android.app.PendingIntent mMediaButtonEventReceiver -> mMediaButtonEventReceiver
-    java.lang.Object mRccObj -> mRccObj
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MediaSessionStub mStub -> mStub
-    android.support.v4.media.session.MediaSessionCompat$Token mToken -> mToken
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MessageHandler mHandler -> mHandler
-    java.lang.String mPackageName -> mPackageName
-    java.lang.String mTag -> mTag
-    android.media.AudioManager mAudioManager -> mAudioManager
-    java.lang.Object mLock -> mLock
-    android.os.RemoteCallbackList mControllerCallbacks -> mControllerCallbacks
-    boolean mDestroyed -> mDestroyed
-    boolean mIsActive -> mIsActive
-    boolean mIsRccRegistered -> mIsRccRegistered
-    boolean mIsMbrRegistered -> mIsMbrRegistered
-    android.support.v4.media.session.MediaSessionCompat$Callback mCallback -> mCallback
-    int mFlags -> mFlags
-    android.support.v4.media.MediaMetadataCompat mMetadata -> mMetadata
-    android.support.v4.media.session.PlaybackStateCompat mState -> mState
-    android.app.PendingIntent mSessionActivity -> mSessionActivity
-    java.util.List mQueue -> mQueue
-    java.lang.CharSequence mQueueTitle -> mQueueTitle
-    int mRatingType -> mRatingType
-    android.os.Bundle mExtras -> mExtras
-    int mVolumeType -> mVolumeType
-    int mLocalStream -> mLocalStream
-    android.support.v4.media.VolumeProviderCompat mVolumeProvider -> mVolumeProvider
-    android.support.v4.media.VolumeProviderCompat$Callback mVolumeCallback -> mVolumeCallback
     void setCallback(android.support.v4.media.session.MediaSessionCompat$Callback,android.os.Handler) -> setCallback
     void setFlags(int) -> setFlags
     void setPlaybackToLocal(int) -> setPlaybackToLocal
@@ -3631,160 +3228,10 @@ android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase -> andr
     android.support.v4.media.session.MediaSessionCompat$Token getSessionToken() -> getSessionToken
     void setPlaybackState(android.support.v4.media.session.PlaybackStateCompat) -> setPlaybackState
     void setMetadata(android.support.v4.media.MediaMetadataCompat) -> setMetadata
-    void setSessionActivity(android.app.PendingIntent) -> setSessionActivity
-    void setMediaButtonReceiver(android.app.PendingIntent) -> setMediaButtonReceiver
-    void setQueue(java.util.List) -> setQueue
-    void setQueueTitle(java.lang.CharSequence) -> setQueueTitle
     java.lang.Object getMediaSession() -> getMediaSession
-    java.lang.Object getRemoteControlClient() -> getRemoteControlClient
-    void setRatingType(int) -> setRatingType
-    void setExtras(android.os.Bundle) -> setExtras
-    boolean update() -> update
-    void adjustVolume(int,int) -> adjustVolume
-    void setVolumeTo(int,int) -> setVolumeTo
-    android.support.v4.media.session.PlaybackStateCompat getStateWithUpdatedPosition() -> getStateWithUpdatedPosition
-    void sendVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo) -> sendVolumeInfoChanged
-    void sendSessionDestroyed() -> sendSessionDestroyed
-    void sendEvent(java.lang.String,android.os.Bundle) -> sendEvent
-    void sendState(android.support.v4.media.session.PlaybackStateCompat) -> sendState
-    void sendMetadata(android.support.v4.media.MediaMetadataCompat) -> sendMetadata
-    void sendQueue(java.util.List) -> sendQueue
-    void sendQueueTitle(java.lang.CharSequence) -> sendQueueTitle
-    android.support.v4.media.VolumeProviderCompat access$200(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$200
-    int access$300(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$300
-    int access$400(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$400
-    void access$500(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase,android.support.v4.media.session.ParcelableVolumeInfo) -> access$500
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MessageHandler access$700(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$700
-    int access$800(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$800
-    boolean access$900(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$900
-    android.os.RemoteCallbackList access$1000(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1000
-    java.lang.String access$1100(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1100
-    java.lang.String access$1200(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1200
-    java.lang.Object access$1300(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1300
-    android.app.PendingIntent access$1400(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1400
-    android.media.AudioManager access$1500(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1500
-    void access$1600(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase,int,int) -> access$1600
-    void access$1700(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase,int,int) -> access$1700
-    android.support.v4.media.MediaMetadataCompat access$1800(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1800
-    android.support.v4.media.session.PlaybackStateCompat access$1900(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$1900
-    java.util.List access$2000(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$2000
-    java.lang.CharSequence access$2100(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$2100
-    android.os.Bundle access$2200(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$2200
-    int access$2300(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$2300
-    android.support.v4.media.session.MediaSessionCompat$Callback access$2400(android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase) -> access$2400
-android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$1 -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$1:
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase this$0 -> this$0
-    void onVolumeChanged(android.support.v4.media.VolumeProviderCompat) -> onVolumeChanged
-android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$2 -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$2:
-    android.support.v4.media.session.MediaSessionCompat$Callback val$callback -> val$callback
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase this$0 -> this$0
-    void onStop() -> onStop
-    void onSkipToPrevious() -> onSkipToPrevious
-    void onSkipToNext() -> onSkipToNext
-    void onSetRating(java.lang.Object) -> onSetRating
-    void onSeekTo(long) -> onSeekTo
-    void onRewind() -> onRewind
-    void onPlay() -> onPlay
-    void onPause() -> onPause
-    boolean onMediaButtonEvent(android.content.Intent) -> onMediaButtonEvent
-    void onFastForward() -> onFastForward
-    void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
-android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$Command -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$Command:
-    java.lang.String command -> command
-    android.os.Bundle extras -> extras
-    android.os.ResultReceiver stub -> stub
-android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MediaSessionStub -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MediaSessionStub:
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase this$0 -> this$0
-    void sendCommand(java.lang.String,android.os.Bundle,android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper) -> sendCommand
-    boolean sendMediaButton(android.view.KeyEvent) -> sendMediaButton
-    void registerCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> registerCallbackListener
-    void unregisterCallbackListener(android.support.v4.media.session.IMediaControllerCallback) -> unregisterCallbackListener
-    java.lang.String getPackageName() -> getPackageName
-    java.lang.String getTag() -> getTag
-    android.app.PendingIntent getLaunchPendingIntent() -> getLaunchPendingIntent
-    long getFlags() -> getFlags
-    android.support.v4.media.session.ParcelableVolumeInfo getVolumeAttributes() -> getVolumeAttributes
-    void adjustVolume(int,int,java.lang.String) -> adjustVolume
-    void setVolumeTo(int,int,java.lang.String) -> setVolumeTo
-    void play() -> play
-    void playFromMediaId(java.lang.String,android.os.Bundle) -> playFromMediaId
-    void playFromSearch(java.lang.String,android.os.Bundle) -> playFromSearch
-    void skipToQueueItem(long) -> skipToQueueItem
-    void pause() -> pause
-    void stop() -> stop
-    void next() -> next
-    void previous() -> previous
-    void fastForward() -> fastForward
-    void rewind() -> rewind
-    void seekTo(long) -> seekTo
-    void rate(android.support.v4.media.RatingCompat) -> rate
-    void sendCustomAction(java.lang.String,android.os.Bundle) -> sendCustomAction
-    android.support.v4.media.MediaMetadataCompat getMetadata() -> getMetadata
-    android.support.v4.media.session.PlaybackStateCompat getPlaybackState() -> getPlaybackState
-    java.util.List getQueue() -> getQueue
-    java.lang.CharSequence getQueueTitle() -> getQueueTitle
-    android.os.Bundle getExtras() -> getExtras
-    int getRatingType() -> getRatingType
-    boolean isTransportControlEnabled() -> isTransportControlEnabled
-android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MessageHandler -> android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MessageHandler:
-    int MSG_PLAY -> MSG_PLAY
-    int MSG_PLAY_MEDIA_ID -> MSG_PLAY_MEDIA_ID
-    int MSG_PLAY_SEARCH -> MSG_PLAY_SEARCH
-    int MSG_SKIP_TO_ITEM -> MSG_SKIP_TO_ITEM
-    int MSG_PAUSE -> MSG_PAUSE
-    int MSG_STOP -> MSG_STOP
-    int MSG_NEXT -> MSG_NEXT
-    int MSG_PREVIOUS -> MSG_PREVIOUS
-    int MSG_FAST_FORWARD -> MSG_FAST_FORWARD
-    int MSG_REWIND -> MSG_REWIND
-    int MSG_SEEK_TO -> MSG_SEEK_TO
-    int MSG_RATE -> MSG_RATE
-    int MSG_CUSTOM_ACTION -> MSG_CUSTOM_ACTION
-    int MSG_MEDIA_BUTTON -> MSG_MEDIA_BUTTON
-    int MSG_COMMAND -> MSG_COMMAND
-    int MSG_ADJUST_VOLUME -> MSG_ADJUST_VOLUME
-    int MSG_SET_VOLUME -> MSG_SET_VOLUME
-    android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase this$0 -> this$0
-    void post(int,java.lang.Object,android.os.Bundle) -> post
-    void post(int,java.lang.Object) -> post
-    void post(int) -> post
-    void post(int,java.lang.Object,int) -> post
-    void handleMessage(android.os.Message) -> handleMessage
-android.support.v4.media.session.MediaSessionCompat$OnActiveChangeListener -> android.support.v4.media.session.MediaSessionCompat$OnActiveChangeListener:
-    void onActiveChanged() -> onActiveChanged
-android.support.v4.media.session.MediaSessionCompat$QueueItem -> android.support.v4.media.session.MediaSessionCompat$QueueItem:
-    int UNKNOWN_ID -> UNKNOWN_ID
-    android.support.v4.media.MediaDescriptionCompat mDescription -> mDescription
-    long mId -> mId
-    java.lang.Object mItem -> mItem
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    android.support.v4.media.MediaDescriptionCompat getDescription() -> getDescription
-    long getQueueId() -> getQueueId
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-    int describeContents() -> describeContents
-    java.lang.Object getQueueItem() -> getQueueItem
-    android.support.v4.media.session.MediaSessionCompat$QueueItem obtain(java.lang.Object) -> obtain
-    java.lang.String toString() -> toString
-android.support.v4.media.session.MediaSessionCompat$QueueItem$1 -> android.support.v4.media.session.MediaSessionCompat$QueueItem$1:
-    android.support.v4.media.session.MediaSessionCompat$QueueItem createFromParcel(android.os.Parcel) -> createFromParcel
-    android.support.v4.media.session.MediaSessionCompat$QueueItem[] newArray(int) -> newArray
-    java.lang.Object[] newArray(int) -> newArray
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper -> android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper:
-    android.os.ResultReceiver mResultReceiver -> mResultReceiver
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    int describeContents() -> describeContents
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-    android.os.ResultReceiver access$600(android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper) -> access$600
-android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper$1 -> android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper$1:
-    android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper createFromParcel(android.os.Parcel) -> createFromParcel
-    android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper[] newArray(int) -> newArray
-    java.lang.Object[] newArray(int) -> newArray
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 android.support.v4.media.session.MediaSessionCompat$Token -> android.support.v4.media.session.MediaSessionCompat$Token:
-    java.lang.Object mInner -> mInner
+    android.os.Parcelable mInner -> mInner
     android.os.Parcelable$Creator CREATOR -> CREATOR
-    android.support.v4.media.session.MediaSessionCompat$Token fromToken(java.lang.Object) -> fromToken
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     java.lang.Object getToken() -> getToken
@@ -3793,78 +3240,9 @@ android.support.v4.media.session.MediaSessionCompat$Token$1 -> android.support.v
     android.support.v4.media.session.MediaSessionCompat$Token[] newArray(int) -> newArray
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.media.session.MediaSessionCompatApi14 -> android.support.v4.media.session.MediaSessionCompatApi14:
-    int RCC_PLAYSTATE_NONE -> RCC_PLAYSTATE_NONE
-    int STATE_NONE -> STATE_NONE
-    int STATE_STOPPED -> STATE_STOPPED
-    int STATE_PAUSED -> STATE_PAUSED
-    int STATE_PLAYING -> STATE_PLAYING
-    int STATE_FAST_FORWARDING -> STATE_FAST_FORWARDING
-    int STATE_REWINDING -> STATE_REWINDING
-    int STATE_BUFFERING -> STATE_BUFFERING
-    int STATE_ERROR -> STATE_ERROR
-    int STATE_CONNECTING -> STATE_CONNECTING
-    int STATE_SKIPPING_TO_PREVIOUS -> STATE_SKIPPING_TO_PREVIOUS
-    int STATE_SKIPPING_TO_NEXT -> STATE_SKIPPING_TO_NEXT
-    java.lang.String METADATA_KEY_TITLE -> METADATA_KEY_TITLE
-    java.lang.String METADATA_KEY_ARTIST -> METADATA_KEY_ARTIST
-    java.lang.String METADATA_KEY_DURATION -> METADATA_KEY_DURATION
-    java.lang.String METADATA_KEY_ALBUM -> METADATA_KEY_ALBUM
-    java.lang.String METADATA_KEY_AUTHOR -> METADATA_KEY_AUTHOR
-    java.lang.String METADATA_KEY_WRITER -> METADATA_KEY_WRITER
-    java.lang.String METADATA_KEY_COMPOSER -> METADATA_KEY_COMPOSER
-    java.lang.String METADATA_KEY_COMPILATION -> METADATA_KEY_COMPILATION
-    java.lang.String METADATA_KEY_DATE -> METADATA_KEY_DATE
-    java.lang.String METADATA_KEY_YEAR -> METADATA_KEY_YEAR
-    java.lang.String METADATA_KEY_GENRE -> METADATA_KEY_GENRE
-    java.lang.String METADATA_KEY_TRACK_NUMBER -> METADATA_KEY_TRACK_NUMBER
-    java.lang.String METADATA_KEY_NUM_TRACKS -> METADATA_KEY_NUM_TRACKS
-    java.lang.String METADATA_KEY_DISC_NUMBER -> METADATA_KEY_DISC_NUMBER
-    java.lang.String METADATA_KEY_ALBUM_ARTIST -> METADATA_KEY_ALBUM_ARTIST
-    java.lang.Object createRemoteControlClient(android.app.PendingIntent) -> createRemoteControlClient
-    void setState(java.lang.Object,int) -> setState
-    void setMetadata(java.lang.Object,android.os.Bundle) -> setMetadata
-    void registerRemoteControlClient(android.content.Context,java.lang.Object) -> registerRemoteControlClient
-    void unregisterRemoteControlClient(android.content.Context,java.lang.Object) -> unregisterRemoteControlClient
-    int getRccStateFromState(int) -> getRccStateFromState
-    void buildOldMetadata(android.os.Bundle,android.media.RemoteControlClient$MetadataEditor) -> buildOldMetadata
-android.support.v4.media.session.MediaSessionCompatApi14$Callback -> android.support.v4.media.session.MediaSessionCompatApi14$Callback:
-    void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
-    boolean onMediaButtonEvent(android.content.Intent) -> onMediaButtonEvent
-    void onPlay() -> onPlay
-    void onPause() -> onPause
-    void onSkipToNext() -> onSkipToNext
-    void onSkipToPrevious() -> onSkipToPrevious
-    void onFastForward() -> onFastForward
-    void onRewind() -> onRewind
-    void onStop() -> onStop
-    void onSeekTo(long) -> onSeekTo
-    void onSetRating(java.lang.Object) -> onSetRating
-android.support.v4.media.session.MediaSessionCompatApi18 -> android.support.v4.media.session.MediaSessionCompatApi18:
-    java.lang.Object createPlaybackPositionUpdateListener(android.support.v4.media.session.MediaSessionCompatApi14$Callback) -> createPlaybackPositionUpdateListener
-    void registerMediaButtonEventReceiver(android.content.Context,android.app.PendingIntent) -> registerMediaButtonEventReceiver
-    void unregisterMediaButtonEventReceiver(android.content.Context,android.app.PendingIntent) -> unregisterMediaButtonEventReceiver
-    void setState(java.lang.Object,int,long,float,long) -> setState
-    void setOnPlaybackPositionUpdateListener(java.lang.Object,java.lang.Object) -> setOnPlaybackPositionUpdateListener
-android.support.v4.media.session.MediaSessionCompatApi18$OnPlaybackPositionUpdateListener -> android.support.v4.media.session.MediaSessionCompatApi18$OnPlaybackPositionUpdateListener:
-    android.support.v4.media.session.MediaSessionCompatApi14$Callback mCallback -> mCallback
-    void onPlaybackPositionUpdate(long) -> onPlaybackPositionUpdate
-android.support.v4.media.session.MediaSessionCompatApi19 -> android.support.v4.media.session.MediaSessionCompatApi19:
-    java.lang.String METADATA_KEY_ART -> METADATA_KEY_ART
-    java.lang.String METADATA_KEY_ALBUM_ART -> METADATA_KEY_ALBUM_ART
-    java.lang.String METADATA_KEY_USER_RATING -> METADATA_KEY_USER_RATING
-    java.lang.String METADATA_KEY_RATING -> METADATA_KEY_RATING
-    java.lang.Object createMetadataUpdateListener(android.support.v4.media.session.MediaSessionCompatApi14$Callback) -> createMetadataUpdateListener
-    void setMetadata(java.lang.Object,android.os.Bundle,boolean) -> setMetadata
-    void setOnMetadataUpdateListener(java.lang.Object,java.lang.Object) -> setOnMetadataUpdateListener
-    void addNewMetadata(android.os.Bundle,android.media.RemoteControlClient$MetadataEditor) -> addNewMetadata
-android.support.v4.media.session.MediaSessionCompatApi19$OnMetadataUpdateListener -> android.support.v4.media.session.MediaSessionCompatApi19$OnMetadataUpdateListener:
-    android.support.v4.media.session.MediaSessionCompatApi14$Callback mCallback -> mCallback
-    void onMetadataUpdate(int,java.lang.Object) -> onMetadataUpdate
 android.support.v4.media.session.MediaSessionCompatApi21 -> android.support.v4.media.session.MediaSessionCompatApi21:
     java.lang.Object createSession(android.content.Context,java.lang.String) -> createSession
     java.lang.Object verifySession(java.lang.Object) -> verifySession
-    java.lang.Object verifyToken(java.lang.Object) -> verifyToken
     java.lang.Object createCallback(android.support.v4.media.session.MediaSessionCompatApi21$Callback) -> createCallback
     void setCallback(java.lang.Object,java.lang.Object,android.os.Handler) -> setCallback
     void setFlags(java.lang.Object,int) -> setFlags
@@ -3877,18 +3255,10 @@ android.support.v4.media.session.MediaSessionCompatApi21 -> android.support.v4.m
     android.os.Parcelable getSessionToken(java.lang.Object) -> getSessionToken
     void setPlaybackState(java.lang.Object,java.lang.Object) -> setPlaybackState
     void setMetadata(java.lang.Object,java.lang.Object) -> setMetadata
-    void setSessionActivity(java.lang.Object,android.app.PendingIntent) -> setSessionActivity
-    void setMediaButtonReceiver(java.lang.Object,android.app.PendingIntent) -> setMediaButtonReceiver
-    void setQueue(java.lang.Object,java.util.List) -> setQueue
-    void setQueueTitle(java.lang.Object,java.lang.CharSequence) -> setQueueTitle
-    void setExtras(java.lang.Object,android.os.Bundle) -> setExtras
 android.support.v4.media.session.MediaSessionCompatApi21$Callback -> android.support.v4.media.session.MediaSessionCompatApi21$Callback:
     void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
     boolean onMediaButtonEvent(android.content.Intent) -> onMediaButtonEvent
     void onPlay() -> onPlay
-    void onPlayFromMediaId(java.lang.String,android.os.Bundle) -> onPlayFromMediaId
-    void onPlayFromSearch(java.lang.String,android.os.Bundle) -> onPlayFromSearch
-    void onSkipToQueueItem(long) -> onSkipToQueueItem
     void onPause() -> onPause
     void onSkipToNext() -> onSkipToNext
     void onSkipToPrevious() -> onSkipToPrevious
@@ -3897,7 +3267,6 @@ android.support.v4.media.session.MediaSessionCompatApi21$Callback -> android.sup
     void onStop() -> onStop
     void onSeekTo(long) -> onSeekTo
     void onSetRating(java.lang.Object) -> onSetRating
-    void onCustomAction(java.lang.String,android.os.Bundle) -> onCustomAction
 android.support.v4.media.session.MediaSessionCompatApi21$CallbackProxy -> android.support.v4.media.session.MediaSessionCompatApi21$CallbackProxy:
     android.support.v4.media.session.MediaSessionCompatApi21$Callback mCallback -> mCallback
     void onCommand(java.lang.String,android.os.Bundle,android.os.ResultReceiver) -> onCommand
@@ -3911,29 +3280,6 @@ android.support.v4.media.session.MediaSessionCompatApi21$CallbackProxy -> androi
     void onStop() -> onStop
     void onSeekTo(long) -> onSeekTo
     void onSetRating(android.media.Rating) -> onSetRating
-android.support.v4.media.session.MediaSessionCompatApi21$QueueItem -> android.support.v4.media.session.MediaSessionCompatApi21$QueueItem:
-    java.lang.Object createItem(java.lang.Object,long) -> createItem
-    java.lang.Object getDescription(java.lang.Object) -> getDescription
-    long getQueueId(java.lang.Object) -> getQueueId
-android.support.v4.media.session.MediaSessionCompatApi22 -> android.support.v4.media.session.MediaSessionCompatApi22:
-    void setRatingType(java.lang.Object,int) -> setRatingType
-android.support.v4.media.session.MediaSessionCompatApi8 -> android.support.v4.media.session.MediaSessionCompatApi8:
-    void registerMediaButtonEventReceiver(android.content.Context,android.content.ComponentName) -> registerMediaButtonEventReceiver
-    void unregisterMediaButtonEventReceiver(android.content.Context,android.content.ComponentName) -> unregisterMediaButtonEventReceiver
-android.support.v4.media.session.ParcelableVolumeInfo -> android.support.v4.media.session.ParcelableVolumeInfo:
-    int volumeType -> volumeType
-    int audioStream -> audioStream
-    int controlType -> controlType
-    int maxVolume -> maxVolume
-    int currentVolume -> currentVolume
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    int describeContents() -> describeContents
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-android.support.v4.media.session.ParcelableVolumeInfo$1 -> android.support.v4.media.session.ParcelableVolumeInfo$1:
-    android.support.v4.media.session.ParcelableVolumeInfo createFromParcel(android.os.Parcel) -> createFromParcel
-    android.support.v4.media.session.ParcelableVolumeInfo[] newArray(int) -> newArray
-    java.lang.Object[] newArray(int) -> newArray
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 android.support.v4.media.session.PlaybackStateCompat -> android.support.v4.media.session.PlaybackStateCompat:
     long ACTION_STOP -> ACTION_STOP
     long ACTION_PAUSE -> ACTION_PAUSE
@@ -3981,13 +3327,13 @@ android.support.v4.media.session.PlaybackStateCompat -> android.support.v4.media
     long getLastPositionUpdateTime() -> getLastPositionUpdateTime
     android.support.v4.media.session.PlaybackStateCompat fromPlaybackState(java.lang.Object) -> fromPlaybackState
     java.lang.Object getPlaybackState() -> getPlaybackState
-    int access$300(android.support.v4.media.session.PlaybackStateCompat) -> access$300
+    int access$100(android.support.v4.media.session.PlaybackStateCompat) -> access$100
+    long access$200(android.support.v4.media.session.PlaybackStateCompat) -> access$200
+    float access$300(android.support.v4.media.session.PlaybackStateCompat) -> access$300
     long access$400(android.support.v4.media.session.PlaybackStateCompat) -> access$400
-    float access$500(android.support.v4.media.session.PlaybackStateCompat) -> access$500
+    long access$500(android.support.v4.media.session.PlaybackStateCompat) -> access$500
     long access$600(android.support.v4.media.session.PlaybackStateCompat) -> access$600
-    long access$700(android.support.v4.media.session.PlaybackStateCompat) -> access$700
-    long access$800(android.support.v4.media.session.PlaybackStateCompat) -> access$800
-    java.lang.CharSequence access$900(android.support.v4.media.session.PlaybackStateCompat) -> access$900
+    java.lang.CharSequence access$700(android.support.v4.media.session.PlaybackStateCompat) -> access$700
 android.support.v4.media.session.PlaybackStateCompat$1 -> android.support.v4.media.session.PlaybackStateCompat$1:
     android.support.v4.media.session.PlaybackStateCompat createFromParcel(android.os.Parcel) -> createFromParcel
     android.support.v4.media.session.PlaybackStateCompat[] newArray(int) -> newArray
@@ -4001,37 +3347,11 @@ android.support.v4.media.session.PlaybackStateCompat$Builder -> android.support.
     long mActions -> mActions
     java.lang.CharSequence mErrorMessage -> mErrorMessage
     long mUpdateTime -> mUpdateTime
-    android.support.v4.media.session.PlaybackStateCompat$Builder setState(int,long,float) -> setState
-    android.support.v4.media.session.PlaybackStateCompat$Builder setState(int,long,float,long) -> setState
-    android.support.v4.media.session.PlaybackStateCompat$Builder setBufferedPosition(long) -> setBufferedPosition
-    android.support.v4.media.session.PlaybackStateCompat$Builder setActions(long) -> setActions
-    android.support.v4.media.session.PlaybackStateCompat$Builder setErrorMessage(java.lang.CharSequence) -> setErrorMessage
+    void setState(int,long,float) -> setState
+    void setBufferedPosition(long) -> setBufferedPosition
+    void setActions(long) -> setActions
+    void setErrorMessage(java.lang.CharSequence) -> setErrorMessage
     android.support.v4.media.session.PlaybackStateCompat build() -> build
-android.support.v4.media.session.PlaybackStateCompat$CustomAction -> android.support.v4.media.session.PlaybackStateCompat$CustomAction:
-    java.lang.String mAction -> mAction
-    java.lang.CharSequence mName -> mName
-    int mIcon -> mIcon
-    android.os.Bundle mExtras -> mExtras
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-    int describeContents() -> describeContents
-    java.lang.String getAction() -> getAction
-    java.lang.CharSequence getName() -> getName
-    int getIcon() -> getIcon
-    android.os.Bundle getExtras() -> getExtras
-    java.lang.String toString() -> toString
-android.support.v4.media.session.PlaybackStateCompat$CustomAction$1 -> android.support.v4.media.session.PlaybackStateCompat$CustomAction$1:
-    android.support.v4.media.session.PlaybackStateCompat$CustomAction createFromParcel(android.os.Parcel) -> createFromParcel
-    android.support.v4.media.session.PlaybackStateCompat$CustomAction[] newArray(int) -> newArray
-    java.lang.Object[] newArray(int) -> newArray
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.media.session.PlaybackStateCompat$CustomAction$Builder -> android.support.v4.media.session.PlaybackStateCompat$CustomAction$Builder:
-    java.lang.String mAction -> mAction
-    java.lang.CharSequence mName -> mName
-    int mIcon -> mIcon
-    android.os.Bundle mExtras -> mExtras
-    android.support.v4.media.session.PlaybackStateCompat$CustomAction$Builder setExtras(android.os.Bundle) -> setExtras
-    android.support.v4.media.session.PlaybackStateCompat$CustomAction build() -> build
 android.support.v4.media.session.PlaybackStateCompatApi21 -> android.support.v4.media.session.PlaybackStateCompatApi21:
     int getState(java.lang.Object) -> getState
     long getPosition(java.lang.Object) -> getPosition
@@ -4238,7 +3558,7 @@ android.support.v4.print.PrintHelperKitkat$1 -> android.support.v4.print.PrintHe
     void onFinish() -> onFinish
 android.support.v4.print.PrintHelperKitkat$2 -> android.support.v4.print.PrintHelperKitkat$2:
     android.print.PrintAttributes mAttributes -> mAttributes
-    android.os.AsyncTask mLoadBitmap -> mLoadBitmap
+    android.os.AsyncTask loadBitmap -> loadBitmap
     android.graphics.Bitmap mBitmap -> mBitmap
     java.lang.String val$jobName -> val$jobName
     android.net.Uri val$imageFile -> val$imageFile
@@ -5551,11 +4871,8 @@ android.support.v4.view.ViewCompat -> android.support.v4.view.ViewCompat:
     void requestApplyInsets(android.view.View) -> requestApplyInsets
     void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean) -> setChildrenDrawingOrderEnabled
     boolean getFitsSystemWindows(android.view.View) -> getFitsSystemWindows
-    void setFitsSystemWindows(android.view.View,boolean) -> setFitsSystemWindows
     void jumpDrawablesToCurrentState(android.view.View) -> jumpDrawablesToCurrentState
     void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener) -> setOnApplyWindowInsetsListener
-    void setSaveFromParentEnabled(android.view.View,boolean) -> setSaveFromParentEnabled
-    void setActivated(android.view.View,boolean) -> setActivated
 android.support.v4.view.ViewCompat$AccessibilityLiveRegion -> android.support.v4.view.ViewCompat$AccessibilityLiveRegion:
 android.support.v4.view.ViewCompat$Api21ViewCompatImpl -> android.support.v4.view.ViewCompat$Api21ViewCompatImpl:
     void setTransitionName(android.view.View,java.lang.String) -> setTransitionName
@@ -5566,7 +4883,6 @@ android.support.v4.view.ViewCompat$Api21ViewCompatImpl -> android.support.v4.vie
     void setTranslationZ(android.view.View,float) -> setTranslationZ
     float getTranslationZ(android.view.View) -> getTranslationZ
     void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener) -> setOnApplyWindowInsetsListener
-    boolean isImportantForAccessibility(android.view.View) -> isImportantForAccessibility
 android.support.v4.view.ViewCompat$BaseViewCompatImpl -> android.support.v4.view.ViewCompat$BaseViewCompatImpl:
     java.lang.reflect.Method mDispatchStartTemporaryDetach -> mDispatchStartTemporaryDetach
     java.lang.reflect.Method mDispatchFinishTemporaryDetach -> mDispatchFinishTemporaryDetach
@@ -5590,7 +4906,6 @@ android.support.v4.view.ViewCompat$BaseViewCompatImpl -> android.support.v4.view
     long getFrameTime() -> getFrameTime
     int getImportantForAccessibility(android.view.View) -> getImportantForAccessibility
     void setImportantForAccessibility(android.view.View,int) -> setImportantForAccessibility
-    boolean isImportantForAccessibility(android.view.View) -> isImportantForAccessibility
     boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> performAccessibilityAction
     android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(android.view.View) -> getAccessibilityNodeProvider
     float getAlpha(android.view.View) -> getAlpha
@@ -5651,11 +4966,8 @@ android.support.v4.view.ViewCompat$BaseViewCompatImpl -> android.support.v4.view
     float getTranslationZ(android.view.View) -> getTranslationZ
     void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean) -> setChildrenDrawingOrderEnabled
     boolean getFitsSystemWindows(android.view.View) -> getFitsSystemWindows
-    void setFitsSystemWindows(android.view.View,boolean) -> setFitsSystemWindows
     void jumpDrawablesToCurrentState(android.view.View) -> jumpDrawablesToCurrentState
     void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener) -> setOnApplyWindowInsetsListener
-    void setSaveFromParentEnabled(android.view.View,boolean) -> setSaveFromParentEnabled
-    void setActivated(android.view.View,boolean) -> setActivated
 android.support.v4.view.ViewCompat$EclairMr1ViewCompatImpl -> android.support.v4.view.ViewCompat$EclairMr1ViewCompatImpl:
     boolean isOpaque(android.view.View) -> isOpaque
     void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean) -> setChildrenDrawingOrderEnabled
@@ -5696,8 +5008,6 @@ android.support.v4.view.ViewCompat$HCViewCompatImpl -> android.support.v4.view.V
     float getPivotX(android.view.View) -> getPivotX
     float getPivotY(android.view.View) -> getPivotY
     void jumpDrawablesToCurrentState(android.view.View) -> jumpDrawablesToCurrentState
-    void setSaveFromParentEnabled(android.view.View,boolean) -> setSaveFromParentEnabled
-    void setActivated(android.view.View,boolean) -> setActivated
 android.support.v4.view.ViewCompat$ICSViewCompatImpl -> android.support.v4.view.ViewCompat$ICSViewCompatImpl:
     java.lang.reflect.Field mAccessibilityDelegateField -> mAccessibilityDelegateField
     boolean accessibilityDelegateCheckFailed -> accessibilityDelegateCheckFailed
@@ -5709,7 +5019,6 @@ android.support.v4.view.ViewCompat$ICSViewCompatImpl -> android.support.v4.view.
     void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat) -> setAccessibilityDelegate
     boolean hasAccessibilityDelegate(android.view.View) -> hasAccessibilityDelegate
     android.support.v4.view.ViewPropertyAnimatorCompat animate(android.view.View) -> animate
-    void setFitsSystemWindows(android.view.View,boolean) -> setFitsSystemWindows
 android.support.v4.view.ViewCompat$ImportantForAccessibility -> android.support.v4.view.ViewCompat$ImportantForAccessibility:
 android.support.v4.view.ViewCompat$JBViewCompatImpl -> android.support.v4.view.ViewCompat$JBViewCompatImpl:
     boolean hasTransientState(android.view.View) -> hasTransientState
@@ -5763,7 +5072,6 @@ android.support.v4.view.ViewCompat$ViewCompatImpl -> android.support.v4.view.Vie
     void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long) -> postOnAnimationDelayed
     int getImportantForAccessibility(android.view.View) -> getImportantForAccessibility
     void setImportantForAccessibility(android.view.View,int) -> setImportantForAccessibility
-    boolean isImportantForAccessibility(android.view.View) -> isImportantForAccessibility
     boolean performAccessibilityAction(android.view.View,int,android.os.Bundle) -> performAccessibilityAction
     android.support.v4.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(android.view.View) -> getAccessibilityNodeProvider
     float getAlpha(android.view.View) -> getAlpha
@@ -5823,11 +5131,8 @@ android.support.v4.view.ViewCompat$ViewCompatImpl -> android.support.v4.view.Vie
     void requestApplyInsets(android.view.View) -> requestApplyInsets
     void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean) -> setChildrenDrawingOrderEnabled
     boolean getFitsSystemWindows(android.view.View) -> getFitsSystemWindows
-    void setFitsSystemWindows(android.view.View,boolean) -> setFitsSystemWindows
     void jumpDrawablesToCurrentState(android.view.View) -> jumpDrawablesToCurrentState
     void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener) -> setOnApplyWindowInsetsListener
-    void setSaveFromParentEnabled(android.view.View,boolean) -> setSaveFromParentEnabled
-    void setActivated(android.view.View,boolean) -> setActivated
 android.support.v4.view.ViewCompatApi21 -> android.support.v4.view.ViewCompatApi21:
     void setTransitionName(android.view.View,java.lang.String) -> setTransitionName
     java.lang.String getTransitionName(android.view.View) -> getTransitionName
@@ -5837,7 +5142,6 @@ android.support.v4.view.ViewCompatApi21 -> android.support.v4.view.ViewCompatApi
     void setTranslationZ(android.view.View,float) -> setTranslationZ
     float getTranslationZ(android.view.View) -> getTranslationZ
     void setOnApplyWindowInsetsListener(android.view.View,android.support.v4.view.OnApplyWindowInsetsListener) -> setOnApplyWindowInsetsListener
-    boolean isImportantForAccessibility(android.view.View) -> isImportantForAccessibility
 android.support.v4.view.ViewCompatApi21$1 -> android.support.v4.view.ViewCompatApi21$1:
     android.support.v4.view.OnApplyWindowInsetsListener val$listener -> val$listener
     android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets) -> onApplyWindowInsets
@@ -5882,8 +5186,6 @@ android.support.v4.view.ViewCompatHC -> android.support.v4.view.ViewCompatHC:
     float getPivotX(android.view.View) -> getPivotX
     float getPivotY(android.view.View) -> getPivotY
     void jumpDrawablesToCurrentState(android.view.View) -> jumpDrawablesToCurrentState
-    void setSaveFromParentEnabled(android.view.View,boolean) -> setSaveFromParentEnabled
-    void setActivated(android.view.View,boolean) -> setActivated
 android.support.v4.view.ViewCompatICS -> android.support.v4.view.ViewCompatICS:
     boolean canScrollHorizontally(android.view.View,int) -> canScrollHorizontally
     boolean canScrollVertically(android.view.View,int) -> canScrollVertically
@@ -5891,7 +5193,6 @@ android.support.v4.view.ViewCompatICS -> android.support.v4.view.ViewCompatICS:
     void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onPopulateAccessibilityEvent
     void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent) -> onInitializeAccessibilityEvent
     void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object) -> onInitializeAccessibilityNodeInfo
-    void setFitsSystemWindows(android.view.View,boolean) -> setFitsSystemWindows
 android.support.v4.view.ViewCompatJB -> android.support.v4.view.ViewCompatJB:
     boolean hasTransientState(android.view.View) -> hasTransientState
     void setHasTransientState(android.view.View,boolean) -> setHasTransientState
@@ -6639,7 +5940,6 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat -> android.sup
     void addChild(android.view.View,int) -> addChild
     int getActions() -> getActions
     void addAction(int) -> addAction
-    void addAction(android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat) -> addAction
     boolean performAction(int) -> performAction
     boolean performAction(int,android.os.Bundle) -> performAction
     void setMovementGranularities(int) -> setMovementGranularities
@@ -6705,23 +6005,12 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityA
     java.lang.Object mAction -> mAction
     int getId() -> getId
     java.lang.CharSequence getLabel() -> getLabel
-    java.lang.Object access$100(android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat) -> access$100
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoApi21Impl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoApi21Impl:
-    java.lang.Object newAccessibilityAction(int,java.lang.CharSequence) -> newAccessibilityAction
     java.util.List getActionList(java.lang.Object) -> getActionList
     java.lang.Object obtainCollectionInfo(int,int,boolean,int) -> obtainCollectionInfo
-    void addAction(java.lang.Object,java.lang.Object) -> addAction
-    int getAccessibilityActionId(java.lang.Object) -> getAccessibilityActionId
-    java.lang.CharSequence getAccessibilityActionLabel(java.lang.Object) -> getAccessibilityActionLabel
+    void addAction(java.lang.Object,int,java.lang.CharSequence) -> addAction
     java.lang.Object obtainCollectionItemInfo(int,int,int,int,boolean,boolean) -> obtainCollectionItemInfo
     boolean isCollectionItemSelected(java.lang.Object) -> isCollectionItemSelected
-android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoApi22Impl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoApi22Impl:
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalBefore(java.lang.Object) -> getTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View) -> setTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View,int) -> setTraversalBefore
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalAfter(java.lang.Object) -> getTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View) -> setTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View,int) -> setTraversalAfter
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl:
     java.lang.Object obtain() -> obtain
     java.lang.Object obtain(android.view.View) -> obtain
@@ -6770,8 +6059,8 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     void setSource(java.lang.Object,android.view.View) -> setSource
     void setText(java.lang.Object,java.lang.CharSequence) -> setText
     void recycle(java.lang.Object) -> recycle
+    void addAction(java.lang.Object,int,java.lang.CharSequence) -> addAction
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl:
-    java.lang.Object newAccessibilityAction(int,java.lang.CharSequence) -> newAccessibilityAction
     java.lang.Object obtain() -> obtain
     java.lang.Object obtain(android.view.View) -> obtain
     java.lang.Object obtain(java.lang.Object) -> obtain
@@ -6787,9 +6076,6 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     void addChild(java.lang.Object,android.view.View,int) -> addChild
     int getActions(java.lang.Object) -> getActions
     void addAction(java.lang.Object,int) -> addAction
-    void addAction(java.lang.Object,java.lang.Object) -> addAction
-    int getAccessibilityActionId(java.lang.Object) -> getAccessibilityActionId
-    java.lang.CharSequence getAccessibilityActionLabel(java.lang.Object) -> getAccessibilityActionLabel
     boolean performAction(java.lang.Object,int) -> performAction
     boolean performAction(java.lang.Object,int,android.os.Bundle) -> performAction
     void setMovementGranularities(java.lang.Object,int) -> setMovementGranularities
@@ -6845,6 +6131,7 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     void setCollectionItemInfo(java.lang.Object,java.lang.Object) -> setCollectionItemInfo
     java.lang.Object getRangeInfo(java.lang.Object) -> getRangeInfo
     java.util.List getActionList(java.lang.Object) -> getActionList
+    void addAction(java.lang.Object,int,java.lang.CharSequence) -> addAction
     java.lang.Object obtainCollectionInfo(int,int,boolean,int) -> obtainCollectionInfo
     int getCollectionInfoColumnCount(java.lang.Object) -> getCollectionInfoColumnCount
     int getCollectionInfoRowCount(java.lang.Object) -> getCollectionInfoRowCount
@@ -6856,12 +6143,6 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     int getCollectionItemRowSpan(java.lang.Object) -> getCollectionItemRowSpan
     boolean isCollectionItemHeading(java.lang.Object) -> isCollectionItemHeading
     boolean isCollectionItemSelected(java.lang.Object) -> isCollectionItemSelected
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalBefore(java.lang.Object) -> getTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View) -> setTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View,int) -> setTraversalBefore
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalAfter(java.lang.Object) -> getTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View) -> setTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View,int) -> setTraversalAfter
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl:
     java.lang.Object obtain(android.view.View,int) -> obtain
     java.lang.Object findFocus(java.lang.Object,int) -> findFocus
@@ -6898,15 +6179,11 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     boolean isCollectionItemHeading(java.lang.Object) -> isCollectionItemHeading
     void setCollectionItemInfo(java.lang.Object,java.lang.Object) -> setCollectionItemInfo
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoStubImpl -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoStubImpl:
-    java.lang.Object newAccessibilityAction(int,java.lang.CharSequence) -> newAccessibilityAction
     java.lang.Object obtain() -> obtain
     java.lang.Object obtain(android.view.View) -> obtain
     java.lang.Object obtain(android.view.View,int) -> obtain
     java.lang.Object obtain(java.lang.Object) -> obtain
     void addAction(java.lang.Object,int) -> addAction
-    void addAction(java.lang.Object,java.lang.Object) -> addAction
-    int getAccessibilityActionId(java.lang.Object) -> getAccessibilityActionId
-    java.lang.CharSequence getAccessibilityActionLabel(java.lang.Object) -> getAccessibilityActionLabel
     void addChild(java.lang.Object,android.view.View) -> addChild
     void addChild(java.lang.Object,android.view.View,int) -> addChild
     java.util.List findAccessibilityNodeInfosByText(java.lang.Object,java.lang.String) -> findAccessibilityNodeInfosByText
@@ -6972,6 +6249,7 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     void setCollectionItemInfo(java.lang.Object,java.lang.Object) -> setCollectionItemInfo
     java.lang.Object getRangeInfo(java.lang.Object) -> getRangeInfo
     java.util.List getActionList(java.lang.Object) -> getActionList
+    void addAction(java.lang.Object,int,java.lang.CharSequence) -> addAction
     java.lang.Object obtainCollectionInfo(int,int,boolean,int) -> obtainCollectionInfo
     int getCollectionInfoColumnCount(java.lang.Object) -> getCollectionInfoColumnCount
     int getCollectionInfoRowCount(java.lang.Object) -> getCollectionInfoRowCount
@@ -6983,12 +6261,6 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityN
     int getCollectionItemRowSpan(java.lang.Object) -> getCollectionItemRowSpan
     boolean isCollectionItemHeading(java.lang.Object) -> isCollectionItemHeading
     boolean isCollectionItemSelected(java.lang.Object) -> isCollectionItemSelected
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalBefore(java.lang.Object) -> getTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View) -> setTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View,int) -> setTraversalBefore
-    android.support.v4.view.accessibility.AccessibilityNodeInfoCompat getTraversalAfter(java.lang.Object) -> getTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View) -> setTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View,int) -> setTraversalAfter
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$CollectionInfoCompat -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$CollectionInfoCompat:
     int SELECTION_MODE_NONE -> SELECTION_MODE_NONE
     int SELECTION_MODE_SINGLE -> SELECTION_MODE_SINGLE
@@ -7007,7 +6279,7 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$CollectionItem
     int getRowSpan() -> getRowSpan
     boolean isHeading() -> isHeading
     boolean isSelected() -> isSelected
-    java.lang.Object access$300(android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$CollectionItemInfoCompat) -> access$300
+    java.lang.Object access$200(android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$CollectionItemInfoCompat) -> access$200
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$RangeInfoCompat -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$RangeInfoCompat:
     int RANGE_TYPE_INT -> RANGE_TYPE_INT
     int RANGE_TYPE_FLOAT -> RANGE_TYPE_FLOAT
@@ -7019,21 +6291,14 @@ android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$RangeInfoCompa
     int getType() -> getType
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21 -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21:
     java.util.List getActionList(java.lang.Object) -> getActionList
-    void addAction(java.lang.Object,java.lang.Object) -> addAction
+    void addAction(java.lang.Object,int,java.lang.CharSequence) -> addAction
     java.lang.Object obtainCollectionInfo(int,int,boolean,int) -> obtainCollectionInfo
     java.lang.Object obtainCollectionItemInfo(int,int,int,int,boolean,boolean) -> obtainCollectionItemInfo
-    java.lang.Object newAccessibilityAction(int,java.lang.CharSequence) -> newAccessibilityAction
-    int getAccessibilityActionId(java.lang.Object) -> getAccessibilityActionId
-    java.lang.CharSequence getAccessibilityActionLabel(java.lang.Object) -> getAccessibilityActionLabel
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21$AccessibilityAction -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21$AccessibilityAction:
+    int getId(java.lang.Object) -> getId
+    java.lang.CharSequence getLabel(java.lang.Object) -> getLabel
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21$CollectionItemInfo -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi21$CollectionItemInfo:
     boolean isSelected(java.lang.Object) -> isSelected
-android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi22 -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompatApi22:
-    java.lang.Object getTraversalBefore(java.lang.Object) -> getTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View) -> setTraversalBefore
-    void setTraversalBefore(java.lang.Object,android.view.View,int) -> setTraversalBefore
-    java.lang.Object getTraversalAfter(java.lang.Object) -> getTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View) -> setTraversalAfter
-    void setTraversalAfter(java.lang.Object,android.view.View,int) -> setTraversalAfter
 android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs -> android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs:
     java.lang.Object obtain() -> obtain
     java.lang.Object obtain(android.view.View) -> obtain
@@ -7543,12 +6808,10 @@ android.support.v4.widget.CircleImageView -> android.support.v4.widget.CircleIma
     void setAnimationListener(android.view.animation.Animation$AnimationListener) -> setAnimationListener
     void onAnimationStart() -> onAnimationStart
     void onAnimationEnd() -> onAnimationEnd
-    void setBackgroundColorRes(int) -> setBackgroundColorRes
     void setBackgroundColor(int) -> setBackgroundColor
-    int access$002(android.support.v4.widget.CircleImageView,int) -> access$002
-    int access$000(android.support.v4.widget.CircleImageView) -> access$000
 android.support.v4.widget.CircleImageView$OvalShadow -> android.support.v4.widget.CircleImageView$OvalShadow:
     android.graphics.RadialGradient mRadialGradient -> mRadialGradient
+    int mShadowRadius -> mShadowRadius
     android.graphics.Paint mShadowPaint -> mShadowPaint
     int mCircleDiameter -> mCircleDiameter
     android.support.v4.widget.CircleImageView this$0 -> this$0
@@ -7705,7 +6968,6 @@ android.support.v4.widget.DrawerLayout -> android.support.v4.widget.DrawerLayout
     void computeScroll() -> computeScroll
     boolean hasOpaqueBackground(android.view.View) -> hasOpaqueBackground
     void setStatusBarBackground(android.graphics.drawable.Drawable) -> setStatusBarBackground
-    android.graphics.drawable.Drawable getStatusBarBackgroundDrawable() -> getStatusBarBackgroundDrawable
     void setStatusBarBackground(int) -> setStatusBarBackground
     void setStatusBarBackgroundColor(int) -> setStatusBarBackgroundColor
     void onDraw(android.graphics.Canvas) -> onDraw
@@ -7760,19 +7022,16 @@ android.support.v4.widget.DrawerLayout$DrawerLayoutCompatImpl -> android.support
     void dispatchChildInsets(android.view.View,java.lang.Object,int) -> dispatchChildInsets
     void applyMarginInsets(android.view.ViewGroup$MarginLayoutParams,java.lang.Object,int) -> applyMarginInsets
     int getTopInset(java.lang.Object) -> getTopInset
-    android.graphics.drawable.Drawable getDefaultStatusBarBackground(android.content.Context) -> getDefaultStatusBarBackground
 android.support.v4.widget.DrawerLayout$DrawerLayoutCompatImplApi21 -> android.support.v4.widget.DrawerLayout$DrawerLayoutCompatImplApi21:
     void configureApplyInsets(android.view.View) -> configureApplyInsets
     void dispatchChildInsets(android.view.View,java.lang.Object,int) -> dispatchChildInsets
     void applyMarginInsets(android.view.ViewGroup$MarginLayoutParams,java.lang.Object,int) -> applyMarginInsets
     int getTopInset(java.lang.Object) -> getTopInset
-    android.graphics.drawable.Drawable getDefaultStatusBarBackground(android.content.Context) -> getDefaultStatusBarBackground
 android.support.v4.widget.DrawerLayout$DrawerLayoutCompatImplBase -> android.support.v4.widget.DrawerLayout$DrawerLayoutCompatImplBase:
     void configureApplyInsets(android.view.View) -> configureApplyInsets
     void dispatchChildInsets(android.view.View,java.lang.Object,int) -> dispatchChildInsets
     void applyMarginInsets(android.view.ViewGroup$MarginLayoutParams,java.lang.Object,int) -> applyMarginInsets
     int getTopInset(java.lang.Object) -> getTopInset
-    android.graphics.drawable.Drawable getDefaultStatusBarBackground(android.content.Context) -> getDefaultStatusBarBackground
 android.support.v4.widget.DrawerLayout$DrawerListener -> android.support.v4.widget.DrawerLayout$DrawerListener:
     void onDrawerSlide(android.view.View,float) -> onDrawerSlide
     void onDrawerOpened(android.view.View) -> onDrawerOpened
@@ -7827,12 +7086,10 @@ android.support.v4.widget.DrawerLayout$ViewDragCallback$1 -> android.support.v4.
     android.support.v4.widget.DrawerLayout$ViewDragCallback this$1 -> this$1
     void run() -> run
 android.support.v4.widget.DrawerLayoutCompatApi21 -> android.support.v4.widget.DrawerLayoutCompatApi21:
-    int[] THEME_ATTRS -> THEME_ATTRS
     void configureApplyInsets(android.view.View) -> configureApplyInsets
     void dispatchChildInsets(android.view.View,java.lang.Object,int) -> dispatchChildInsets
     void applyMarginInsets(android.view.ViewGroup$MarginLayoutParams,java.lang.Object,int) -> applyMarginInsets
     int getTopInset(java.lang.Object) -> getTopInset
-    android.graphics.drawable.Drawable getDefaultStatusBarBackground(android.content.Context) -> getDefaultStatusBarBackground
 android.support.v4.widget.DrawerLayoutCompatApi21$InsetsListener -> android.support.v4.widget.DrawerLayoutCompatApi21$InsetsListener:
     android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets) -> onApplyWindowInsets
 android.support.v4.widget.DrawerLayoutImpl -> android.support.v4.widget.DrawerLayoutImpl:
@@ -8556,7 +7813,6 @@ android.support.v4.widget.SwipeRefreshLayout -> android.support.v4.widget.SwipeR
     int mCurrentTargetOffsetTop -> mCurrentTargetOffsetTop
     boolean mOriginalOffsetCalculated -> mOriginalOffsetCalculated
     float mInitialMotionY -> mInitialMotionY
-    float mInitialDownY -> mInitialDownY
     boolean mIsBeingDragged -> mIsBeingDragged
     int mActivePointerId -> mActivePointerId
     boolean mScale -> mScale
@@ -8599,8 +7855,6 @@ android.support.v4.widget.SwipeRefreshLayout -> android.support.v4.widget.SwipeR
     void startProgressAlphaMaxAnimation() -> startProgressAlphaMaxAnimation
     android.view.animation.Animation startAlphaAnimation(int,int) -> startAlphaAnimation
     void setProgressBackgroundColor(int) -> setProgressBackgroundColor
-    void setProgressBackgroundColorSchemeResource(int) -> setProgressBackgroundColorSchemeResource
-    void setProgressBackgroundColorSchemeColor(int) -> setProgressBackgroundColorSchemeColor
     void setColorScheme(int[]) -> setColorScheme
     void setColorSchemeResources(int[]) -> setColorSchemeResources
     void setColorSchemeColors(int[]) -> setColorSchemeColors
@@ -8609,7 +7863,6 @@ android.support.v4.widget.SwipeRefreshLayout -> android.support.v4.widget.SwipeR
     void setDistanceToTriggerSync(int) -> setDistanceToTriggerSync
     void onLayout(boolean,int,int,int,int) -> onLayout
     void onMeasure(int,int) -> onMeasure
-    int getProgressCircleDiameter() -> getProgressCircleDiameter
     boolean canChildScrollUp() -> canChildScrollUp
     boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
     float getMotionEventY(android.view.MotionEvent,int) -> getMotionEventY
@@ -9459,10 +8712,11 @@ com.myth.cici.BaseActivity$1 -> com.myth.cici.b:
     com.myth.cici.BaseActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
-    java.util.HashMap colorMap -> d
+    java.util.HashMap colorMap -> e
     android.graphics.Typeface typeface -> a
     java.lang.String[] TypefaceString -> b
     int[] bgimgList -> c
+    int[] bgSmallimgList -> d
     void onCreate() -> onCreate
     com.myth.cici.entity.ColorEntity getColorById(int) -> a
     void setTypeface(android.content.Context,int) -> a
@@ -9611,10 +8865,12 @@ com.myth.cici.activity.EditActivity -> com.myth.cici.activity.EditActivity:
     void initView() -> e
     void changeFragment(int) -> a
     void exit() -> d
+    void save() -> f
     void onBackPressed() -> onBackPressed
     int access$0(com.myth.cici.activity.EditActivity) -> a
-    com.myth.cici.entity.Writing access$1(com.myth.cici.activity.EditActivity) -> b
-    android.app.Activity access$2(com.myth.cici.activity.EditActivity) -> c
+    void access$1(com.myth.cici.activity.EditActivity) -> b
+    com.myth.cici.entity.Writing access$2(com.myth.cici.activity.EditActivity) -> c
+    android.app.Activity access$3(com.myth.cici.activity.EditActivity) -> d
 com.myth.cici.activity.EditActivity$1 -> com.myth.cici.activity.p:
     com.myth.cici.activity.EditActivity this$0 -> a
     void onClick(android.view.View) -> onClick

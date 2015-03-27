@@ -110,12 +110,6 @@ public class ChangePictureFragment extends Fragment
         {
             if (resultCode == Activity.RESULT_OK && data != null)
             {
-                // final Bitmap bmp = data.getParcelableExtra("data");
-                // if (bmp != null)
-                // {
-                // srcBitmap = bmp;
-                // destBitmap = bmp;
-                // }
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
@@ -252,6 +246,7 @@ public class ChangePictureFragment extends Fragment
             blur.setRadius(radius + 1);
             blur.forEach(overlayAlloc);
             overlayAlloc.copyTo(bmp);
+            rs.destroy();
         }
         else
         {

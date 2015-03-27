@@ -16,7 +16,7 @@ public class ImageAdapter extends BaseAdapter
 
     private Context mContext;
 
-    private int[] list = MyApplication.bgimgList;
+    private int[] list = MyApplication.bgSmallimgList;
 
     public ImageAdapter(Context context)
     {
@@ -46,7 +46,7 @@ public class ImageAdapter extends BaseAdapter
             imageView.setLayoutParams(layoutParams);
         }
 
-        ((ImageView) ((LinearLayout) convertView).getChildAt(0)).setImageResource(MyApplication.bgimgList[position]);
+        ((ImageView) ((LinearLayout) convertView).getChildAt(0)).setImageResource(MyApplication.bgSmallimgList[position]);
         return convertView;
     }
 

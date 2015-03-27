@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
-    <issue id="NewApi" severity="ignore" />
+    <issue id="BackButton" severity="ignore" />
+    <issue id="EasterEgg" severity="ignore" />
+    <issue id="FieldGetter" severity="ignore" />
+    <issue id="GradleDynamicVersion" severity="ignore" />
+    <issue id="IconExpectedSize" severity="ignore" />
+    <issue id="NewerVersionAvailable" severity="ignore" />
+    <issue id="RtlCompat" severity="ignore" />
+    <issue id="RtlEnabled" severity="ignore" />
+    <issue id="RtlHardcoded" severity="ignore" />
+    <issue id="RtlSymmetry" severity="ignore" />
+    <issue id="SelectableText" severity="ignore" />
+    <issue id="StopShip" severity="ignore" />
+    <issue id="TypographyQuotes" severity="ignore" />
+    <issue id="UnusedIds" severity="ignore" />
 </lint>
