@@ -37,7 +37,6 @@ public class YunSearchActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setBottomGone();
-        YunDatabaseHelper.getYunList(mActivity);
         initView();
     }
 
@@ -75,6 +74,7 @@ public class YunSearchActivity extends BaseActivity
         });
         yunTitle = (TextView) findViewById(R.id.yun_title);
         yunzi = (TextView) findViewById(R.id.yun_zi);
+        yunzi.setVisibility(View.GONE);
         clear = findViewById(R.id.clear);
         clear.setOnClickListener(new OnClickListener()
         {
@@ -120,6 +120,7 @@ public class YunSearchActivity extends BaseActivity
                     {
                         yunTitle.setText(str + ": " + yun.getSection_desc() + "  " + yun.getTone_name());
                         yunzi.setText(yun.getGlys());
+                        yunzi.setVisibility(View.VISIBLE);
                     }
                 }
             }

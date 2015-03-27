@@ -56,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
+                 android:textIsSelectable="true"
                 android:lineSpacingMultiplier="1.2"
                 android:layout_below="@id/author"
                 />
@@ -67,6 +68,7 @@
                 android:textColor="@color/white_hint"
                 android:layout_below="@id/content"
                 android:lineSpacingMultiplier="1.2"
+                 android:textIsSelectable="true"
                 android:layout_marginTop="10dp"
                 />
             <WebView

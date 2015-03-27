@@ -12,7 +12,7 @@ import com.myth.cici.entity.Yun;
 
 public class YunDatabaseHelper
 {
-    private static String YUNSHU[] = {"zhonghuaxinyun", "pingshuiyun", "cilinzhenyun"};
+    private static String YUNSHU[] = {"zhonghuaxinyun", "pingshuiyun", "cilinzhengyun"};
 
     public static String YUNString[] = {"中华新韵", "平水韵", "词林正韵"};
 
@@ -20,12 +20,9 @@ public class YunDatabaseHelper
 
     public static void getYunList(Context context)
     {
-        if (yunList == null || yunList.size() == 0)
-        {
-            SQLiteDatabase db = DBManager.getDatabase();
-            Cursor cursor = db.rawQuery("select * from " + YUNSHU[getDefaultYunShu(context)], null);
-            yunList = getYunListFromCursor(cursor);
-        }
+        SQLiteDatabase db = DBManager.getDatabase();
+        Cursor cursor = db.rawQuery("select * from " + YUNSHU[getDefaultYunShu(context)], null);
+        yunList = getYunListFromCursor(cursor);
     }
 
     /**
@@ -44,6 +41,7 @@ public class YunDatabaseHelper
                 return yunList.get(i).getTone();
             }
         }
+
         return 10;
     }
 
@@ -89,6 +87,7 @@ public class YunDatabaseHelper
             Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
             edit.putInt("yunshu", i);
             edit.commit();
+            getYunList(context);
         }
     }
 

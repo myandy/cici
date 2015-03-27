@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="212"
+         android:textIsSelectable="true"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -27,6 +28,7 @@
         android:gravity="left"
         android:lineSpacingMultiplier="1.2"
         android:maxLines="12"
+         android:textIsSelectable="true"
         android:text="212"
         android:textColor="@color/black"
         android:textSize="18sp" />
