@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -107,48 +108,55 @@ public class EditFragment extends Fragment
         String s = Html.fromHtml(cipai.getPingze()).toString();
         sList = CheckUtils.getCodeFormPingze(s.split("。"));
 
-        String[] tList = null;
-        if (writing.getText() != null)
+        if (sList != null)
         {
-            tList = writing.getText().split("\n");
-        }
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        for (int i = 0; i < sList.length; i++)
-        {
-            View view1 = new PingzeLinearlayout(mContext, sList[i]);
-            view1.setPadding(0, 30, 0, 30);
-            final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
-            edittext.setTypeface(MyApplication.typeface);
-            final int index = i;
-            edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
+            String[] tList = null;
+            if (writing.getText() != null)
             {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus)
+                tList = writing.getText().split("\n");
+            }
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            for (int i = 0; i < sList.length; i++)
+            {
+                View view1 = new PingzeLinearlayout(mContext, sList[i]);
+                view1.setPadding(0, 30, 0, 30);
+                final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
+                edittext.setTypeface(MyApplication.typeface);
+                final int index = i;
+                edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
                 {
-                    if (!hasFocus)
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus)
                     {
-                        CheckUtils.checkEditText(edittext, sList[index]);
+                        if (!hasFocus)
+                        {
+                            CheckUtils.checkEditText(edittext, sList[index]);
+                        }
+                        else
+                        {
+                            keyboard.setVisibility(View.VISIBLE);
+                            ((BaseActivity) mContext).setBottomGone();
+                        }
                     }
-                    else
-                    {
-                        keyboard.setVisibility(View.VISIBLE);
-                        ((BaseActivity) mContext).setBottomGone();
-                    }
+                });
+                editContent.addView(view1);
+                editContent.addView(edittext);
+                editTexts.add(edittext);
+
+                if (i == 0)
+                {
+                    edittext.requestFocus();
                 }
-            });
-            editContent.addView(view1);
-            editContent.addView(edittext);
-            editTexts.add(edittext);
 
-            if (i == 0)
-            {
-                edittext.requestFocus();
+                if (tList != null && tList.length > i)
+                {
+                    edittext.setText(tList[i]);
+                }
             }
-
-            if (tList != null && tList.length > i)
-            {
-                edittext.setText(tList[i]);
-            }
+        }
+        else
+        {
+            Log.e("EditFragment", "sList is null");
         }
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);

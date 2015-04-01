@@ -108,7 +108,7 @@ public class CipaiActivity extends BaseActivity
         }
         else
         {
-            maxLines = 6;
+            maxLines = 5;
         }
         gallery = (ViewPager) findViewById(R.id.gc_main_gallery);
 

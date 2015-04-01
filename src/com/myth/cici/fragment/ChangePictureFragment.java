@@ -21,6 +21,7 @@ import android.provider.MediaStore;
 import android.renderscript.Allocation;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -140,9 +141,6 @@ public class ChangePictureFragment extends Fragment
             {
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                // intent.setType("image/*");
-                // intent.putExtra("crop", "true");
-                // intent.putExtra("return-data", true);
                 startActivityForResult(intent, REQUEST_PICK_IMG);
 
             }
@@ -227,31 +225,38 @@ public class ChangePictureFragment extends Fragment
     {
         Bitmap bmp = Bitmap.createBitmap(srcBitmap.getWidth(), srcBitmap.getHeight(), Config.ARGB_8888);
 
-        int brightness = bright - 127;
-        ColorMatrix cMatrix = new ColorMatrix();
-        cMatrix.set(new float[] {1, 0, 0, 0, brightness, 0, 1, 0, 0, brightness,// 改变亮度
-                0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
-
-        Paint paint = new Paint();
-        paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-        Canvas canvas = new Canvas(bmp);
-        canvas.drawBitmap(srcBitmap, 0, 0, paint);
-
-        if (Build.VERSION.SDK_INT > 16)
+        try
         {
-            RenderScript rs = RenderScript.create(getActivity());
-            Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
-            ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
-            blur.setInput(overlayAlloc);
-            blur.setRadius(radius + 1);
-            blur.forEach(overlayAlloc);
-            overlayAlloc.copyTo(bmp);
-            rs.destroy();
+            int brightness = bright - 127;
+            ColorMatrix cMatrix = new ColorMatrix();
+            cMatrix.set(new float[] {1, 0, 0, 0, brightness, 0, 1, 0, 0, brightness,// 改变亮度
+                    0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
+
+            Paint paint = new Paint();
+            paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
+            Canvas canvas = new Canvas(bmp);
+            canvas.drawBitmap(srcBitmap, 0, 0, paint);
+
+            if (Build.VERSION.SDK_INT > 16)
+            {
+                RenderScript rs = RenderScript.create(getActivity());
+                Allocation overlayAlloc = Allocation.createFromBitmap(rs, bmp);
+                ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, overlayAlloc.getElement());
+                blur.setInput(overlayAlloc);
+                blur.setRadius(radius + 1);
+                blur.forEach(overlayAlloc);
+                overlayAlloc.copyTo(bmp);
+                rs.destroy();
+            }
+            else
+            {
+                // 低版本的折衷处理方法
+                bmp = Fastblur.fastblur(mContext, bmp, radius);
+            }
         }
-        else
+        catch (Exception e)
         {
-            // 低版本的折衷处理方法
-            bmp = Fastblur.fastblur(mContext, bmp, radius);
+            Log.e("ChangePicture", "drawPictureError");
         }
 
         destBitmap = bmp;

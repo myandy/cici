@@ -19,6 +19,7 @@
     <string name="setting_yun">韵典</string>
     <string name="setting_typeface">简繁切换</string>
     <string name="setting_about">关于词Ci</string>
+    <string name="setting_ad">支持开发者（应用推荐）</string>
     
     <string name="sort_default">默认排序</string>
     <string name="sort_count">按字数排序</string>

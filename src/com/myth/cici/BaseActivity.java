@@ -1,11 +1,14 @@
 package com.myth.cici;
 
 import android.app.Activity;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -31,6 +34,13 @@ public class BaseActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
+        if (VERSION.SDK_INT >= VERSION_CODES.KITKAT)
+        {
+            // 透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 透明导航栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
         mActivity = this;
         mBottomLayout = (FrameLayout) findViewById(R.id.bottom_layout);
         findViewById(R.id.bottom_left).setOnClickListener(new OnClickListener()

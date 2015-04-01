@@ -21,10 +21,10 @@
                 android:id="@+id/yun_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:text="@string/setting_yun"
                 android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_marginLeft="20dp"
                 android:textSize="20sp" />
 
             <TextView
@@ -33,9 +33,9 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
                 android:drawableRight="@drawable/next_hl"
+                android:gravity="center"
                 android:text="@string/setting_yun"
                 android:textColor="@color/white"
-                android:gravity="center"
                 android:textSize="20dp" />
         </RelativeLayout>
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/setting_line" />
-        
+
         <RelativeLayout
             android:id="@+id/item_typeface"
             android:layout_width="match_parent"
@@ -53,10 +53,10 @@
                 android:id="@+id/typeface_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:text="@string/setting_typeface"
                 android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_marginLeft="20dp"
                 android:textSize="20sp" />
 
             <TextView
@@ -65,9 +65,9 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
                 android:drawableRight="@drawable/next_hl"
+                android:gravity="center"
                 android:text="@string/setting_yun"
                 android:textColor="@color/white"
-                android:gravity="center"
                 android:textSize="20sp" />
         </RelativeLayout>
 
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/setting_line" />
-        
+
         <RelativeLayout
             android:id="@+id/item_about"
             android:layout_width="match_parent"
@@ -85,10 +85,10 @@
                 android:id="@+id/about_title"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:text="@string/setting_about"
                 android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_marginLeft="20dp"
                 android:textSize="20dp" />
 
             <TextView
@@ -97,10 +97,43 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
                 android:drawableRight="@drawable/next_hl"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <!--
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/setting_line" />
+        
+        <RelativeLayout
+            android:id="@+id/item_ad"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:id="@+id/ad_title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/setting_ad"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ad_value"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/next_hl"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:textSize="20sp" />
         </RelativeLayout>
+        -->
 
     </LinearLayout>
 

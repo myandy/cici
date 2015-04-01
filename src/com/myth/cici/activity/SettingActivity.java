@@ -26,6 +26,10 @@ public class SettingActivity extends BaseActivity
 
     private void initView()
     {
+
+        // final GdtAppwall appwall = new GdtAppwall(this, "1104396282",
+        // "2090000295819515", false);
+
         refreshYun();
         refreshTypeface();
 
@@ -85,6 +89,15 @@ public class SettingActivity extends BaseActivity
                 startActivity(new Intent(mActivity, AboutActivity.class));
             }
         });
+        // findViewById(R.id.item_ad).setOnClickListener(new OnClickListener()
+        // {
+        //
+        // @Override
+        // public void onClick(View v)
+        // {
+        // appwall.doShowAppWall();
+        // }
+        // });
     }
 
     private void refreshYun()

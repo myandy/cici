@@ -3,9 +3,9 @@ package com.myth.cici.activity;
 import java.util.ArrayList;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -98,8 +98,14 @@ public class CipaiListActivity extends BaseActivity
             }
         });
         addView();
-
-        listview.smoothScrollToPosition(ciList.size());
+        try
+        {
+            listview.smoothScrollToPosition(ciList.size());
+        }
+        catch (Exception e)
+        {
+            Log.e("CipaiList", e.toString());
+        }
     }
 
     private void addView()

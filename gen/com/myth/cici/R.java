@@ -267,10 +267,10 @@ in (inches), mm (millimeters).
         public static final int ci=0x7f040000;
     }
     public static final class string {
-        public static final int about_text=0x7f070012;
-        public static final int about_text1=0x7f070013;
-        public static final int about_text2=0x7f070014;
-        public static final int about_text3=0x7f070015;
+        public static final int about_text=0x7f070013;
+        public static final int about_text1=0x7f070014;
+        public static final int about_text2=0x7f070015;
+        public static final int about_text3=0x7f070016;
         public static final int app_name=0x7f070000;
         public static final int cancel=0x7f070003;
         public static final int confirm=0x7f070004;
@@ -285,10 +285,11 @@ in (inches), mm (millimeters).
         public static final int search_cipai_hint=0x7f070002;
         public static final int search_hint=0x7f070001;
         public static final int setting_about=0x7f07000f;
+        public static final int setting_ad=0x7f070010;
         public static final int setting_typeface=0x7f07000e;
         public static final int setting_yun=0x7f07000d;
-        public static final int sort_count=0x7f070011;
-        public static final int sort_default=0x7f070010;
+        public static final int sort_count=0x7f070012;
+        public static final int sort_default=0x7f070011;
     }
     public static final class style {
         /** 

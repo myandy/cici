@@ -8041,11 +8041,12 @@ android.support.v7.widget.DefaultItemAnimator -> android.support.v7.widget.a:
     java.util.ArrayList mRemoveAnimations -> h
     void runPendingAnimations() -> a
     boolean animateRemove(android.support.v7.widget.RecyclerView$ViewHolder) -> a
-    void animateRemoveImpl(android.support.v7.widget.RecyclerView$ViewHolder) -> f
+    void animateRemoveImpl(android.support.v7.widget.RecyclerView$ViewHolder) -> g
     boolean animateAdd(android.support.v7.widget.RecyclerView$ViewHolder) -> b
-    void animateAddImpl(android.support.v7.widget.RecyclerView$ViewHolder) -> g
+    void animateAddImpl(android.support.v7.widget.RecyclerView$ViewHolder) -> h
     boolean animateMove(android.support.v7.widget.RecyclerView$ViewHolder,int,int,int,int) -> a
     void animateMoveImpl(android.support.v7.widget.RecyclerView$ViewHolder,int,int,int,int) -> b
+    void endAnimation(android.support.v7.widget.RecyclerView$ViewHolder) -> c
     boolean isRunning() -> b
     void dispatchFinishedWhenDone() -> h
     void endAnimations() -> c
@@ -8089,6 +8090,141 @@ android.support.v7.widget.DefaultItemAnimator$VpaListenerAdapter -> android.supp
     void onAnimationStart(android.view.View) -> onAnimationStart
     void onAnimationEnd(android.view.View) -> onAnimationEnd
     void onAnimationCancel(android.view.View) -> onAnimationCancel
+android.support.v7.widget.LinearLayoutManager -> android.support.v7.widget.i:
+    int mOrientation -> d
+    android.support.v7.widget.LinearLayoutManager$RenderState mRenderState -> e
+    android.support.v7.widget.LinearLayoutManager$OrientationHelper mOrientationHelper -> a
+    boolean mLastStackFromEnd -> f
+    boolean mReverseLayout -> g
+    boolean mShouldReverseLayout -> h
+    boolean mStackFromEnd -> i
+    int mPendingScrollPosition -> j
+    int mPendingScrollPositionOffset -> k
+    android.support.v7.widget.LinearLayoutManager$SavedState mPendingSavedState -> l
+    android.support.v7.widget.RecyclerView$LayoutParams generateDefaultLayoutParams() -> a
+    android.os.Parcelable onSaveInstanceState() -> b
+    void onRestoreInstanceState(android.os.Parcelable) -> a
+    boolean canScrollHorizontally() -> c
+    boolean canScrollVertically() -> d
+    void setStackFromEnd(boolean) -> a
+    void setOrientation(int) -> a
+    void resolveShouldLayoutReverse() -> u
+    void setReverseLayout(boolean) -> b
+    android.view.View findViewByPosition(int) -> b
+    int getExtraLayoutSpace(android.support.v7.widget.RecyclerView$State) -> a
+    void smoothScrollToPosition(android.support.v7.widget.RecyclerView,android.support.v7.widget.RecyclerView$State,int) -> a
+    android.graphics.PointF computeScrollVectorForPosition(int) -> c
+    void onLayoutChildren(android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
+    int fixLayoutEndGap(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State,boolean) -> a
+    int fixLayoutStartGap(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State,boolean) -> b
+    void updateRenderStateToFillEnd(int,int) -> b
+    void updateRenderStateToFillStart(int,int) -> c
+    boolean isLayoutRTL() -> v
+    void ensureRenderState() -> e
+    void scrollToPosition(int) -> d
+    int scrollHorizontallyBy(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
+    int scrollVerticallyBy(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> b
+    int computeHorizontalScrollOffset(android.support.v7.widget.RecyclerView$State) -> b
+    int computeVerticalScrollOffset(android.support.v7.widget.RecyclerView$State) -> c
+    int computeHorizontalScrollExtent(android.support.v7.widget.RecyclerView$State) -> d
+    int computeVerticalScrollExtent(android.support.v7.widget.RecyclerView$State) -> e
+    int computeHorizontalScrollRange(android.support.v7.widget.RecyclerView$State) -> f
+    int computeVerticalScrollRange(android.support.v7.widget.RecyclerView$State) -> g
+    void updateRenderState(int,int,boolean,android.support.v7.widget.RecyclerView$State) -> a
+    int scrollBy(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> c
+    void recycleChildren(android.support.v7.widget.RecyclerView$Recycler,int,int) -> a
+    void recycleViewsFromStart(android.support.v7.widget.RecyclerView$Recycler,int) -> a
+    void recycleViewsFromEnd(android.support.v7.widget.RecyclerView$Recycler,int) -> b
+    void recycleByRenderState(android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.LinearLayoutManager$RenderState) -> a
+    int fill(android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.LinearLayoutManager$RenderState,android.support.v7.widget.RecyclerView$State,boolean) -> a
+    int convertFocusDirectionToLayoutDirection(int) -> j
+    android.view.View getChildClosestToStart() -> w
+    android.view.View getChildClosestToEnd() -> x
+    android.view.View onFocusSearchFailed(android.view.View,int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
+    boolean supportsPredictiveItemAnimations() -> f
+    android.support.v7.widget.LinearLayoutManager$OrientationHelper createVerticalOrientationHelper() -> g
+    android.support.v7.widget.LinearLayoutManager$OrientationHelper createHorizontalOrientationHelper() -> h
+android.support.v7.widget.LinearLayoutManager$1 -> android.support.v7.widget.j:
+    android.support.v7.widget.LinearLayoutManager this$0 -> a
+    android.graphics.PointF computeScrollVectorForPosition(int) -> a
+android.support.v7.widget.LinearLayoutManager$2 -> android.support.v7.widget.k:
+    android.support.v7.widget.LinearLayoutManager this$0 -> a
+    int getEndAfterPadding() -> a
+    void offsetChildren(int) -> a
+    int getStartAfterPadding() -> b
+    int getDecoratedMeasurement(android.view.View) -> a
+    int getDecoratedMeasurementInOther(android.view.View) -> b
+    int getDecoratedEnd(android.view.View) -> c
+    int getDecoratedStart(android.view.View) -> d
+    int getTotalSpace() -> c
+android.support.v7.widget.LinearLayoutManager$3 -> android.support.v7.widget.l:
+    android.support.v7.widget.LinearLayoutManager this$0 -> a
+    int getEndAfterPadding() -> a
+    void offsetChildren(int) -> a
+    int getStartAfterPadding() -> b
+    int getDecoratedMeasurement(android.view.View) -> a
+    int getDecoratedMeasurementInOther(android.view.View) -> b
+    int getDecoratedEnd(android.view.View) -> c
+    int getDecoratedStart(android.view.View) -> d
+    int getTotalSpace() -> c
+android.support.v7.widget.LinearLayoutManager$OrientationHelper -> android.support.v7.widget.m:
+    int getDecoratedStart(android.view.View) -> d
+    int getDecoratedEnd(android.view.View) -> c
+    int getDecoratedMeasurement(android.view.View) -> a
+    int getDecoratedMeasurementInOther(android.view.View) -> b
+    int getStartAfterPadding() -> b
+    int getEndAfterPadding() -> a
+    void offsetChildren(int) -> a
+    int getTotalSpace() -> c
+android.support.v7.widget.LinearLayoutManager$RenderState -> android.support.v7.widget.n:
+    int mOffset -> a
+    int mAvailable -> b
+    int mCurrentPosition -> c
+    int mItemDirection -> d
+    int mLayoutDirection -> e
+    int mScrollingOffset -> f
+    int mExtra -> g
+    java.util.List mScrapList -> h
+    boolean hasMore(android.support.v7.widget.RecyclerView$State) -> a
+    android.view.View next(android.support.v7.widget.RecyclerView$Recycler) -> a
+    android.view.View nextFromLimitedList() -> a
+android.support.v7.widget.LinearLayoutManager$SavedState -> android.support.v7.widget.o:
+    int mOrientation -> a
+    int mAnchorPosition -> b
+    int mAnchorOffset -> c
+    boolean mReverseLayout -> d
+    boolean mStackFromEnd -> e
+    boolean mAnchorLayoutFromEnd -> f
+    android.os.Parcelable$Creator CREATOR -> g
+    int describeContents() -> describeContents
+    void writeToParcel(android.os.Parcel,int) -> writeToParcel
+android.support.v7.widget.LinearLayoutManager$SavedState$1 -> android.support.v7.widget.p:
+    android.support.v7.widget.LinearLayoutManager$SavedState createFromParcel(android.os.Parcel) -> a
+    android.support.v7.widget.LinearLayoutManager$SavedState[] newArray(int) -> a
+    java.lang.Object[] newArray(int) -> newArray
+    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+android.support.v7.widget.LinearSmoothScroller -> android.support.v7.widget.q:
+    android.view.animation.LinearInterpolator mLinearInterpolator -> b
+    android.view.animation.DecelerateInterpolator mDecelerateInterpolator -> c
+    android.graphics.PointF mTargetVector -> d
+    float MILLISECONDS_PER_PX -> a
+    int mInterimTargetDx -> e
+    int mInterimTargetDy -> f
+    void onStart() -> a
+    void onTargetFound(android.view.View,android.support.v7.widget.RecyclerView$State,android.support.v7.widget.RecyclerView$SmoothScroller$Action) -> a
+    void onSeekTargetStep(int,int,android.support.v7.widget.RecyclerView$State,android.support.v7.widget.RecyclerView$SmoothScroller$Action) -> a
+    void onStop() -> b
+    float calculateSpeedPerPixel(android.util.DisplayMetrics) -> a
+    int calculateTimeForDeceleration(int) -> b
+    int calculateTimeForScrolling(int) -> c
+    int getHorizontalSnapPreference() -> c
+    int getVerticalSnapPreference() -> d
+    void updateActionForInterimTarget(android.support.v7.widget.RecyclerView$SmoothScroller$Action) -> a
+    int clampApplyScroll(int,int) -> a
+    int calculateDtToFit(int,int,int,int,int) -> a
+    int calculateDyToMakeVisible(android.view.View,int) -> a
+    int calculateDxToMakeVisible(android.view.View,int) -> b
+    android.graphics.PointF computeScrollVectorForPosition(int) -> a
 android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView:
     android.support.v7.widget.RecyclerView$RecyclerViewDataObserver mObserver -> g
     android.support.v7.widget.RecyclerView$Recycler mRecycler -> h
@@ -8105,46 +8241,54 @@ android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView
     java.util.ArrayList mOnItemTouchListeners -> s
     android.support.v7.widget.RecyclerView$OnItemTouchListener mActiveOnItemTouchListener -> t
     boolean mIsAttached -> u
-    boolean mFirstLayoutComplete -> v
-    boolean mEatRequestLayout -> w
-    boolean mLayoutRequestEaten -> x
-    boolean mAdapterUpdateDuringMeasure -> y
-    boolean mPostUpdatesOnAnimation -> z
-    android.support.v4.widget.EdgeEffectCompat mLeftGlow -> A
-    android.support.v4.widget.EdgeEffectCompat mTopGlow -> B
-    android.support.v4.widget.EdgeEffectCompat mRightGlow -> C
-    android.support.v4.widget.EdgeEffectCompat mBottomGlow -> D
+    boolean mHasFixedSize -> v
+    boolean mFirstLayoutComplete -> w
+    boolean mEatRequestLayout -> x
+    boolean mLayoutRequestEaten -> y
+    boolean mAdapterUpdateDuringMeasure -> z
+    boolean mPostUpdatesOnAnimation -> A
+    android.support.v4.widget.EdgeEffectCompat mLeftGlow -> B
+    android.support.v4.widget.EdgeEffectCompat mTopGlow -> C
+    android.support.v4.widget.EdgeEffectCompat mRightGlow -> D
+    android.support.v4.widget.EdgeEffectCompat mBottomGlow -> E
     android.support.v7.widget.RecyclerView$ItemAnimator mItemAnimator -> a
-    int mScrollState -> E
-    int mScrollPointerId -> F
-    android.view.VelocityTracker mVelocityTracker -> G
-    int mInitialTouchX -> H
-    int mInitialTouchY -> I
-    int mLastTouchX -> J
-    int mLastTouchY -> K
-    int mTouchSlop -> L
-    int mMinFlingVelocity -> M
-    int mMaxFlingVelocity -> N
-    android.support.v7.widget.RecyclerView$ViewFlinger mViewFlinger -> O
-    android.support.v7.widget.RecyclerView$State mState -> P
-    android.support.v7.widget.RecyclerView$OnScrollListener mScrollListener -> Q
+    int mScrollState -> F
+    int mScrollPointerId -> G
+    android.view.VelocityTracker mVelocityTracker -> H
+    int mInitialTouchX -> I
+    int mInitialTouchY -> J
+    int mLastTouchX -> K
+    int mLastTouchY -> L
+    int mTouchSlop -> M
+    int mMinFlingVelocity -> N
+    int mMaxFlingVelocity -> O
+    android.support.v7.widget.RecyclerView$ViewFlinger mViewFlinger -> P
+    android.support.v7.widget.RecyclerView$State mState -> Q
+    android.support.v7.widget.RecyclerView$OnScrollListener mScrollListener -> R
     boolean mItemsAddedOrRemoved -> b
     boolean mItemsChanged -> c
     int mAnimatingViewIndex -> d
     int mNumAnimatingViews -> e
     boolean mInPreLayout -> f
-    android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorListener mItemAnimatorListener -> R
-    boolean mPostedAnimatorRunner -> S
-    java.lang.Runnable mItemAnimatorRunner -> T
-    android.view.animation.Interpolator sQuinticInterpolator -> U
+    android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorListener mItemAnimatorListener -> S
+    boolean mPostedAnimatorRunner -> T
+    java.lang.Runnable mItemAnimatorRunner -> U
+    android.view.animation.Interpolator sQuinticInterpolator -> V
+    void setHasFixedSize(boolean) -> a
+    void setAdapter(android.support.v7.widget.RecyclerView$Adapter) -> a
+    android.support.v7.widget.RecyclerView$Adapter getAdapter() -> a
+    void setLayoutManager(android.support.v7.widget.RecyclerView$LayoutManager) -> a
     android.os.Parcelable onSaveInstanceState() -> onSaveInstanceState
     void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
-    void addAnimatingView(android.view.View) -> d
-    void removeAnimatingView(android.view.View) -> e
-    void setScrollState(int) -> a
+    void addAnimatingView(android.view.View) -> g
+    void removeAnimatingView(android.view.View) -> h
+    android.view.View getAnimatingView(int,int) -> h
+    void setScrollState(int) -> e
+    void scrollToPosition(int) -> a
+    void smoothScrollToPosition(int) -> b
     void scrollTo(int,int) -> scrollTo
     void scrollBy(int,int) -> scrollBy
-    void consumePendingUpdateOperations() -> h
+    void consumePendingUpdateOperations() -> j
     void scrollByInternal(int,int) -> a
     int computeHorizontalScrollOffset() -> computeHorizontalScrollOffset
     int computeHorizontalScrollExtent() -> computeHorizontalScrollExtent
@@ -8152,13 +8296,13 @@ android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView
     int computeVerticalScrollOffset() -> computeVerticalScrollOffset
     int computeVerticalScrollExtent() -> computeVerticalScrollExtent
     int computeVerticalScrollRange() -> computeVerticalScrollRange
-    void eatRequestLayout() -> a
-    void resumeRequestLayout(boolean) -> a
+    void eatRequestLayout() -> b
+    void resumeRequestLayout(boolean) -> b
     void smoothScrollBy(int,int) -> b
     boolean fling(int,int) -> c
-    void stopScroll() -> b
-    void pullGlows(int,int) -> h
-    void releaseGlows() -> i
+    void stopScroll() -> c
+    void pullGlows(int,int) -> i
+    void releaseGlows() -> k
     void absorbGlows(int,int) -> d
     android.view.View focusSearch(android.view.View,int) -> focusSearch
     void requestChildFocus(android.view.View,android.view.View) -> requestChildFocus
@@ -8170,11 +8314,11 @@ android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView
     boolean dispatchOnItemTouch(android.view.MotionEvent) -> b
     boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void cancelTouch() -> j
+    void cancelTouch() -> l
     void onPointerUp(android.view.MotionEvent) -> c
     void onMeasure(int,int) -> onMeasure
-    void postAnimationRunner() -> k
-    void dispatchLayout() -> c
+    void postAnimationRunner() -> m
+    void dispatchLayout() -> d
     void animateAppearance(android.support.v7.widget.RecyclerView$ViewHolder,android.graphics.Rect,int,int) -> a
     void animateDisappearance(android.support.v7.widget.RecyclerView$ItemHolderInfo) -> a
     void onLayout(boolean,int,int,int,int) -> onLayout
@@ -8185,20 +8329,27 @@ android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView
     android.view.ViewGroup$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
     android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet) -> generateLayoutParams
     android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> generateLayoutParams
-    void dispatchLayoutUpdates() -> d
-    void updateChildViews() -> e
-    void clearOldPositions() -> f
+    int findPositionOffset(int) -> f
+    void dispatchLayoutUpdates() -> e
+    void updateChildViews() -> f
+    void clearOldPositions() -> g
     void offsetPositionRecordsForInsert(int,int) -> e
     void offsetPositionRecordsForRemove(int,int) -> f
     void viewRangeUpdate(int,int) -> g
+    void markKnownViewsInvalid() -> h
     android.support.v7.widget.RecyclerView$ViewHolder getChildViewHolder(android.view.View) -> a
     android.support.v7.widget.RecyclerView$ViewHolder getChildViewHolderInt(android.view.View) -> b
     int getChildPosition(android.view.View) -> c
     android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForPosition(int,boolean) -> a
+    void offsetChildrenVertical(int) -> c
+    void onChildAttachedToWindow(android.view.View) -> d
+    void onChildDetachedFromWindow(android.view.View) -> e
+    void offsetChildrenHorizontal(int) -> d
+    android.graphics.Rect getItemDecorInsetsForChild(android.view.View) -> f
     void recycleUpdateOp(android.support.v7.widget.RecyclerView$UpdateOp) -> a
     java.util.ArrayList access$100(android.support.v7.widget.RecyclerView) -> a
     boolean access$302(android.support.v7.widget.RecyclerView,boolean) -> a
-    android.view.animation.Interpolator access$1200() -> g
+    android.view.animation.Interpolator access$1200() -> i
     void access$1300(android.support.v7.widget.RecyclerView) -> b
     android.support.v7.widget.RecyclerView$LayoutManager access$1400(android.support.v7.widget.RecyclerView) -> c
     android.support.v7.widget.RecyclerView$Adapter access$1500(android.support.v7.widget.RecyclerView) -> d
@@ -8208,30 +8359,47 @@ android.support.v7.widget.RecyclerView -> android.support.v7.widget.RecyclerView
     android.support.v7.widget.RecyclerView$OnScrollListener access$2000(android.support.v7.widget.RecyclerView) -> h
     boolean access$2100(android.support.v7.widget.RecyclerView) -> i
     void access$2200(android.support.v7.widget.RecyclerView,int) -> a
+    int access$2300(android.support.v7.widget.RecyclerView,int) -> b
+    void access$2400(android.support.v7.widget.RecyclerView,android.view.View,boolean) -> a
+    android.view.View access$2600(android.support.v7.widget.RecyclerView,int,int) -> a
     android.support.v7.widget.RecyclerView$RecyclerListener access$2700(android.support.v7.widget.RecyclerView) -> j
-    void access$3300(android.support.v7.widget.RecyclerView,android.view.View,boolean) -> a
-    void access$3400(android.support.v7.widget.RecyclerView,int,int) -> a
+    void access$2800(android.support.v7.widget.RecyclerView,android.view.View,int,android.view.ViewGroup$LayoutParams) -> a
+    void access$3000(android.support.v7.widget.RecyclerView,int) -> c
+    void access$3300(android.support.v7.widget.RecyclerView,android.view.View,boolean) -> b
+    void access$3400(android.support.v7.widget.RecyclerView,int,int) -> b
     android.support.v7.widget.RecyclerView$ViewFlinger access$3600(android.support.v7.widget.RecyclerView) -> k
     void access$3900(android.support.v7.widget.RecyclerView,android.view.View) -> a
-    void access$4000(android.support.v7.widget.RecyclerView,android.view.View,boolean) -> b
-android.support.v7.widget.RecyclerView$1 -> android.support.v7.widget.i:
+    void access$4000(android.support.v7.widget.RecyclerView,android.view.View,boolean) -> c
+android.support.v7.widget.RecyclerView$1 -> android.support.v7.widget.r:
     android.support.v7.widget.RecyclerView this$0 -> a
     void run() -> run
-android.support.v7.widget.RecyclerView$2 -> android.support.v7.widget.j:
+android.support.v7.widget.RecyclerView$2 -> android.support.v7.widget.s:
     android.support.v7.widget.RecyclerView this$0 -> a
     void run() -> run
-android.support.v7.widget.RecyclerView$3 -> android.support.v7.widget.k:
+android.support.v7.widget.RecyclerView$3 -> android.support.v7.widget.t:
     float getInterpolation(float) -> getInterpolation
-android.support.v7.widget.RecyclerView$Adapter -> android.support.v7.widget.l:
-    boolean mHasStableIds -> a
+android.support.v7.widget.RecyclerView$Adapter -> android.support.v7.widget.u:
+    android.support.v7.widget.RecyclerView$AdapterDataObservable mObservable -> a
+    boolean mHasStableIds -> b
+    android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> a
     void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> a
+    android.support.v7.widget.RecyclerView$ViewHolder createViewHolder(android.view.ViewGroup,int) -> b
     void bindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> b
-    long getItemId(int) -> a
+    int getItemViewType(int) -> a
+    long getItemId(int) -> b
     int getItemCount() -> a
     boolean hasStableIds() -> b
     void onViewRecycled(android.support.v7.widget.RecyclerView$ViewHolder) -> a
-android.support.v7.widget.RecyclerView$AdapterDataObserver -> android.support.v7.widget.m:
-android.support.v7.widget.RecyclerView$ItemAnimator -> android.support.v7.widget.n:
+    void onViewAttachedToWindow(android.support.v7.widget.RecyclerView$ViewHolder) -> b
+    void onViewDetachedFromWindow(android.support.v7.widget.RecyclerView$ViewHolder) -> c
+    void registerAdapterDataObserver(android.support.v7.widget.RecyclerView$AdapterDataObserver) -> a
+    void unregisterAdapterDataObserver(android.support.v7.widget.RecyclerView$AdapterDataObserver) -> b
+    void notifyDataSetChanged() -> c
+android.support.v7.widget.RecyclerView$AdapterDataObservable -> android.support.v7.widget.v:
+    void notifyChanged() -> a
+android.support.v7.widget.RecyclerView$AdapterDataObserver -> android.support.v7.widget.w:
+    void onChanged() -> a
+android.support.v7.widget.RecyclerView$ItemAnimator -> android.support.v7.widget.x:
     android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorListener mListener -> a
     java.util.ArrayList mFinishedListeners -> b
     long mAddDuration -> c
@@ -8245,35 +8413,39 @@ android.support.v7.widget.RecyclerView$ItemAnimator -> android.support.v7.widget
     boolean animateRemove(android.support.v7.widget.RecyclerView$ViewHolder) -> a
     boolean animateAdd(android.support.v7.widget.RecyclerView$ViewHolder) -> b
     boolean animateMove(android.support.v7.widget.RecyclerView$ViewHolder,int,int,int,int) -> a
-    void dispatchRemoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> c
-    void dispatchMoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> d
-    void dispatchAddFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> e
+    void dispatchRemoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> d
+    void dispatchMoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> e
+    void dispatchAddFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> f
+    void endAnimation(android.support.v7.widget.RecyclerView$ViewHolder) -> c
     void endAnimations() -> c
     void dispatchAnimationsFinished() -> g
-android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorFinishedListener -> android.support.v7.widget.o:
+android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorFinishedListener -> android.support.v7.widget.y:
     void onAnimationsFinished() -> a
-android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorListener -> android.support.v7.widget.p:
+android.support.v7.widget.RecyclerView$ItemAnimator$ItemAnimatorListener -> android.support.v7.widget.z:
     void onRemoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> a
     void onAddFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> b
     void onMoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> c
-android.support.v7.widget.RecyclerView$ItemAnimatorRestoreListener -> android.support.v7.widget.q:
+android.support.v7.widget.RecyclerView$ItemAnimatorRestoreListener -> android.support.v7.widget.aa:
     android.support.v7.widget.RecyclerView this$0 -> a
     void onRemoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> a
     void onAddFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> b
     void onMoveFinished(android.support.v7.widget.RecyclerView$ViewHolder) -> c
-android.support.v7.widget.RecyclerView$ItemDecoration -> android.support.v7.widget.r:
+android.support.v7.widget.RecyclerView$ItemDecoration -> android.support.v7.widget.ab:
     void onDraw(android.graphics.Canvas,android.support.v7.widget.RecyclerView) -> a
     void onDrawOver(android.graphics.Canvas,android.support.v7.widget.RecyclerView) -> b
-android.support.v7.widget.RecyclerView$ItemHolderInfo -> android.support.v7.widget.s:
+    void getItemOffsets(android.graphics.Rect,int,android.support.v7.widget.RecyclerView) -> a
+android.support.v7.widget.RecyclerView$ItemHolderInfo -> android.support.v7.widget.ac:
     android.support.v7.widget.RecyclerView$ViewHolder holder -> a
     int left -> b
     int top -> c
     int right -> d
     int bottom -> e
     int position -> f
-android.support.v7.widget.RecyclerView$LayoutManager -> android.support.v7.widget.t:
-    android.support.v7.widget.RecyclerView mRecyclerView -> a
-    android.support.v7.widget.RecyclerView$SmoothScroller mSmoothScroller -> b
+android.support.v7.widget.RecyclerView$LayoutManager -> android.support.v7.widget.ad:
+    android.support.v7.widget.RecyclerView mRecyclerView -> b
+    android.support.v7.widget.RecyclerView$SmoothScroller mSmoothScroller -> c
+    void requestLayout() -> i
+    boolean supportsPredictiveItemAnimations() -> f
     void onAttachedToWindow(android.support.v7.widget.RecyclerView) -> a
     void onDetachedFromWindow(android.support.v7.widget.RecyclerView) -> b
     void onLayoutChildren(android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
@@ -8283,90 +8455,133 @@ android.support.v7.widget.RecyclerView$LayoutManager -> android.support.v7.widge
     android.support.v7.widget.RecyclerView$LayoutParams generateLayoutParams(android.content.Context,android.util.AttributeSet) -> a
     int scrollHorizontallyBy(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
     int scrollVerticallyBy(int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> b
-    boolean canScrollHorizontally() -> b
-    boolean canScrollVertically() -> c
-    int getWidth() -> d
-    int getHeight() -> e
-    int getPaddingLeft() -> f
-    int getPaddingTop() -> g
-    int getPaddingRight() -> h
-    int getPaddingBottom() -> i
+    boolean canScrollHorizontally() -> c
+    boolean canScrollVertically() -> d
+    void scrollToPosition(int) -> d
+    void smoothScrollToPosition(android.support.v7.widget.RecyclerView,android.support.v7.widget.RecyclerView$State,int) -> a
+    void startSmoothScroll(android.support.v7.widget.RecyclerView$SmoothScroller) -> a
+    int getLayoutDirection() -> j
+    void addView(android.view.View,int) -> a
+    void addView(android.view.View) -> a
+    void removeViewAt(int) -> e
+    int getPosition(android.view.View) -> b
+    android.view.View findViewByPosition(int) -> b
+    void detachViewAt(int) -> f
+    void removeAndRecycleViewAt(int,android.support.v7.widget.RecyclerView$Recycler) -> a
+    int getChildCount() -> k
+    android.view.View getChildAt(int) -> g
+    int getWidth() -> l
+    int getHeight() -> m
+    int getPaddingLeft() -> n
+    int getPaddingTop() -> o
+    int getPaddingRight() -> p
+    int getPaddingBottom() -> q
+    void offsetChildrenHorizontal(int) -> h
+    void offsetChildrenVertical(int) -> i
+    void detachAndScrapAttachedViews(android.support.v7.widget.RecyclerView$Recycler) -> a
     void removeAndRecycleScrapInt(android.support.v7.widget.RecyclerView$Recycler,boolean) -> a
+    void measureChildWithMargins(android.view.View,int,int) -> a
+    int getChildMeasureSpec(int,int,int,boolean) -> a
+    int getDecoratedMeasuredWidth(android.view.View) -> c
+    int getDecoratedMeasuredHeight(android.view.View) -> d
+    void layoutDecorated(android.view.View,int,int,int,int) -> a
+    int getDecoratedLeft(android.view.View) -> e
+    int getDecoratedTop(android.view.View) -> f
+    int getDecoratedRight(android.view.View) -> g
+    int getDecoratedBottom(android.view.View) -> h
     android.view.View onFocusSearchFailed(android.view.View,int,android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State) -> a
-    android.view.View onInterceptFocusSearch(android.view.View,int) -> a
+    android.view.View onInterceptFocusSearch(android.view.View,int) -> b
     boolean requestChildRectangleOnScreen(android.support.v7.widget.RecyclerView,android.view.View,android.graphics.Rect,boolean) -> a
     boolean onRequestChildFocus(android.support.v7.widget.RecyclerView,android.view.View,android.view.View) -> a
+    void onAdapterChanged(android.support.v7.widget.RecyclerView$Adapter,android.support.v7.widget.RecyclerView$Adapter) -> a
     boolean onAddFocusables(android.support.v7.widget.RecyclerView,java.util.ArrayList,int,int) -> a
     void onItemsAdded(android.support.v7.widget.RecyclerView,int,int) -> a
     void onItemsRemoved(android.support.v7.widget.RecyclerView,int,int) -> b
-    int computeHorizontalScrollExtent(android.support.v7.widget.RecyclerView$State) -> a
+    int computeHorizontalScrollExtent(android.support.v7.widget.RecyclerView$State) -> d
     int computeHorizontalScrollOffset(android.support.v7.widget.RecyclerView$State) -> b
-    int computeHorizontalScrollRange(android.support.v7.widget.RecyclerView$State) -> c
-    int computeVerticalScrollExtent(android.support.v7.widget.RecyclerView$State) -> d
-    int computeVerticalScrollOffset(android.support.v7.widget.RecyclerView$State) -> e
-    int computeVerticalScrollRange(android.support.v7.widget.RecyclerView$State) -> f
+    int computeHorizontalScrollRange(android.support.v7.widget.RecyclerView$State) -> f
+    int computeVerticalScrollExtent(android.support.v7.widget.RecyclerView$State) -> e
+    int computeVerticalScrollOffset(android.support.v7.widget.RecyclerView$State) -> c
+    int computeVerticalScrollRange(android.support.v7.widget.RecyclerView$State) -> g
     void onMeasure(android.support.v7.widget.RecyclerView$Recycler,android.support.v7.widget.RecyclerView$State,int,int) -> a
     void setMeasuredDimension(int,int) -> a
-    int getMinimumWidth() -> j
-    int getMinimumHeight() -> k
-    android.os.Parcelable onSaveInstanceState() -> l
+    int getMinimumWidth() -> r
+    int getMinimumHeight() -> s
+    android.os.Parcelable onSaveInstanceState() -> b
     void onRestoreInstanceState(android.os.Parcelable) -> a
-    void stopSmoothScroller() -> m
-    void onSmoothScrollerStopped(android.support.v7.widget.RecyclerView$SmoothScroller) -> a
+    void stopSmoothScroller() -> t
+    void onSmoothScrollerStopped(android.support.v7.widget.RecyclerView$SmoothScroller) -> b
+    void removeAndRecycleAllViews(android.support.v7.widget.RecyclerView$Recycler) -> b
     void access$3700(android.support.v7.widget.RecyclerView$LayoutManager,android.support.v7.widget.RecyclerView$SmoothScroller) -> a
-android.support.v7.widget.RecyclerView$LayoutParams -> android.support.v7.widget.u:
+android.support.v7.widget.RecyclerView$LayoutParams -> android.support.v7.widget.ae:
     android.support.v7.widget.RecyclerView$ViewHolder mViewHolder -> a
     android.graphics.Rect mDecorInsets -> b
     boolean mInsetsDirty -> c
-android.support.v7.widget.RecyclerView$OnItemTouchListener -> android.support.v7.widget.v:
+    boolean isItemRemoved() -> a
+    int getViewPosition() -> b
+android.support.v7.widget.RecyclerView$OnItemTouchListener -> android.support.v7.widget.af:
     boolean onInterceptTouchEvent(android.support.v7.widget.RecyclerView,android.view.MotionEvent) -> a
     void onTouchEvent(android.support.v7.widget.RecyclerView,android.view.MotionEvent) -> b
-android.support.v7.widget.RecyclerView$OnScrollListener -> android.support.v7.widget.w:
+android.support.v7.widget.RecyclerView$OnScrollListener -> android.support.v7.widget.ag:
     void onScrollStateChanged(int) -> a
     void onScrolled(int,int) -> a
-android.support.v7.widget.RecyclerView$RecycledViewPool -> android.support.v7.widget.x:
+android.support.v7.widget.RecyclerView$RecycledViewPool -> android.support.v7.widget.ah:
     android.util.SparseArray mScrap -> a
     android.util.SparseIntArray mMaxScrap -> b
     int mAttachCount -> c
+    void clear() -> a
+    android.support.v7.widget.RecyclerView$ViewHolder getRecycledView(int) -> a
     void putRecycledView(android.support.v7.widget.RecyclerView$ViewHolder) -> a
-    java.util.ArrayList getScrapHeapForType(int) -> a
-android.support.v7.widget.RecyclerView$Recycler -> android.support.v7.widget.y:
+    void onAdapterChanged(android.support.v7.widget.RecyclerView$Adapter,android.support.v7.widget.RecyclerView$Adapter) -> a
+    java.util.ArrayList getScrapHeapForType(int) -> b
+android.support.v7.widget.RecyclerView$Recycler -> android.support.v7.widget.ai:
     java.util.ArrayList mAttachedScrap -> b
     java.util.ArrayList mCachedViews -> c
     java.util.List mUnmodifiableAttachedScrap -> d
     int mViewCacheMax -> e
     android.support.v7.widget.RecyclerView$RecycledViewPool mRecyclerPool -> f
     android.support.v7.widget.RecyclerView this$0 -> a
+    void clear() -> a
+    java.util.List getScrapList() -> b
+    boolean validateViewHolderForOffsetPosition(android.support.v7.widget.RecyclerView$ViewHolder,int) -> a
+    android.view.View getViewForPosition(int) -> a
     void recycleView(android.view.View) -> a
+    void recycleCachedViews() -> c
     void recycleViewHolder(android.support.v7.widget.RecyclerView$ViewHolder) -> a
     void quickRecycleScrapView(android.view.View) -> b
+    void scrapView(android.view.View) -> c
     void unscrapView(android.support.v7.widget.RecyclerView$ViewHolder) -> b
-    int getScrapCount() -> a
-    android.view.View getScrapViewAt(int) -> a
-    void clearScrap() -> b
+    int getScrapCount() -> d
+    android.view.View getScrapViewAt(int) -> b
+    void clearScrap() -> e
+    android.support.v7.widget.RecyclerView$ViewHolder getScrapViewForPosition(int,int) -> a
+    android.support.v7.widget.RecyclerView$ViewHolder getScrapViewForId(long,int) -> a
     void dispatchViewRecycled(android.support.v7.widget.RecyclerView$ViewHolder) -> c
-    void offsetPositionRecordsForInsert(int,int) -> a
-    void offsetPositionRecordsForRemove(int,int) -> b
-    android.support.v7.widget.RecyclerView$RecycledViewPool getRecycledViewPool() -> c
-    android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForPosition(int) -> b
-    void viewRangeUpdate(int,int) -> c
-    void clearOldPositions() -> d
-android.support.v7.widget.RecyclerView$RecyclerListener -> android.support.v7.widget.z:
+    void onAdapterChanged(android.support.v7.widget.RecyclerView$Adapter,android.support.v7.widget.RecyclerView$Adapter) -> a
+    void offsetPositionRecordsForInsert(int,int) -> b
+    void offsetPositionRecordsForRemove(int,int) -> c
+    android.support.v7.widget.RecyclerView$RecycledViewPool getRecycledViewPool() -> f
+    android.support.v7.widget.RecyclerView$ViewHolder findViewHolderForPosition(int) -> c
+    void viewRangeUpdate(int,int) -> d
+    void markKnownViewsInvalid() -> g
+    void clearOldPositions() -> h
+android.support.v7.widget.RecyclerView$RecyclerListener -> android.support.v7.widget.aj:
     void onViewRecycled(android.support.v7.widget.RecyclerView$ViewHolder) -> a
-android.support.v7.widget.RecyclerView$RecyclerViewDataObserver -> android.support.v7.widget.aa:
+android.support.v7.widget.RecyclerView$RecyclerViewDataObserver -> android.support.v7.widget.ak:
     android.support.v7.widget.RecyclerView this$0 -> a
-android.support.v7.widget.RecyclerView$SavedState -> android.support.v7.widget.ab:
+    void onChanged() -> a
+android.support.v7.widget.RecyclerView$SavedState -> android.support.v7.widget.al:
     android.os.Parcelable mLayoutState -> a
     android.os.Parcelable$Creator CREATOR -> b
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
     void copyFrom(android.support.v7.widget.RecyclerView$SavedState) -> a
     void access$500(android.support.v7.widget.RecyclerView$SavedState,android.support.v7.widget.RecyclerView$SavedState) -> a
-android.support.v7.widget.RecyclerView$SavedState$1 -> android.support.v7.widget.ac:
+android.support.v7.widget.RecyclerView$SavedState$1 -> android.support.v7.widget.am:
     android.support.v7.widget.RecyclerView$SavedState createFromParcel(android.os.Parcel) -> a
     android.support.v7.widget.RecyclerView$SavedState[] newArray(int) -> a
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v7.widget.RecyclerView$SmoothScroller -> android.support.v7.widget.ad:
+android.support.v7.widget.RecyclerView$SmoothScroller -> android.support.v7.widget.an:
     int mTargetPosition -> a
     android.support.v7.widget.RecyclerView mRecyclerView -> b
     android.support.v7.widget.RecyclerView$LayoutManager mLayoutManager -> c
@@ -8374,16 +8589,26 @@ android.support.v7.widget.RecyclerView$SmoothScroller -> android.support.v7.widg
     boolean mRunning -> e
     android.view.View mTargetView -> f
     android.support.v7.widget.RecyclerView$SmoothScroller$Action mRecyclingAction -> g
-    void stop() -> a
-    boolean isPendingInitialRun() -> b
-    boolean isRunning() -> c
+    void start(android.support.v7.widget.RecyclerView,android.support.v7.widget.RecyclerView$LayoutManager) -> a
+    void setTargetPosition(int) -> d
+    android.support.v7.widget.RecyclerView$LayoutManager getLayoutManager() -> e
+    void stop() -> f
+    boolean isPendingInitialRun() -> g
+    boolean isRunning() -> h
+    int getTargetPosition() -> i
     void onAnimation(int,int) -> a
     int getChildPosition(android.view.View) -> a
-    void onStop() -> d
+    int getChildCount() -> j
+    android.view.View findViewByPosition(int) -> e
+    void instantScrollToPosition(int) -> f
+    void onChildAttachedToWindow(android.view.View) -> b
+    void normalize(android.graphics.PointF) -> a
+    void onStart() -> a
+    void onStop() -> b
     void onSeekTargetStep(int,int,android.support.v7.widget.RecyclerView$State,android.support.v7.widget.RecyclerView$SmoothScroller$Action) -> a
     void onTargetFound(android.view.View,android.support.v7.widget.RecyclerView$State,android.support.v7.widget.RecyclerView$SmoothScroller$Action) -> a
     void access$1800(android.support.v7.widget.RecyclerView$SmoothScroller,int,int) -> a
-android.support.v7.widget.RecyclerView$SmoothScroller$Action -> android.support.v7.widget.ae:
+android.support.v7.widget.RecyclerView$SmoothScroller$Action -> android.support.v7.widget.ao:
     int mDx -> a
     int mDy -> b
     int mDuration -> c
@@ -8392,8 +8617,9 @@ android.support.v7.widget.RecyclerView$SmoothScroller$Action -> android.support.
     int consecutiveUpdates -> f
     void runInNecessary(android.support.v7.widget.RecyclerView) -> a
     void validate() -> a
+    void update(int,int,int,android.view.animation.Interpolator) -> a
     void access$3800(android.support.v7.widget.RecyclerView$SmoothScroller$Action,android.support.v7.widget.RecyclerView) -> a
-android.support.v7.widget.RecyclerView$State -> android.support.v7.widget.af:
+android.support.v7.widget.RecyclerView$State -> android.support.v7.widget.ap:
     int mTargetPosition -> a
     android.support.v4.util.ArrayMap mPreLayoutHolderMap -> b
     android.support.v4.util.ArrayMap mPostLayoutHolderMap -> c
@@ -8402,6 +8628,10 @@ android.support.v7.widget.RecyclerView$State -> android.support.v7.widget.af:
     int mDeletedInvisibleItemCountSincePreviousLayout -> f
     boolean mStructureChanged -> g
     boolean mInPreLayout -> h
+    boolean isPreLayout() -> a
+    int getTargetScrollPosition() -> b
+    boolean hasTargetScrollPosition() -> c
+    int getItemCount() -> d
     boolean access$402(android.support.v7.widget.RecyclerView$State,boolean) -> a
     int access$602(android.support.v7.widget.RecyclerView$State,int) -> a
     boolean access$702(android.support.v7.widget.RecyclerView$State,boolean) -> b
@@ -8413,11 +8643,11 @@ android.support.v7.widget.RecyclerView$State -> android.support.v7.widget.af:
     int access$1102(android.support.v7.widget.RecyclerView$State,int) -> c
     int access$1108(android.support.v7.widget.RecyclerView$State) -> e
     int access$3502(android.support.v7.widget.RecyclerView$State,int) -> d
-android.support.v7.widget.RecyclerView$UpdateOp -> android.support.v7.widget.ag:
+android.support.v7.widget.RecyclerView$UpdateOp -> android.support.v7.widget.aq:
     int cmd -> a
     int positionStart -> b
     int itemCount -> c
-android.support.v7.widget.RecyclerView$ViewFlinger -> android.support.v7.widget.ah:
+android.support.v7.widget.RecyclerView$ViewFlinger -> android.support.v7.widget.ar:
     int mLastFlingX -> b
     int mLastFlingY -> c
     android.support.v4.widget.ScrollerCompat mScroller -> d
@@ -8437,7 +8667,7 @@ android.support.v7.widget.RecyclerView$ViewFlinger -> android.support.v7.widget.
     void smoothScrollBy(int,int,int) -> a
     void smoothScrollBy(int,int,int,android.view.animation.Interpolator) -> a
     void stop() -> b
-android.support.v7.widget.RecyclerView$ViewHolder -> android.support.v7.widget.ai:
+android.support.v7.widget.RecyclerView$ViewHolder -> android.support.v7.widget.as:
     android.view.View itemView -> a
     int mPosition -> b
     int mOldPosition -> c
@@ -8449,19 +8679,884 @@ android.support.v7.widget.RecyclerView$ViewHolder -> android.support.v7.widget.a
     void offsetPosition(int) -> a
     void clearOldPosition() -> a
     int getPosition() -> b
-    int getItemViewType() -> c
-    boolean isScrap() -> d
-    boolean isInvalid() -> e
-    boolean needsUpdate() -> f
-    boolean isBound() -> g
-    boolean isRemoved() -> h
+    long getItemId() -> c
+    int getItemViewType() -> d
+    boolean isScrap() -> e
+    void unScrap() -> f
+    void setScrapContainer(android.support.v7.widget.RecyclerView$Recycler) -> a
+    boolean isInvalid() -> g
+    boolean needsUpdate() -> h
+    boolean isBound() -> i
+    boolean isRemoved() -> j
     void setFlags(int,int) -> a
     void addFlags(int) -> b
-    void clearFlagsForSharedPool() -> i
+    void clearFlagsForSharedPool() -> k
     java.lang.String toString() -> toString
     void setIsRecyclable(boolean) -> a
-    boolean isRecyclable() -> j
+    boolean isRecyclable() -> l
     android.support.v7.widget.RecyclerView$Recycler access$2502(android.support.v7.widget.RecyclerView$ViewHolder,android.support.v7.widget.RecyclerView$Recycler) -> a
+com.myth.cici.BaseActivity -> com.myth.cici.a:
+    android.app.Activity mActivity -> a
+    android.widget.FrameLayout mContentLayout -> b
+    android.widget.FrameLayout mBottomLayout -> c
+    void onCreate(android.os.Bundle) -> onCreate
+    void onPause() -> onPause
+    void onResume() -> onResume
+    android.widget.ImageView getBottomLeftView() -> a
+    void setBottomGone() -> b
+    void setBottomVisible() -> c
+    void addBottomRightView(android.view.View,android.view.ViewGroup$LayoutParams) -> a
+    void addBottomCenterView(android.view.View,android.view.ViewGroup$LayoutParams) -> b
+    void setContentView(int) -> setContentView
+com.myth.cici.BaseActivity$1 -> com.myth.cici.b:
+    com.myth.cici.BaseActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
+    java.util.HashMap colorMap -> e
+    android.graphics.Typeface typeface -> a
+    java.lang.String[] TypefaceString -> b
+    int[] bgimgList -> c
+    int[] bgSmallimgList -> d
+    void onCreate() -> onCreate
+    com.myth.cici.entity.ColorEntity getColorById(int) -> a
+    void setTypeface(android.content.Context,int) -> a
+    void setDefaultTypeface(android.content.Context,int) -> b
+    int getDefaulTypeface(android.content.Context) -> a
+com.myth.cici.activity.AboutActivity -> com.myth.cici.activity.AboutActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+com.myth.cici.activity.CiActivity -> com.myth.cici.activity.CiActivity:
+    java.util.ArrayList ciList -> d
+    com.myth.cici.entity.Cipai cipai -> e
+    int num -> f
+    android.widget.TextView content -> g
+    boolean isIntroduce -> h
+    boolean isRandom -> i
+    com.myth.cici.entity.Ci ci -> j
+    android.widget.TextView title -> k
+    com.myth.cici.wiget.CircleEditView editView -> l
+    void onCreate(android.os.Bundle) -> onCreate
+    void getRandomCi() -> d
+    void setColor() -> e
+    void initView() -> f
+    void initBottomRightView() -> g
+    void refreshRandomView() -> h
+    void initContentView() -> i
+    android.app.Activity access$0(com.myth.cici.activity.CiActivity) -> a
+    com.myth.cici.entity.Ci access$1(com.myth.cici.activity.CiActivity) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.activity.CiActivity) -> c
+    void access$3(com.myth.cici.activity.CiActivity) -> d
+    void access$4(com.myth.cici.activity.CiActivity) -> e
+    int access$5(com.myth.cici.activity.CiActivity) -> f
+    void access$6(com.myth.cici.activity.CiActivity,int) -> a
+    java.util.ArrayList access$7(com.myth.cici.activity.CiActivity) -> g
+    void access$8(com.myth.cici.activity.CiActivity,com.myth.cici.entity.Ci) -> a
+    void access$9(com.myth.cici.activity.CiActivity) -> h
+com.myth.cici.activity.CiActivity$1 -> com.myth.cici.activity.a:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$2 -> com.myth.cici.activity.b:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$3 -> com.myth.cici.activity.c:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$4 -> com.myth.cici.activity.d:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$5 -> com.myth.cici.activity.e:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity -> com.myth.cici.activity.CipaiActivity:
+    java.util.ArrayList ciList -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    android.support.v4.view.ViewPager gallery -> g
+    com.myth.cici.wiget.SwitchPoint switchPoint -> d
+    int maxLines -> h
+    android.support.v4.view.PagerAdapter galleryAdapter -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    java.util.ArrayList access$0(com.myth.cici.activity.CipaiActivity) -> a
+    int access$1(com.myth.cici.activity.CipaiActivity) -> b
+    android.app.Activity access$2(com.myth.cici.activity.CipaiActivity) -> c
+    com.myth.cici.entity.Cipai access$3(com.myth.cici.activity.CipaiActivity) -> d
+    android.support.v4.view.ViewPager access$4(com.myth.cici.activity.CipaiActivity) -> e
+com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.f:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    java.lang.Object instantiateItem(android.view.ViewGroup,int) -> instantiateItem
+    void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> destroyItem
+    boolean isViewFromObject(android.view.View,java.lang.Object) -> isViewFromObject
+    int getItemPosition(java.lang.Object) -> getItemPosition
+    int getCount() -> getCount
+    com.myth.cici.activity.CipaiActivity access$0(com.myth.cici.activity.CipaiActivity$1) -> a
+com.myth.cici.activity.CipaiActivity$1$1 -> com.myth.cici.activity.g:
+    com.myth.cici.activity.CipaiActivity$1 this$1 -> a
+    int val$position -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity$2 -> com.myth.cici.activity.h:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiActivity$3 -> com.myth.cici.activity.i:
+    com.myth.cici.activity.CipaiActivity this$0 -> a
+    void onPageSelected(int) -> onPageSelected
+    void onPageScrolled(int,float,int) -> onPageScrolled
+    void onPageScrollStateChanged(int) -> onPageScrollStateChanged
+com.myth.cici.activity.CipaiListActivity -> com.myth.cici.activity.CipaiListActivity:
+    android.support.v7.widget.RecyclerView listview -> d
+    java.util.ArrayList ciList -> e
+    boolean isDefault -> f
+    com.myth.cici.adapter.CipaiListAdapter adapter -> g
+    void onCreate(android.os.Bundle) -> onCreate
+    void onStart() -> onStart
+    void initView() -> d
+    void addView() -> e
+    boolean access$0(com.myth.cici.activity.CipaiListActivity) -> a
+    void access$1(com.myth.cici.activity.CipaiListActivity,boolean) -> a
+    void access$2(com.myth.cici.activity.CipaiListActivity,java.util.ArrayList) -> a
+    void access$3(com.myth.cici.activity.CipaiListActivity) -> b
+com.myth.cici.activity.CipaiListActivity$1 -> com.myth.cici.activity.j:
+    com.myth.cici.activity.CipaiListActivity this$0 -> a
+    android.widget.TextView val$rectLeft -> b
+    android.widget.TextView val$rectRight -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiListActivity$2 -> com.myth.cici.activity.k:
+    com.myth.cici.activity.CipaiListActivity this$0 -> a
+    android.widget.TextView val$rectLeft -> b
+    android.widget.TextView val$rectRight -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiSearchActivity -> com.myth.cici.activity.CipaiSearchActivity:
+    android.view.View clear -> e
+    android.support.v7.widget.RecyclerView listview -> f
+    com.myth.cici.adapter.CipaiAdapter adapter -> g
+    java.util.ArrayList ciList -> h
+    java.util.ArrayList sortList -> i
+    android.widget.EditText search -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void refreshData() -> d
+    java.util.ArrayList searchCipai(java.lang.String) -> a
+    void initView() -> e
+    android.app.Activity access$0(com.myth.cici.activity.CipaiSearchActivity) -> a
+    java.util.ArrayList access$1(com.myth.cici.activity.CipaiSearchActivity) -> b
+    android.view.View access$2(com.myth.cici.activity.CipaiSearchActivity) -> c
+    void access$3(com.myth.cici.activity.CipaiSearchActivity) -> d
+com.myth.cici.activity.CipaiSearchActivity$1 -> com.myth.cici.activity.l:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onItemClick(int) -> a
+com.myth.cici.activity.CipaiSearchActivity$2 -> com.myth.cici.activity.m:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiSearchActivity$3 -> com.myth.cici.activity.n:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CipaiSearchActivity$4 -> com.myth.cici.activity.o:
+    com.myth.cici.activity.CipaiSearchActivity this$0 -> a
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.myth.cici.activity.EditActivity -> com.myth.cici.activity.EditActivity:
+    com.myth.cici.entity.Cipai cipai -> h
+    com.myth.cici.entity.Writing writing -> i
+    com.myth.cici.fragment.ChangeBackgroundFragment changeBackgroundFrament -> d
+    com.myth.cici.fragment.EditFragment editFragment -> e
+    com.myth.cici.fragment.ChangePictureFragment changePictureFragment -> f
+    java.util.ArrayList fragments -> g
+    int currentIndex -> j
+    java.lang.String oldText -> k
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> e
+    void changeFragment(int) -> a
+    void exit() -> d
+    void save() -> f
+    void onBackPressed() -> onBackPressed
+    int access$0(com.myth.cici.activity.EditActivity) -> a
+    void access$1(com.myth.cici.activity.EditActivity) -> b
+    com.myth.cici.entity.Writing access$2(com.myth.cici.activity.EditActivity) -> c
+    android.app.Activity access$3(com.myth.cici.activity.EditActivity) -> d
+com.myth.cici.activity.EditActivity$1 -> com.myth.cici.activity.p:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$2 -> com.myth.cici.activity.q:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$3 -> com.myth.cici.activity.r:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$4 -> com.myth.cici.activity.s:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$5 -> com.myth.cici.activity.t:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$6 -> com.myth.cici.activity.u:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.activity.MainActivity -> com.myth.cici.activity.MainActivity:
+    android.widget.RelativeLayout viewPagerContainer -> d
+    android.support.v4.view.ViewPager viewPager -> e
+    java.util.ArrayList writings -> f
+    com.myth.cici.activity.MainActivity$MyPagerAdapter pagerAdapter -> g
+    int currentpage -> h
+    boolean firstIn -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void layoutItemContainer(android.view.View) -> a
+    void onResume() -> onResume
+    void refresh() -> d
+    android.app.Activity access$0(com.myth.cici.activity.MainActivity) -> a
+    void access$1(com.myth.cici.activity.MainActivity,int) -> a
+    android.widget.RelativeLayout access$2(com.myth.cici.activity.MainActivity) -> b
+    android.support.v4.view.ViewPager access$3(com.myth.cici.activity.MainActivity) -> c
+com.myth.cici.activity.MainActivity$1 -> com.myth.cici.activity.v:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.myth.cici.activity.MainActivity$2 -> com.myth.cici.activity.w:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.MainActivity$3 -> com.myth.cici.activity.x:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.MainActivity$MyOnPageChangeListener -> com.myth.cici.activity.y:
+    com.myth.cici.activity.MainActivity this$0 -> a
+    void onPageSelected(int) -> onPageSelected
+    void onPageScrolled(int,float,int) -> onPageScrolled
+    void onPageScrollStateChanged(int) -> onPageScrollStateChanged
+com.myth.cici.activity.MainActivity$MyPagerAdapter -> com.myth.cici.activity.z:
+    java.util.ArrayList datas -> b
+    com.myth.cici.activity.MainActivity this$0 -> a
+    int getCount() -> getCount
+    boolean isNoWriting() -> a
+    void setWritings(java.util.ArrayList) -> a
+    boolean isViewFromObject(android.view.View,java.lang.Object) -> isViewFromObject
+    java.lang.Object instantiateItem(android.view.ViewGroup,int) -> instantiateItem
+    void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> destroyItem
+    int getItemPosition(java.lang.Object) -> getItemPosition
+com.myth.cici.activity.SettingActivity -> com.myth.cici.activity.SettingActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void refreshYun() -> e
+    void refreshTypeface() -> f
+    android.app.Activity access$0(com.myth.cici.activity.SettingActivity) -> a
+    void access$1(com.myth.cici.activity.SettingActivity) -> b
+    void access$2(com.myth.cici.activity.SettingActivity) -> c
+com.myth.cici.activity.SettingActivity$1 -> com.myth.cici.activity.aa:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$1) -> a
+com.myth.cici.activity.SettingActivity$1$1 -> com.myth.cici.activity.ab:
+    com.myth.cici.activity.SettingActivity$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.SettingActivity$2 -> com.myth.cici.activity.ac:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$2) -> a
+com.myth.cici.activity.SettingActivity$2$1 -> com.myth.cici.activity.ad:
+    com.myth.cici.activity.SettingActivity$2 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.SettingActivity$3 -> com.myth.cici.activity.ae:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareActivity -> com.myth.cici.activity.ShareActivity:
+    com.myth.cici.entity.Cipai cipai -> e
+    com.myth.cici.entity.Writing writing -> f
+    android.widget.LinearLayout content -> g
+    int rela1 -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void layoutItemContainer(android.view.View) -> a
+    void scaleRotateIn(android.view.View,long,long) -> a
+    java.lang.String saveImage() -> e
+    android.app.Activity access$0(com.myth.cici.activity.ShareActivity) -> a
+    java.lang.String access$1(com.myth.cici.activity.ShareActivity) -> b
+com.myth.cici.activity.ShareActivity$1 -> com.myth.cici.activity.af:
+    com.myth.cici.activity.ShareActivity this$0 -> a
+    android.widget.TextView val$title -> b
+    android.widget.TextView val$text -> c
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.ShareActivity access$0(com.myth.cici.activity.ShareActivity$1) -> a
+com.myth.cici.activity.ShareActivity$1$1 -> com.myth.cici.activity.ag:
+    com.myth.cici.activity.ShareActivity$1 this$1 -> a
+    android.widget.TextView val$title -> b
+    android.widget.TextView val$text -> c
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.ShareEditActivity -> com.myth.cici.activity.ShareEditActivity:
+    com.myth.cici.entity.Cipai cipai -> g
+    com.myth.cici.entity.Writing writing -> h
+    com.myth.cici.entity.Ci ci -> i
+    com.myth.cici.fragment.ChangeBackgroundFragment changeBackgroundFrament -> d
+    com.myth.cici.fragment.ChangePictureFragment changePictureFragment -> e
+    java.util.ArrayList fragments -> f
+    int currentIndex -> j
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    void changeFragment(int) -> a
+    void onBackPressed() -> onBackPressed
+    int access$0(com.myth.cici.activity.ShareEditActivity) -> a
+    com.myth.cici.entity.Writing access$1(com.myth.cici.activity.ShareEditActivity) -> b
+    com.myth.cici.entity.Ci access$2(com.myth.cici.activity.ShareEditActivity) -> c
+    android.app.Activity access$3(com.myth.cici.activity.ShareEditActivity) -> d
+com.myth.cici.activity.ShareEditActivity$1 -> com.myth.cici.activity.ah:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareEditActivity$2 -> com.myth.cici.activity.ai:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    android.widget.ImageView val$background -> b
+    android.widget.ImageView val$picture -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.ShareEditActivity$3 -> com.myth.cici.activity.aj:
+    com.myth.cici.activity.ShareEditActivity this$0 -> a
+    android.widget.ImageView val$background -> b
+    android.widget.ImageView val$picture -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity -> com.myth.cici.activity.YunSearchActivity:
+    com.myth.cici.entity.Yun yun -> d
+    android.widget.TextView yunTitle -> e
+    android.widget.TextView yunzi -> f
+    android.view.View clear -> g
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> d
+    android.view.View access$0(com.myth.cici.activity.YunSearchActivity) -> a
+    void access$1(com.myth.cici.activity.YunSearchActivity,com.myth.cici.entity.Yun) -> a
+    com.myth.cici.entity.Yun access$2(com.myth.cici.activity.YunSearchActivity) -> b
+    android.widget.TextView access$3(com.myth.cici.activity.YunSearchActivity) -> c
+    android.widget.TextView access$4(com.myth.cici.activity.YunSearchActivity) -> d
+com.myth.cici.activity.YunSearchActivity$1 -> com.myth.cici.activity.ak:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    android.widget.EditText val$search -> b
+    void run() -> run
+com.myth.cici.activity.YunSearchActivity$2 -> com.myth.cici.activity.al:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity$3 -> com.myth.cici.activity.am:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    android.widget.EditText val$search -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.YunSearchActivity$4 -> com.myth.cici.activity.an:
+    com.myth.cici.activity.YunSearchActivity this$0 -> a
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+com.myth.cici.adapter.CipaiAdapter -> com.myth.cici.a.a:
+    java.util.List list -> a
+    com.myth.cici.adapter.CipaiAdapter$ViewHolder holder -> b
+    com.myth.cici.listener.MyListener myListener -> c
+    void setList(java.util.List) -> a
+    com.myth.cici.adapter.CipaiAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> c
+    void onBindViewHolder(com.myth.cici.adapter.CipaiAdapter$ViewHolder,int) -> a
+    int getItemCount() -> a
+    void setMyListener(com.myth.cici.listener.MyListener) -> a
+    android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> a
+    void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> a
+com.myth.cici.adapter.CipaiAdapter$ViewHolder -> com.myth.cici.a.b:
+    com.myth.cici.listener.MyListener myListener -> h
+    android.widget.TextView name -> f
+    android.widget.TextView tag -> g
+    void onClick(android.view.View) -> onClick
+    void access$0(com.myth.cici.adapter.CipaiAdapter$ViewHolder,com.myth.cici.listener.MyListener) -> a
+com.myth.cici.adapter.CipaiListAdapter -> com.myth.cici.a.c:
+    android.content.Context mContext -> a
+    java.util.List list -> b
+    void setList(java.util.List) -> a
+    com.myth.cici.adapter.CipaiListAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> c
+    void onBindViewHolder(com.myth.cici.adapter.CipaiListAdapter$ViewHolder,int) -> a
+    int getItemCount() -> a
+    void initHolderView(com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem,int) -> a
+    android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> a
+    void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder,int) -> a
+    android.content.Context access$2(com.myth.cici.adapter.CipaiListAdapter) -> a
+com.myth.cici.adapter.CipaiListAdapter$1 -> com.myth.cici.a.d:
+    com.myth.cici.adapter.CipaiListAdapter this$0 -> a
+    com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem val$holder -> b
+    void onClick(android.view.View) -> onClick
+com.myth.cici.adapter.CipaiListAdapter$ViewHolder -> com.myth.cici.a.e:
+    com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem holder1 -> f
+    com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem holder2 -> g
+com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem -> com.myth.cici.a.f:
+    com.myth.cici.entity.Cipai cipai -> a
+    android.view.View item -> b
+    android.widget.RelativeLayout head -> c
+    android.view.ViewGroup middle -> d
+    android.widget.TextView num -> e
+    android.widget.TextView name -> f
+    com.myth.cici.wiget.VerticalTextView enname -> g
+    com.myth.cici.wiget.StoneView stoneView -> h
+    com.myth.cici.adapter.CipaiListAdapter$ViewHolder this$1 -> i
+com.myth.cici.adapter.ImageAdapter -> com.myth.cici.a.g:
+    android.content.Context mContext -> a
+    int[] list -> b
+    int getCount() -> getCount
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    java.lang.Object getItem(int) -> getItem
+com.myth.cici.adapter.IntroAdapter -> com.myth.cici.a.h:
+    android.content.Context mContext -> a
+    int[] mColors -> b
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.myth.cici.adapter.IntroAdapter$ViewHolder -> com.myth.cici.a.i:
+    android.widget.ImageView imageview -> a
+    com.myth.cici.adapter.IntroAdapter this$0 -> b
+com.myth.cici.db.CiDatabaseHelper -> com.myth.cici.b.a:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getCiByCipaiId(int) -> a
+    java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
+    java.util.ArrayList getAllCi() -> a
+com.myth.cici.db.CipaiDatabaseHelper -> com.myth.cici.b.b:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllShowCipai() -> a
+    java.util.ArrayList getAllCipaiByWordCount() -> b
+    java.util.ArrayList getAllCipai() -> c
+    com.myth.cici.entity.Cipai getCipaiById(int) -> a
+    java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.ColorDatabaseHelper -> com.myth.cici.b.c:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllColor() -> a
+    java.util.ArrayList getColorListFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.DBManager -> com.myth.cici.b.d:
+    java.lang.String DB_PATH -> a
+    void initDatabase(android.content.Context) -> a
+    android.database.sqlite.SQLiteDatabase getDatabase() -> a
+com.myth.cici.db.WritingDatabaseHelper -> com.myth.cici.b.e:
+    java.lang.String TABLE_NAME -> a
+    java.util.ArrayList getAllWriting(android.content.Context) -> a
+    void saveWriting(android.content.Context,com.myth.cici.entity.Writing) -> a
+    void deleteWriting(android.content.Context,com.myth.cici.entity.Writing) -> b
+    java.util.ArrayList getWritingFromCursor(android.database.Cursor) -> a
+com.myth.cici.db.YunDatabaseHelper -> com.myth.cici.b.f:
+    java.lang.String[] YUNSHU -> b
+    java.lang.String[] YUNString -> a
+    java.util.ArrayList yunList -> c
+    void getYunList(android.content.Context) -> a
+    int getWordStone(java.lang.String) -> a
+    com.myth.cici.entity.Yun getSameYun(java.lang.String) -> b
+    java.util.ArrayList getYunListFromCursor(android.database.Cursor) -> a
+    void setDefaultYunShu(android.content.Context,int) -> a
+    int getDefaultYunShu(android.content.Context) -> b
+com.myth.cici.entity.Ci -> com.myth.cici.c.a:
+    int id -> a
+    java.lang.String author -> b
+    java.lang.String text -> c
+    java.lang.String note -> d
+    int ci_id -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Cipai getCipai() -> a
+    void setCipai(com.myth.cici.entity.Cipai) -> a
+    int getId() -> b
+    void setId(int) -> a
+    java.lang.String getAuthor() -> c
+    void setAuthor(java.lang.String) -> a
+    java.lang.String getText() -> d
+    void setText(java.lang.String) -> b
+    java.lang.String getNote() -> e
+    void setNote(java.lang.String) -> c
+    int getCi_id() -> f
+    void setCi_id(int) -> b
+com.myth.cici.entity.Cipai -> com.myth.cici.c.b:
+    int id -> a
+    java.lang.String name -> b
+    java.lang.String enname -> c
+    java.lang.String alias -> d
+    java.lang.String source -> e
+    int wordcount -> f
+    int tone_type -> g
+    int color_id -> h
+    java.lang.String pingze -> i
+    int parent_id -> j
+    int getId() -> a
+    void setId(int) -> a
+    java.lang.String getName() -> b
+    void setName(java.lang.String) -> a
+    java.lang.String getEnname() -> c
+    void setEnname(java.lang.String) -> b
+    void setAlias(java.lang.String) -> c
+    java.lang.String getSource() -> d
+    void setSource(java.lang.String) -> d
+    int getWordcount() -> e
+    void setWordcount(int) -> b
+    int getTone_type() -> f
+    void setTone_type(int) -> c
+    int getColor_id() -> g
+    void setColor_id(int) -> d
+    java.lang.String getPingze() -> h
+    void setPingze(java.lang.String) -> e
+    int getParent_id() -> i
+    void setParent_id(int) -> e
+com.myth.cici.entity.ColorEntity -> com.myth.cici.c.c:
+    int id -> a
+    java.lang.String name -> b
+    int red -> c
+    int green -> d
+    int blue -> e
+    int getId() -> a
+    void setId(int) -> a
+    void setName(java.lang.String) -> a
+    int getRed() -> b
+    void setRed(int) -> b
+    int getGreen() -> c
+    void setGreen(int) -> c
+    int getBlue() -> d
+    void setBlue(int) -> d
+com.myth.cici.entity.Writing -> com.myth.cici.c.d:
+    int id -> a
+    java.lang.String text -> b
+    int ci_id -> c
+    long create_dt -> d
+    long update_dt -> e
+    java.lang.String bgimg -> f
+    android.graphics.Bitmap bitmap -> g
+    com.myth.cici.entity.Cipai cipai -> h
+    int getId() -> a
+    void setId(int) -> a
+    java.lang.String getText() -> b
+    void setText(java.lang.String) -> a
+    long getCreate_dt() -> c
+    void setCreate_dt(long) -> a
+    long getUpdate_dt() -> d
+    void setUpdate_dt(long) -> b
+    java.lang.String getBgimg() -> e
+    void setBgimg(java.lang.String) -> b
+    int getCi_id() -> f
+    void setCi_id(int) -> b
+    android.graphics.Bitmap getBitmap() -> g
+    void setBitmap(android.graphics.Bitmap) -> a
+    com.myth.cici.entity.Cipai getCipai() -> h
+    void setCipai(com.myth.cici.entity.Cipai) -> a
+com.myth.cici.entity.Yun -> com.myth.cici.c.e:
+    int tone -> a
+    java.lang.String glys -> b
+    java.lang.String section_desc -> c
+    java.lang.String tone_name -> d
+    int getTone() -> a
+    void setTone(int) -> a
+    java.lang.String getGlys() -> b
+    void setGlys(java.lang.String) -> a
+    java.lang.String getTone_name() -> c
+    void setTone_name(java.lang.String) -> b
+    java.lang.String getSection_desc() -> d
+    void setSection_desc(java.lang.String) -> c
+com.myth.cici.fragment.ChangeBackgroundFragment -> com.myth.cici.d.a:
+    android.content.Context mContext -> a
+    android.widget.LinearLayout content -> b
+    android.widget.TextView text -> c
+    com.myth.cici.entity.Cipai cipai -> d
+    com.myth.cici.entity.Writing writing -> e
+    int bg_index -> f
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void refresh() -> b
+    void initViews(android.view.View) -> a
+    void layoutItemContainer(android.view.View) -> b
+    void access$0(com.myth.cici.fragment.ChangeBackgroundFragment,int) -> a
+    android.widget.LinearLayout access$1(com.myth.cici.fragment.ChangeBackgroundFragment) -> a
+com.myth.cici.fragment.ChangeBackgroundFragment$1 -> com.myth.cici.d.b:
+    com.myth.cici.fragment.ChangeBackgroundFragment this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.myth.cici.fragment.ChangePictureFragment -> com.myth.cici.d.c:
+    android.content.Context mContext -> a
+    android.widget.LinearLayout content -> b
+    android.widget.TextView text -> c
+    android.graphics.Bitmap srcBitmap -> d
+    android.graphics.Bitmap destBitmap -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Writing writing -> g
+    int bright -> h
+    int radius -> i
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void refresh() -> b
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void initViews(android.view.View) -> a
+    void drawPicture(int,int) -> a
+    void layoutItemContainer(android.view.View) -> b
+    int access$0(com.myth.cici.fragment.ChangePictureFragment) -> a
+    int access$1(com.myth.cici.fragment.ChangePictureFragment) -> b
+    void access$2(com.myth.cici.fragment.ChangePictureFragment,int,int) -> a
+    void access$3(com.myth.cici.fragment.ChangePictureFragment,int) -> a
+    void access$4(com.myth.cici.fragment.ChangePictureFragment,int) -> b
+com.myth.cici.fragment.ChangePictureFragment$1 -> com.myth.cici.d.d:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.ChangePictureFragment$2 -> com.myth.cici.d.e:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.myth.cici.fragment.ChangePictureFragment$3 -> com.myth.cici.d.f:
+    com.myth.cici.fragment.ChangePictureFragment this$0 -> a
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.myth.cici.fragment.EditFragment -> com.myth.cici.d.g:
+    android.widget.LinearLayout editContent -> a
+    java.lang.String[] sList -> b
+    android.content.Context mContext -> c
+    java.util.ArrayList editTexts -> d
+    android.view.View root -> e
+    com.myth.cici.entity.Cipai cipai -> f
+    com.myth.cici.entity.Writing writing -> g
+    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void save() -> a
+    void initViews(android.view.View) -> a
+    void hideSoftInputFromWindow() -> b
+    java.lang.String[] access$0(com.myth.cici.fragment.EditFragment) -> a
+    android.content.Context access$1(com.myth.cici.fragment.EditFragment) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.fragment.EditFragment) -> c
+    void access$3(com.myth.cici.fragment.EditFragment) -> d
+com.myth.cici.fragment.EditFragment$1 -> com.myth.cici.d.h:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    android.widget.EditText val$edittext -> b
+    int val$index -> c
+    android.view.View val$keyboard -> d
+    void onFocusChange(android.view.View,boolean) -> onFocusChange
+com.myth.cici.fragment.EditFragment$2 -> com.myth.cici.d.i:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.EditFragment$3 -> com.myth.cici.d.j:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.fragment.EditFragment$4 -> com.myth.cici.d.k:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    android.view.View val$keyboard -> b
+    android.view.View val$getfocus -> c
+    void onClick(android.view.View) -> onClick
+com.myth.cici.listener.MyListener -> com.myth.cici.e.a:
+    void onItemClick(int) -> a
+com.myth.cici.util.CheckUtils -> com.myth.cici.f.a:
+    void checkEditText(android.widget.EditText,java.lang.String) -> a
+    boolean checkPingze(char,char) -> a
+    int getHanziCode(char) -> a
+    java.lang.String[] getCodeFormPingze(java.lang.String[]) -> a
+com.myth.cici.util.CheckUtils$1 -> com.myth.cici.f.b:
+    void updateDrawState(android.text.TextPaint) -> updateDrawState
+com.myth.cici.util.DateUtils -> com.myth.cici.f.c:
+    java.lang.String longToFormat(long,java.lang.String) -> a
+    java.lang.String dateToString(java.util.Date,java.lang.String) -> a
+com.myth.cici.util.DisplayUtil -> com.myth.cici.f.d:
+    float m -> a
+    int dip2px(android.content.Context,double) -> a
+com.myth.cici.util.Fastblur -> com.myth.cici.f.e:
+    android.graphics.Bitmap fastblur(android.content.Context,android.graphics.Bitmap,int) -> a
+com.myth.cici.util.FileUtils -> com.myth.cici.f.f:
+    java.lang.String ROOT_DIR -> a
+    java.lang.String BACKGROUND_DIR -> b
+    java.lang.String SHARE_DIR -> c
+    java.lang.String saveFile(android.graphics.Bitmap) -> a
+    void createDir(java.lang.String) -> a
+    java.lang.String saveFile(android.graphics.Bitmap,java.lang.String) -> a
+    byte[] Bitmap2Bytes(android.graphics.Bitmap) -> b
+com.myth.cici.util.Logs -> com.myth.cici.f.g:
+    boolean isDebuggable() -> a
+    void error(java.lang.String) -> a
+    java.lang.String getTag() -> b
+com.myth.cici.util.Logs$LogException -> com.myth.cici.f.h:
+com.myth.cici.util.MD5 -> com.myth.cici.f.i:
+    java.lang.String byte2Hex(byte) -> a
+    java.lang.String MD5_32(byte[]) -> a
+    java.lang.String MD5_16(byte[]) -> b
+com.myth.cici.util.OthersUtils -> com.myth.cici.f.j:
+    void copy(java.lang.String,android.content.Context) -> a
+    void shareMsg(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    android.graphics.Bitmap createViewBitmap(android.view.View) -> a
+    boolean isChinese(char) -> a
+    java.lang.String getFirstChinese(java.lang.String) -> a
+    int getDisplayWidth(android.content.Context) -> a
+    int getDisplayWidthBySystemService(android.content.Context) -> b
+com.myth.cici.util.ResizeUtil -> com.myth.cici.f.k:
+    float sysWidth -> a
+    int resize(android.content.Context,float) -> a
+com.myth.cici.util.StringUtils -> com.myth.cici.f.l:
+    boolean isEmpty(java.lang.String) -> a
+    boolean isNumeric(java.lang.String) -> b
+com.myth.cici.wiget.CircleEditView -> com.myth.cici.wiget.a:
+    int mColor -> a
+    android.content.Context mContext -> b
+    void setmColor(int) -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.CircleTextView -> com.myth.cici.wiget.b:
+    int mColor -> a
+    java.lang.String mText -> b
+    android.content.Context mContext -> c
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.GCDialog -> com.myth.cici.wiget.c:
+    android.view.View titleLayout -> b
+    android.widget.TextView titleView -> c
+    android.widget.TextView contentView -> d
+    android.widget.TextView confirmView -> e
+    android.widget.TextView cancelView -> f
+    android.view.View devideLine -> g
+    android.content.Context context -> a
+    com.myth.cici.wiget.GCDialog$OnCustomDialogListener listener -> h
+    android.os.Bundle bundle -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    com.myth.cici.wiget.GCDialog$OnCustomDialogListener access$0(com.myth.cici.wiget.GCDialog) -> a
+com.myth.cici.wiget.GCDialog$1 -> com.myth.cici.wiget.d:
+    com.myth.cici.wiget.GCDialog this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.GCDialog$2 -> com.myth.cici.wiget.e:
+    com.myth.cici.wiget.GCDialog this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.GCDialog$OnCustomDialogListener -> com.myth.cici.wiget.f:
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.wiget.HorizontalListView -> com.myth.cici.wiget.HorizontalListView:
+    boolean mAlwaysOverrideTouch -> a
+    android.widget.ListAdapter mAdapter -> b
+    int mLeftViewIndex -> f
+    int mRightViewIndex -> g
+    int mCurrentX -> c
+    int mNextX -> d
+    int mMaxX -> h
+    int mDisplayOffset -> i
+    android.widget.Scroller mScroller -> e
+    android.view.GestureDetector mGesture -> j
+    java.util.Queue mRemovedViewQueue -> k
+    android.widget.AdapterView$OnItemSelectedListener mOnItemSelected -> l
+    android.widget.AdapterView$OnItemClickListener mOnItemClicked -> m
+    android.widget.AdapterView$OnItemLongClickListener mOnItemLongClicked -> n
+    boolean mDataChanged -> o
+    android.database.DataSetObserver mDataObserver -> p
+    android.view.GestureDetector$OnGestureListener mOnGesture -> q
+    void initView() -> b
+    void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener) -> setOnItemSelectedListener
+    void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener) -> setOnItemClickListener
+    void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener) -> setOnItemLongClickListener
+    android.widget.ListAdapter getAdapter() -> a
+    android.view.View getSelectedView() -> getSelectedView
+    void setAdapter(android.widget.ListAdapter) -> a
+    void reset() -> c
+    void setSelection(int) -> setSelection
+    void addAndMeasureChild(android.view.View,int) -> a
+    void onLayout(boolean,int,int,int,int) -> onLayout
+    void fillList(int) -> a
+    void fillListRight(int,int) -> a
+    void fillListLeft(int,int) -> b
+    void removeNonVisibleItems(int) -> b
+    void positionItems(int) -> c
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    boolean onFling(android.view.MotionEvent,android.view.MotionEvent,float,float) -> a
+    boolean onDown(android.view.MotionEvent) -> a
+    void setAdapter(android.widget.Adapter) -> setAdapter
+    android.widget.Adapter getAdapter() -> getAdapter
+    void access$2(com.myth.cici.wiget.HorizontalListView,boolean) -> a
+    void access$3(com.myth.cici.wiget.HorizontalListView) -> a
+    android.widget.AdapterView$OnItemClickListener access$4(com.myth.cici.wiget.HorizontalListView) -> b
+    int access$5(com.myth.cici.wiget.HorizontalListView) -> c
+    android.widget.AdapterView$OnItemSelectedListener access$6(com.myth.cici.wiget.HorizontalListView) -> d
+    android.widget.AdapterView$OnItemLongClickListener access$7(com.myth.cici.wiget.HorizontalListView) -> e
+com.myth.cici.wiget.HorizontalListView$1 -> com.myth.cici.wiget.g:
+    com.myth.cici.wiget.HorizontalListView this$0 -> a
+    void onChanged() -> onChanged
+    void onInvalidated() -> onInvalidated
+com.myth.cici.wiget.HorizontalListView$2 -> com.myth.cici.wiget.h:
+    com.myth.cici.wiget.HorizontalListView this$0 -> a
+    boolean onDown(android.view.MotionEvent) -> onDown
+    boolean onFling(android.view.MotionEvent,android.view.MotionEvent,float,float) -> onFling
+    boolean onScroll(android.view.MotionEvent,android.view.MotionEvent,float,float) -> onScroll
+    boolean onSingleTapConfirmed(android.view.MotionEvent) -> onSingleTapConfirmed
+    void onLongPress(android.view.MotionEvent) -> onLongPress
+    boolean isEventWithinView(android.view.MotionEvent,android.view.View) -> a
+com.myth.cici.wiget.HorizontalListView$3 -> com.myth.cici.wiget.i:
+    com.myth.cici.wiget.HorizontalListView this$0 -> a
+    void run() -> run
+com.myth.cici.wiget.IntroductionView -> com.myth.cici.wiget.j:
+    android.content.Context mContext -> b
+    int[] mColors -> a
+    void layoutItemContainer(android.view.View) -> a
+    void initView() -> a
+com.myth.cici.wiget.MainView -> com.myth.cici.wiget.k:
+    android.content.Context mContext -> a
+    void initView() -> a
+    android.content.Context access$0(com.myth.cici.wiget.MainView) -> a
+com.myth.cici.wiget.MainView$1 -> com.myth.cici.wiget.l:
+    com.myth.cici.wiget.MainView this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.MainView$2 -> com.myth.cici.wiget.m:
+    com.myth.cici.wiget.MainView this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.PingzeLinearlayout -> com.myth.cici.wiget.n:
+com.myth.cici.wiget.PingzeView -> com.myth.cici.wiget.o:
+    int mType -> a
+    android.content.Context mContext -> b
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.StoneView -> com.myth.cici.wiget.p:
+    java.lang.String[] typeString -> a
+    int mType -> b
+    int mColor -> c
+    android.content.Context mContext -> d
+    java.lang.String getYunString(int) -> a
+    void setType(int,int) -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+com.myth.cici.wiget.SwitchPoint -> com.myth.cici.wiget.SwitchPoint:
+    android.content.Context mContext -> a
+    void addSwitchBtn(int,int,int,int) -> a
+    void setSelectedSwitchBtn(int) -> a
+com.myth.cici.wiget.TouchEffectImageView -> com.myth.cici.wiget.TouchEffectImageView:
+    boolean mDoesntSetAlpha -> a
+    void drawableStateChanged() -> drawableStateChanged
+com.myth.cici.wiget.VScrollView -> com.myth.cici.wiget.VScrollView:
+    android.content.Context mContext -> a
+    android.view.View mView -> c
+    float touchY -> d
+    int scrollY -> e
+    boolean handleStop -> f
+    int eachStep -> g
+    android.os.Handler resetPositionHandler -> b
+    void onFinishInflate() -> onFinishInflate
+    boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void commonOnTouchEvent(android.view.MotionEvent) -> a
+    boolean isNeedMove() -> a
+    void animation() -> b
+    int access$0(com.myth.cici.wiget.VScrollView) -> a
+    boolean access$1(com.myth.cici.wiget.VScrollView) -> b
+    int access$2(com.myth.cici.wiget.VScrollView) -> c
+    void access$3(com.myth.cici.wiget.VScrollView,int) -> a
+    android.view.View access$4(com.myth.cici.wiget.VScrollView) -> d
+com.myth.cici.wiget.VScrollView$1 -> com.myth.cici.wiget.q:
+    com.myth.cici.wiget.VScrollView this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.myth.cici.wiget.VerticalTextView -> com.myth.cici.wiget.VerticalTextView:
+    boolean topDown -> a
+    void onMeasure(int,int) -> onMeasure
+    boolean setFrame(int,int,int,int) -> setFrame
+    void draw(android.graphics.Canvas) -> draw
+com.myth.cici.wiget.WritingView -> com.myth.cici.wiget.r:
+    android.content.Context mContext -> a
+    com.myth.cici.entity.Writing writing -> b
+    void initView() -> a
+    void layoutItemContainer(android.view.View) -> a
+    android.content.Context access$0(com.myth.cici.wiget.WritingView) -> a
+    com.myth.cici.entity.Writing access$1(com.myth.cici.wiget.WritingView) -> b
+com.myth.cici.wiget.WritingView$1 -> com.myth.cici.wiget.s:
+    com.myth.cici.wiget.WritingView this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+    com.myth.cici.wiget.WritingView access$0(com.myth.cici.wiget.WritingView$1) -> a
+com.myth.cici.wiget.WritingView$1$1 -> com.myth.cici.wiget.t:
+    com.myth.cici.wiget.WritingView$1 this$1 -> a
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.wiget.WritingView$2 -> com.myth.cici.wiget.u:
+    com.myth.cici.wiget.WritingView this$0 -> a
+    android.app.AlertDialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
 com.umeng.analytics.AnalyticsConfig -> com.umeng.analytics.AnalyticsConfig:
     java.lang.String a -> a
     java.lang.String b -> b
