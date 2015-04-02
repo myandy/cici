@@ -46,6 +46,11 @@ public class EditFragment extends Fragment
 
     private Writing writing;
 
+    public EditFragment(Cipai cipai2, Writing writing2)
+    {
+        setData(cipai2, writing2);
+    }
+
     public void setData(Cipai cipai, Writing writing)
     {
         this.cipai = cipai;

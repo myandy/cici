@@ -137,11 +137,9 @@ public class ShareEditActivity extends BaseActivity
         addBottomCenterView(background, lps);
         addBottomCenterView(picture, lps);
 
-        changeBackgroundFrament = new ChangeBackgroundFragment();
-        changePictureFragment = new ChangePictureFragment();
+        changeBackgroundFrament = new ChangeBackgroundFragment(cipai, writing);
+        changePictureFragment = new ChangePictureFragment(cipai, writing);
 
-        changeBackgroundFrament.setData(cipai, writing);
-        changePictureFragment.setData(cipai, writing);
 
         fragments.add(changeBackgroundFrament);
         fragments.add(changePictureFragment);

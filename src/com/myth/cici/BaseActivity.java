@@ -1,6 +1,10 @@
 package com.myth.cici;
 
+import java.lang.reflect.Field;
+
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Rect;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
@@ -29,6 +33,8 @@ public class BaseActivity extends Activity
      */
     protected FrameLayout mBottomLayout = null;
 
+    private static int statusBarHeight = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,6 +46,12 @@ public class BaseActivity extends Activity
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             // 透明导航栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
+            if (statusBarHeight == 0)
+            {
+                statusBarHeight = getStatusBarHeight(this);
+            }
+
         }
         mActivity = this;
         mBottomLayout = (FrameLayout) findViewById(R.id.bottom_layout);
@@ -55,6 +67,27 @@ public class BaseActivity extends Activity
         mContentLayout = (FrameLayout) findViewById(R.id.content_layout);
     }
 
+    public static int getStatusBarHeight(Context context)
+    {
+        Class<?> c = null;
+        Object obj = null;
+        Field field = null;
+        int x = 0, statusBarHeight = 0;
+        try
+        {
+            c = Class.forName("com.android.internal.R$dimen");
+            obj = c.newInstance();
+            field = c.getField("status_bar_height");
+            x = Integer.parseInt(field.get(obj).toString());
+            statusBarHeight = context.getResources().getDimensionPixelSize(x);
+        }
+        catch (Exception e1)
+        {
+            e1.printStackTrace();
+        }
+        return statusBarHeight;
+    }
+
     @Override
     protected void onPause()
     {
@@ -66,6 +99,10 @@ public class BaseActivity extends Activity
     protected void onResume()
     {
         super.onResume();
+        Rect frame = new Rect();
+        getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        System.out.println(statusBarHeight);
         MobclickAgent.onResume(this);
     }
 
@@ -108,6 +145,10 @@ public class BaseActivity extends Activity
     public void setContentView(int layoutId)
     {
         getLayoutInflater().inflate(layoutId, mContentLayout);
+        if (VERSION.SDK_INT >= VERSION_CODES.KITKAT)
+        {
+            mContentLayout.setPadding(0, statusBarHeight, 0, 0);
+        }
     }
 
 }
