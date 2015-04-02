@@ -54,25 +54,29 @@ public class CheckUtils
         }
         if (intCode == 1 || intCode == 3)
         {
-            return getHanziCode(hanzi) == intCode;
+            int wordStone = YunDatabaseHelper.getWordStone(hanzi + "");
+
+            if (wordStone == 30)
+            {
+                return true;
+            }
+            else if (wordStone == 10 && intCode == 1)
+            {
+                return true;
+            }
+            else if (wordStone == 20 && intCode == 3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
             return true;
         }
-    }
-
-    private static int getHanziCode(char c)
-    {
-        if (YunDatabaseHelper.getWordStone(c + "") == 10)
-        {
-            return 1;
-        }
-        else
-        {
-            return 3;
-        }
-
     }
 
     public static String[] getCodeFormPingze(String[] list)

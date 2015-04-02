@@ -5,7 +5,7 @@
     android:versionName="1.5" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <!-- 往SDCard的创建与删除文件权限 -->

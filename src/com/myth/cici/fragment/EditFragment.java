@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -123,7 +124,10 @@ public class EditFragment extends Fragment
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             for (int i = 0; i < sList.length; i++)
             {
+                HorizontalScrollView scrollView = new HorizontalScrollView(mContext);
+
                 View view1 = new PingzeLinearlayout(mContext, sList[i]);
+                scrollView.addView(view1);
                 view1.setPadding(0, 30, 0, 30);
                 final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
                 edittext.setTypeface(MyApplication.typeface);
@@ -144,7 +148,7 @@ public class EditFragment extends Fragment
                         }
                     }
                 });
-                editContent.addView(view1);
+                editContent.addView(scrollView);
                 editContent.addView(edittext);
                 editTexts.add(edittext);
 

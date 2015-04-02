@@ -42,7 +42,7 @@ public class YunDatabaseHelper
             }
         }
 
-        return 10;
+        return 30;
     }
 
     /**
