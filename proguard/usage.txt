@@ -193,7 +193,7 @@ android.support.v7.widget.RecyclerView$ViewHolder:
     static final int FLAG_REMOVED
     static final int FLAG_NOT_RECYCLABLE
 com.myth.cici.BaseActivity:
-    99:100:protected void addBottomCenterView(android.view.View)
+    136:137:protected void addBottomCenterView(android.view.View)
 com.myth.cici.BuildConfig
 com.myth.cici.R
 com.myth.cici.R$attr
@@ -292,8 +292,8 @@ com.myth.cici.util.MD5:
 com.myth.cici.util.OthersUtils:
     20:20:public OthersUtils()
     44:45:public static java.lang.String paste(android.content.Context)
-    118:129:public static java.lang.String readAssertResource(android.content.Context,java.lang.String)
-    134:161:private static java.lang.String getStringFromInputStream(java.io.InputStream)
+    114:125:public static java.lang.String readAssertResource(android.content.Context,java.lang.String)
+    130:157:private static java.lang.String getStringFromInputStream(java.io.InputStream)
 com.myth.cici.util.ResizeUtil:
     private static final int W720
     5:5:public ResizeUtil()

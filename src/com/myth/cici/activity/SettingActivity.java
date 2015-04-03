@@ -38,6 +38,7 @@ public class SettingActivity extends BaseActivity
         ((TextView) findViewById(R.id.typeface_value)).setTypeface(MyApplication.typeface);
         ((TextView) findViewById(R.id.typeface_title)).setTypeface(MyApplication.typeface);
         ((TextView) findViewById(R.id.about_title)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.notice_title)).setTypeface(MyApplication.typeface);
 
         findViewById(R.id.item_yun).setOnClickListener(new OnClickListener()
         {
@@ -89,15 +90,15 @@ public class SettingActivity extends BaseActivity
                 startActivity(new Intent(mActivity, AboutActivity.class));
             }
         });
-        findViewById(R.id.item_ad).setOnClickListener(new OnClickListener()
-        {
-
-            @Override
-            public void onClick(View v)
-            {
-                appwall.doShowAppWall();
-            }
-        });
+        // findViewById(R.id.item_ad).setOnClickListener(new OnClickListener()
+        // {
+        //
+        // @Override
+        // public void onClick(View v)
+        // {
+        // appwall.doShowAppWall();
+        // }
+        // });
     }
 
     private void refreshYun()

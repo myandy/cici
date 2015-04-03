@@ -8699,7 +8699,9 @@ com.myth.cici.BaseActivity -> com.myth.cici.a:
     android.app.Activity mActivity -> a
     android.widget.FrameLayout mContentLayout -> b
     android.widget.FrameLayout mBottomLayout -> c
+    int statusBarHeight -> d
     void onCreate(android.os.Bundle) -> onCreate
+    int getStatusBarHeight(android.content.Context) -> a
     void onPause() -> onPause
     void onResume() -> onResume
     android.widget.ImageView getBottomLeftView() -> a
@@ -9342,7 +9344,6 @@ com.myth.cici.listener.MyListener -> com.myth.cici.e.a:
 com.myth.cici.util.CheckUtils -> com.myth.cici.f.a:
     void checkEditText(android.widget.EditText,java.lang.String) -> a
     boolean checkPingze(char,char) -> a
-    int getHanziCode(char) -> a
     java.lang.String[] getCodeFormPingze(java.lang.String[]) -> a
 com.myth.cici.util.CheckUtils$1 -> com.myth.cici.f.b:
     void updateDrawState(android.text.TextPaint) -> updateDrawState
@@ -9557,6 +9558,709 @@ com.myth.cici.wiget.WritingView$2 -> com.myth.cici.wiget.u:
     com.myth.cici.wiget.WritingView this$0 -> a
     android.app.AlertDialog val$dialog -> b
     void onClick(android.view.View) -> onClick
+com.qq.e.a.a -> com.qq.e.a.a:
+    java.lang.String a -> a
+    int a(java.lang.String) -> a
+    java.lang.String a(android.content.Context) -> a
+com.qq.e.ads.AdActivity -> com.qq.e.ads.AdActivity:
+    com.qq.e.v2.plugininterfaces.ActivityDelegate a -> a
+    void onCreate(android.os.Bundle) -> onCreate
+    void onResume() -> onResume
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    void onStop() -> onStop
+    void onDestroy() -> onDestroy
+    void onBackPressed() -> onBackPressed
+com.qq.e.ads.AdListener -> com.qq.e.ads.AdListener:
+    void onNoAd() -> onNoAd
+    void onAdReceiv() -> onAdReceiv
+    void onAdExposure() -> onAdExposure
+    void onBannerClosed() -> onBannerClosed
+    void onAdClicked() -> onAdClicked
+com.qq.e.ads.AdRequest -> com.qq.e.ads.AdRequest:
+    java.util.Map a -> a
+    java.util.Map b -> b
+    boolean c -> c
+    int d -> d
+    java.util.Map getExtConfig() -> getExtConfig
+    int getRefresh() -> getRefresh
+    void setRefresh(int) -> setRefresh
+    boolean isTestAd() -> isTestAd
+    boolean getTestAd() -> getTestAd
+    void setTestAd(boolean) -> setTestAd
+    boolean isShowCloseBtn() -> isShowCloseBtn
+    void setShowCloseBtn(boolean) -> setShowCloseBtn
+    void setUseRollAnimation(int) -> setUseRollAnimation
+    int getUseRollAnimation(boolean) -> getUseRollAnimation
+com.qq.e.ads.AdSize -> com.qq.e.ads.AdSize:
+    java.lang.String SMART_BANNER_STR -> SMART_BANNER_STR
+    com.qq.e.ads.AdSize BANNER -> BANNER
+    com.qq.e.ads.AdSize BANNER_SMALL -> BANNER_SMALL
+    com.qq.e.ads.AdSize SMART_BANNER -> SMART_BANNER
+com.qq.e.ads.AdView -> com.qq.e.ads.AdView:
+    com.qq.e.v2.plugininterfaces.BannerViewInterface a -> a
+    void fetchAd(com.qq.e.ads.AdRequest) -> fetchAd
+    void setAdListener(com.qq.e.ads.AdListener) -> setAdListener
+    void destroy() -> destroy
+com.qq.e.ads.InterstitialAd -> com.qq.e.ads.InterstitialAd:
+    com.qq.e.v2.plugininterfaces.InterstitialAdViewInterface a -> a
+    void setAdListener(com.qq.e.ads.InterstitialAdListener) -> setAdListener
+    void show() -> show
+    void showAsPopupWindown() -> showAsPopupWindown
+    void show(android.app.Activity) -> show
+    void showAsPopupWindown(android.app.Activity) -> showAsPopupWindown
+    void loadAd() -> loadAd
+    void closePopupWindow() -> closePopupWindow
+com.qq.e.ads.InterstitialAdListener -> com.qq.e.ads.InterstitialAdListener:
+    void onFail() -> onFail
+    void onBack() -> onBack
+    void onAdReceive() -> onAdReceive
+    void onExposure() -> onExposure
+    void onClicked() -> onClicked
+com.qq.e.appwall.GdtAppwall -> com.qq.e.appwall.GdtAppwall:
+    com.qq.e.v2.plugininterfaces.AppWallADViewInterface a -> a
+    void doShowAppWall() -> doShowAppWall
+    void prepare() -> prepare
+    void setScreenOrientation(int) -> setScreenOrientation
+com.qq.e.comm.DownloadService -> com.qq.e.comm.DownloadService:
+    java.lang.String V2 -> V2
+    java.lang.String VERSION_KEY -> VERSION_KEY
+    com.qq.e.v2.plugininterfaces.ServiceDelegate a -> a
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    void onCreate() -> onCreate
+    boolean a(java.lang.String) -> a
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+    void onDestroy() -> onDestroy
+    void onLowMemory() -> onLowMemory
+    void onRebind(android.content.Intent) -> onRebind
+    void onTaskRemoved(android.content.Intent) -> onTaskRemoved
+    void onTrimMemory(int) -> onTrimMemory
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    boolean onUnbind(android.content.Intent) -> onUnbind
+com.qq.e.comm.SDKSrcConfig -> com.qq.e.comm.SDKSrcConfig:
+    java.lang.String a -> a
+    java.lang.String getSdkSrc() -> getSdkSrc
+    void setSdkSrc(java.lang.String) -> setSdkSrc
+com.qq.e.comm.a -> com.qq.e.comm.a:
+    java.lang.String a -> a
+    com.qq.e.v2.managers.setting.a b -> b
+    boolean a(android.content.Context) -> a
+    boolean a(android.content.Context,java.lang.Class[]) -> a
+    boolean b(android.content.Context) -> b
+    boolean c(android.content.Context) -> c
+    boolean a(android.content.Context,java.io.File,java.io.File) -> a
+    java.lang.String a() -> a
+    com.qq.e.v2.managers.setting.a b() -> b
+    java.util.Map c() -> c
+    void a(java.lang.String,java.lang.Object,java.util.Map) -> a
+    java.util.Map d() -> d
+    java.util.Map e() -> e
+    java.util.Map f() -> f
+    java.util.Map g() -> g
+    byte[] a(byte[]) -> a
+    byte[] b(byte[]) -> b
+    byte[] c(byte[]) -> c
+    byte[] d(byte[]) -> d
+com.qq.e.feeds.FeedsAD -> com.qq.e.feeds.FeedsAD:
+    int ERROR_INTERNAL -> ERROR_INTERNAL
+    int ERROR_LOAD_AD_FAILED -> ERROR_LOAD_AD_FAILED
+    int ERROR_PERMISSION_UNGRATIFIED -> ERROR_PERMISSION_UNGRATIFIED
+    com.qq.e.feeds.FeedsADDelegate a -> a
+    com.qq.e.feeds.FeedsSetting b -> b
+    com.qq.e.feeds.FeedsAD$FeedsADListener c -> c
+    com.qq.e.feeds.FeedsSetting getSetting() -> getSetting
+    void setSetting(com.qq.e.feeds.FeedsSetting) -> setSetting
+    void loadAD() -> loadAD
+    com.qq.e.feeds.FeedsADViewRef getADViewRef() -> getADViewRef
+com.qq.e.feeds.FeedsAD$FeedsADListener -> com.qq.e.feeds.FeedsAD$FeedsADListener:
+    void onFeedsADReady(com.qq.e.feeds.FeedsADViewRef) -> onFeedsADReady
+    void onFeedsADLoaded(com.qq.e.feeds.FeedsADViewRef) -> onFeedsADLoaded
+    void onFeedsADFail(int) -> onFeedsADFail
+com.qq.e.feeds.FeedsADDelegate -> com.qq.e.feeds.FeedsADDelegate:
+    void loadAD(com.qq.e.feeds.FeedsSetting) -> loadAD
+    com.qq.e.feeds.FeedsADViewRef getADViewRef() -> getADViewRef
+com.qq.e.feeds.FeedsADViewRef -> com.qq.e.feeds.FeedsADViewRef:
+    android.view.View getView() -> getView
+    void free() -> free
+    void setStyle(java.lang.String) -> setStyle
+    void setStyleAndADBackGround(java.lang.String,int) -> setStyleAndADBackGround
+    void setADBackGroundColor(int) -> setADBackGroundColor
+    void onScrollIn() -> onScrollIn
+    int getSuggestADPosition() -> getSuggestADPosition
+com.qq.e.feeds.FeedsSetting -> com.qq.e.feeds.FeedsSetting:
+    java.lang.String a -> a
+    int b -> b
+    java.lang.String getStyleID() -> getStyleID
+    void setStyleID(java.lang.String) -> setStyleID
+    int getAdBackGroundColor() -> getAdBackGroundColor
+    void setAdBackGroundColor(int) -> setAdBackGroundColor
+com.qq.e.feedsad.CustomFeedsViewBuilder -> com.qq.e.feedsad.CustomFeedsViewBuilder:
+    android.view.View build(java.util.Map,android.view.View,com.qq.e.feedsad.FeedsADSetting) -> build
+com.qq.e.feedsad.CustomFeedsViewInterface -> com.qq.e.feedsad.CustomFeedsViewInterface:
+    void updateStyle(java.lang.String) -> updateStyle
+    void updateAppStatus(java.lang.String,int) -> updateAppStatus
+    void updateBackGround(int) -> updateBackGround
+com.qq.e.feedsad.FeedsAD -> com.qq.e.feedsad.FeedsAD:
+    int ERROR_INTERNAL -> ERROR_INTERNAL
+    int ERROR_LOAD_AD_FAILED -> ERROR_LOAD_AD_FAILED
+    int ERROR_PERMISSION_UNGRATIFIED -> ERROR_PERMISSION_UNGRATIFIED
+    com.qq.e.feedsad.FeedsADDelegate a -> a
+    com.qq.e.feedsad.FeedsADSetting b -> b
+    com.qq.e.feedsad.FeedsAD$FeedsADListener c -> c
+    com.qq.e.feedsad.FeedsADSetting getSetting() -> getSetting
+    void loadAD(int) -> loadAD
+com.qq.e.feedsad.FeedsAD$FeedsADListener -> com.qq.e.feedsad.FeedsAD$FeedsADListener:
+    void onFeedsADLoaded(java.util.Collection) -> onFeedsADLoaded
+    void onFeedsADReady(com.qq.e.feedsad.FeedsADViewRef) -> onFeedsADReady
+    void onFeedsADFail(int) -> onFeedsADFail
+com.qq.e.feedsad.FeedsADDelegate -> com.qq.e.feedsad.FeedsADDelegate:
+    void loadAD(int) -> loadAD
+com.qq.e.feedsad.FeedsADSetting -> com.qq.e.feedsad.FeedsADSetting:
+    java.lang.String a -> a
+    int b -> b
+    java.lang.String getStyleID() -> getStyleID
+    void setStyleID(java.lang.String) -> setStyleID
+    int getAdBackGroundColor() -> getAdBackGroundColor
+    void setAdBackGroundColor(int) -> setAdBackGroundColor
+com.qq.e.feedsad.FeedsADViewRef -> com.qq.e.feedsad.FeedsADViewRef:
+    android.view.View getView(android.view.View,android.app.Activity) -> getView
+    void setStyle(java.lang.String) -> setStyle
+    void setStyleAndADBackGround(java.lang.String,int) -> setStyleAndADBackGround
+    void setADBackGroundColor(int) -> setADBackGroundColor
+    int getSuggestADPosition() -> getSuggestADPosition
+    void release() -> release
+    java.util.Map getADInfo() -> getADInfo
+com.qq.e.gdtnativead.GDTNativeAd -> com.qq.e.gdtnativead.GDTNativeAd:
+    com.qq.e.gdtnativead.GDTNativeAdDelegate a -> a
+    com.qq.e.gdtnativead.GDTNativeAd$GDTNativeAdListener b -> b
+    void loadAd(int) -> loadAd
+com.qq.e.gdtnativead.GDTNativeAd$ErrorCode -> com.qq.e.gdtnativead.GDTNativeAd$ErrorCode:
+    int ERROR_INTERNAL -> ERROR_INTERNAL
+    int ERROR_LOAD_AD_FAILED -> ERROR_LOAD_AD_FAILED
+    int ERROR_PERMISSION_UNGRATIFIED -> ERROR_PERMISSION_UNGRATIFIED
+com.qq.e.gdtnativead.GDTNativeAd$GDTNativeAdListener -> com.qq.e.gdtnativead.GDTNativeAd$GDTNativeAdListener:
+    void onGDTNativeAdLoaded(java.util.List) -> onGDTNativeAdLoaded
+    void onGDTNativeAdFail(int) -> onGDTNativeAdFail
+com.qq.e.gdtnativead.GDTNativeAdDataRef -> com.qq.e.gdtnativead.GDTNativeAdDataRef:
+    java.lang.String getTitle() -> getTitle
+    java.lang.String getDesc() -> getDesc
+    java.lang.String getIconUrl() -> getIconUrl
+    java.lang.String getImgUrl() -> getImgUrl
+    boolean isApp() -> isApp
+    void onExposured(android.view.View) -> onExposured
+    void onClicked() -> onClicked
+com.qq.e.gdtnativead.GDTNativeAdDelegate -> com.qq.e.gdtnativead.GDTNativeAdDelegate:
+    void loadAd(int) -> loadAd
+com.qq.e.gridappwall.GridAppWall -> com.qq.e.gridappwall.GridAppWall:
+    int ERROR_INTERNAL -> ERROR_INTERNAL
+    int ERROR_LOAD_AD_FAILED -> ERROR_LOAD_AD_FAILED
+    int ERROR_PERMISSION_UNGRATIFIED -> ERROR_PERMISSION_UNGRATIFIED
+    com.qq.e.gridappwall.GridAppWallView a -> a
+    void a(com.qq.e.gridappwall.GridAppWallListener) -> a
+    void show() -> show
+    void showRelativeTo(android.view.View) -> showRelativeTo
+    void showRelativeTo(int,int) -> showRelativeTo
+com.qq.e.gridappwall.GridAppWallListener -> com.qq.e.gridappwall.GridAppWallListener:
+    void onAdDismissed() -> onAdDismissed
+    void onAdFailed(int) -> onAdFailed
+    void onAdPresent() -> onAdPresent
+com.qq.e.gridappwall.GridAppWallView -> com.qq.e.gridappwall.GridAppWallView:
+    void setAdListener(com.qq.e.gridappwall.GridAppWallListener) -> setAdListener
+    com.qq.e.gridappwall.GridAppWallListener getAdListener() -> getAdListener
+    void show() -> show
+    void showRelativeTo(android.view.View) -> showRelativeTo
+    void showRelativeTo(int,int) -> showRelativeTo
+com.qq.e.splash.AdViewFactory -> com.qq.e.splash.AdViewFactory:
+    com.qq.e.splash.SplashAdView createSplashAdView(android.content.Context,java.lang.String,java.lang.String) -> createSplashAdView
+com.qq.e.splash.SplashAd -> com.qq.e.splash.SplashAd:
+    int ERROR_LOAD_AD_FAILED -> ERROR_LOAD_AD_FAILED
+    int ERROR_REJECT_LOAD_AD -> ERROR_REJECT_LOAD_AD
+    int ERROR_CONTAINER_INVISIBLE -> ERROR_CONTAINER_INVISIBLE
+    int INTERNAL_ERROR -> INTERNAL_ERROR
+    com.qq.e.splash.SplashAdView a -> a
+    void a(com.qq.e.splash.SplashAdListener) -> a
+com.qq.e.splash.SplashAdListener -> com.qq.e.splash.SplashAdListener:
+    void onAdDismissed() -> onAdDismissed
+    void onAdFailed(int) -> onAdFailed
+    void onAdPresent() -> onAdPresent
+com.qq.e.splash.SplashAdView -> com.qq.e.splash.SplashAdView:
+    void setAdListener(com.qq.e.splash.SplashAdListener) -> setAdListener
+    com.qq.e.splash.SplashAdListener getAdListener() -> getAdListener
+    void fetchAndShowIn(android.view.ViewGroup) -> fetchAndShowIn
+com.qq.e.v2.a.a -> com.qq.e.v2.a.a:
+    com.qq.e.v2.a.a a -> a
+    java.lang.Boolean b -> b
+    com.qq.e.v2.a.a a() -> a
+    void a(android.content.Context,long) -> a
+com.qq.e.v2.a.a$1 -> com.qq.e.v2.a.a$1:
+    com.qq.e.v2.managers.setting.SM a -> a
+    com.qq.e.v2.managers.plugin.PM b -> b
+    void onResponse(com.qq.e.v2.net.GDTSecurityADNetRequest,com.qq.e.v2.net.GDTSecurityADNetResponse) -> onResponse
+    void onErr(java.lang.Exception) -> onErr
+com.qq.e.v2.constants.Constants -> com.qq.e.v2.constants.Constants:
+    java.lang.String SDK_SERVER_URL -> SDK_SERVER_URL
+    java.lang.String ACT_URL -> ACT_URL
+    java.lang.String LAC_URL -> LAC_URL
+    java.lang.String ERR_URL -> ERR_URL
+    java.lang.String TRACE_URL -> TRACE_URL
+    java.lang.String GETAD_URL -> GETAD_URL
+    java.lang.String DISP_URL -> DISP_URL
+    java.lang.String CLICK_URL -> CLICK_URL
+    java.lang.String MSG_URL -> MSG_URL
+    java.lang.String SP_KEY -> SP_KEY
+com.qq.e.v2.constants.Constants$KEYS -> com.qq.e.v2.constants.Constants$KEYS:
+    java.lang.String RET -> RET
+    java.lang.String SID -> SID
+    java.lang.String SUID -> SUID
+    java.lang.String SIG -> SIG
+    java.lang.String SETTING -> SETTING
+    java.lang.String BIZ -> BIZ
+    java.lang.String CTXTSETTING -> CTXTSETTING
+    java.lang.String JAR -> JAR
+    java.lang.String SDK -> SDK
+    java.lang.String APP -> APP
+    java.lang.String PLUGIN_URL -> PLUGIN_URL
+    java.lang.String PLUGIN_VERSION -> PLUGIN_VERSION
+    java.lang.String PLACEMENTS -> PLACEMENTS
+    java.lang.String DEVINFO -> DEVINFO
+    java.lang.String APPINFO -> APPINFO
+    java.lang.String SDKINFO -> SDKINFO
+    java.lang.String UPDATEINFO -> UPDATEINFO
+    java.lang.String CTXTINFO -> CTXTINFO
+    java.lang.String PLCINFO -> PLCINFO
+    java.lang.String SPLASH_TMPL -> SPLASH_TMPL
+    java.lang.String SPLASH_LOADTIMEOUT -> SPLASH_LOADTIMEOUT
+    java.lang.String SPLASH_EXPOSURE_TIME -> SPLASH_EXPOSURE_TIME
+    java.lang.String SPLASH_NETWORK_PERMISION -> SPLASH_NETWORK_PERMISION
+    java.lang.String SPLASH_MAX_REQUEST_NUM -> SPLASH_MAX_REQUEST_NUM
+    java.lang.String Banner_RF -> Banner_RF
+    java.lang.String BannerPageUrl -> BannerPageUrl
+    java.lang.String SDKServerReportSamplingRate -> SDKServerReportSamplingRate
+    java.lang.String SDKServerGetADReportSamplingRate -> SDKServerGetADReportSamplingRate
+    java.lang.String SDKServerExpReportSamplingRate -> SDKServerExpReportSamplingRate
+    java.lang.String SDKServerClickReportSamplingRate -> SDKServerClickReportSamplingRate
+    java.lang.String BannerAPKPopPageUrl -> BannerAPKPopPageUrl
+    java.lang.String GridPageUrl -> GridPageUrl
+    java.lang.String DownloaderCCTCount -> DownloaderCCTCount
+    java.lang.String BannerShowCloseBtn -> BannerShowCloseBtn
+    java.lang.String DOWNLOAD_AUTO_RECOVER -> DOWNLOAD_AUTO_RECOVER
+    java.lang.String DOWNLOAD_GiveupTime_InDay -> DOWNLOAD_GiveupTime_InDay
+    java.lang.String InterstitialPageURL -> InterstitialPageURL
+    java.lang.String AppWallPageURL -> AppWallPageURL
+    java.lang.String RequireWindowFocus -> RequireWindowFocus
+    java.lang.String FeedsTplID -> FeedsTplID
+    java.lang.String FeedsStyleID -> FeedsStyleID
+    java.lang.String FeedsADExposureTime -> FeedsADExposureTime
+    java.lang.String FeedsADURL -> FeedsADURL
+    java.lang.String FeedsADURL2 -> FeedsADURL2
+    java.lang.String BannerAutoShow -> BannerAutoShow
+    java.lang.String BannerRollAnimation -> BannerRollAnimation
+    java.lang.String DownConfirm -> DownConfirm
+com.qq.e.v2.constants.Constants$PLUGIN -> com.qq.e.v2.constants.Constants$PLUGIN:
+    java.lang.String PLUGIN_DIR -> PLUGIN_DIR
+    java.lang.String ASSET_PLUGIN_DIR -> ASSET_PLUGIN_DIR
+    java.lang.String ASSET_PLUGIN_NAME -> ASSET_PLUGIN_NAME
+    java.lang.String ASSET_PLUGIN_SIG -> ASSET_PLUGIN_SIG
+    int ASSET_PLUGIN_VERSION -> ASSET_PLUGIN_VERSION
+    java.lang.String TMP_JAR_FILE -> TMP_JAR_FILE
+    java.lang.String TMP_SIG_FILE -> TMP_SIG_FILE
+    java.lang.String FINAL_JAR_FILE -> FINAL_JAR_FILE
+    java.lang.String FINAL_SIG_FILE -> FINAL_SIG_FILE
+    java.lang.String DEXDIR -> DEXDIR
+com.qq.e.v2.constants.Constants$SETTING -> com.qq.e.v2.constants.Constants$SETTING:
+    java.lang.String SETTINGDIR -> SETTINGDIR
+    java.lang.String DEV_CLOUD_SETTING -> DEV_CLOUD_SETTING
+    java.lang.String SDK_CLOUD_SETTING -> SDK_CLOUD_SETTING
+    java.lang.String SUID_FILE -> SUID_FILE
+com.qq.e.v2.managers.GDTADManager -> com.qq.e.v2.managers.GDTADManager:
+    java.lang.Boolean a -> a
+    android.content.Context b -> b
+    com.qq.e.v2.managers.setting.SM c -> c
+    com.qq.e.v2.managers.plugin.PM d -> d
+    com.qq.e.v2.managers.status.APPStatus e -> e
+    com.qq.e.v2.managers.status.DeviceStatus f -> f
+    com.qq.e.v2.managers.GDTADManager getInstance() -> getInstance
+    boolean initWith(android.content.Context,java.lang.String) -> initWith
+    android.content.Context getAppContext() -> getAppContext
+    com.qq.e.v2.managers.setting.SM getSM() -> getSM
+    com.qq.e.v2.managers.plugin.PM getPM() -> getPM
+    com.qq.e.v2.managers.status.APPStatus getAppStatus() -> getAppStatus
+    com.qq.e.v2.managers.status.DeviceStatus getDeviceStatus() -> getDeviceStatus
+com.qq.e.v2.managers.GDTADManager$a -> com.qq.e.v2.managers.GDTADManager$a:
+    com.qq.e.v2.managers.GDTADManager a -> a
+    com.qq.e.v2.managers.GDTADManager a() -> a
+com.qq.e.v2.managers.plugin.PM -> com.qq.e.v2.managers.plugin.PM:
+    java.util.regex.Pattern a -> a
+    android.content.Context b -> b
+    java.lang.String c -> c
+    java.io.File d -> d
+    int e -> e
+    dalvik.system.DexClassLoader f -> f
+    java.util.Map g -> g
+    boolean b() -> b
+    int a(java.io.File,java.io.File) -> a
+    java.lang.String getLocalSig() -> getLocalSig
+    void update(java.lang.String,java.lang.String) -> update
+    com.qq.e.splash.AdViewFactory getAdViewFactory() -> getAdViewFactory
+    com.qq.e.v2.plugininterfaces.GridAdViewFactory getGridAdViewFactory() -> getGridAdViewFactory
+    com.qq.e.v2.plugininterfaces.FeedsAdViewFactory getFeedsAdViewFactory() -> getFeedsAdViewFactory
+    com.qq.e.v2.plugininterfaces.InterstitialViewFactory getInterstitialViewFactory() -> getInterstitialViewFactory
+    com.qq.e.v2.plugininterfaces.AppWallViewFactory getAppWallViewFactory() -> getAppWallViewFactory
+    com.qq.e.v2.plugininterfaces.GDTNativeAdViewFactory getGDTNativeAdViewFactory() -> getGDTNativeAdViewFactory
+    java.lang.Object getFactory(java.lang.Class) -> getFactory
+    com.qq.e.v2.plugininterfaces.ServiceDelegateFactory getServiceDelegateFactory() -> getServiceDelegateFactory
+    com.qq.e.v2.plugininterfaces.ActivityDelegateFactory getActivityDelegateFactory() -> getActivityDelegateFactory
+    com.qq.e.v2.plugininterfaces.BannerViewFactory getBannerViewFactory() -> getBannerViewFactory
+    java.io.File c() -> c
+    java.io.File d() -> d
+    java.io.File e() -> e
+    int getPluginVersion() -> getPluginVersion
+    java.io.File a(com.qq.e.v2.managers.plugin.PM) -> a
+    java.io.File b(com.qq.e.v2.managers.plugin.PM) -> b
+    java.util.regex.Pattern a() -> a
+    java.io.File c(com.qq.e.v2.managers.plugin.PM) -> c
+    java.io.File d(com.qq.e.v2.managers.plugin.PM) -> d
+com.qq.e.v2.managers.plugin.PM$1 -> com.qq.e.v2.managers.plugin.PM$1:
+com.qq.e.v2.managers.plugin.PM$a -> com.qq.e.v2.managers.plugin.PM$a:
+    java.lang.String a -> a
+    com.qq.e.v2.managers.plugin.PM b -> b
+    void onResponse(com.qq.e.v2.net.GDTPlainADNetRequest,com.qq.e.v2.net.GDTPlainADNetResponse) -> onResponse
+    void onError(java.lang.Exception) -> onError
+com.qq.e.v2.managers.plugin.a -> com.qq.e.v2.managers.plugin.a:
+com.qq.e.v2.managers.setting.SM -> com.qq.e.v2.managers.setting.SM:
+    com.qq.e.v2.managers.setting.a a -> a
+    java.lang.String b -> b
+    com.qq.e.v2.managers.setting.a c -> c
+    com.qq.e.v2.managers.setting.a d -> d
+    java.lang.String e -> e
+    com.qq.e.v2.managers.setting.b f -> f
+    com.qq.e.v2.managers.setting.b g -> g
+    java.lang.String h -> h
+    java.lang.String i -> i
+    android.content.Context j -> j
+    void a() -> a
+    void b() -> b
+    void updateSDKCloudSetting(java.lang.String,java.lang.String) -> updateSDKCloudSetting
+    void updateDEVCloudSetting(java.lang.String,java.lang.String) -> updateDEVCloudSetting
+    void updateContextSetting(java.lang.String) -> updateContextSetting
+    void setDEVCodeSetting(java.lang.String,java.lang.Object) -> setDEVCodeSetting
+    void setDEVCodeSetting(java.lang.String,java.lang.Object,java.lang.String) -> setDEVCodeSetting
+    java.lang.Object get(java.lang.String) -> get
+    java.lang.Object getForPlacement(java.lang.String,java.lang.String) -> getForPlacement
+    java.lang.String getString(java.lang.String) -> getString
+    java.lang.String getStringForPlacement(java.lang.String,java.lang.String) -> getStringForPlacement
+    int getInteger(java.lang.String) -> getInteger
+    int getIntegerForPlacement(java.lang.String,java.lang.String) -> getIntegerForPlacement
+    int a(java.lang.Object) -> a
+    java.lang.String getDevCloudSettingSig() -> getDevCloudSettingSig
+    java.lang.String getSdkCloudSettingSig() -> getSdkCloudSettingSig
+    void updateSID(java.lang.String) -> updateSID
+    void updateSUID(java.lang.String) -> updateSUID
+    java.lang.String getSuid() -> getSuid
+    java.lang.String getSid() -> getSid
+com.qq.e.v2.managers.setting.a -> com.qq.e.v2.managers.setting.a:
+    java.util.Map a -> a
+    java.util.Map b -> b
+    java.lang.Object a(java.lang.String) -> a
+    java.lang.Object a(java.lang.String,java.lang.String) -> a
+    void a(java.lang.String,java.lang.Object) -> a
+    void a(java.lang.String,java.lang.Object,java.lang.String) -> a
+    com.qq.e.comm.a a(android.content.Context) -> a
+    com.qq.e.v2.managers.setting.d b(android.content.Context) -> b
+    boolean a(android.content.Context,java.lang.String,java.lang.String) -> a
+    boolean b(android.content.Context,java.lang.String,java.lang.String) -> b
+    boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
+    boolean b(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> b
+    android.util.Pair a(android.content.Context,java.lang.String) -> a
+com.qq.e.v2.managers.setting.b -> com.qq.e.v2.managers.setting.b:
+    java.util.Map a -> a
+    java.lang.Object a(java.lang.String) -> a
+    void a(java.lang.String,java.lang.Object) -> a
+    java.lang.String toString() -> toString
+com.qq.e.v2.managers.setting.c -> com.qq.e.v2.managers.setting.c:
+com.qq.e.v2.managers.setting.d -> com.qq.e.v2.managers.setting.d:
+    java.lang.String a -> a
+    com.qq.e.v2.managers.setting.b b -> b
+    java.lang.String a() -> a
+    com.qq.e.v2.managers.setting.b b() -> b
+com.qq.e.v2.managers.status.APPStatus -> com.qq.e.v2.managers.status.APPStatus:
+    java.lang.String a -> a
+    android.content.Context b -> b
+    java.lang.String getAPPID() -> getAPPID
+    java.lang.String getAPPName() -> getAPPName
+    java.lang.String getAPPVersion() -> getAPPVersion
+com.qq.e.v2.managers.status.Carrier -> com.qq.e.v2.managers.status.Carrier:
+    com.qq.e.v2.managers.status.Carrier UNKNOWN -> UNKNOWN
+    com.qq.e.v2.managers.status.Carrier CMCC -> CMCC
+    com.qq.e.v2.managers.status.Carrier UNICOM -> UNICOM
+    com.qq.e.v2.managers.status.Carrier TELECOM -> TELECOM
+    int a -> a
+    com.qq.e.v2.managers.status.Carrier[] b -> b
+    com.qq.e.v2.managers.status.Carrier[] values() -> values
+    com.qq.e.v2.managers.status.Carrier valueOf(java.lang.String) -> valueOf
+    int getValue() -> getValue
+com.qq.e.v2.managers.status.DeviceStatus -> com.qq.e.v2.managers.status.DeviceStatus:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    int d -> d
+    int e -> e
+    int f -> f
+    java.lang.String g -> g
+    java.lang.String h -> h
+    java.lang.String i -> i
+    java.lang.String j -> j
+    java.lang.String k -> k
+    java.lang.String l -> l
+    java.lang.String m -> m
+    java.lang.String model -> model
+    android.content.Context n -> n
+    void a() -> a
+    java.lang.String getLat() -> getLat
+    java.lang.String getLng() -> getLng
+    java.lang.String getDid() -> getDid
+    int getVersion() -> getVersion
+    java.lang.String getUid() -> getUid
+    java.lang.String getLanguage() -> getLanguage
+    int getDeviceWidth() -> getDeviceWidth
+    int getDeviceHeight() -> getDeviceHeight
+    int getDeviceDensity() -> getDeviceDensity
+    java.lang.String getScreenOrientation() -> getScreenOrientation
+    java.lang.String getOperator() -> getOperator
+    java.lang.String getPhoneNet() -> getPhoneNet
+    java.lang.String getDataNet() -> getDataNet
+    java.lang.String getMarket() -> getMarket
+    int a(float,int) -> a
+    java.util.Map getLacAndCeilId() -> getLacAndCeilId
+    java.lang.String getBaseStopInfo() -> getBaseStopInfo
+    com.qq.e.v2.managers.status.Carrier getCarrier() -> getCarrier
+    com.qq.e.v2.managers.status.NetworkType getNetworkType() -> getNetworkType
+    java.lang.String a(com.qq.e.v2.managers.status.DeviceStatus,java.lang.String) -> a
+    java.lang.String b(com.qq.e.v2.managers.status.DeviceStatus,java.lang.String) -> b
+com.qq.e.v2.managers.status.DeviceStatus$1 -> com.qq.e.v2.managers.status.DeviceStatus$1:
+    android.location.LocationManager a -> a
+    com.qq.e.v2.managers.status.DeviceStatus b -> b
+    void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+    void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    void onLocationChanged(android.location.Location) -> onLocationChanged
+com.qq.e.v2.managers.status.NetworkType -> com.qq.e.v2.managers.status.NetworkType:
+    com.qq.e.v2.managers.status.NetworkType UNKNOWN -> UNKNOWN
+    com.qq.e.v2.managers.status.NetworkType WIFI -> WIFI
+    com.qq.e.v2.managers.status.NetworkType NET_2G -> NET_2G
+    com.qq.e.v2.managers.status.NetworkType NET_3G -> NET_3G
+    com.qq.e.v2.managers.status.NetworkType NET_4G -> NET_4G
+    int a -> a
+    int b -> b
+    com.qq.e.v2.managers.status.NetworkType[] c -> c
+    com.qq.e.v2.managers.status.NetworkType[] values() -> values
+    com.qq.e.v2.managers.status.NetworkType valueOf(java.lang.String) -> valueOf
+    int getConnValue() -> getConnValue
+    int getPermValue() -> getPermValue
+com.qq.e.v2.managers.status.SDKStatus -> com.qq.e.v2.managers.status.SDKStatus:
+    java.lang.String SDKV -> SDKV
+    java.lang.String JSV -> JSV
+    int BuildVersion -> BuildVersion
+com.qq.e.v2.net.GDTADNetClient -> com.qq.e.v2.net.GDTADNetClient:
+    java.lang.ThreadLocal a -> a
+    com.qq.e.v2.net.GDTADNetClient b -> b
+    java.util.concurrent.ThreadPoolExecutor c -> c
+    org.apache.http.client.HttpClient d -> d
+    com.qq.e.v2.net.GDTADNetClient getInstance() -> getInstance
+    void excute(com.qq.e.v2.net.GDTADNetRequest,com.qq.e.v2.net.GDTADNetClient$Priority,int) -> excute
+    void excute(com.qq.e.v2.net.GDTADNetRequest,com.qq.e.v2.net.GDTADNetClient$Priority) -> excute
+    void excuteErrorReportTask(com.qq.e.v2.net.GDTADNetRequest) -> excuteErrorReportTask
+    int a() -> a
+    boolean d() -> d
+    java.lang.ThreadLocal b() -> b
+    org.apache.http.client.HttpClient c() -> c
+com.qq.e.v2.net.GDTADNetClient$1 -> com.qq.e.v2.net.GDTADNetClient$1:
+    int[] a -> a
+com.qq.e.v2.net.GDTADNetClient$Priority -> com.qq.e.v2.net.GDTADNetClient$Priority:
+    com.qq.e.v2.net.GDTADNetClient$Priority High -> High
+    com.qq.e.v2.net.GDTADNetClient$Priority Mid -> Mid
+    com.qq.e.v2.net.GDTADNetClient$Priority Low -> Low
+    int a -> a
+    com.qq.e.v2.net.GDTADNetClient$Priority[] b -> b
+    com.qq.e.v2.net.GDTADNetClient$Priority[] values() -> values
+    com.qq.e.v2.net.GDTADNetClient$Priority valueOf(java.lang.String) -> valueOf
+    int value() -> value
+    int a(com.qq.e.v2.net.GDTADNetClient$Priority) -> a
+com.qq.e.v2.net.GDTADNetClient$a -> com.qq.e.v2.net.GDTADNetClient$a:
+    com.qq.e.v2.net.GDTADNetClient$Priority b -> b
+    com.qq.e.v2.net.GDTADNetRequest c -> c
+    int d -> d
+    boolean a -> a
+    void run() -> run
+    void a(org.apache.http.client.methods.HttpRequestBase) -> a
+    void a(java.lang.Exception) -> a
+    int compareTo(java.lang.Object) -> compareTo
+com.qq.e.v2.net.GDTADNetRequest -> com.qq.e.v2.net.GDTADNetRequest:
+    int a -> a
+    int b -> b
+    java.lang.String c -> c
+    java.util.Map d -> d
+    java.util.Map e -> e
+    java.util.Map f -> f
+    java.util.Map g -> g
+    com.qq.e.v2.net.GDTADNetRequest$Method h -> h
+    byte[] i -> i
+    byte[] getPostData() -> getPostData
+    com.qq.e.v2.net.GDTADNetRequest$Method getMethod() -> getMethod
+    java.lang.String getUrl() -> getUrl
+    java.util.Map getHeaders() -> getHeaders
+    java.util.Map getParas() -> getParas
+    void addHeader(java.lang.String,java.lang.String) -> addHeader
+    void addParam(java.lang.String,java.lang.String) -> addParam
+    java.lang.String getUrlWithParas() -> getUrlWithParas
+    int getConnectionTimeOut() -> getConnectionTimeOut
+    void setConnectionTimeOut(int) -> setConnectionTimeOut
+    int getSocketTimeOut() -> getSocketTimeOut
+    void setSocketTimeOut(int) -> setSocketTimeOut
+    void onResponse(org.apache.http.HttpResponse) -> onResponse
+    void onError(java.lang.Exception) -> onError
+com.qq.e.v2.net.GDTADNetRequest$Method -> com.qq.e.v2.net.GDTADNetRequest$Method:
+    com.qq.e.v2.net.GDTADNetRequest$Method GET -> GET
+    com.qq.e.v2.net.GDTADNetRequest$Method POST -> POST
+    com.qq.e.v2.net.GDTADNetRequest$Method[] a -> a
+    com.qq.e.v2.net.GDTADNetRequest$Method[] values() -> values
+    com.qq.e.v2.net.GDTADNetRequest$Method valueOf(java.lang.String) -> valueOf
+com.qq.e.v2.net.GDTADNetResponse -> com.qq.e.v2.net.GDTADNetResponse:
+    org.apache.http.HttpResponse a -> a
+    org.apache.http.HttpResponse a() -> a
+    java.io.InputStream getRawContent() -> getRawContent
+    void close() -> close
+    byte[] b() -> b
+    byte[] getContentAsByteArray() -> getContentAsByteArray
+    java.lang.String getContentAsString(java.lang.String) -> getContentAsString
+    java.lang.String getContentAsString() -> getContentAsString
+    int getStatusCode() -> getStatusCode
+com.qq.e.v2.net.GDTPlainADNetRequest -> com.qq.e.v2.net.GDTPlainADNetRequest:
+    com.qq.e.v2.net.GDTPlainADNetRequest$CallBack a -> a
+    void onResponse(org.apache.http.HttpResponse) -> onResponse
+    void onError(java.lang.Exception) -> onError
+com.qq.e.v2.net.GDTPlainADNetRequest$CallBack -> com.qq.e.v2.net.GDTPlainADNetRequest$CallBack:
+    void onResponse(com.qq.e.v2.net.GDTPlainADNetRequest,com.qq.e.v2.net.GDTPlainADNetResponse) -> onResponse
+    void onError(java.lang.Exception) -> onError
+com.qq.e.v2.net.GDTPlainADNetResponse -> com.qq.e.v2.net.GDTPlainADNetResponse:
+    com.qq.e.v2.net.GDTPlainADNetRequest a -> a
+    byte[] getContentAsByteArray() -> getContentAsByteArray
+com.qq.e.v2.net.GDTSecurityADNetRequest -> com.qq.e.v2.net.GDTSecurityADNetRequest:
+    com.qq.e.v2.net.GDTSecurityADNetRequest$CallBack a -> a
+    void onResponse(org.apache.http.HttpResponse) -> onResponse
+    void onError(java.lang.Exception) -> onError
+com.qq.e.v2.net.GDTSecurityADNetRequest$CallBack -> com.qq.e.v2.net.GDTSecurityADNetRequest$CallBack:
+    void onErr(java.lang.Exception) -> onErr
+    void onResponse(com.qq.e.v2.net.GDTSecurityADNetRequest,com.qq.e.v2.net.GDTSecurityADNetResponse) -> onResponse
+com.qq.e.v2.net.GDTSecurityADNetResponse -> com.qq.e.v2.net.GDTSecurityADNetResponse:
+    com.qq.e.v2.net.GDTSecurityADNetRequest a -> a
+    byte[] getContentAsByteArray() -> getContentAsByteArray
+com.qq.e.v2.net.a -> com.qq.e.v2.net.a:
+    int[] a -> a
+    int[] a(byte[],int) -> a
+    byte[] a(int[],int) -> a
+    int a(byte) -> a
+    byte[] a(byte[]) -> a
+    byte[] b(byte[]) -> b
+com.qq.e.v2.plugininterfaces.ActivityDelegate -> com.qq.e.v2.plugininterfaces.ActivityDelegate:
+    java.lang.String DelegateKeyName -> DelegateKeyName
+    void onBeforeCreate(android.os.Bundle) -> onBeforeCreate
+    void onAfterCreate(android.os.Bundle) -> onAfterCreate
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void onDestroy() -> onDestroy
+    void onBackPressed() -> onBackPressed
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+com.qq.e.v2.plugininterfaces.ActivityDelegateFactory -> com.qq.e.v2.plugininterfaces.ActivityDelegateFactory:
+    java.lang.String NAME_BANNER_POPUP -> NAME_BANNER_POPUP
+    com.qq.e.v2.plugininterfaces.ActivityDelegate getDelegate(java.lang.String,android.app.Activity) -> getDelegate
+com.qq.e.v2.plugininterfaces.AppWallADViewInterface -> com.qq.e.v2.plugininterfaces.AppWallADViewInterface:
+    void showAppWall() -> showAppWall
+    void prepare() -> prepare
+    void setScreenOrientation(int) -> setScreenOrientation
+com.qq.e.v2.plugininterfaces.AppWallViewFactory -> com.qq.e.v2.plugininterfaces.AppWallViewFactory:
+    com.qq.e.v2.plugininterfaces.AppWallADViewInterface getAppWallView(android.content.Context,java.lang.String,java.lang.String,boolean) -> getAppWallView
+com.qq.e.v2.plugininterfaces.BannerViewFactory -> com.qq.e.v2.plugininterfaces.BannerViewFactory:
+    com.qq.e.v2.plugininterfaces.BannerViewInterface getBannerView(android.app.Activity,com.qq.e.ads.AdSize,java.lang.String,java.lang.String,boolean) -> getBannerView
+com.qq.e.v2.plugininterfaces.BannerViewInterface -> com.qq.e.v2.plugininterfaces.BannerViewInterface:
+    void fetchAd(com.qq.e.ads.AdRequest) -> fetchAd
+    void setAdListener(com.qq.e.ads.AdListener) -> setAdListener
+    android.view.View getView() -> getView
+    void destroy() -> destroy
+com.qq.e.v2.plugininterfaces.FeedsAdViewFactory -> com.qq.e.v2.plugininterfaces.FeedsAdViewFactory:
+    com.qq.e.feeds.FeedsADDelegate createFeedsADDelegate(android.app.Activity,java.lang.String,java.lang.String,com.qq.e.feeds.FeedsAD$FeedsADListener) -> createFeedsADDelegate
+    com.qq.e.feedsad.FeedsADDelegate createNewFeedsADDelegate(android.app.Activity,java.lang.String,java.lang.String,com.qq.e.feedsad.FeedsADSetting,com.qq.e.feedsad.FeedsAD$FeedsADListener,com.qq.e.feedsad.CustomFeedsViewBuilder) -> createNewFeedsADDelegate
+com.qq.e.v2.plugininterfaces.GDTNativeAdViewFactory -> com.qq.e.v2.plugininterfaces.GDTNativeAdViewFactory:
+    com.qq.e.gdtnativead.GDTNativeAdDelegate createGDTNativeAdDelegate(android.content.Context,java.lang.String,java.lang.String,com.qq.e.gdtnativead.GDTNativeAd$GDTNativeAdListener) -> createGDTNativeAdDelegate
+com.qq.e.v2.plugininterfaces.GridAdViewFactory -> com.qq.e.v2.plugininterfaces.GridAdViewFactory:
+    com.qq.e.gridappwall.GridAppWallView createGridAppWallView(android.app.Activity,java.lang.String,java.lang.String) -> createGridAppWallView
+com.qq.e.v2.plugininterfaces.InterstitialAdViewInterface -> com.qq.e.v2.plugininterfaces.InterstitialAdViewInterface:
+    void setAdListener(com.qq.e.ads.InterstitialAdListener) -> setAdListener
+    void showAsPopupWindown() -> showAsPopupWindown
+    void closePopupWindow() -> closePopupWindow
+    void show() -> show
+    void loadAd() -> loadAd
+    void showAsPopupWindown(android.app.Activity) -> showAsPopupWindown
+    void show(android.app.Activity) -> show
+com.qq.e.v2.plugininterfaces.InterstitialViewFactory -> com.qq.e.v2.plugininterfaces.InterstitialViewFactory:
+    com.qq.e.v2.plugininterfaces.InterstitialAdViewInterface getInterstitialView(android.app.Activity,java.lang.String,java.lang.String) -> getInterstitialView
+com.qq.e.v2.plugininterfaces.ServiceDelegate -> com.qq.e.v2.plugininterfaces.ServiceDelegate:
+    void onCreate() -> onCreate
+    void onDestroy() -> onDestroy
+    void onLowMemory() -> onLowMemory
+    void onRebind(android.content.Intent) -> onRebind
+    void onTaskRemoved(android.content.Intent) -> onTaskRemoved
+    void onTrimMemory(int) -> onTrimMemory
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    boolean onUnbind(android.content.Intent) -> onUnbind
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+com.qq.e.v2.plugininterfaces.ServiceDelegateFactory -> com.qq.e.v2.plugininterfaces.ServiceDelegateFactory:
+    com.qq.e.v2.plugininterfaces.ServiceDelegate getAPKDownloadServiceDelegate(android.app.Service) -> getAPKDownloadServiceDelegate
+com.qq.e.v2.util.FileUtil -> com.qq.e.v2.util.FileUtil:
+    boolean copyTo(java.io.InputStream,java.io.File) -> copyTo
+    boolean renameTo(java.io.File,java.io.File) -> renameTo
+    void tryClose(java.io.InputStream) -> tryClose
+    void tryClose(java.io.OutputStream) -> tryClose
+com.qq.e.v2.util.GDTLogger -> com.qq.e.v2.util.GDTLogger:
+    boolean DEBUG_ENABLE -> DEBUG_ENABLE
+    void d(java.lang.String) -> d
+    void i(java.lang.String) -> i
+    void e(java.lang.String,java.lang.Throwable) -> e
+    void w(java.lang.String,java.lang.Throwable) -> w
+    void w(java.lang.String) -> w
+    void e(java.lang.String) -> e
+    void report(java.lang.String,java.lang.Throwable) -> report
+    void report(java.lang.String) -> report
+com.qq.e.v2.util.GDTST -> com.qq.e.v2.util.GDTST:
+    java.security.PublicKey a -> a
+    boolean b -> b
+    com.qq.e.v2.util.GDTST getToolInstance() -> getToolInstance
+    boolean verifyString(java.lang.String,java.lang.String) -> verifyString
+    boolean verifyFile(java.lang.String,java.io.File) -> verifyFile
+    boolean verify(java.lang.String,java.lang.String) -> verify
+    java.lang.String a(java.lang.String) -> a
+    java.security.PublicKey b(java.lang.String) -> b
+com.qq.e.v2.util.GDTST$1 -> com.qq.e.v2.util.GDTST$1:
+com.qq.e.v2.util.GDTST$Holder -> com.qq.e.v2.util.GDTST$Holder:
+    com.qq.e.v2.util.GDTST instance -> instance
+com.qq.e.v2.util.JsonUtil -> com.qq.e.v2.util.JsonUtil:
+    org.json.JSONArray bytesToJsonArray(byte[]) -> bytesToJsonArray
+    byte[] jsonArrayToBytes(org.json.JSONArray) -> jsonArrayToBytes
+    void jsonToMap(org.json.JSONObject,java.util.Map) -> jsonToMap
+    org.json.JSONObject mapToJson(java.util.Map) -> mapToJson
+com.qq.e.v2.util.Md5Util -> com.qq.e.v2.util.Md5Util:
+    java.lang.String[] a -> a
+    java.lang.String byteArrayToHexString(byte[]) -> byteArrayToHexString
+    byte[] hexStringtoByteArray(java.lang.String) -> hexStringtoByteArray
+    java.lang.String encode(java.lang.String) -> encode
+    java.lang.String encodeBase64String(java.lang.String) -> encodeBase64String
+    java.lang.String encode(java.io.File) -> encode
+com.qq.e.v2.util.StringUtil -> com.qq.e.v2.util.StringUtil:
+    boolean isEmpty(java.lang.String) -> isEmpty
+    java.lang.String readAll(java.io.File) -> readAll
+    void writeTo(java.lang.String,java.io.File) -> writeTo
+    int parseInteger(java.lang.String,int) -> parseInteger
+    java.lang.String join(java.lang.String,java.lang.String[]) -> join
 com.umeng.analytics.AnalyticsConfig -> com.umeng.analytics.AnalyticsConfig:
     java.lang.String a -> a
     java.lang.String b -> b
