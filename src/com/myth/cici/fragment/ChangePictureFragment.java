@@ -60,17 +60,17 @@ public class ChangePictureFragment extends Fragment
 
     private int radius = 0;
 
-    public ChangePictureFragment(Cipai cipai2, Writing writing2)
+    public ChangePictureFragment()
     {
-        setData(cipai2, writing2);
     }
 
-    public void setData(Cipai cipai, Writing writing)
+    public static ChangePictureFragment getInstance(Cipai cipai, Writing writing)
     {
-        this.cipai = cipai;
-        this.writing = writing;
+        ChangePictureFragment fileViewFragment = new ChangePictureFragment();
+        fileViewFragment.cipai = cipai;
+        fileViewFragment.writing = writing;
+        return fileViewFragment;
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {

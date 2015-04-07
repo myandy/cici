@@ -181,9 +181,9 @@ public class EditActivity extends BaseActivity
         addBottomCenterView(picture, lps);
 
         // 创建修改实例
-        editFragment = new EditFragment(cipai, writing);
-        changeBackgroundFrament = new ChangeBackgroundFragment(cipai, writing);
-        changePictureFragment = new ChangePictureFragment(cipai, writing);
+        editFragment = EditFragment.getInstance(cipai, writing);
+        changeBackgroundFrament = ChangeBackgroundFragment.getInstance(cipai, writing);
+        changePictureFragment = ChangePictureFragment.getInstance(cipai, writing);
 
 
         fragments.add(editFragment);

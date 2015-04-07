@@ -33,17 +33,17 @@ public class ChangeBackgroundFragment extends Fragment
 
     private int bg_index = 0;
 
-    public ChangeBackgroundFragment(Cipai cipai2, Writing writing2)
+    public ChangeBackgroundFragment()
     {
-        setData(cipai2, writing2);
     }
 
-    public void setData(Cipai cipai, Writing writing)
+    public static ChangeBackgroundFragment getInstance(Cipai cipai, Writing writing)
     {
-        this.cipai = cipai;
-        this.writing = writing;
+        ChangeBackgroundFragment fileViewFragment = new ChangeBackgroundFragment();
+        fileViewFragment.cipai = cipai;
+        fileViewFragment.writing = writing;
+        return fileViewFragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -83,9 +83,9 @@ public class ChangeBackgroundFragment extends Fragment
     private void initViews(View view)
     {
         HorizontalListView imgs = (HorizontalListView) view.findViewById(R.id.imgs);
-        
-        ImageAdapter adapter=new ImageAdapter(mContext);
-        imgs.setAdapter( adapter);
+
+        ImageAdapter adapter = new ImageAdapter(mContext);
+        imgs.setAdapter(adapter);
         imgs.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
 
@@ -96,7 +96,7 @@ public class ChangeBackgroundFragment extends Fragment
                 content.setBackgroundResource(MyApplication.bgimgList[position]);
             }
         });
-        
+
         content = (LinearLayout) view.findViewById(R.id.content);
         layoutItemContainer(content);
         TextView title = (TextView) view.findViewById(R.id.title);

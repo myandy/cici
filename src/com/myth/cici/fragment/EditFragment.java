@@ -47,15 +47,16 @@ public class EditFragment extends Fragment
 
     private Writing writing;
 
-    public EditFragment(Cipai cipai2, Writing writing2)
+    public EditFragment()
     {
-        setData(cipai2, writing2);
     }
 
-    public void setData(Cipai cipai, Writing writing)
+    public static EditFragment getInstance(Cipai cipai, Writing writing)
     {
-        this.cipai = cipai;
-        this.writing = writing;
+        EditFragment fileViewFragment = new EditFragment();
+        fileViewFragment.cipai = cipai;
+        fileViewFragment.writing = writing;
+        return fileViewFragment;
     }
 
     @Override
@@ -125,7 +126,7 @@ public class EditFragment extends Fragment
             for (int i = 0; i < sList.length; i++)
             {
                 HorizontalScrollView scrollView = new HorizontalScrollView(mContext);
-
+                scrollView.setHorizontalScrollBarEnabled(false);
                 View view1 = new PingzeLinearlayout(mContext, sList[i]);
                 scrollView.addView(view1);
                 view1.setPadding(0, 30, 0, 30);
