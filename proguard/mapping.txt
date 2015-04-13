@@ -8724,18 +8724,24 @@ com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
     void setTypeface(android.content.Context,int) -> a
     void setDefaultTypeface(android.content.Context,int) -> b
     int getDefaulTypeface(android.content.Context) -> a
+    boolean getDefaulListType(android.content.Context) -> b
+    void setDefaultListType(android.content.Context,boolean) -> a
+    boolean getCheckAble(android.content.Context) -> c
+    void setCheckAble(android.content.Context,boolean) -> b
 com.myth.cici.activity.AboutActivity -> com.myth.cici.activity.AboutActivity:
     void onCreate(android.os.Bundle) -> onCreate
 com.myth.cici.activity.CiActivity -> com.myth.cici.activity.CiActivity:
-    java.util.ArrayList ciList -> d
-    com.myth.cici.entity.Cipai cipai -> e
-    int num -> f
-    android.widget.TextView content -> g
-    boolean isIntroduce -> h
-    boolean isRandom -> i
-    com.myth.cici.entity.Ci ci -> j
-    android.widget.TextView title -> k
-    com.myth.cici.wiget.CircleEditView editView -> l
+    java.util.ArrayList ciList -> f
+    com.myth.cici.entity.Cipai cipai -> g
+    int num -> h
+    android.widget.TextView content -> i
+    boolean isIntroduce -> j
+    boolean isRandom -> k
+    com.myth.cici.entity.Ci ci -> l
+    android.widget.TextView title -> m
+    com.myth.cici.wiget.CircleEditView editView -> n
+    com.myth.cici.wiget.TouchEffectImageView prev -> d
+    com.myth.cici.wiget.TouchEffectImageView next -> e
     void onCreate(android.os.Bundle) -> onCreate
     void getRandomCi() -> d
     void setColor() -> e
@@ -8744,28 +8750,44 @@ com.myth.cici.activity.CiActivity -> com.myth.cici.activity.CiActivity:
     void refreshRandomView() -> h
     void initContentView() -> i
     android.app.Activity access$0(com.myth.cici.activity.CiActivity) -> a
-    com.myth.cici.entity.Ci access$1(com.myth.cici.activity.CiActivity) -> b
-    com.myth.cici.entity.Cipai access$2(com.myth.cici.activity.CiActivity) -> c
-    void access$3(com.myth.cici.activity.CiActivity) -> d
-    void access$4(com.myth.cici.activity.CiActivity) -> e
-    int access$5(com.myth.cici.activity.CiActivity) -> f
-    void access$6(com.myth.cici.activity.CiActivity,int) -> a
-    java.util.ArrayList access$7(com.myth.cici.activity.CiActivity) -> g
-    void access$8(com.myth.cici.activity.CiActivity,com.myth.cici.entity.Ci) -> a
-    void access$9(com.myth.cici.activity.CiActivity) -> h
+    android.widget.TextView access$1(com.myth.cici.activity.CiActivity) -> b
+    android.widget.TextView access$2(com.myth.cici.activity.CiActivity) -> c
+    com.myth.cici.entity.Ci access$3(com.myth.cici.activity.CiActivity) -> d
+    com.myth.cici.entity.Cipai access$4(com.myth.cici.activity.CiActivity) -> e
+    void access$5(com.myth.cici.activity.CiActivity) -> f
+    void access$6(com.myth.cici.activity.CiActivity) -> g
+    int access$7(com.myth.cici.activity.CiActivity) -> h
+    void access$8(com.myth.cici.activity.CiActivity,int) -> a
+    java.util.ArrayList access$9(com.myth.cici.activity.CiActivity) -> i
+    void access$10(com.myth.cici.activity.CiActivity,com.myth.cici.entity.Ci) -> a
+    void access$11(com.myth.cici.activity.CiActivity) -> j
 com.myth.cici.activity.CiActivity$1 -> com.myth.cici.activity.a:
     com.myth.cici.activity.CiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CiActivity$2 -> com.myth.cici.activity.b:
+    com.myth.cici.activity.CiActivity access$0(com.myth.cici.activity.CiActivity$1) -> a
+com.myth.cici.activity.CiActivity$1$1 -> com.myth.cici.activity.b:
+    com.myth.cici.activity.CiActivity$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.CiActivity$2 -> com.myth.cici.activity.c:
     com.myth.cici.activity.CiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CiActivity$3 -> com.myth.cici.activity.c:
+    com.myth.cici.activity.CiActivity access$0(com.myth.cici.activity.CiActivity$2) -> a
+com.myth.cici.activity.CiActivity$2$1 -> com.myth.cici.activity.d:
+    com.myth.cici.activity.CiActivity$2 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.CiActivity$3 -> com.myth.cici.activity.e:
     com.myth.cici.activity.CiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CiActivity$4 -> com.myth.cici.activity.d:
+com.myth.cici.activity.CiActivity$4 -> com.myth.cici.activity.f:
     com.myth.cici.activity.CiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CiActivity$5 -> com.myth.cici.activity.e:
+com.myth.cici.activity.CiActivity$5 -> com.myth.cici.activity.g:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$6 -> com.myth.cici.activity.h:
+    com.myth.cici.activity.CiActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.CiActivity$7 -> com.myth.cici.activity.i:
     com.myth.cici.activity.CiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.myth.cici.activity.CipaiActivity -> com.myth.cici.activity.CipaiActivity:
@@ -8782,7 +8804,7 @@ com.myth.cici.activity.CipaiActivity -> com.myth.cici.activity.CipaiActivity:
     android.app.Activity access$2(com.myth.cici.activity.CipaiActivity) -> c
     com.myth.cici.entity.Cipai access$3(com.myth.cici.activity.CipaiActivity) -> d
     android.support.v4.view.ViewPager access$4(com.myth.cici.activity.CipaiActivity) -> e
-com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.f:
+com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.j:
     com.myth.cici.activity.CipaiActivity this$0 -> a
     java.lang.Object instantiateItem(android.view.ViewGroup,int) -> instantiateItem
     void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> destroyItem
@@ -8790,40 +8812,39 @@ com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.f:
     int getItemPosition(java.lang.Object) -> getItemPosition
     int getCount() -> getCount
     com.myth.cici.activity.CipaiActivity access$0(com.myth.cici.activity.CipaiActivity$1) -> a
-com.myth.cici.activity.CipaiActivity$1$1 -> com.myth.cici.activity.g:
+com.myth.cici.activity.CipaiActivity$1$1 -> com.myth.cici.activity.k:
     com.myth.cici.activity.CipaiActivity$1 this$1 -> a
     int val$position -> b
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CipaiActivity$2 -> com.myth.cici.activity.h:
+com.myth.cici.activity.CipaiActivity$2 -> com.myth.cici.activity.l:
     com.myth.cici.activity.CipaiActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CipaiActivity$3 -> com.myth.cici.activity.i:
+com.myth.cici.activity.CipaiActivity$3 -> com.myth.cici.activity.m:
     com.myth.cici.activity.CipaiActivity this$0 -> a
     void onPageSelected(int) -> onPageSelected
     void onPageScrolled(int,float,int) -> onPageScrolled
     void onPageScrollStateChanged(int) -> onPageScrollStateChanged
 com.myth.cici.activity.CipaiListActivity -> com.myth.cici.activity.CipaiListActivity:
-    android.support.v7.widget.RecyclerView listview -> d
-    java.util.ArrayList ciList -> e
-    boolean isDefault -> f
-    com.myth.cici.adapter.CipaiListAdapter adapter -> g
+    android.support.v7.widget.RecyclerView listview -> f
+    java.util.ArrayList ciList -> g
+    boolean isDefault -> h
+    com.myth.cici.adapter.CipaiListAdapter adapter -> i
+    android.widget.TextView rectLeft -> d
+    android.widget.TextView rectRight -> e
     void onCreate(android.os.Bundle) -> onCreate
-    void onStart() -> onStart
     void initView() -> d
     void addView() -> e
+    void setBackground() -> f
     boolean access$0(com.myth.cici.activity.CipaiListActivity) -> a
     void access$1(com.myth.cici.activity.CipaiListActivity,boolean) -> a
-    void access$2(com.myth.cici.activity.CipaiListActivity,java.util.ArrayList) -> a
-    void access$3(com.myth.cici.activity.CipaiListActivity) -> b
-com.myth.cici.activity.CipaiListActivity$1 -> com.myth.cici.activity.j:
+    android.app.Activity access$2(com.myth.cici.activity.CipaiListActivity) -> b
+    void access$3(com.myth.cici.activity.CipaiListActivity) -> c
+    void access$4(com.myth.cici.activity.CipaiListActivity) -> d
+com.myth.cici.activity.CipaiListActivity$1 -> com.myth.cici.activity.n:
     com.myth.cici.activity.CipaiListActivity this$0 -> a
-    android.widget.TextView val$rectLeft -> b
-    android.widget.TextView val$rectRight -> c
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CipaiListActivity$2 -> com.myth.cici.activity.k:
+com.myth.cici.activity.CipaiListActivity$2 -> com.myth.cici.activity.o:
     com.myth.cici.activity.CipaiListActivity this$0 -> a
-    android.widget.TextView val$rectLeft -> b
-    android.widget.TextView val$rectRight -> c
     void onClick(android.view.View) -> onClick
 com.myth.cici.activity.CipaiSearchActivity -> com.myth.cici.activity.CipaiSearchActivity:
     android.view.View clear -> e
@@ -8840,16 +8861,16 @@ com.myth.cici.activity.CipaiSearchActivity -> com.myth.cici.activity.CipaiSearch
     java.util.ArrayList access$1(com.myth.cici.activity.CipaiSearchActivity) -> b
     android.view.View access$2(com.myth.cici.activity.CipaiSearchActivity) -> c
     void access$3(com.myth.cici.activity.CipaiSearchActivity) -> d
-com.myth.cici.activity.CipaiSearchActivity$1 -> com.myth.cici.activity.l:
+com.myth.cici.activity.CipaiSearchActivity$1 -> com.myth.cici.activity.p:
     com.myth.cici.activity.CipaiSearchActivity this$0 -> a
     void onItemClick(int) -> a
-com.myth.cici.activity.CipaiSearchActivity$2 -> com.myth.cici.activity.m:
+com.myth.cici.activity.CipaiSearchActivity$2 -> com.myth.cici.activity.q:
     com.myth.cici.activity.CipaiSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CipaiSearchActivity$3 -> com.myth.cici.activity.n:
+com.myth.cici.activity.CipaiSearchActivity$3 -> com.myth.cici.activity.r:
     com.myth.cici.activity.CipaiSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.CipaiSearchActivity$4 -> com.myth.cici.activity.o:
+com.myth.cici.activity.CipaiSearchActivity$4 -> com.myth.cici.activity.s:
     com.myth.cici.activity.CipaiSearchActivity this$0 -> a
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
@@ -8873,31 +8894,31 @@ com.myth.cici.activity.EditActivity -> com.myth.cici.activity.EditActivity:
     void access$1(com.myth.cici.activity.EditActivity) -> b
     com.myth.cici.entity.Writing access$2(com.myth.cici.activity.EditActivity) -> c
     android.app.Activity access$3(com.myth.cici.activity.EditActivity) -> d
-com.myth.cici.activity.EditActivity$1 -> com.myth.cici.activity.p:
+com.myth.cici.activity.EditActivity$1 -> com.myth.cici.activity.t:
     com.myth.cici.activity.EditActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.EditActivity$2 -> com.myth.cici.activity.q:
+com.myth.cici.activity.EditActivity$2 -> com.myth.cici.activity.u:
     com.myth.cici.activity.EditActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.EditActivity$3 -> com.myth.cici.activity.r:
-    com.myth.cici.activity.EditActivity this$0 -> a
-    android.widget.ImageView val$edit -> b
-    android.widget.ImageView val$background -> c
-    android.widget.ImageView val$picture -> d
-    void onClick(android.view.View) -> onClick
-com.myth.cici.activity.EditActivity$4 -> com.myth.cici.activity.s:
+com.myth.cici.activity.EditActivity$3 -> com.myth.cici.activity.v:
     com.myth.cici.activity.EditActivity this$0 -> a
     android.widget.ImageView val$edit -> b
     android.widget.ImageView val$background -> c
     android.widget.ImageView val$picture -> d
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.EditActivity$5 -> com.myth.cici.activity.t:
+com.myth.cici.activity.EditActivity$4 -> com.myth.cici.activity.w:
     com.myth.cici.activity.EditActivity this$0 -> a
     android.widget.ImageView val$edit -> b
     android.widget.ImageView val$background -> c
     android.widget.ImageView val$picture -> d
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.EditActivity$6 -> com.myth.cici.activity.u:
+com.myth.cici.activity.EditActivity$5 -> com.myth.cici.activity.x:
+    com.myth.cici.activity.EditActivity this$0 -> a
+    android.widget.ImageView val$edit -> b
+    android.widget.ImageView val$background -> c
+    android.widget.ImageView val$picture -> d
+    void onClick(android.view.View) -> onClick
+com.myth.cici.activity.EditActivity$6 -> com.myth.cici.activity.y:
     com.myth.cici.activity.EditActivity this$0 -> a
     void onConfirm() -> a
     void onCancel() -> b
@@ -8916,21 +8937,21 @@ com.myth.cici.activity.MainActivity -> com.myth.cici.activity.MainActivity:
     void access$1(com.myth.cici.activity.MainActivity,int) -> a
     android.widget.RelativeLayout access$2(com.myth.cici.activity.MainActivity) -> b
     android.support.v4.view.ViewPager access$3(com.myth.cici.activity.MainActivity) -> c
-com.myth.cici.activity.MainActivity$1 -> com.myth.cici.activity.v:
+com.myth.cici.activity.MainActivity$1 -> com.myth.cici.activity.z:
     com.myth.cici.activity.MainActivity this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.myth.cici.activity.MainActivity$2 -> com.myth.cici.activity.w:
+com.myth.cici.activity.MainActivity$2 -> com.myth.cici.activity.aa:
     com.myth.cici.activity.MainActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.MainActivity$3 -> com.myth.cici.activity.x:
+com.myth.cici.activity.MainActivity$3 -> com.myth.cici.activity.ab:
     com.myth.cici.activity.MainActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.MainActivity$MyOnPageChangeListener -> com.myth.cici.activity.y:
+com.myth.cici.activity.MainActivity$MyOnPageChangeListener -> com.myth.cici.activity.ac:
     com.myth.cici.activity.MainActivity this$0 -> a
     void onPageSelected(int) -> onPageSelected
     void onPageScrolled(int,float,int) -> onPageScrolled
     void onPageScrollStateChanged(int) -> onPageScrollStateChanged
-com.myth.cici.activity.MainActivity$MyPagerAdapter -> com.myth.cici.activity.z:
+com.myth.cici.activity.MainActivity$MyPagerAdapter -> com.myth.cici.activity.ad:
     java.util.ArrayList datas -> b
     com.myth.cici.activity.MainActivity this$0 -> a
     int getCount() -> getCount
@@ -8945,24 +8966,33 @@ com.myth.cici.activity.SettingActivity -> com.myth.cici.activity.SettingActivity
     void initView() -> d
     void refreshYun() -> e
     void refreshTypeface() -> f
+    void refreshCheck() -> g
     android.app.Activity access$0(com.myth.cici.activity.SettingActivity) -> a
     void access$1(com.myth.cici.activity.SettingActivity) -> b
     void access$2(com.myth.cici.activity.SettingActivity) -> c
-com.myth.cici.activity.SettingActivity$1 -> com.myth.cici.activity.aa:
+    void access$3(com.myth.cici.activity.SettingActivity) -> d
+com.myth.cici.activity.SettingActivity$1 -> com.myth.cici.activity.ae:
     com.myth.cici.activity.SettingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
     com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$1) -> a
-com.myth.cici.activity.SettingActivity$1$1 -> com.myth.cici.activity.ab:
+com.myth.cici.activity.SettingActivity$1$1 -> com.myth.cici.activity.af:
     com.myth.cici.activity.SettingActivity$1 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.myth.cici.activity.SettingActivity$2 -> com.myth.cici.activity.ac:
+com.myth.cici.activity.SettingActivity$2 -> com.myth.cici.activity.ag:
     com.myth.cici.activity.SettingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
     com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$2) -> a
-com.myth.cici.activity.SettingActivity$2$1 -> com.myth.cici.activity.ad:
+com.myth.cici.activity.SettingActivity$2$1 -> com.myth.cici.activity.ah:
     com.myth.cici.activity.SettingActivity$2 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.myth.cici.activity.SettingActivity$3 -> com.myth.cici.activity.ae:
+com.myth.cici.activity.SettingActivity$3 -> com.myth.cici.activity.ai:
+    com.myth.cici.activity.SettingActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.myth.cici.activity.SettingActivity access$0(com.myth.cici.activity.SettingActivity$3) -> a
+com.myth.cici.activity.SettingActivity$3$1 -> com.myth.cici.activity.aj:
+    com.myth.cici.activity.SettingActivity$3 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.activity.SettingActivity$4 -> com.myth.cici.activity.ak:
     com.myth.cici.activity.SettingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.myth.cici.activity.ShareActivity -> com.myth.cici.activity.ShareActivity:
@@ -8977,13 +9007,13 @@ com.myth.cici.activity.ShareActivity -> com.myth.cici.activity.ShareActivity:
     java.lang.String saveImage() -> e
     android.app.Activity access$0(com.myth.cici.activity.ShareActivity) -> a
     java.lang.String access$1(com.myth.cici.activity.ShareActivity) -> b
-com.myth.cici.activity.ShareActivity$1 -> com.myth.cici.activity.af:
+com.myth.cici.activity.ShareActivity$1 -> com.myth.cici.activity.al:
     com.myth.cici.activity.ShareActivity this$0 -> a
     android.widget.TextView val$title -> b
     android.widget.TextView val$text -> c
     void onClick(android.view.View) -> onClick
     com.myth.cici.activity.ShareActivity access$0(com.myth.cici.activity.ShareActivity$1) -> a
-com.myth.cici.activity.ShareActivity$1$1 -> com.myth.cici.activity.ag:
+com.myth.cici.activity.ShareActivity$1$1 -> com.myth.cici.activity.am:
     com.myth.cici.activity.ShareActivity$1 this$1 -> a
     android.widget.TextView val$title -> b
     android.widget.TextView val$text -> c
@@ -9004,15 +9034,15 @@ com.myth.cici.activity.ShareEditActivity -> com.myth.cici.activity.ShareEditActi
     com.myth.cici.entity.Writing access$1(com.myth.cici.activity.ShareEditActivity) -> b
     com.myth.cici.entity.Ci access$2(com.myth.cici.activity.ShareEditActivity) -> c
     android.app.Activity access$3(com.myth.cici.activity.ShareEditActivity) -> d
-com.myth.cici.activity.ShareEditActivity$1 -> com.myth.cici.activity.ah:
+com.myth.cici.activity.ShareEditActivity$1 -> com.myth.cici.activity.an:
     com.myth.cici.activity.ShareEditActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.ShareEditActivity$2 -> com.myth.cici.activity.ai:
+com.myth.cici.activity.ShareEditActivity$2 -> com.myth.cici.activity.ao:
     com.myth.cici.activity.ShareEditActivity this$0 -> a
     android.widget.ImageView val$background -> b
     android.widget.ImageView val$picture -> c
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.ShareEditActivity$3 -> com.myth.cici.activity.aj:
+com.myth.cici.activity.ShareEditActivity$3 -> com.myth.cici.activity.ap:
     com.myth.cici.activity.ShareEditActivity this$0 -> a
     android.widget.ImageView val$background -> b
     android.widget.ImageView val$picture -> c
@@ -9029,18 +9059,18 @@ com.myth.cici.activity.YunSearchActivity -> com.myth.cici.activity.YunSearchActi
     com.myth.cici.entity.Yun access$2(com.myth.cici.activity.YunSearchActivity) -> b
     android.widget.TextView access$3(com.myth.cici.activity.YunSearchActivity) -> c
     android.widget.TextView access$4(com.myth.cici.activity.YunSearchActivity) -> d
-com.myth.cici.activity.YunSearchActivity$1 -> com.myth.cici.activity.ak:
+com.myth.cici.activity.YunSearchActivity$1 -> com.myth.cici.activity.aq:
     com.myth.cici.activity.YunSearchActivity this$0 -> a
     android.widget.EditText val$search -> b
     void run() -> run
-com.myth.cici.activity.YunSearchActivity$2 -> com.myth.cici.activity.al:
+com.myth.cici.activity.YunSearchActivity$2 -> com.myth.cici.activity.ar:
     com.myth.cici.activity.YunSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.YunSearchActivity$3 -> com.myth.cici.activity.am:
+com.myth.cici.activity.YunSearchActivity$3 -> com.myth.cici.activity.as:
     com.myth.cici.activity.YunSearchActivity this$0 -> a
     android.widget.EditText val$search -> b
     void onClick(android.view.View) -> onClick
-com.myth.cici.activity.YunSearchActivity$4 -> com.myth.cici.activity.an:
+com.myth.cici.activity.YunSearchActivity$4 -> com.myth.cici.activity.at:
     com.myth.cici.activity.YunSearchActivity this$0 -> a
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
@@ -9252,7 +9282,7 @@ com.myth.cici.fragment.ChangeBackgroundFragment -> com.myth.cici.d.a:
     com.myth.cici.entity.Cipai cipai -> d
     com.myth.cici.entity.Writing writing -> e
     int bg_index -> f
-    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    com.myth.cici.fragment.ChangeBackgroundFragment getInstance(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void onResume() -> onResume
     void onStop() -> onStop
@@ -9275,7 +9305,7 @@ com.myth.cici.fragment.ChangePictureFragment -> com.myth.cici.d.c:
     com.myth.cici.entity.Writing writing -> g
     int bright -> h
     int radius -> i
-    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    com.myth.cici.fragment.ChangePictureFragment getInstance(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void onResume() -> onResume
     void onStop() -> onStop
@@ -9311,15 +9341,15 @@ com.myth.cici.fragment.EditFragment -> com.myth.cici.d.g:
     android.view.View root -> e
     com.myth.cici.entity.Cipai cipai -> f
     com.myth.cici.entity.Writing writing -> g
-    void setData(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
+    com.myth.cici.fragment.EditFragment getInstance(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void onResume() -> onResume
     void onStop() -> onStop
     void save() -> a
     void initViews(android.view.View) -> a
     void hideSoftInputFromWindow() -> b
-    java.lang.String[] access$0(com.myth.cici.fragment.EditFragment) -> a
-    android.content.Context access$1(com.myth.cici.fragment.EditFragment) -> b
+    android.content.Context access$0(com.myth.cici.fragment.EditFragment) -> a
+    java.lang.String[] access$1(com.myth.cici.fragment.EditFragment) -> b
     com.myth.cici.entity.Cipai access$2(com.myth.cici.fragment.EditFragment) -> c
     void access$3(com.myth.cici.fragment.EditFragment) -> d
 com.myth.cici.fragment.EditFragment$1 -> com.myth.cici.d.h:
@@ -9510,8 +9540,10 @@ com.myth.cici.wiget.SwitchPoint -> com.myth.cici.wiget.SwitchPoint:
     void addSwitchBtn(int,int,int,int) -> a
     void setSelectedSwitchBtn(int) -> a
 com.myth.cici.wiget.TouchEffectImageView -> com.myth.cici.wiget.TouchEffectImageView:
-    boolean mDoesntSetAlpha -> a
-    void drawableStateChanged() -> drawableStateChanged
+    boolean clickAble -> a
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void setClickDisable() -> a
+    void setClickEnable() -> b
 com.myth.cici.wiget.VScrollView -> com.myth.cici.wiget.VScrollView:
     android.content.Context mContext -> a
     android.view.View mView -> c

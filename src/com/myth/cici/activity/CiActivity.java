@@ -3,6 +3,8 @@ package com.myth.cici.activity;
 import java.util.ArrayList;
 import java.util.Random;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.MyApplication;
@@ -25,6 +28,7 @@ import com.myth.cici.entity.Ci;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
 import com.myth.cici.util.DisplayUtil;
+import com.myth.cici.util.OthersUtils;
 import com.myth.cici.wiget.CircleEditView;
 import com.myth.cici.wiget.TouchEffectImageView;
 
@@ -48,6 +52,10 @@ public class CiActivity extends BaseActivity
     private TextView title;
 
     private CircleEditView editView;
+
+    TouchEffectImageView prev;
+
+    TouchEffectImageView next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -116,7 +124,55 @@ public class CiActivity extends BaseActivity
 
         content = (TextView) findViewById(R.id.content);
         content.setTypeface(MyApplication.typeface);
+        content.setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                new AlertDialog.Builder(mActivity).setItems(new String[] {"复制文本"},
+                        new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+
+                                if (which == 0)
+                                {
+                                    OthersUtils.copy(title.getText() + "\n" + content.getText(), mActivity);
+                                    Toast.makeText(mActivity, R.string.copy_text_done, Toast.LENGTH_SHORT).show();
+                                }
+                                dialog.dismiss();
+                            }
+                        }).show();
+
+            }
+        });
         ((TextView) findViewById(R.id.note)).setTypeface(MyApplication.typeface);
+
+        findViewById(R.id.note).setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                new AlertDialog.Builder(mActivity).setItems(new String[] {"复制文本"},
+                        new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+
+                                if (which == 0)
+                                {
+                                    OthersUtils.copy(title.getText() + "\n" + content.getText(), mActivity);
+                                    Toast.makeText(mActivity, R.string.copy_text_done, Toast.LENGTH_SHORT).show();
+                                }
+                                dialog.dismiss();
+                            }
+                        }).show();
+
+            }
+        });
+
         ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.typeface);
         if (isIntroduce)
         {
@@ -149,9 +205,9 @@ public class CiActivity extends BaseActivity
             }
         });
 
-        initContentView();
-
         initBottomRightView();
+
+        initContentView();
 
     }
 
@@ -182,7 +238,7 @@ public class CiActivity extends BaseActivity
         }
         else
         {
-            ImageView prev = new TouchEffectImageView(mActivity, null);
+            prev = new TouchEffectImageView(mActivity, null);
             prev.setImageResource(R.drawable.prev);
             prev.setScaleType(ScaleType.FIT_XY);
             addBottomRightView(prev,
@@ -202,7 +258,7 @@ public class CiActivity extends BaseActivity
                 }
             });
 
-            ImageView next = new TouchEffectImageView(mActivity, null);
+            next = new TouchEffectImageView(mActivity, null);
             next.setImageResource(R.drawable.next);
             next.setScaleType(ScaleType.FIT_XY);
             addBottomRightView(next,
@@ -247,7 +303,25 @@ public class CiActivity extends BaseActivity
         }
         else
         {
-
+            if (!isRandom)
+            {
+                if (num < ciList.size() - 1)
+                {
+                    next.setClickEnable();
+                }
+                else
+                {
+                    next.setClickDisable();
+                }
+                if (num > 1)
+                {
+                    prev.setClickEnable();
+                }
+                else
+                {
+                    prev.setClickDisable();
+                }
+            }
             String note = ci.getNote();
             if (note == null)
             {

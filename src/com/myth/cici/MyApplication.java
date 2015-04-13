@@ -82,4 +82,28 @@ public class MyApplication extends Application
         return PreferenceManager.getDefaultSharedPreferences(context).getInt("typeface", 0);
     }
 
+    public static boolean getDefaulListType(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("listType", true);
+    }
+
+    public static void setDefaultListType(Context context, boolean bool)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putBoolean("listType", bool);
+        edit.commit();
+    }
+
+    public static boolean getCheckAble(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("check", true);
+    }
+
+    public static void setCheckAble(Context context, boolean bool)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putBoolean("check", bool);
+        edit.commit();
+    }
+
 }

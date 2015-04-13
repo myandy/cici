@@ -1,30 +1,17 @@
 package com.myth.cici.wiget;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 
-/**
- * User: youxueliu Date: 2014/6/23 Time: 14:40 有点击效果的ImageView
- */
 public class TouchEffectImageView extends ImageView
 {
 
-    public final static int TOUCH_ALPHA = 100; // 点击的时候设置透明度
-
-    public final static int UP_ALPHA = 255; // 弹起的时候恢复透明度
-
-    private boolean mDoesntSetAlpha; // 不设置透明度
-
-    /**
-     * 是否需要设置点击时候按钮背景色变化
-     * 
-     * @param setAlphaState
-     */
-    public void setDontShowAlphaState(boolean setAlphaState)
-    {
-        mDoesntSetAlpha = setAlphaState;
-    }
+    private boolean clickAble = true;
 
     public TouchEffectImageView(Context context, AttributeSet attributeSet)
     {
@@ -32,15 +19,53 @@ public class TouchEffectImageView extends ImageView
     }
 
     @Override
-    protected void drawableStateChanged()
+    public boolean onTouchEvent(MotionEvent event)
     {
-        super.drawableStateChanged();
-        if (!mDoesntSetAlpha)
+
+        if (clickAble)
         {
-            if (isPressed())
-                setAlpha(TOUCH_ALPHA);
-            else
-                setAlpha(UP_ALPHA);
+            switch (event.getAction())
+            {
+                case MotionEvent.ACTION_DOWN:
+                    Drawable drawable = getDrawable();
+                    if (drawable != null)
+                    {
+                        drawable.mutate().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+                    }
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                case MotionEvent.ACTION_UP:
+                    Drawable drawableUp = getDrawable();
+                    if (drawableUp != null)
+                    {
+                        drawableUp.mutate().clearColorFilter();
+                    }
+                    break;
+            }
+        }
+
+        return super.onTouchEvent(event);
+    }
+
+    public void setClickDisable()
+    {
+        clickAble = false;
+        Drawable drawable = getDrawable();
+        if (drawable != null)
+        {
+            drawable.mutate().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+        }
+    }
+
+    public void setClickEnable()
+    {
+        clickAble = true;
+        Drawable drawableUp = getDrawable();
+        if (drawableUp != null)
+        {
+            drawableUp.mutate().clearColorFilter();
         }
     }
 }

@@ -140,7 +140,10 @@ public class EditFragment extends Fragment
                     {
                         if (!hasFocus)
                         {
-                            CheckUtils.checkEditText(edittext, sList[index]);
+                            if (MyApplication.getCheckAble(mContext))
+                            {
+                                CheckUtils.checkEditText(edittext, sList[index]);
+                            }
                         }
                         else
                         {

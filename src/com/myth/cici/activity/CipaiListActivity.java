@@ -28,26 +28,17 @@ public class CipaiListActivity extends BaseActivity
 
     private CipaiListAdapter adapter;
 
+    TextView rectLeft;
+
+    TextView rectRight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_cipai_list);
-        ciList = CipaiDatabaseHelper.getAllShowCipai();
-
-        if (ciList == null || ciList.size() == 0)
-        {
-            finish();
-        }
+        isDefault = MyApplication.getDefaulListType(mActivity);
         initView();
-    }
-
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-
     }
 
     private void initView()
@@ -61,10 +52,13 @@ public class CipaiListActivity extends BaseActivity
 
         adapter = new CipaiListAdapter(mActivity);
         listview.setAdapter(adapter);
-        final TextView rectLeft = (TextView) findViewById(R.id.rect_left);
+        rectLeft = (TextView) findViewById(R.id.rect_left);
         rectLeft.setTypeface(MyApplication.typeface);
-        final TextView rectRight = (TextView) findViewById(R.id.rect_right);
+        rectRight = (TextView) findViewById(R.id.rect_right);
         rectRight.setTypeface(MyApplication.typeface);
+
+        setBackground();
+
         rectLeft.setOnClickListener(new OnClickListener()
         {
 
@@ -74,9 +68,8 @@ public class CipaiListActivity extends BaseActivity
                 if (!isDefault)
                 {
                     isDefault = true;
-                    rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
-                    rectRight.setBackgroundResource(R.drawable.rect_right);
-                    ciList = CipaiDatabaseHelper.getAllShowCipai();
+                    MyApplication.setDefaultListType(mActivity, true);
+                    setBackground();
                     addView();
                 }
             }
@@ -90,9 +83,8 @@ public class CipaiListActivity extends BaseActivity
                 if (isDefault)
                 {
                     isDefault = false;
-                    rectLeft.setBackgroundResource(R.drawable.rect_left);
-                    rectRight.setBackgroundResource(R.drawable.rect_right_selected);
-                    ciList = CipaiDatabaseHelper.getAllCipaiByWordCount();
+                    MyApplication.setDefaultListType(mActivity, false);
+                    setBackground();
                     addView();
                 }
             }
@@ -110,8 +102,28 @@ public class CipaiListActivity extends BaseActivity
 
     private void addView()
     {
+        if (ciList == null || ciList.size() == 0)
+        {
+            finish();
+        }
         adapter.setList(ciList);
         adapter.notifyDataSetChanged();
+    }
+
+    private void setBackground()
+    {
+        if (isDefault)
+        {
+            rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
+            rectRight.setBackgroundResource(R.drawable.rect_right);
+            ciList = CipaiDatabaseHelper.getAllShowCipai();
+        }
+        else
+        {
+            rectLeft.setBackgroundResource(R.drawable.rect_left);
+            rectRight.setBackgroundResource(R.drawable.rect_right_selected);
+            ciList = CipaiDatabaseHelper.getAllCipaiByWordCount();
+        }
     }
 
 }

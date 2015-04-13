@@ -342,10 +342,6 @@ com.myth.cici.wiget.StoneView:
     55:59:public StoneView(android.content.Context,int,int)
 com.myth.cici.wiget.SwitchPoint:
     33:35:public void addSwitchBtn(int)
-com.myth.cici.wiget.TouchEffectImageView:
-    public static final int TOUCH_ALPHA
-    public static final int UP_ALPHA
-    26:27:public void setDontShowAlphaState(boolean)
 com.myth.cici.wiget.VScrollView:
     private static final int MAX_SCROLL_HEIGHT
     private static final float SCROLL_RATIO

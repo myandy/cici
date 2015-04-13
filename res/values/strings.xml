@@ -19,6 +19,9 @@
     <string name="setting_yun">韵典</string>
     <string name="setting_typeface">简繁切换</string>
     <string name="setting_about">关于词Ci</string>
+    <string name="setting_check">检查平仄</string>
+    <string name="check_true">自动检查</string>
+    <string name="check_false">不自动检查</string>
     <string name="setting_ad">支持开发者（应用推荐）</string>
     
     <string name="notice_title">词Ci用户交流请加QQ群：439747099</string>
