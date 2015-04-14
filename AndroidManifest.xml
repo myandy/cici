@@ -26,8 +26,17 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
     <application
         android:name="com.myth.cici.MyApplication"
         android:icon="@drawable/appicon"
@@ -69,7 +78,21 @@
         </meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="xiaomi" />
+            android:value="wandoujia" />
+
+        <activity
+            android:name="com.wandoujia.ads.sdk.activities.AppDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.wandoujia.ads.sdk.activities.AppWallActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.wandoujia.ads.sdk.activities.InterstitialActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.wandoujia.ads.sdk.download.AppDownloadService"
+            android:process=":app_download" />
     </application>
 
 </manifest>
