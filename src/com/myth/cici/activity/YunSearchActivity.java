@@ -1,5 +1,6 @@
 package com.myth.cici.activity;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,11 +24,15 @@ import com.myth.cici.util.OthersUtils;
 public class YunSearchActivity extends BaseActivity
 {
 
-    private Yun yun;
+    private List<Yun> yuns;
 
     private TextView yunTitle;
 
     private TextView yunzi;
+
+    private TextView yunTitle2;
+
+    private TextView yunzi2;
 
     private View clear;
 
@@ -74,7 +79,12 @@ public class YunSearchActivity extends BaseActivity
         });
         yunTitle = (TextView) findViewById(R.id.yun_title);
         yunzi = (TextView) findViewById(R.id.yun_zi);
+
+        yunTitle2 = (TextView) findViewById(R.id.yun_title2);
+        yunzi2 = (TextView) findViewById(R.id.yun_zi2);
+
         yunzi.setVisibility(View.GONE);
+        yunzi2.setVisibility(View.GONE);
         clear = findViewById(R.id.clear);
         clear.setOnClickListener(new OnClickListener()
         {
@@ -115,12 +125,32 @@ public class YunSearchActivity extends BaseActivity
                 String str = OthersUtils.getFirstChinese(s.toString());
                 if (!TextUtils.isEmpty(str))
                 {
-                    yun = YunDatabaseHelper.getSameYun(str);
-                    if (yun != null)
+                    yuns = YunDatabaseHelper.getSameYun(str);
+                    if (yuns != null && yuns.size() > 0)
                     {
-                        yunTitle.setText(str + ": " + yun.getSection_desc() + "  " + yun.getTone_name());
-                        yunzi.setText(yun.getGlys());
+                        yunTitle.setVisibility(View.VISIBLE);
                         yunzi.setVisibility(View.VISIBLE);
+                        yunTitle.setText(str + ": " + yuns.get(0).getSection_desc() + "  " + yuns.get(0).getTone_name());
+                        yunzi.setText(yuns.get(0).getGlys());
+                    }
+                    else
+                    {
+                        yunTitle.setVisibility(View.GONE);
+                        yunzi.setVisibility(View.GONE);
+                    }
+
+                    if (yuns != null && yuns.size() > 1)
+                    {
+                        yunTitle2.setVisibility(View.VISIBLE);
+                        yunzi2.setVisibility(View.VISIBLE);
+                        yunTitle2.setText(str + ": " + yuns.get(1).getSection_desc() + "  "
+                                + yuns.get(1).getTone_name());
+                        yunzi2.setText(yuns.get(1).getGlys());
+                    }
+                    else
+                    {
+                        yunTitle2.setVisibility(View.GONE);
+                        yunzi2.setVisibility(View.GONE);
                     }
                 }
             }

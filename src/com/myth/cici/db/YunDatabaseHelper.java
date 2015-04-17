@@ -1,6 +1,7 @@
 package com.myth.cici.db;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences.Editor;
@@ -34,15 +35,22 @@ public class YunDatabaseHelper
      */
     public static int getWordStone(String word)
     {
+        List<Integer> tones = new ArrayList<Integer>();
         for (int i = 0; i < yunList.size(); i++)
         {
             if (yunList.get(i).getGlys().contains(word))
             {
-                return yunList.get(i).getTone();
+                tones.add(yunList.get(i).getTone());
             }
         }
-
-        return 30;
+        if (tones.size() == 1)
+        {
+            return tones.get(0);
+        }
+        else
+        {
+            return 30;
+        }
     }
 
     /**
@@ -52,16 +60,17 @@ public class YunDatabaseHelper
      * @return
      * @see [类、类#方法、类#成员]
      */
-    public static Yun getSameYun(String word)
+    public static List<Yun> getSameYun(String word)
     {
+        List<Yun> yuns = new ArrayList<Yun>();
         for (int i = 0; i < yunList.size(); i++)
         {
             if (yunList.get(i).getGlys().contains(word))
             {
-                return yunList.get(i);
+                yuns.add(yunList.get(i));
             }
         }
-        return null;
+        return yuns;
     }
 
     private static ArrayList<Yun> getYunListFromCursor(Cursor cursor)
