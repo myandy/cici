@@ -35,6 +35,7 @@ import com.myth.cici.R;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.Fastblur;
+import com.myth.cici.util.ImageUtils;
 import com.myth.cici.util.ResizeUtil;
 
 public class ChangePictureFragment extends Fragment
@@ -126,8 +127,8 @@ public class ChangePictureFragment extends Fragment
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 String picturePath = cursor.getString(columnIndex);
                 cursor.close();
-
-                Bitmap bmp = BitmapFactory.decodeFile(picturePath);
+                
+                Bitmap bmp = ImageUtils.getimage(picturePath);
                 srcBitmap = bmp;
                 destBitmap = bmp;
             }

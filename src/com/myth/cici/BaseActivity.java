@@ -6,13 +6,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -40,12 +38,12 @@ public class BaseActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
-        if (VERSION.SDK_INT >= VERSION_CODES.KITKAT)
+        if (VERSION.SDK_INT >= 19)
         {
             // 透明状态栏
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(0x4000000);
             // 透明导航栏
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            getWindow().addFlags(0x8000000);
 
             if (statusBarHeight == 0)
             {
@@ -145,7 +143,7 @@ public class BaseActivity extends Activity
     public void setContentView(int layoutId)
     {
         getLayoutInflater().inflate(layoutId, mContentLayout);
-        if (VERSION.SDK_INT >= VERSION_CODES.KITKAT)
+        if (VERSION.SDK_INT >= 19)
         {
             mContentLayout.setPadding(0, statusBarHeight, 0, 0);
         }
