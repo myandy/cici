@@ -37,7 +37,6 @@ public class CircleTextView extends View
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(DisplayUtil.dip2px(mContext, 32), DisplayUtil.dip2px(mContext, 32),
                 DisplayUtil.dip2px(mContext, 30), paint);
-        paint.setColor(R.color.white);
         paint.setTextSize(DisplayUtil.dip2px(mContext, 16));
         paint.setTypeface(MyApplication.typeface);
         canvas.drawText(mText, DisplayUtil.dip2px(mContext, 21), DisplayUtil.dip2px(mContext, 37), paint);
