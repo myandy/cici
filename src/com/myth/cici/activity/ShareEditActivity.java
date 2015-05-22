@@ -52,6 +52,7 @@ public class ShareEditActivity extends BaseActivity
 
         writing = new Writing();
         writing.setText(ci.getText());
+        writing.setAuthor(ci.getAuthor());
         cipai = ci.getCipai();
         writing.setCipai(cipai);
 

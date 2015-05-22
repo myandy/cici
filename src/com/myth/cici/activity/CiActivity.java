@@ -222,7 +222,7 @@ public class CiActivity extends BaseActivity
             ImageView view = new TouchEffectImageView(mActivity, null);
             view.setImageResource(R.drawable.random);
             view.setScaleType(ScaleType.FIT_XY);
-            view.setPadding(5, 5, 5, 5);
+            view.setPadding(12, 12, 12, 12);
             addBottomRightView(view,
                     new LayoutParams(DisplayUtil.dip2px(mActivity, 30.4), DisplayUtil.dip2px(mActivity, 24)));
             view.setOnClickListener(new OnClickListener()

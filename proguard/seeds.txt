@@ -9696,7 +9696,6 @@ com.myth.cici.activity.CipaiSearchActivity
 com.myth.cici.activity.CipaiSearchActivity: CipaiSearchActivity()
 com.myth.cici.activity.EditActivity
 com.myth.cici.activity.EditActivity: EditActivity()
-com.myth.cici.activity.GCImageViewActivity
 com.myth.cici.activity.MainActivity
 com.myth.cici.activity.MainActivity: MainActivity()
 com.myth.cici.activity.SettingActivity

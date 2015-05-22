@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.myth.cici.BaseActivity;
@@ -16,14 +18,12 @@ import com.myth.cici.db.YunDatabaseHelper;
 public class SettingActivity extends BaseActivity
 {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         initView();
-
 
     }
 
@@ -42,6 +42,9 @@ public class SettingActivity extends BaseActivity
         ((TextView) findViewById(R.id.check_title)).setTypeface(MyApplication.typeface);
         ((TextView) findViewById(R.id.about_title)).setTypeface(MyApplication.typeface);
         ((TextView) findViewById(R.id.notice_title)).setTypeface(MyApplication.typeface);
+
+        ((TextView) findViewById(R.id.username_title)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.username_value)).setTypeface(MyApplication.typeface);
 
         findViewById(R.id.item_yun).setOnClickListener(new OnClickListener()
         {
@@ -111,6 +114,34 @@ public class SettingActivity extends BaseActivity
             public void onClick(View v)
             {
                 startActivity(new Intent(mActivity, AboutActivity.class));
+            }
+        });
+
+        final TextView username = (TextView) findViewById(R.id.username_value);
+        String name = MyApplication.getDefaultUserName(mActivity);
+        if (!TextUtils.isEmpty(name))
+        {
+            username.setText(name);
+        }
+
+        findViewById(R.id.item_username).setOnClickListener(new OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                final EditText et = new EditText(mActivity);
+                new AlertDialog.Builder(mActivity).setTitle("请输入用户名").setIcon(android.R.drawable.ic_dialog_info).setView(
+                        et).setPositiveButton("确定", new DialogInterface.OnClickListener()
+                {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        username.setText(et.getText().toString().trim());
+                        MyApplication.setDefaultUserName(mActivity, et.getText().toString().trim());
+                    }
+                }).setNegativeButton("取消", null).show();
             }
         });
     }

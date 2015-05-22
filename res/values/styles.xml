@@ -17,4 +17,10 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
     
+      <!-- popwidnow 显示消失动画 -->
+    <style name="popwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
+    </style>
+    
 </resources>

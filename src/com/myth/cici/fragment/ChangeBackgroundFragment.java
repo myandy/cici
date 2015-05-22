@@ -2,7 +2,9 @@ package com.myth.cici.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.adapter.ImageAdapter;
 import com.myth.cici.entity.Cipai;
+import com.myth.cici.entity.ColorEntity;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.HorizontalListView;
@@ -32,6 +35,8 @@ public class ChangeBackgroundFragment extends Fragment
     private Writing writing;
 
     private int bg_index = 0;
+    
+    private TextView title;
 
     public ChangeBackgroundFragment()
     {
@@ -99,11 +104,16 @@ public class ChangeBackgroundFragment extends Fragment
 
         content = (LinearLayout) view.findViewById(R.id.content);
         layoutItemContainer(content);
-        TextView title = (TextView) view.findViewById(R.id.title);
+        title = (TextView) view.findViewById(R.id.title);
         title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
         title.setTypeface(MyApplication.typeface);
         text.setTypeface(MyApplication.typeface);
+        
+        setTextSize();
+        setGravity();
+        setPadding();
+        setColor();
     }
 
     private void layoutItemContainer(View itemContainer)
@@ -112,5 +122,46 @@ public class ChangeBackgroundFragment extends Fragment
         params.width = ResizeUtil.resize(mContext, 720);
         params.height = ResizeUtil.resize(mContext, 720);
         itemContainer.setLayoutParams(params);
+    }
+    
+    private void setPadding()
+    {
+        int margin = MyApplication.getDefaultSharePadding(mContext);
+        LinearLayout.LayoutParams lps = (android.widget.LinearLayout.LayoutParams) text.getLayoutParams();
+        lps.leftMargin = margin;
+        text.setLayoutParams(lps);
+    }
+
+    private void setGravity()
+    {
+        boolean isCenter = MyApplication.getDefaultShareGravity(mContext);
+        if (isCenter)
+        {
+            text.setGravity(Gravity.CENTER_HORIZONTAL);
+        }
+        else
+        {
+            text.setGravity(Gravity.LEFT);
+        }
+    }
+
+    private void setTextSize()
+    {
+        int size = MyApplication.getDefaultShareSize(mContext);
+        text.setTextSize(size);
+        title.setTextSize(size + 2);
+    }
+
+    private void setColor()
+    {
+
+        ColorEntity colorEntity = MyApplication.getColorByPos(MyApplication.getDefaultShareColor(mContext));
+        int color = Color.rgb(0, 0, 0);
+        if (colorEntity != null)
+        {
+            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
+        }
+        text.setTextColor(color);
+        title.setTextColor(color);
     }
 }

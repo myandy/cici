@@ -39,5 +39,11 @@
      <color  name="setting_line">#222222</color>
      
      <color  name="edittext_line">#D2D2D2</color>
+     
+      <color name="pptvvas_menu_devide">#787878</color>
+      
+      <color name="pptvvas_gray_light">#EDEDED</color>
+      
+         <color name="pptvvas_white">#FFFFFFFF</color>
     
 </resources>

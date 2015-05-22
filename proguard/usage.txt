@@ -193,9 +193,13 @@ android.support.v7.widget.RecyclerView$ViewHolder:
     static final int FLAG_REMOVED
     static final int FLAG_NOT_RECYCLABLE
 com.myth.cici.BaseActivity:
-    136:137:protected void addBottomCenterView(android.view.View)
+    134:135:protected void addBottomCenterView(android.view.View)
 com.myth.cici.BuildConfig
+com.myth.cici.MyApplication:
+    131:131:public static int getDefaultTextSize(android.content.Context)
+    136:139:public static void setDefaultTextSize(android.content.Context,int)
 com.myth.cici.R
+com.myth.cici.R$anim
 com.myth.cici.R$attr
 com.myth.cici.R$color
 com.myth.cici.R$dimen
@@ -235,14 +239,12 @@ com.myth.cici.entity.Ci:
 com.myth.cici.entity.Cipai:
     private static final long serialVersionUID
     65:65:public java.lang.String getAlias()
-com.myth.cici.entity.ColorEntity:
-    28:28:public java.lang.String getName()
 com.myth.cici.entity.Writing:
     private static final long serialVersionUID
     private int layout
-    87:87:public int getLayout()
-    92:93:public void setLayout(int)
-    97:97:public static long getSerialversionuid()
+    89:89:public int getLayout()
+    94:95:public void setLayout(int)
+    99:99:public static long getSerialversionuid()
 com.myth.cici.fragment.ChangePictureFragment:
     private static final int REQUEST_PICK_IMG
 com.myth.cici.util.CheckUtils:
@@ -272,6 +274,8 @@ com.myth.cici.util.Fastblur:
 com.myth.cici.util.FileUtils:
     13:13:public FileUtils()
     89:95:public static android.graphics.Bitmap Bytes2Bimap(byte[])
+com.myth.cici.util.ImageUtils:
+    9:9:public ImageUtils()
 com.myth.cici.util.Logs:
     private static final int EXCEPTION_STACK_INDEX
     10:10:public Logs()
@@ -367,8 +371,8 @@ com.myth.cici.wiget.VScrollView:
     private static final int MAX_SCROLL_HEIGHT
     private static final float SCROLL_RATIO
 com.myth.cici.wiget.WritingView:
-    38:39:public WritingView(android.content.Context,android.util.AttributeSet,int)
-    43:44:public WritingView(android.content.Context,android.util.AttributeSet)
+    47:48:public WritingView(android.content.Context,android.util.AttributeSet,int)
+    52:53:public WritingView(android.content.Context,android.util.AttributeSet)
 u.aly.a:
     80:81:public void a(u.aly.ay)
 u.aly.aa:

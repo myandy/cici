@@ -2,6 +2,7 @@ package com.myth.cici;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.app.Application;
 import android.content.Context;
@@ -16,6 +17,8 @@ import com.myth.cici.entity.ColorEntity;
 
 public class MyApplication extends Application
 {
+
+    private static List<ColorEntity> colorList;
 
     private static HashMap<Integer, ColorEntity> colorMap;
 
@@ -32,12 +35,29 @@ public class MyApplication extends Application
         setTypeface(getApplicationContext(), getDefaulTypeface(this));
     }
 
+    public static ColorEntity getColorByPos(int pos)
+    {
+        if (colorList == null)
+        {
+            colorList = ColorDatabaseHelper.getAll();
+        }
+        pos--;
+        if (pos >= 0 && pos < colorList.size())
+        {
+            return colorList.get(pos);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public static ColorEntity getColorById(int id)
     {
         if (colorMap == null)
         {
             colorMap = new HashMap<Integer, ColorEntity>();
-            ArrayList<ColorEntity> colorList = ColorDatabaseHelper.getAllColor();
+            ArrayList<ColorEntity> colorList = ColorDatabaseHelper.getAll();
             for (ColorEntity color : colorList)
             {
                 colorMap.put(color.getId(), color);
@@ -103,6 +123,90 @@ public class MyApplication extends Application
     {
         Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
         edit.putBoolean("check", bool);
+        edit.commit();
+    }
+
+    public static int getDefaultTextSize(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getInt("size", 18);
+    }
+
+    public static void setDefaultTextSize(Context context, int size)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putInt("size", size);
+        edit.commit();
+    }
+
+    public static int getDefaultShareSize(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getInt("share_size", 18);
+    }
+
+    public static void setDefaultShareSize(Context context, int size)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putInt("share_size", size);
+        edit.commit();
+    }
+
+    public static boolean getDefaultShareGravity(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("share_gravity", true);
+    }
+
+    public static void setDefaultShareGravity(Context context, boolean iscenter)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putBoolean("share_gravity", iscenter);
+        edit.commit();
+    }
+
+    public static boolean getDefaultShareAuthor(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("share_author", true);
+    }
+
+    public static void setDefaultShareAuthor(Context context, boolean iscenter)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putBoolean("share_author", iscenter);
+        edit.commit();
+    }
+
+    public static int getDefaultSharePadding(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getInt("share_padding", 20);
+    }
+
+    public static void setDefaultSharePadding(Context context, int size)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putInt("share_padding", size);
+        edit.commit();
+    }
+
+    public static int getDefaultShareColor(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getInt("share_color", 20);
+    }
+
+    public static void setDefaultShareColor(Context context, int size)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putInt("share_color", size);
+        edit.commit();
+    }
+
+    public static String getDefaultUserName(Context context)
+    {
+        return PreferenceManager.getDefaultSharedPreferences(context).getString("username", "");
+    }
+
+    public static void setDefaultUserName(Context context, String size)
+    {
+        Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        edit.putString("username", size);
         edit.commit();
     }
 

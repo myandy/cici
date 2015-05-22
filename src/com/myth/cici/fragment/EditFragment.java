@@ -113,6 +113,11 @@ public class EditFragment extends Fragment
         final View keyboard = view.findViewById(R.id.edit_keyboard);
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
         String s = Html.fromHtml(cipai.getPingze()).toString();
+
+        if (s == null)
+        {
+            return;
+        }
         sList = CheckUtils.getCodeFormPingze(s.split("。"));
 
         if (sList != null)
