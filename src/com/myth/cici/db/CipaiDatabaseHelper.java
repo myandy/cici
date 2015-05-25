@@ -9,7 +9,7 @@ import com.myth.cici.entity.Cipai;
 
 public class CipaiDatabaseHelper
 {
-    private static String TABLE_NAME = "cipai";
+    private static final String TABLE_NAME = "cipai";
 
     public static ArrayList<Cipai> getAllShowCipai()
     {

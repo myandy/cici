@@ -94,12 +94,12 @@ public class CipaiListAdapter extends RecyclerView.Adapter<CipaiListAdapter.View
             holder2.stoneView = new StoneView(parent.getContext());
             holder2.middle.addView(holder2.stoneView, layoutParams);
 
-            holder1.name.setTypeface(MyApplication.typeface);
-            holder2.name.setTypeface(MyApplication.typeface);
-            holder1.enname.setTypeface(MyApplication.typeface);
-            holder2.enname.setTypeface(MyApplication.typeface);
-            holder1.num.setTypeface(MyApplication.typeface);
-            holder2.num.setTypeface(MyApplication.typeface);
+            holder1.name.setTypeface(MyApplication.getTypeface());
+            holder2.name.setTypeface(MyApplication.getTypeface());
+            holder1.enname.setTypeface(MyApplication.getTypeface());
+            holder2.enname.setTypeface(MyApplication.getTypeface());
+            holder1.num.setTypeface(MyApplication.getTypeface());
+            holder2.num.setTypeface(MyApplication.getTypeface());
         }
 
         TextView name;

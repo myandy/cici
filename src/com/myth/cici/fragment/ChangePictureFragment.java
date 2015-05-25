@@ -63,7 +63,7 @@ public class ChangePictureFragment extends Fragment
     private int bright = 127;
 
     private int radius = 0;
-    
+
     private TextView title;
 
     public ChangePictureFragment()
@@ -77,6 +77,7 @@ public class ChangePictureFragment extends Fragment
         fileViewFragment.writing = writing;
         return fileViewFragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -132,7 +133,7 @@ public class ChangePictureFragment extends Fragment
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 String picturePath = cursor.getString(columnIndex);
                 cursor.close();
-                
+
                 Bitmap bmp = ImageUtils.getimage(picturePath);
                 srcBitmap = bmp;
                 destBitmap = bmp;
@@ -160,18 +161,20 @@ public class ChangePictureFragment extends Fragment
         title = (TextView) view.findViewById(R.id.title);
         title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
-        title.setTypeface(MyApplication.typeface);
-        text.setTypeface(MyApplication.typeface);
+        title.setTypeface(MyApplication.getTypeface());
+        text.setTypeface(MyApplication.getTypeface());
 
         setTextSize();
         setGravity();
         setPadding();
         setColor();
-        
-        // srcBitmap = BitmapFactory.decodeFile(pathName);
-        srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zuibaichi);
 
-        destBitmap = srcBitmap;
+        // srcBitmap = BitmapFactory.decodeFile(pathName);
+        if (destBitmap == null)
+        {
+            srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zuibaichi);
+            destBitmap = srcBitmap;
+        }
 
         SeekBar seekBar1 = (SeekBar) view.findViewById(R.id.seekBar1);
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -286,7 +289,7 @@ public class ChangePictureFragment extends Fragment
         params.height = ResizeUtil.resize(mContext, 720);
         itemContainer.setLayoutParams(params);
     }
-    
+
     private void setPadding()
     {
         int margin = MyApplication.getDefaultSharePadding(mContext);

@@ -53,9 +53,9 @@ public class CipaiListActivity extends BaseActivity
         adapter = new CipaiListAdapter(mActivity);
         listview.setAdapter(adapter);
         rectLeft = (TextView) findViewById(R.id.rect_left);
-        rectLeft.setTypeface(MyApplication.typeface);
+        rectLeft.setTypeface(MyApplication.getTypeface());
         rectRight = (TextView) findViewById(R.id.rect_right);
-        rectRight.setTypeface(MyApplication.typeface);
+        rectRight.setTypeface(MyApplication.getTypeface());
 
         setBackground();
 

@@ -9,7 +9,7 @@ import com.myth.cici.entity.Ci;
 
 public class CiDatabaseHelper
 {
-    private static String TABLE_NAME = "example";
+    private static final String TABLE_NAME = "example";
 
     public static ArrayList<Ci> getCiByCipaiId(int cipaiId)
     {

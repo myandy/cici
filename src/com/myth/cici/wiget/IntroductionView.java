@@ -52,7 +52,7 @@ public class IntroductionView extends RelativeLayout
         View root = inflater.inflate(R.layout.layout_intro, null);
 
         TextView title = (TextView) root.findViewById(R.id.title);
-        title.setTypeface(MyApplication.typeface);
+        title.setTypeface(MyApplication.getTypeface());
         final StackView stackView = (StackView) root.findViewById(R.id.stack_view);
         layoutItemContainer(stackView);
 

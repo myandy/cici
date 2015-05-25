@@ -54,11 +54,11 @@ public class MainView extends RelativeLayout
         });
         for (int i = 0; i < showAll.getChildCount(); i++)
         {
-            ((TextView) showAll.getChildAt(i)).setTypeface(MyApplication.typeface);
+            ((TextView) showAll.getChildAt(i)).setTypeface(MyApplication.getTypeface());
         }
 
         TextView showOne = (TextView) root.findViewById(R.id.show_one);
-        showOne.setTypeface(MyApplication.typeface);
+        showOne.setTypeface(MyApplication.getTypeface());
         showOne.setOnClickListener(new OnClickListener()
         {
 

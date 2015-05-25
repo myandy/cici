@@ -9,7 +9,7 @@ import com.myth.cici.entity.ColorEntity;
 
 public class ColorDatabaseHelper
 {
-    private static String TABLE_NAME = "color";
+    private static final String TABLE_NAME = "color";
 
 
     public static ArrayList<ColorEntity> getAll()

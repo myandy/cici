@@ -64,7 +64,7 @@ public class CipaiActivity extends BaseActivity
         TextView writeTV = new TextView(mActivity);
         writeTV.setText("填词");
         writeTV.setTextSize(18);
-        writeTV.setTypeface(MyApplication.typeface);
+        writeTV.setTypeface(MyApplication.getTypeface());
         writeTV.setOnClickListener(new OnClickListener()
         {
 
@@ -98,7 +98,7 @@ public class CipaiActivity extends BaseActivity
         topView.addView(new CircleTextView(mActivity, count, color), param);
 
         TextView title = (TextView) findViewById(R.id.title);
-        title.setTypeface(MyApplication.typeface);
+        title.setTypeface(MyApplication.getTypeface());
         title.setTextSize(48);
         title.setText(cipai.getName());
 
@@ -168,7 +168,7 @@ public class CipaiActivity extends BaseActivity
 
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
-            textView.setTypeface(MyApplication.typeface);
+            textView.setTypeface(MyApplication.getTypeface());
             String text = ciList.get(position % ciList.size()).getText();
             if (!TextUtils.isEmpty(ciList.get(position % ciList.size()).getAuthor()))
             {

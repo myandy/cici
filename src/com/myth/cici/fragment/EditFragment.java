@@ -112,6 +112,11 @@ public class EditFragment extends Fragment
         editTexts.clear();
         final View keyboard = view.findViewById(R.id.edit_keyboard);
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
+
+        if (cipai == null)
+        {
+            return;
+        }
         String s = Html.fromHtml(cipai.getPingze()).toString();
 
         if (s == null)
@@ -136,7 +141,7 @@ public class EditFragment extends Fragment
                 scrollView.addView(view1);
                 view1.setPadding(0, 30, 0, 30);
                 final EditText edittext = (EditText) inflater.inflate(R.layout.edittext, null);
-                edittext.setTypeface(MyApplication.typeface);
+                edittext.setTypeface(MyApplication.getTypeface());
                 final int index = i;
                 edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener()
                 {
@@ -179,7 +184,7 @@ public class EditFragment extends Fragment
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);
         title.setText(cipai.getName());
-        title.setTypeface(MyApplication.typeface);
+        title.setTypeface(MyApplication.getTypeface());
 
         view.findViewById(R.id.edit_dict).setOnClickListener(new OnClickListener()
         {

@@ -13,6 +13,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
@@ -70,6 +71,12 @@ public class EditActivity extends BaseActivity
         else if (writing != null)
         {
             cipai = writing.getCipai();
+        }
+        else
+        {
+            finish();
+            Toast.makeText(this, "进入编辑出错", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         oldText = writing.getText();
@@ -184,7 +191,6 @@ public class EditActivity extends BaseActivity
         editFragment = EditFragment.getInstance(cipai, writing);
         changeBackgroundFrament = ChangeBackgroundFragment.getInstance(cipai, writing);
         changePictureFragment = ChangePictureFragment.getInstance(cipai, writing);
-
 
         fragments.add(editFragment);
         fragments.add(changeBackgroundFrament);

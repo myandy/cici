@@ -34,17 +34,17 @@ public class SettingActivity extends BaseActivity
         refreshTypeface();
         refreshCheck();
 
-        ((TextView) findViewById(R.id.yun_title)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.yun_value)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.typeface_value)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.typeface_title)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.check_value)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.check_title)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.about_title)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.notice_title)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.yun_title)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.yun_value)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.typeface_value)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.typeface_title)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.check_value)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.check_title)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.about_title)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.notice_title)).setTypeface(MyApplication.getTypeface());
 
-        ((TextView) findViewById(R.id.username_title)).setTypeface(MyApplication.typeface);
-        ((TextView) findViewById(R.id.username_value)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.username_title)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.username_value)).setTypeface(MyApplication.getTypeface());
 
         findViewById(R.id.item_yun).setOnClickListener(new OnClickListener()
         {

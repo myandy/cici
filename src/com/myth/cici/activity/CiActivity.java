@@ -119,11 +119,11 @@ public class CiActivity extends BaseActivity
         setColor();
 
         title = (TextView) findViewById(R.id.title);
-        title.setTypeface(MyApplication.typeface);
+        title.setTypeface(MyApplication.getTypeface());
         title.setText(cipai.getName());
 
         content = (TextView) findViewById(R.id.content);
-        content.setTypeface(MyApplication.typeface);
+        content.setTypeface(MyApplication.getTypeface());
         content.setOnClickListener(new OnClickListener()
         {
 
@@ -147,7 +147,7 @@ public class CiActivity extends BaseActivity
 
             }
         });
-        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication.getTypeface());
 
         findViewById(R.id.note).setOnClickListener(new OnClickListener()
         {
@@ -173,7 +173,7 @@ public class CiActivity extends BaseActivity
             }
         });
 
-        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.typeface);
+        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.getTypeface());
         if (isIntroduce)
         {
             findViewById(R.id.share).setVisibility(View.GONE);

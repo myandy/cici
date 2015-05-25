@@ -27,6 +27,8 @@ public class DBManager
     /** The Constant VERSION. */
     public static final int DB_VERSION = 1;
 
+    private static SQLiteDatabase db;
+
     public static void initDatabase(Context context)
     {
         try
@@ -60,7 +62,11 @@ public class DBManager
 
     public static SQLiteDatabase getDatabase()
     {
-        return SQLiteDatabase.openOrCreateDatabase(DB_PATH, null);
+        if (db == null)
+        {
+            db = SQLiteDatabase.openOrCreateDatabase(DB_PATH, null);
+        }
+        return db;
     }
 
 }

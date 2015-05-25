@@ -10,7 +10,7 @@ import com.myth.cici.entity.Writing;
 
 public class WritingDatabaseHelper
 {
-    private static String TABLE_NAME = "writing";
+    private static final String TABLE_NAME = "writing";
 
     public static ArrayList<Writing> getAllWriting(Context context)
     {
