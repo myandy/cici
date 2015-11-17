@@ -9461,12 +9461,12 @@ com.myth.cici.BaseActivity$1 -> com.myth.cici.a:
     com.myth.cici.BaseActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
-    java.util.List colorList -> e
-    java.util.HashMap colorMap -> f
-    android.graphics.Typeface typeface -> a
-    java.lang.String[] TypefaceString -> b
-    int[] bgimgList -> c
-    int[] bgSmallimgList -> d
+    java.util.List colorList -> d
+    java.util.HashMap colorMap -> e
+    android.graphics.Typeface typeface -> f
+    java.lang.String[] TypefaceString -> a
+    int[] bgimgList -> b
+    int[] bgSmallimgList -> c
     void onCreate() -> onCreate
     com.myth.cici.entity.ColorEntity getColorByPos(int) -> a
     com.myth.cici.entity.ColorEntity getColorById(int) -> b
@@ -9489,6 +9489,7 @@ com.myth.cici.MyApplication -> com.myth.cici.MyApplication:
     void setDefaultShareColor(android.content.Context,int) -> e
     java.lang.String getDefaultUserName(android.content.Context) -> i
     void setDefaultUserName(android.content.Context,java.lang.String) -> a
+    android.graphics.Typeface getTypeface() -> a
 com.myth.cici.activity.AboutActivity -> com.myth.cici.activity.AboutActivity:
     void onCreate(android.os.Bundle) -> onCreate
 com.myth.cici.activity.CiActivity -> com.myth.cici.activity.CiActivity:
@@ -9556,15 +9557,13 @@ com.myth.cici.activity.CipaiActivity -> com.myth.cici.activity.CipaiActivity:
     com.myth.cici.entity.Cipai cipai -> f
     android.support.v4.view.ViewPager gallery -> g
     com.myth.cici.wiget.SwitchPoint switchPoint -> d
-    int maxLines -> h
-    android.support.v4.view.PagerAdapter galleryAdapter -> i
+    android.support.v4.view.PagerAdapter galleryAdapter -> h
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> d
     java.util.ArrayList access$0(com.myth.cici.activity.CipaiActivity) -> a
-    int access$1(com.myth.cici.activity.CipaiActivity) -> b
-    android.app.Activity access$2(com.myth.cici.activity.CipaiActivity) -> c
-    com.myth.cici.entity.Cipai access$3(com.myth.cici.activity.CipaiActivity) -> d
-    android.support.v4.view.ViewPager access$4(com.myth.cici.activity.CipaiActivity) -> e
+    android.app.Activity access$1(com.myth.cici.activity.CipaiActivity) -> b
+    com.myth.cici.entity.Cipai access$2(com.myth.cici.activity.CipaiActivity) -> c
+    android.support.v4.view.ViewPager access$3(com.myth.cici.activity.CipaiActivity) -> d
 com.myth.cici.activity.CipaiActivity$1 -> com.myth.cici.activity.j:
     com.myth.cici.activity.CipaiActivity this$0 -> a
     java.lang.Object instantiateItem(android.view.ViewGroup,int) -> instantiateItem
@@ -9693,6 +9692,7 @@ com.myth.cici.activity.MainActivity -> com.myth.cici.activity.MainActivity:
     void onCreate(android.os.Bundle) -> onCreate
     void layoutItemContainer(android.view.View) -> a
     void onResume() -> onResume
+    void onStop() -> onStop
     void refresh() -> d
     android.app.Activity access$0(com.myth.cici.activity.MainActivity) -> a
     void access$1(com.myth.cici.activity.MainActivity,int) -> a
@@ -9938,10 +9938,15 @@ com.myth.cici.adapter.CipaiListAdapter$1 -> com.myth.cici.adapter.d:
     com.myth.cici.adapter.CipaiListAdapter this$0 -> a
     com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem val$holder -> b
     void onClick(android.view.View) -> onClick
-com.myth.cici.adapter.CipaiListAdapter$ViewHolder -> com.myth.cici.adapter.e:
+    com.myth.cici.adapter.CipaiListAdapter access$0(com.myth.cici.adapter.CipaiListAdapter$1) -> a
+com.myth.cici.adapter.CipaiListAdapter$1$1 -> com.myth.cici.adapter.e:
+    com.myth.cici.adapter.CipaiListAdapter$1 this$1 -> a
+    java.util.ArrayList val$cipais -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.myth.cici.adapter.CipaiListAdapter$ViewHolder -> com.myth.cici.adapter.f:
     com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem holder1 -> f
     com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem holder2 -> g
-com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem -> com.myth.cici.adapter.f:
+com.myth.cici.adapter.CipaiListAdapter$ViewHolder$ViewHolderItem -> com.myth.cici.adapter.g:
     com.myth.cici.entity.Cipai cipai -> a
     android.view.View item -> b
     android.widget.RelativeLayout head -> c
@@ -9965,36 +9970,44 @@ com.myth.cici.adapter.IntroAdapter -> com.myth.cici.adapter.IntroAdapter:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.myth.cici.adapter.IntroAdapter$ViewHolder -> com.myth.cici.adapter.g:
+com.myth.cici.adapter.IntroAdapter$ViewHolder -> com.myth.cici.adapter.h:
     android.widget.ImageView imageview -> a
     com.myth.cici.adapter.IntroAdapter this$0 -> b
-com.myth.cici.db.CiDatabaseHelper -> com.myth.cici.a.a:
-    java.lang.String TABLE_NAME -> a
+com.myth.cici.db.BackupTask -> com.myth.cici.a.a:
+    android.content.Context mContext -> b
+    boolean needBackup -> a
+    java.lang.Integer doInBackground(java.lang.String[]) -> a
+    void fileCopy(java.io.File,java.io.File) -> a
+    boolean restoreDatabase(android.content.Context) -> a
+    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+com.myth.cici.db.CiDatabaseHelper -> com.myth.cici.a.b:
     java.util.ArrayList getCiByCipaiId(int) -> a
     java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
     java.util.ArrayList getAllCi() -> a
-com.myth.cici.db.CipaiDatabaseHelper -> com.myth.cici.a.b:
-    java.lang.String TABLE_NAME -> a
+com.myth.cici.db.CipaiDatabaseHelper -> com.myth.cici.a.c:
     java.util.ArrayList getAllShowCipai() -> a
     java.util.ArrayList getAllCipaiByWordCount() -> b
     java.util.ArrayList getAllCipai() -> c
     com.myth.cici.entity.Cipai getCipaiById(int) -> a
+    java.util.ArrayList getParentCipaiById(int) -> b
     java.util.ArrayList getCipaiListFromCursor(android.database.Cursor) -> a
-com.myth.cici.db.ColorDatabaseHelper -> com.myth.cici.a.c:
-    java.lang.String TABLE_NAME -> a
+com.myth.cici.db.ColorDatabaseHelper -> com.myth.cici.a.d:
     java.util.ArrayList getAll() -> a
     java.util.ArrayList getColorListFromCursor(android.database.Cursor) -> a
-com.myth.cici.db.DBManager -> com.myth.cici.a.d:
+com.myth.cici.db.DBManager -> com.myth.cici.a.e:
     java.lang.String DB_PATH -> a
+    java.lang.String DB_NEW_PATH -> b
+    android.database.sqlite.SQLiteDatabase db_new -> c
+    android.database.sqlite.SQLiteDatabase db -> d
     void initDatabase(android.content.Context) -> a
-    android.database.sqlite.SQLiteDatabase getDatabase() -> a
-com.myth.cici.db.WritingDatabaseHelper -> com.myth.cici.a.e:
-    java.lang.String TABLE_NAME -> a
+    android.database.sqlite.SQLiteDatabase getNewDatabase() -> a
+    android.database.sqlite.SQLiteDatabase getDatabase() -> b
+com.myth.cici.db.WritingDatabaseHelper -> com.myth.cici.a.f:
     java.util.ArrayList getAllWriting(android.content.Context) -> a
     void saveWriting(android.content.Context,com.myth.cici.entity.Writing) -> a
     void deleteWriting(android.content.Context,com.myth.cici.entity.Writing) -> b
     java.util.ArrayList getWritingFromCursor(android.database.Cursor) -> a
-com.myth.cici.db.YunDatabaseHelper -> com.myth.cici.a.f:
+com.myth.cici.db.YunDatabaseHelper -> com.myth.cici.a.g:
     java.lang.String[] YUNSHU -> b
     java.lang.String[] YUNString -> a
     java.util.ArrayList yunList -> c
@@ -10218,7 +10231,7 @@ com.myth.cici.listener.MyListener -> com.myth.cici.d.a:
     void onItemClick(int) -> a
 com.myth.cici.util.CheckUtils -> com.myth.cici.e.a:
     void checkEditText(android.widget.EditText,java.lang.String) -> a
-    boolean checkPingze(char,char) -> a
+    int checkPingze(char,char) -> a
     java.lang.String[] getCodeFormPingze(java.lang.String[]) -> a
 com.myth.cici.util.CheckUtils$1 -> com.myth.cici.e.b:
     void updateDrawState(android.text.TextPaint) -> updateDrawState
@@ -10237,7 +10250,6 @@ com.myth.cici.util.FileUtils -> com.myth.cici.e.f:
     java.lang.String saveFile(android.graphics.Bitmap) -> a
     void createDir(java.lang.String) -> a
     java.lang.String saveFile(android.graphics.Bitmap,java.lang.String) -> a
-    byte[] Bitmap2Bytes(android.graphics.Bitmap) -> b
 com.myth.cici.util.ImageUtils -> com.myth.cici.e.g:
     android.graphics.Bitmap compressImage(android.graphics.Bitmap) -> a
     android.graphics.Bitmap getimage(java.lang.String) -> a
@@ -10246,11 +10258,7 @@ com.myth.cici.util.Logs -> com.myth.cici.e.h:
     void error(java.lang.String) -> a
     java.lang.String getTag() -> b
 com.myth.cici.util.Logs$LogException -> com.myth.cici.e.i:
-com.myth.cici.util.MD5 -> com.myth.cici.e.j:
-    java.lang.String byte2Hex(byte) -> a
-    java.lang.String MD5_32(byte[]) -> a
-    java.lang.String MD5_16(byte[]) -> b
-com.myth.cici.util.OthersUtils -> com.myth.cici.e.k:
+com.myth.cici.util.OthersUtils -> com.myth.cici.e.j:
     void copy(java.lang.String,android.content.Context) -> a
     void shareMsg(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
     android.graphics.Bitmap createViewBitmap(android.view.View) -> a
@@ -10258,10 +10266,10 @@ com.myth.cici.util.OthersUtils -> com.myth.cici.e.k:
     java.lang.String getFirstChinese(java.lang.String) -> a
     int getDisplayWidth(android.content.Context) -> a
     int getDisplayWidthBySystemService(android.content.Context) -> b
-com.myth.cici.util.ResizeUtil -> com.myth.cici.e.l:
+com.myth.cici.util.ResizeUtil -> com.myth.cici.e.k:
     float sysWidth -> a
     int resize(android.content.Context,float) -> a
-com.myth.cici.util.StringUtils -> com.myth.cici.e.m:
+com.myth.cici.util.StringUtils -> com.myth.cici.e.l:
     boolean isEmpty(java.lang.String) -> a
     boolean isNumeric(java.lang.String) -> b
 com.myth.cici.wiget.CipaiItem -> com.myth.cici.wiget.CipaiItem:

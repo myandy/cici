@@ -39,6 +39,7 @@ public class CircleTextView extends View
                 DisplayUtil.dip2px(mContext, 30), paint);
         paint.setTextSize(DisplayUtil.dip2px(mContext, 16));
         paint.setTypeface(MyApplication.getTypeface());
+        paint.setColor(getResources().getColor((R.color.white)));
         canvas.drawText(mText, DisplayUtil.dip2px(mContext, 21), DisplayUtil.dip2px(mContext, 37), paint);
     }
 

@@ -32,8 +32,7 @@ import com.myth.cici.util.OthersUtils;
 import com.myth.cici.wiget.CircleEditView;
 import com.myth.cici.wiget.TouchEffectImageView;
 
-public class CiActivity extends BaseActivity
-{
+public class CiActivity extends BaseActivity {
 
     private ArrayList<Ci> ciList = new ArrayList<Ci>();
 
@@ -58,27 +57,20 @@ public class CiActivity extends BaseActivity
     TouchEffectImageView next;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ci);
 
-        if (getIntent().hasExtra("cipai"))
-        {
+        if (getIntent().hasExtra("cipai")) {
             ciList = (ArrayList<Ci>) getIntent().getSerializableExtra("cilist");
             cipai = (Cipai) getIntent().getSerializableExtra("cipai");
             num = getIntent().getIntExtra("num", 0);
-            if (num == 0)
-            {
+            if (num == 0) {
                 isIntroduce = true;
-            }
-            else
-            {
+            } else {
                 ci = ciList.get(num);
             }
-        }
-        else
-        {
+        } else {
             isRandom = true;
             ciList = CiDatabaseHelper.getAllCi();
             getRandomCi();
@@ -87,33 +79,33 @@ public class CiActivity extends BaseActivity
         initView();
     }
 
-    private void getRandomCi()
-    {
+    private void getRandomCi() {
         ci = ciList.get(new Random().nextInt(ciList.size()));
         cipai = CipaiDatabaseHelper.getCipaiById(ci.getCi_id());
-        if (cipai.getParent_id() > 0)
-        {
-            Cipai cipai1 = CipaiDatabaseHelper.getCipaiById(cipai.getParent_id());
+        if (cipai.getParent_id() > 0) {
+            Cipai cipai1 = CipaiDatabaseHelper.getCipaiById(cipai
+                    .getParent_id());
             cipai.setColor_id(cipai1.getColor_id());
             cipai.setSource(cipai1.getSource());
         }
     }
 
-    private void setColor()
-    {
-        ColorEntity colorEntity = MyApplication.getColorById(cipai.getColor_id());
+    private void setColor() {
+        ColorEntity colorEntity = MyApplication.getColorById(cipai
+                .getColor_id());
         int color = 0xffffff;
-        if (colorEntity != null)
-        {
-            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
+        if (colorEntity != null) {
+            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(),
+                    colorEntity.getBlue());
         }
         editView.setmColor(color);
     }
 
-    private void initView()
-    {
+    private void initView() {
         LinearLayout topView = (LinearLayout) findViewById(R.id.right);
-        LayoutParams param = new LayoutParams(DisplayUtil.dip2px(mActivity, 80), DisplayUtil.dip2px(mActivity, 120));
+        LayoutParams param = new LayoutParams(
+                DisplayUtil.dip2px(mActivity, 80), DisplayUtil.dip2px(
+                        mActivity, 120));
         editView = new CircleEditView(mActivity);
         topView.addView(editView, 1, param);
         setColor();
@@ -122,24 +114,35 @@ public class CiActivity extends BaseActivity
         title.setTypeface(MyApplication.getTypeface());
         title.setText(cipai.getName());
 
+        title.setTextSize(44);
+        
+        if (cipai.getName().length() > 5) {
+            TextView title1 = (TextView) findViewById(R.id.title1);
+            title1.setTypeface(MyApplication.getTypeface());
+            title1.setTextSize(44);
+
+            title1.setText(cipai.getName().substring(0, 5));
+            title.setText(cipai.getName().substring(5));
+        }
+
         content = (TextView) findViewById(R.id.content);
         content.setTypeface(MyApplication.getTypeface());
-        content.setOnClickListener(new OnClickListener()
-        {
+        content.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
-                new AlertDialog.Builder(mActivity).setItems(new String[] {"复制文本"},
-                        new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int which)
-                            {
+            public void onClick(View v) {
+                new AlertDialog.Builder(mActivity).setItems(
+                        new String[] { "复制文本" },
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                    int which) {
 
-                                if (which == 0)
-                                {
-                                    OthersUtils.copy(title.getText() + "\n" + content.getText(), mActivity);
-                                    Toast.makeText(mActivity, R.string.copy_text_done, Toast.LENGTH_SHORT).show();
+                                if (which == 0) {
+                                    OthersUtils.copy(title.getText() + "\n"
+                                            + content.getText(), mActivity);
+                                    Toast.makeText(mActivity,
+                                            R.string.copy_text_done,
+                                            Toast.LENGTH_SHORT).show();
                                 }
                                 dialog.dismiss();
                             }
@@ -147,24 +150,25 @@ public class CiActivity extends BaseActivity
 
             }
         });
-        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication.getTypeface());
+        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication
+                .getTypeface());
 
-        findViewById(R.id.note).setOnClickListener(new OnClickListener()
-        {
+        findViewById(R.id.note).setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
-                new AlertDialog.Builder(mActivity).setItems(new String[] {"复制文本"},
-                        new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int which)
-                            {
+            public void onClick(View v) {
+                new AlertDialog.Builder(mActivity).setItems(
+                        new String[] { "复制文本" },
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                    int which) {
 
-                                if (which == 0)
-                                {
-                                    OthersUtils.copy(title.getText() + "\n" + content.getText(), mActivity);
-                                    Toast.makeText(mActivity, R.string.copy_text_done, Toast.LENGTH_SHORT).show();
+                                if (which == 0) {
+                                    OthersUtils.copy(title.getText() + "\n"
+                                            + content.getText(), mActivity);
+                                    Toast.makeText(mActivity,
+                                            R.string.copy_text_done,
+                                            Toast.LENGTH_SHORT).show();
                                 }
                                 dialog.dismiss();
                             }
@@ -173,32 +177,27 @@ public class CiActivity extends BaseActivity
             }
         });
 
-        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication.getTypeface());
-        if (isIntroduce)
-        {
+        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication
+                .getTypeface());
+        if (isIntroduce) {
             findViewById(R.id.share).setVisibility(View.GONE);
-        }
-        else
-        {
-            findViewById(R.id.share).setOnClickListener(new OnClickListener()
-            {
+        } else {
+            findViewById(R.id.share).setOnClickListener(new OnClickListener() {
 
                 @Override
-                public void onClick(View v)
-                {
-                    Intent intent = new Intent(mActivity, ShareEditActivity.class);
+                public void onClick(View v) {
+                    Intent intent = new Intent(mActivity,
+                            ShareEditActivity.class);
                     ci.setCipai(cipai);
                     intent.putExtra("ci", ci);
                     startActivity(intent);
                 }
             });
         }
-        editView.setOnClickListener(new OnClickListener()
-        {
+        editView.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(mActivity, EditActivity.class);
                 intent.putExtra("cipai", cipai);
                 startActivity(intent);
@@ -211,46 +210,37 @@ public class CiActivity extends BaseActivity
 
     }
 
-    private void initBottomRightView()
-    {
-        if (isIntroduce)
-        {
+    private void initBottomRightView() {
+        if (isIntroduce) {
             return;
-        }
-        else if (isRandom)
-        {
+        } else if (isRandom) {
             ImageView view = new TouchEffectImageView(mActivity, null);
             view.setImageResource(R.drawable.random);
             view.setScaleType(ScaleType.FIT_XY);
             view.setPadding(12, 12, 12, 12);
             addBottomRightView(view,
-                    new LayoutParams(DisplayUtil.dip2px(mActivity, 30.4), DisplayUtil.dip2px(mActivity, 24)));
-            view.setOnClickListener(new OnClickListener()
-            {
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 30.4),
+                            DisplayUtil.dip2px(mActivity, 24)));
+            view.setOnClickListener(new OnClickListener() {
 
                 @Override
-                public void onClick(View v)
-                {
+                public void onClick(View v) {
                     getRandomCi();
                     refreshRandomView();
                 }
             });
-        }
-        else
-        {
+        } else {
             prev = new TouchEffectImageView(mActivity, null);
             prev.setImageResource(R.drawable.prev);
             prev.setScaleType(ScaleType.FIT_XY);
             addBottomRightView(prev,
-                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42), DisplayUtil.dip2px(mActivity, 42)));
-            prev.setOnClickListener(new OnClickListener()
-            {
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42),
+                            DisplayUtil.dip2px(mActivity, 42)));
+            prev.setOnClickListener(new OnClickListener() {
 
                 @Override
-                public void onClick(View v)
-                {
-                    if (num > 1)
-                    {
+                public void onClick(View v) {
+                    if (num > 1) {
                         num--;
                         ci = ciList.get(num);
                         initContentView();
@@ -262,15 +252,13 @@ public class CiActivity extends BaseActivity
             next.setImageResource(R.drawable.next);
             next.setScaleType(ScaleType.FIT_XY);
             addBottomRightView(next,
-                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42), DisplayUtil.dip2px(mActivity, 42)));
-            next.setOnClickListener(new OnClickListener()
-            {
+                    new LayoutParams(DisplayUtil.dip2px(mActivity, 42),
+                            DisplayUtil.dip2px(mActivity, 42)));
+            next.setOnClickListener(new OnClickListener() {
 
                 @Override
-                public void onClick(View v)
-                {
-                    if (num < ciList.size() - 1)
-                    {
+                public void onClick(View v) {
+                    if (num < ciList.size() - 1) {
                         num++;
                         ci = ciList.get(num);
                         initContentView();
@@ -282,17 +270,14 @@ public class CiActivity extends BaseActivity
 
     }
 
-    private void refreshRandomView()
-    {
+    private void refreshRandomView() {
         title.setText(cipai.getName());
         setColor();
         initContentView();
     }
 
-    private void initContentView()
-    {
-        if (isIntroduce)
-        {
+    private void initContentView() {
+        if (isIntroduce) {
             WebView intro = (WebView) findViewById(R.id.intro);
             intro.setBackgroundColor(0);
             intro.setVisibility(View.VISIBLE);
@@ -300,36 +285,27 @@ public class CiActivity extends BaseActivity
             settings.setDefaultTextEncodingName("UTF-8");
             intro.loadUrl("file:///android_asset/intro.html");
             content.setText(cipai.getSource());
-        }
-        else
-        {
-            if (!isRandom)
-            {
-                if (num < ciList.size() - 1)
-                {
+        } else {
+            if (!isRandom) {
+                if (num < ciList.size() - 1) {
                     next.setClickEnable();
-                }
-                else
-                {
+                } else {
                     next.setClickDisable();
                 }
-                if (num > 1)
-                {
+                if (num > 1) {
                     prev.setClickEnable();
-                }
-                else
-                {
+                } else {
                     prev.setClickDisable();
                 }
             }
             String note = ci.getNote();
-            if (note == null)
-            {
+            if (note == null) {
                 note = "";
             }
             content.setText(ci.getText());
             ((TextView) findViewById(R.id.note)).setText(note);
-            ((TextView) findViewById(R.id.author)).setText(ci.getAuthor() + "\n");
+            ((TextView) findViewById(R.id.author)).setText(ci.getAuthor()
+                    + "\n");
         }
     }
 

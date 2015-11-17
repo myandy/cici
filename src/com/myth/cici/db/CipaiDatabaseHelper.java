@@ -13,7 +13,7 @@ public class CipaiDatabaseHelper
 
     public static ArrayList<Cipai> getAllShowCipai()
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME
                 + " where parent_id is null order by cast( color_id as int)", null);
         return getCipaiListFromCursor(cursor);
@@ -21,7 +21,7 @@ public class CipaiDatabaseHelper
 
     public static ArrayList<Cipai> getAllCipaiByWordCount()
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where parent_id is null order by wordcount desc",
                 null);
         return getCipaiListFromCursor(cursor);
@@ -29,14 +29,14 @@ public class CipaiDatabaseHelper
 
     public static ArrayList<Cipai> getAllCipai()
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
         return getCipaiListFromCursor(cursor);
     }
 
     public static Cipai getCipaiById(int id)
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where id= " + id, null);
         ArrayList<Cipai> list = getCipaiListFromCursor(cursor);
         if (list.size() > 0)
@@ -48,10 +48,18 @@ public class CipaiDatabaseHelper
             return new Cipai();
         }
     }
+    
+    public static ArrayList<Cipai> getParentCipaiById(int id)
+    {
+        SQLiteDatabase db = DBManager.getNewDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where id= " + id  +"  or parent_id= "+id, null);
+        return getCipaiListFromCursor(cursor);
+  
+    }
 
     public static void deleteCipaiById(int id)
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         db.rawQuery("delete * from " + TABLE_NAME + " where id= " + id, null);
     }
 

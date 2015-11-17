@@ -29,6 +29,7 @@ public class WritingDatabaseHelper
         db.execSQL(sqlStr,
                 new String[] {writing.getId() + "", writing.getBgimg(), writing.getCi_id() + "",
                         writing.getCreate_dt() + "", writing.getText(), System.currentTimeMillis() + ""});
+        BackupTask.needBackup = true;
     }
 
     public static void deleteWriting(Context context, Writing writing)
@@ -36,6 +37,7 @@ public class WritingDatabaseHelper
         SQLiteDatabase db = DBManager.getDatabase();
 
         db.execSQL("delete from " + TABLE_NAME + " where " + "id" + " = " + writing.getId());
+        BackupTask.needBackup = true;
     }
 
     private static ArrayList<Writing> getWritingFromCursor(Cursor cursor)

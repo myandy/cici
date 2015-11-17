@@ -453,16 +453,15 @@ public class ShareActivity extends BaseActivity
                 @Override
                 public void onClick(View v)
                 {
-
                     final List<ColorEntity> list = ColorDatabaseHelper.getAll();
                     String s[] = new String[list.size()+1];
                     s[0]="黑色";
                     for (int i = 1; i < list.size()+1; i++)
                     {
-                        
                         s[i] = list.get(i-1).getName();
                     }
-                    new AlertDialog.Builder(mActivity).setItems(s, new DialogInterface.OnClickListener()
+                    int color=MyApplication.getDefaultShareColor(mActivity);
+                    new AlertDialog.Builder(mActivity).setSingleChoiceItems(s,color, new DialogInterface.OnClickListener()
                     {
                         public void onClick(DialogInterface dialog, int which)
                         {

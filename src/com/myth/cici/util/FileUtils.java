@@ -3,6 +3,7 @@ package com.myth.cici.util;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -33,7 +34,7 @@ public class FileUtils
     {
         createDir(ROOT_DIR);
         createDir(BACKGROUND_DIR);
-        String fileName = MD5.MD5_16(Bitmap2Bytes(bm));
+        String fileName =bm.hashCode()+"";
         File myCaptureFile = new File(BACKGROUND_DIR + "/" + fileName + ".jpg");
         if (!myCaptureFile.exists())
         {
@@ -95,4 +96,5 @@ public class FileUtils
             return null;
         }
     }
+    
 }

@@ -13,7 +13,7 @@ public class CiDatabaseHelper
 
     public static ArrayList<Ci> getCiByCipaiId(int cipaiId)
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME + " where ci_id=" + cipaiId, null);
         return getCipaiListFromCursor(cursor);
     }
@@ -36,7 +36,7 @@ public class CiDatabaseHelper
 
     public static ArrayList<Ci> getAllCi()
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
         return getCipaiListFromCursor(cursor);
     }

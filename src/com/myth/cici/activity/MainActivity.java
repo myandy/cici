@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 
 import com.myth.cici.BaseActivity;
 import com.myth.cici.R;
+import com.myth.cici.db.BackupTask;
 import com.myth.cici.db.WritingDatabaseHelper;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.DisplayUtil;
@@ -121,6 +122,14 @@ public class MainActivity extends BaseActivity
     {
         super.onResume();
         refresh();
+    }
+    
+    @Override
+    protected void onStop() {
+        // TODO Auto-generated method stub
+        super.onStop();
+
+        new BackupTask(this).execute(BackupTask.COMMAND_BACKUP);
     }
 
     public void refresh()

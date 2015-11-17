@@ -43,7 +43,7 @@ public class BaseActivity extends Activity
             // 透明状态栏
             getWindow().addFlags(0x4000000);
             // 透明导航栏
-            getWindow().addFlags(0x8000000);
+//            getWindow().addFlags(0x8000000);
 
             if (statusBarHeight == 0)
             {

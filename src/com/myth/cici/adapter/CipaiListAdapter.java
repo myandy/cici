@@ -1,8 +1,11 @@
 package com.myth.cici.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +21,7 @@ import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.activity.CipaiActivity;
 import com.myth.cici.adapter.CipaiListAdapter.ViewHolder.ViewHolderItem;
+import com.myth.cici.db.CipaiDatabaseHelper;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
 import com.myth.cici.util.DisplayUtil;
@@ -146,9 +150,31 @@ public class CipaiListAdapter extends RecyclerView.Adapter<CipaiListAdapter.View
                 @Override
                 public void onClick(View v)
                 {
+                    final ArrayList<Cipai> cipais=CipaiDatabaseHelper.getParentCipaiById(holder.cipai.getId());
+                    
+                   String [] titles=new String[cipais.size()];
+                    
+                    for(int i=0;i<cipais.size();i++){
+                        titles[i]=cipais.get(i).getName();
+                        cipais.get(i).setSource(holder.cipai.getSource());
+                        cipais.get(i).setColor_id(holder.cipai.getColor_id());
+                    }
+                    if(cipais.size()>1){
+                        new AlertDialog.Builder(mContext).setItems(titles, new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                Intent intent = new Intent(mContext, CipaiActivity.class);
+                                intent.putExtra("cipai",cipais.get(which));
+                                mContext.startActivity(intent);
+                                dialog.dismiss();
+                            }
+                        }).show();
+                    }
+                    else{
                     Intent intent = new Intent(mContext, CipaiActivity.class);
                     intent.putExtra("cipai", holder.cipai);
-                    mContext.startActivity(intent);
+                    mContext.startActivity(intent);}
                 }
             });
 

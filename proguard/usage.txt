@@ -198,6 +198,7 @@ com.myth.cici.BuildConfig
 com.myth.cici.MyApplication:
     131:131:public static int getDefaultTextSize(android.content.Context)
     136:139:public static void setDefaultTextSize(android.content.Context,int)
+    220:221:public static void setTypeface(android.graphics.Typeface)
 com.myth.cici.R
 com.myth.cici.R$anim
 com.myth.cici.R$attr
@@ -211,26 +212,34 @@ com.myth.cici.R$string
 com.myth.cici.R$style
 com.myth.cici.R$styleable
 com.myth.cici.activity.MainActivity$MyPagerAdapter:
-    172:172:public java.util.ArrayList getWritings()
+    181:181:public java.util.ArrayList getWritings()
 com.myth.cici.adapter.CipaiAdapter$ViewHolder:
     64:65:public void setMyListener(com.myth.cici.listener.MyListener)
 com.myth.cici.adapter.CipaiListAdapter$ViewHolder:
     android.widget.TextView name
     android.widget.TextView tag
+com.myth.cici.db.BackupTask:
+    public static final java.lang.String COMMAND_BACKUP
+    public static final java.lang.String COMMAND_RESTORE
 com.myth.cici.db.CiDatabaseHelper:
+    private static final java.lang.String TABLE_NAME
     10:10:public CiDatabaseHelper()
 com.myth.cici.db.CipaiDatabaseHelper:
+    private static final java.lang.String TABLE_NAME
     10:10:public CipaiDatabaseHelper()
-    54:56:public static void deleteCipaiById(int)
+    62:64:public static void deleteCipaiById(int)
 com.myth.cici.db.ColorDatabaseHelper:
+    private static final java.lang.String TABLE_NAME
     10:10:public ColorDatabaseHelper()
 com.myth.cici.db.DBManager:
     private static final int BUFFER_SIZE
     public static final java.lang.String DB_NAME
+    public static final java.lang.String DB_NEW_NAME
     public static final java.lang.String PACKAGE_NAME
     public static final int DB_VERSION
-    16:16:public DBManager()
+    17:17:public DBManager()
 com.myth.cici.db.WritingDatabaseHelper:
+    private static final java.lang.String TABLE_NAME
     11:11:public WritingDatabaseHelper()
 com.myth.cici.db.YunDatabaseHelper:
     14:14:public YunDatabaseHelper()
@@ -248,7 +257,7 @@ com.myth.cici.entity.Writing:
 com.myth.cici.fragment.ChangePictureFragment:
     private static final int REQUEST_PICK_IMG
 com.myth.cici.util.CheckUtils:
-    12:12:public CheckUtils()
+    14:14:public CheckUtils()
 com.myth.cici.util.DateUtils:
     public static final java.lang.String YMD_FORMAT
     public static final java.lang.String YM_FORMAT
@@ -272,8 +281,9 @@ com.myth.cici.util.DisplayUtil:
 com.myth.cici.util.Fastblur:
     7:7:public Fastblur()
 com.myth.cici.util.FileUtils:
-    13:13:public FileUtils()
-    89:95:public static android.graphics.Bitmap Bytes2Bimap(byte[])
+    14:14:public FileUtils()
+    83:85:public static byte[] Bitmap2Bytes(android.graphics.Bitmap)
+    90:96:public static android.graphics.Bitmap Bytes2Bimap(byte[])
 com.myth.cici.util.ImageUtils:
     9:9:public ImageUtils()
 com.myth.cici.util.Logs:
@@ -285,11 +295,6 @@ com.myth.cici.util.Logs:
     75:79:public static void warn(java.lang.String)
 com.myth.cici.util.Logs$LogException:
     private static final long serialVersionUID
-com.myth.cici.util.MD5:
-    18:18:public MD5()
-    29:41:public static java.lang.String MD5_32(java.lang.String)
-    75:75:public static java.lang.String MD5_16(java.lang.String)
-    92:137:public static java.lang.String MD5_32(java.io.File)
 com.myth.cici.util.OthersUtils:
     20:20:public OthersUtils()
     44:45:public static java.lang.String paste(android.content.Context)

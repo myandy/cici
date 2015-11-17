@@ -21,7 +21,7 @@ public class YunDatabaseHelper
 
     public static void getYunList(Context context)
     {
-        SQLiteDatabase db = DBManager.getDatabase();
+        SQLiteDatabase db = DBManager.getNewDatabase();
         Cursor cursor = db.rawQuery("select * from " + YUNSHU[getDefaultYunShu(context)], null);
         yunList = getYunListFromCursor(cursor);
     }

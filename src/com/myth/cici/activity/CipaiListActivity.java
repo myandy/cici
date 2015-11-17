@@ -115,13 +115,17 @@ public class CipaiListActivity extends BaseActivity
         if (isDefault)
         {
             rectLeft.setBackgroundResource(R.drawable.rect_left_selected);
+            rectLeft.setTextColor(getResources().getColor(R.color.black));
             rectRight.setBackgroundResource(R.drawable.rect_right);
+            rectRight.setTextColor(getResources().getColor(R.color.white));
             ciList = CipaiDatabaseHelper.getAllShowCipai();
         }
         else
         {
             rectLeft.setBackgroundResource(R.drawable.rect_left);
+            rectLeft.setTextColor(getResources().getColor(R.color.white));
             rectRight.setBackgroundResource(R.drawable.rect_right_selected);
+            rectRight.setTextColor(getResources().getColor(R.color.black));
             ciList = CipaiDatabaseHelper.getAllCipaiByWordCount();
         }
     }
