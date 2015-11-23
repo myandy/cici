@@ -256,8 +256,9 @@ com.myth.cici.entity.Writing:
     99:99:public static long getSerialversionuid()
 com.myth.cici.fragment.ChangePictureFragment:
     private static final int REQUEST_PICK_IMG
+com.myth.cici.fragment.Test
 com.myth.cici.util.CheckUtils:
-    14:14:public CheckUtils()
+    16:16:public CheckUtils()
 com.myth.cici.util.DateUtils:
     public static final java.lang.String YMD_FORMAT
     public static final java.lang.String YM_FORMAT
@@ -353,6 +354,9 @@ com.myth.cici.wiget.IntroductionView:
 com.myth.cici.wiget.MainView:
     25:26:public MainView(android.content.Context,android.util.AttributeSet,int)
     30:31:public MainView(android.content.Context,android.util.AttributeSet)
+com.myth.cici.wiget.PasteEditText:
+    private static final int ID_PASTE
+    46:46:public com.myth.cici.wiget.PasteEditText$OnPasteListener getOnPasteListener()
 com.myth.cici.wiget.PingzeView:
     private static final int TYPE_PING
     private static final int TYPE_ZHONG

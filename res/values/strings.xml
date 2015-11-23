@@ -39,4 +39,7 @@
     
     <string name="about_text3">有建议或者bug请联系：\nandymao1991@gmail.com</string>
     
+     <string name="tip_paste_auto">是否自动保存中文分句符后的内容到下一行</string>
+    <string name="auto_save">智能保存</string>
+    
 </resources>

@@ -10199,30 +10199,44 @@ com.myth.cici.fragment.EditFragment -> com.myth.cici.c.g:
     android.view.View root -> e
     com.myth.cici.entity.Cipai cipai -> f
     com.myth.cici.entity.Writing writing -> g
+    com.myth.cici.wiget.PasteEditText$OnPasteListener onPasteListener -> h
     com.myth.cici.fragment.EditFragment getInstance(com.myth.cici.entity.Cipai,com.myth.cici.entity.Writing) -> a
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void onResume() -> onResume
     void onStop() -> onStop
     void save() -> a
     void initViews(android.view.View) -> a
+    java.lang.String[] split(java.lang.String) -> a
     void hideSoftInputFromWindow() -> b
-    android.content.Context access$0(com.myth.cici.fragment.EditFragment) -> a
-    java.lang.String[] access$1(com.myth.cici.fragment.EditFragment) -> b
-    com.myth.cici.entity.Cipai access$2(com.myth.cici.fragment.EditFragment) -> c
-    void access$3(com.myth.cici.fragment.EditFragment) -> d
+    java.util.ArrayList access$0(com.myth.cici.fragment.EditFragment) -> a
+    java.lang.String[] access$1(com.myth.cici.fragment.EditFragment,java.lang.String) -> a
+    android.content.Context access$2(com.myth.cici.fragment.EditFragment) -> b
+    java.lang.String[] access$3(com.myth.cici.fragment.EditFragment) -> c
+    com.myth.cici.entity.Cipai access$4(com.myth.cici.fragment.EditFragment) -> d
+    void access$5(com.myth.cici.fragment.EditFragment) -> e
 com.myth.cici.fragment.EditFragment$1 -> com.myth.cici.c.h:
     com.myth.cici.fragment.EditFragment this$0 -> a
-    android.widget.EditText val$edittext -> b
+    void onPasteClick(int) -> a
+    com.myth.cici.fragment.EditFragment access$0(com.myth.cici.fragment.EditFragment$1) -> a
+com.myth.cici.fragment.EditFragment$1$1 -> com.myth.cici.c.i:
+    com.myth.cici.fragment.EditFragment$1 this$1 -> a
+    int val$line -> b
+    java.lang.String[] val$texts -> c
+    void onConfirm() -> a
+    void onCancel() -> b
+com.myth.cici.fragment.EditFragment$2 -> com.myth.cici.c.j:
+    com.myth.cici.fragment.EditFragment this$0 -> a
+    com.myth.cici.wiget.PasteEditText val$edittext -> b
     int val$index -> c
     android.view.View val$keyboard -> d
     void onFocusChange(android.view.View,boolean) -> onFocusChange
-com.myth.cici.fragment.EditFragment$2 -> com.myth.cici.c.i:
+com.myth.cici.fragment.EditFragment$3 -> com.myth.cici.c.k:
     com.myth.cici.fragment.EditFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.fragment.EditFragment$3 -> com.myth.cici.c.j:
+com.myth.cici.fragment.EditFragment$4 -> com.myth.cici.c.l:
     com.myth.cici.fragment.EditFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.myth.cici.fragment.EditFragment$4 -> com.myth.cici.c.k:
+com.myth.cici.fragment.EditFragment$5 -> com.myth.cici.c.m:
     com.myth.cici.fragment.EditFragment this$0 -> a
     android.view.View val$keyboard -> b
     android.view.View val$getfocus -> c
@@ -10382,13 +10396,23 @@ com.myth.cici.wiget.MainView$1 -> com.myth.cici.wiget.j:
 com.myth.cici.wiget.MainView$2 -> com.myth.cici.wiget.k:
     com.myth.cici.wiget.MainView this$0 -> a
     void onClick(android.view.View) -> onClick
+com.myth.cici.wiget.PasteEditText -> com.myth.cici.wiget.PasteEditText:
+    com.myth.cici.wiget.PasteEditText$OnPasteListener onPasteListener -> a
+    int line -> b
+    boolean onTextContextMenuItem(int) -> onTextContextMenuItem
+    void setOnPasteListener(com.myth.cici.wiget.PasteEditText$OnPasteListener) -> a
+com.myth.cici.wiget.PasteEditText$1 -> com.myth.cici.wiget.l:
+    com.myth.cici.wiget.PasteEditText this$0 -> a
+    void run() -> run
+com.myth.cici.wiget.PasteEditText$OnPasteListener -> com.myth.cici.wiget.m:
+    void onPasteClick(int) -> a
 com.myth.cici.wiget.PingzeLinearlayout -> com.myth.cici.wiget.PingzeLinearlayout:
-com.myth.cici.wiget.PingzeView -> com.myth.cici.wiget.l:
+com.myth.cici.wiget.PingzeView -> com.myth.cici.wiget.n:
     int mType -> a
     android.content.Context mContext -> b
     void onDraw(android.graphics.Canvas) -> onDraw
 com.myth.cici.wiget.SelectImageView -> com.myth.cici.wiget.SelectImageView:
-com.myth.cici.wiget.StoneView -> com.myth.cici.wiget.m:
+com.myth.cici.wiget.StoneView -> com.myth.cici.wiget.o:
     java.lang.String[] typeString -> a
     int mType -> b
     int mColor -> c
@@ -10424,7 +10448,7 @@ com.myth.cici.wiget.VScrollView -> com.myth.cici.wiget.VScrollView:
     int access$2(com.myth.cici.wiget.VScrollView) -> c
     void access$3(com.myth.cici.wiget.VScrollView,int) -> a
     android.view.View access$4(com.myth.cici.wiget.VScrollView) -> d
-com.myth.cici.wiget.VScrollView$1 -> com.myth.cici.wiget.n:
+com.myth.cici.wiget.VScrollView$1 -> com.myth.cici.wiget.p:
     com.myth.cici.wiget.VScrollView this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
 com.myth.cici.wiget.VerticalTextView -> com.myth.cici.wiget.VerticalTextView:
@@ -10447,15 +10471,15 @@ com.myth.cici.wiget.WritingView -> com.myth.cici.wiget.WritingView:
     void setAuthor() -> f
     android.content.Context access$0(com.myth.cici.wiget.WritingView) -> a
     com.myth.cici.entity.Writing access$1(com.myth.cici.wiget.WritingView) -> b
-com.myth.cici.wiget.WritingView$1 -> com.myth.cici.wiget.o:
+com.myth.cici.wiget.WritingView$1 -> com.myth.cici.wiget.q:
     com.myth.cici.wiget.WritingView this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
     com.myth.cici.wiget.WritingView access$0(com.myth.cici.wiget.WritingView$1) -> a
-com.myth.cici.wiget.WritingView$1$1 -> com.myth.cici.wiget.p:
+com.myth.cici.wiget.WritingView$1$1 -> com.myth.cici.wiget.r:
     com.myth.cici.wiget.WritingView$1 this$1 -> a
     void onConfirm() -> a
     void onCancel() -> b
-com.myth.cici.wiget.WritingView$2 -> com.myth.cici.wiget.q:
+com.myth.cici.wiget.WritingView$2 -> com.myth.cici.wiget.s:
     com.myth.cici.wiget.WritingView this$0 -> a
     android.app.AlertDialog val$dialog -> b
     void onClick(android.view.View) -> onClick

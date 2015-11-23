@@ -9715,6 +9715,9 @@ com.myth.cici.wiget.HorizontalListView
 com.myth.cici.wiget.HorizontalListView: HorizontalListView(android.content.Context,android.util.AttributeSet)
 com.myth.cici.wiget.IntroductionView
 com.myth.cici.wiget.MainView
+com.myth.cici.wiget.PasteEditText
+com.myth.cici.wiget.PasteEditText: PasteEditText(android.content.Context,android.util.AttributeSet)
+com.myth.cici.wiget.PasteEditText: PasteEditText(android.content.Context)
 com.myth.cici.wiget.PingzeLinearlayout
 com.myth.cici.wiget.SelectImageView
 com.myth.cici.wiget.SwitchPoint

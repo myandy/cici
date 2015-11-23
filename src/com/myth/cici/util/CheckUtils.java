@@ -1,10 +1,12 @@
 package com.myth.cici.util;
 
+import android.R.integer;
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.widget.EditText;
@@ -37,7 +39,8 @@ public class CheckUtils {
                     edittext.setText(ss);
                 } else if (check == 30) {
                     SpannableString ss = new SpannableString(edittext.getText());
-                    ss.setSpan(new ForegroundColorSpan(Color.GREEN), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    ss.setSpan(new ForegroundColorSpan(Color.GREEN), i, i + 1,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     edittext.setText(ss);
                 }
             }
@@ -75,8 +78,12 @@ public class CheckUtils {
 
     public static String[] getCodeFormPingze(String[] list) {
         if (list != null && list.length > 0) {
-            String[] codes = new String[list.length - 1];
-            for (int i = 0; i < list.length - 1; i++) {
+            int size = list.length;
+            if (TextUtils.isEmpty(list[size - 1].trim())) {
+                size--;
+            }
+            String[] codes = new String[size];
+            for (int i = 0; i < size; i++) {
                 codes[i] = "";
                 for (int j = 0; j < list[i].length(); j++) {
                     if (list[i].charAt(j) == '平') {

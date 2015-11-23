@@ -32,7 +32,7 @@ public class DBManager {
             + PACKAGE_NAME + "/" + DB_NEW_NAME; // 在手机里存放数据库的位置
 
     /** The Constant VERSION. */
-    public static final int DB_VERSION = 2;
+    public static final int DB_VERSION = 3;
 
     private static SQLiteDatabase db_new;
 

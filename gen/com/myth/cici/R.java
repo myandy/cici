@@ -303,6 +303,7 @@ in (inches), mm (millimeters).
         public static final int about_text2=0x7f09001a;
         public static final int about_text3=0x7f09001b;
         public static final int app_name=0x7f090000;
+        public static final int auto_save=0x7f09001d;
         public static final int cancel=0x7f090003;
         public static final int check_false=0x7f090013;
         public static final int check_true=0x7f090012;
@@ -326,6 +327,7 @@ in (inches), mm (millimeters).
         public static final int setting_yun=0x7f09000d;
         public static final int sort_count=0x7f090017;
         public static final int sort_default=0x7f090016;
+        public static final int tip_paste_auto=0x7f09001c;
     }
     public static final class style {
         /** 

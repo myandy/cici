@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -156,7 +157,9 @@ public class CipaiListAdapter extends RecyclerView.Adapter<CipaiListAdapter.View
                     
                     for(int i=0;i<cipais.size();i++){
                         titles[i]=cipais.get(i).getName();
-                        cipais.get(i).setSource(holder.cipai.getSource());
+                        if(TextUtils.isEmpty(cipais.get(i).getSource())){
+                            cipais.get(i).setSource(holder.cipai.getSource());
+                        }
                         cipais.get(i).setColor_id(holder.cipai.getColor_id());
                     }
                     if(cipais.size()>1){
