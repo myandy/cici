@@ -8,6 +8,9 @@ android {
         applicationId "com.myth.cici"
         minSdkVersion 14
         targetSdkVersion 21
+
+        versionCode 14
+        versionName '2.0'
     }
 
     buildTypes {
