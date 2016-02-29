@@ -106,6 +106,7 @@ public class ChangePictureFragment extends Fragment {
     private void refresh() {
         text.setText(writing.getText());
         content.setBackgroundDrawable(new BitmapDrawable(getResources(), destBitmap));
+        title.setText(cipai.getName());
     }
 
     @Override
@@ -147,7 +148,6 @@ public class ChangePictureFragment extends Fragment {
         });
         layoutItemContainer(content);
         title = (TextView) view.findViewById(R.id.title);
-        title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
         title.setTypeface(myApplication.getTypeface());
         text.setTypeface(myApplication.getTypeface());

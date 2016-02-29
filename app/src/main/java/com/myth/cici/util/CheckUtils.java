@@ -1,6 +1,5 @@
 package com.myth.cici.util;
 
-import android.R.integer;
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;

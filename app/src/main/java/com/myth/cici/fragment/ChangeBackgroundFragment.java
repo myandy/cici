@@ -78,6 +78,7 @@ public class ChangeBackgroundFragment extends Fragment {
     private void refresh() {
         text.setText(writing.getText());
         content.setBackgroundResource(myApplication.bgimgList[bg_index]);
+        title.setText(cipai.getName());
     }
 
     private void initViews(View view) {
@@ -97,7 +98,6 @@ public class ChangeBackgroundFragment extends Fragment {
         content = (LinearLayout) view.findViewById(R.id.content);
         layoutItemContainer(content);
         title = (TextView) view.findViewById(R.id.title);
-        title.setText(cipai.getName());
         text = (TextView) view.findViewById(R.id.text);
         title.setTypeface(myApplication.getTypeface());
         text.setTypeface(myApplication.getTypeface());
