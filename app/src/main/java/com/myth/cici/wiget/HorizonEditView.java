@@ -1,5 +1,6 @@
 package com.myth.cici.wiget;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,43 +17,39 @@ import com.myth.cici.activity.CipaiActivity;
 import com.myth.cici.entity.Cipai;
 import com.myth.cici.entity.ColorEntity;
 
-public class HorizonEditView extends RelativeLayout
-{
+public class HorizonEditView extends RelativeLayout {
 
+    private MyApplication myApplication;
     ViewHolder holder1;
 
     ViewHolder holder2;
 
     private Context mContext;
 
-    public HorizonEditView(Context context, AttributeSet attrs, int defStyle)
-    {
+    public HorizonEditView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public HorizonEditView(Context context, AttributeSet attrs)
-    {
+    public HorizonEditView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public HorizonEditView(Context context)
-    {
+    public HorizonEditView(Context context) {
         super(context);
     }
 
-    public HorizonEditView(Context context, Cipai cipai1, Cipai cipai2)
-    {
+    public HorizonEditView(Context context, Cipai cipai1, Cipai cipai2) {
         super(context);
         holder1 = new ViewHolder();
         holder2 = new ViewHolder();
         holder1.cipai = cipai1;
         holder2.cipai = cipai2;
         mContext = context;
+        myApplication = (MyApplication) ((Activity) mContext).getApplication();
         initView();
     }
 
-    private void initView()
-    {
+    private void initView() {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View root = inflater.inflate(R.layout.layout_cipai_item, null);
 
@@ -77,27 +74,22 @@ public class HorizonEditView extends RelativeLayout
 
     }
 
-    private void initHolderView(final ViewHolder holder)
-    {
+    private void initHolderView(final ViewHolder holder) {
 
-        if (holder.cipai != null)
-        {
-            holder.item.setOnClickListener(new OnClickListener()
-            {
+        if (holder.cipai != null) {
+            holder.item.setOnClickListener(new OnClickListener() {
 
                 @Override
-                public void onClick(View v)
-                {
+                public void onClick(View v) {
                     Intent intent = new Intent(mContext, CipaiActivity.class);
                     intent.putExtra("cipai", holder.cipai);
                     mContext.startActivity(intent);
                 }
             });
 
-            ColorEntity colorEntity = MyApplication.getColorById(holder.cipai.getColor_id());
+            ColorEntity colorEntity = myApplication.getColorById(holder.cipai.getColor_id());
             int color = 0xffffff;
-            if (colorEntity != null)
-            {
+            if (colorEntity != null) {
                 color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
             }
             holder.head.setBackgroundColor(color);
@@ -109,8 +101,7 @@ public class HorizonEditView extends RelativeLayout
                     100);
             holder.middle.addView(new StoneView(mContext, holder.cipai.getTone_type(), color), 0, layoutParams);
             String count = holder.cipai.getWordcount() + "";
-            if (holder.cipai.getWordcount() < 100)
-            {
+            if (holder.cipai.getWordcount() < 100) {
                 count = "0" + holder.cipai.getWordcount();
             }
             holder.num.setText(count);
@@ -119,8 +110,7 @@ public class HorizonEditView extends RelativeLayout
         }
     }
 
-    public class ViewHolder
-    {
+    public class ViewHolder {
         Cipai cipai;
 
         View item;

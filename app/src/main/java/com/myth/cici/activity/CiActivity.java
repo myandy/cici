@@ -1,8 +1,5 @@
 package com.myth.cici.activity;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.myth.cici.BaseActivity;
-import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.db.CiDatabaseHelper;
 import com.myth.cici.db.CipaiDatabaseHelper;
@@ -31,6 +27,9 @@ import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.util.OthersUtils;
 import com.myth.cici.wiget.CircleEditView;
 import com.myth.cici.wiget.TouchEffectImageView;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class CiActivity extends BaseActivity {
 
@@ -91,7 +90,7 @@ public class CiActivity extends BaseActivity {
     }
 
     private void setColor() {
-        ColorEntity colorEntity = MyApplication.getColorById(cipai
+        ColorEntity colorEntity = myApplication.getColorById(cipai
                 .getColor_id());
         int color = 0xffffff;
         if (colorEntity != null) {
@@ -111,14 +110,14 @@ public class CiActivity extends BaseActivity {
         setColor();
 
         title = (TextView) findViewById(R.id.title);
-        title.setTypeface(MyApplication.getTypeface());
+        title.setTypeface(myApplication.getTypeface());
         title.setText(cipai.getName());
 
         title.setTextSize(44);
         
         if (cipai.getName().length() > 5) {
             TextView title1 = (TextView) findViewById(R.id.title1);
-            title1.setTypeface(MyApplication.getTypeface());
+            title1.setTypeface(myApplication.getTypeface());
             title1.setTextSize(44);
 
             title1.setText(cipai.getName().substring(0, 5));
@@ -126,7 +125,7 @@ public class CiActivity extends BaseActivity {
         }
 
         content = (TextView) findViewById(R.id.content);
-        content.setTypeface(MyApplication.getTypeface());
+        content.setTypeface(myApplication.getTypeface());
         content.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -150,7 +149,7 @@ public class CiActivity extends BaseActivity {
 
             }
         });
-        ((TextView) findViewById(R.id.note)).setTypeface(MyApplication
+        ((TextView) findViewById(R.id.note)).setTypeface(myApplication
                 .getTypeface());
 
         findViewById(R.id.note).setOnClickListener(new OnClickListener() {
@@ -177,7 +176,7 @@ public class CiActivity extends BaseActivity {
             }
         });
 
-        ((TextView) findViewById(R.id.author)).setTypeface(MyApplication
+        ((TextView) findViewById(R.id.author)).setTypeface(myApplication
                 .getTypeface());
         if (isIntroduce) {
             findViewById(R.id.share).setVisibility(View.GONE);

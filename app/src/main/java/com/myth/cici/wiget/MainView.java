@@ -17,59 +17,50 @@ import com.myth.cici.activity.CipaiListActivity;
 import com.umeng.comm.core.CommunitySDK;
 import com.umeng.comm.core.impl.CommunityFactory;
 
-public class MainView extends RelativeLayout
-{
+public class MainView extends RelativeLayout {
 
 
+    private MyApplication myApplication;
     private Context mContext;
 
-    public MainView(Context context, AttributeSet attrs, int defStyle)
-    {
+    public MainView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public MainView(Context context, AttributeSet attrs)
-    {
+    public MainView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MainView(Context context)
-    {
+    public MainView(Context context) {
         super(context);
         mContext = context;
+        myApplication = (MyApplication) ((Activity) mContext).getApplication();
         initView();
     }
 
-    private void initView()
-    {
-        MyApplication myApplication = (MyApplication) ((Activity) mContext).getApplication();
+    private void initView() {
 
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View root = inflater.inflate(R.layout.layout_main, null);
 
         ViewGroup showAll = (ViewGroup) root.findViewById(R.id.show_all);
-        showAll.setOnClickListener(new OnClickListener()
-        {
+        showAll.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 mContext.startActivity(new Intent(mContext, CipaiListActivity.class));
             }
         });
-        for (int i = 0; i < showAll.getChildCount(); i++)
-        {
-            ((TextView) showAll.getChildAt(i)).setTypeface(MyApplication.getTypeface());
+        for (int i = 0; i < showAll.getChildCount(); i++) {
+            ((TextView) showAll.getChildAt(i)).setTypeface(myApplication.getTypeface());
         }
 
         TextView showOne = (TextView) root.findViewById(R.id.show_one);
-        showOne.setTypeface(MyApplication.getTypeface());
-        showOne.setOnClickListener(new OnClickListener()
-        {
+        showOne.setTypeface(myApplication.getTypeface());
+        showOne.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(mContext, CiActivity.class);
                 mContext.startActivity(intent);
 

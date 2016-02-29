@@ -1,7 +1,5 @@
 package com.myth.cici.activity;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.myth.cici.BaseActivity;
-import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.db.CiDatabaseHelper;
 import com.myth.cici.entity.Ci;
@@ -26,6 +23,8 @@ import com.myth.cici.util.DisplayUtil;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.CircleTextView;
 import com.myth.cici.wiget.SwitchPoint;
+
+import java.util.ArrayList;
 
 public class CipaiActivity extends BaseActivity {
 
@@ -59,7 +58,7 @@ public class CipaiActivity extends BaseActivity {
         writeTV.setText("填词");
         writeTV.setTextSize(18);
         writeTV.setPadding(15, 15, 15, 15);
-        writeTV.setTypeface(MyApplication.getTypeface());
+        writeTV.setTypeface(myApplication.getTypeface());
         writeTV.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -71,7 +70,7 @@ public class CipaiActivity extends BaseActivity {
         });
         addBottomRightView(writeTV, new LayoutParams(-2, -2));
 
-        ColorEntity colorEntity = MyApplication.getColorById(cipai
+        ColorEntity colorEntity = myApplication.getColorById(cipai
                 .getColor_id());
         int color = 0xffffff;
         if (colorEntity != null) {
@@ -92,13 +91,13 @@ public class CipaiActivity extends BaseActivity {
         topView.addView(new CircleTextView(mActivity, count, color), param);
 
         TextView title = (TextView) findViewById(R.id.title);
-        title.setTypeface(MyApplication.getTypeface());
+        title.setTypeface(myApplication.getTypeface());
         title.setTextSize(44);
         title.setText(cipai.getName());
 
         if (cipai.getName().length() > 5) {
             TextView title1 = (TextView) findViewById(R.id.title1);
-            title1.setTypeface(MyApplication.getTypeface());
+            title1.setTypeface(myApplication.getTypeface());
             title1.setTextSize(44);
 
             title1.setText(cipai.getName().substring(0, 5));
@@ -158,7 +157,7 @@ public class CipaiActivity extends BaseActivity {
 
             container.addView(root, param);
             TextView textView = (TextView) root.findViewById(R.id.textview);
-            textView.setTypeface(MyApplication.getTypeface());
+            textView.setTypeface(myApplication.getTypeface());
             String text = ciList.get(position % ciList.size()).getText();
             if (!TextUtils.isEmpty(ciList.get(position % ciList.size())
                     .getAuthor())) {

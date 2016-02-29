@@ -1,8 +1,5 @@
 package com.myth.cici.activity;
 
-import java.io.IOException;
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -31,7 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.myth.cici.BaseActivity;
-import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.db.ColorDatabaseHelper;
 import com.myth.cici.entity.Cipai;
@@ -43,6 +39,9 @@ import com.myth.cici.util.OthersUtils;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.TouchEffectImageView;
+
+import java.io.IOException;
+import java.util.List;
 
 public class ShareActivity extends BaseActivity
 {
@@ -152,13 +151,13 @@ public class ShareActivity extends BaseActivity
         layoutItemContainer(content);
         title.setText(cipai.getName());
         text.setText(writing.getText());
-        title.setTypeface(MyApplication.getTypeface());
-        text.setTypeface(MyApplication.getTypeface());
-        author.setTypeface(MyApplication.getTypeface());
+        title.setTypeface(myApplication.getTypeface());
+        text.setTypeface(myApplication.getTypeface());
+        author.setTypeface(myApplication.getTypeface());
         
         if (TextUtils.isEmpty(writing.getAuthor()))
         {
-            author.setText(MyApplication.getDefaultUserName(mActivity));
+            author.setText(myApplication.getDefaultUserName(mActivity));
         }
         else
         {
@@ -173,7 +172,7 @@ public class ShareActivity extends BaseActivity
 
         if (StringUtils.isNumeric(writing.getBgimg()))
         {
-            content.setBackgroundResource(MyApplication.bgimgList[Integer.parseInt(writing.getBgimg())]);
+            content.setBackgroundResource(myApplication.bgimgList[Integer.parseInt(writing.getBgimg())]);
         }
         else if (writing.getBitmap() != null)
         {
@@ -228,7 +227,7 @@ public class ShareActivity extends BaseActivity
 
     public void isAddTextSize(boolean add)
     {
-        int size = MyApplication.getDefaultShareSize(mActivity);
+        int size = myApplication.getDefaultShareSize(mActivity);
         if (add)
         {
             size += 2;
@@ -237,13 +236,13 @@ public class ShareActivity extends BaseActivity
         {
             size -= 2;
         }
-        MyApplication.setDefaultShareSize(mActivity, size);
+        myApplication.setDefaultShareSize(mActivity, size);
         setTextSize();
     }
 
     public void setTextSize()
     {
-        int size = MyApplication.getDefaultShareSize(mActivity);
+        int size = myApplication.getDefaultShareSize(mActivity);
         text.setTextSize(size);
         title.setTextSize(size + 2);
         author.setTextSize(size - 2);
@@ -251,13 +250,13 @@ public class ShareActivity extends BaseActivity
 
     private void setGravity(boolean isCenter)
     {
-        MyApplication.setDefaultShareGravity(mActivity, isCenter);
+        myApplication.setDefaultShareGravity(mActivity, isCenter);
         setGravity();
     }
 
     private void setGravity()
     {
-        boolean isCenter = MyApplication.getDefaultShareGravity(mActivity);
+        boolean isCenter = myApplication.getDefaultShareGravity(mActivity);
         if (isCenter)
         {
             text.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -270,7 +269,7 @@ public class ShareActivity extends BaseActivity
 
     private void setPadding()
     {
-        int margin = MyApplication.getDefaultSharePadding(mActivity);
+        int margin = myApplication.getDefaultSharePadding(mActivity);
         LinearLayout.LayoutParams lps = (android.widget.LinearLayout.LayoutParams) text.getLayoutParams();
         lps.leftMargin = margin;
         text.setLayoutParams(lps);
@@ -278,7 +277,7 @@ public class ShareActivity extends BaseActivity
 
     private void setAuthor()
     {
-        if (MyApplication.getDefaultShareAuthor(mActivity))
+        if (myApplication.getDefaultShareAuthor(mActivity))
         {
             author.setVisibility(View.VISIBLE);
         }
@@ -290,13 +289,13 @@ public class ShareActivity extends BaseActivity
 
     private void setAuthor(boolean showAuthor)
     {
-        MyApplication.setDefaultShareAuthor(mActivity, showAuthor);
+        myApplication.setDefaultShareAuthor(mActivity, showAuthor);
         setAuthor();
     }
 
     private void setPadding(boolean isAdd)
     {
-        int margin = MyApplication.getDefaultSharePadding(mActivity);
+        int margin = myApplication.getDefaultSharePadding(mActivity);
         if (isAdd)
         {
             margin += 8;
@@ -305,14 +304,14 @@ public class ShareActivity extends BaseActivity
         {
             margin -= 8;
         }
-        MyApplication.setDefaultSharePadding(mActivity, margin);
+        myApplication.setDefaultSharePadding(mActivity, margin);
         setPadding();
     }
 
     private void setColor()
     {
 
-        ColorEntity colorEntity = MyApplication.getColorByPos(MyApplication.getDefaultShareColor(mActivity));
+        ColorEntity colorEntity = myApplication.getColorByPos(myApplication.getDefaultShareColor(mActivity));
         int color = Color.rgb(0, 0, 0);
         if (colorEntity != null)
         {
@@ -325,7 +324,7 @@ public class ShareActivity extends BaseActivity
 
     private void setColor(int color)
     {
-        MyApplication.setDefaultShareColor(mActivity, color);
+        myApplication.setDefaultShareColor(mActivity, color);
         setColor();
     }
 
@@ -460,7 +459,7 @@ public class ShareActivity extends BaseActivity
                     {
                         s[i] = list.get(i-1).getName();
                     }
-                    int color=MyApplication.getDefaultShareColor(mActivity);
+                    int color=myApplication.getDefaultShareColor(mActivity);
                     new AlertDialog.Builder(mActivity).setSingleChoiceItems(s,color, new DialogInterface.OnClickListener()
                     {
                         public void onClick(DialogInterface dialog, int which)
@@ -482,7 +481,7 @@ public class ShareActivity extends BaseActivity
                 @Override
                 public void onClick(View v)
                 {
-                    boolean isCollect = MyApplication.getDefaultShareAuthor(mActivity);
+                    boolean isCollect = myApplication.getDefaultShareAuthor(mActivity);
                     setAuthor(!isCollect);
                     if (menu != null)
                     {
@@ -491,7 +490,7 @@ public class ShareActivity extends BaseActivity
                 }
             });
 
-            if (MyApplication.getDefaultShareAuthor(mActivity))
+            if (myApplication.getDefaultShareAuthor(mActivity))
             {
                 ((TextView) menuView.findViewById(R.id.tv8)).setText("隐藏作者");
             }
@@ -516,7 +515,7 @@ public class ShareActivity extends BaseActivity
         else
         {
 
-            if (MyApplication.getDefaultShareAuthor(mActivity))
+            if (myApplication.getDefaultShareAuthor(mActivity))
             {
                 ((TextView) menuView.findViewById(R.id.tv8)).setText("隐藏作者");
             }

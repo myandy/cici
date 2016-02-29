@@ -27,6 +27,9 @@
     <string name="setting_ad">支持开发者（应用推荐）</string>
     
     <string name="notice_title">词Ci用户交流请加QQ群：439747099</string>
+
+    <string name="about_qq_toast">QQ群号已复制到剪切板，请打开QQ查找QQ群加入我们</string>
+    <string name="about_qq">439747099</string>
     
     <string name="sort_default">默认排序</string>
     <string name="sort_count">按字数排序</string>

@@ -1,9 +1,5 @@
 package com.myth.cici.fragment;
 
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -11,7 +7,6 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,10 +27,14 @@ import com.myth.cici.entity.Writing;
 import com.myth.cici.util.CheckUtils;
 import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.GCDialog;
-import com.myth.cici.wiget.PasteEditText;
 import com.myth.cici.wiget.GCDialog.OnCustomDialogListener;
+import com.myth.cici.wiget.PasteEditText;
 import com.myth.cici.wiget.PasteEditText.OnPasteListener;
 import com.myth.cici.wiget.PingzeLinearlayout;
+
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EditFragment extends Fragment {
 
@@ -53,6 +52,8 @@ public class EditFragment extends Fragment {
 
     private Writing writing;
 
+    private MyApplication myApplication;
+
     public EditFragment() {
     }
 
@@ -65,10 +66,11 @@ public class EditFragment extends Fragment {
 
     @Override
     public View onCreateView(android.view.LayoutInflater inflater,
-            android.view.ViewGroup container, Bundle savedInstanceState) {
+                             android.view.ViewGroup container, Bundle savedInstanceState) {
 
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = inflater.getContext();
+        myApplication = (MyApplication) ((Activity) mContext).getApplication();
         root = inflater.inflate(R.layout.fragment_edit, null);
         initViews(root);
         return root;
@@ -79,7 +81,7 @@ public class EditFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (StringUtils.isNumeric(writing.getBgimg())) {
-            root.setBackgroundResource(MyApplication.bgimgList[Integer
+            root.setBackgroundResource(myApplication.bgimgList[Integer
                     .parseInt(writing.getBgimg())]);
         } else if (writing.getBitmap() != null) {
             root.setBackgroundDrawable(new BitmapDrawable(getResources(),
@@ -139,13 +141,13 @@ public class EditFragment extends Fragment {
                     edittext.line = i;
                     edittext.setOnPasteListener(onPasteListener);
                 }
-                edittext.setTypeface(MyApplication.getTypeface());
+                edittext.setTypeface(myApplication.getTypeface());
                 final int index = i;
                 edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
                         if (!hasFocus) {
-                            if (MyApplication.getCheckAble(mContext)) {
+                            if (myApplication.getCheckAble(mContext)) {
                                 CheckUtils
                                         .checkEditText(edittext, sList[index]);
                             }
@@ -173,7 +175,7 @@ public class EditFragment extends Fragment {
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);
         title.setText(cipai.getName());
-        title.setTypeface(MyApplication.getTypeface());
+        title.setTypeface(myApplication.getTypeface());
 
         view.findViewById(R.id.edit_dict).setOnClickListener(
                 new OnClickListener() {
@@ -246,7 +248,7 @@ public class EditFragment extends Fragment {
         }
     };
 
-   private String[] split(String str) {
+    private String[] split(String str) {
 
         /* 正则表达式：句子结束符 */
         String regEx = "：|。|！|；";
