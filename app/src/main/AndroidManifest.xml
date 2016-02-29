@@ -2,49 +2,89 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.myth.cici"
     android:versionCode="13"
-    android:versionName="1.93" >
+    android:versionName="1.93">
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
+    <!-- 使用相机 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <!-- 检测网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取mac地址作为用户的备用唯一标识 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取用户手机的IMEI，用来唯一的标识用户 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 缓存资源优先存入SDcard -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 定位所需的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 推送相关的权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- QQ登录所需权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
     <!-- 往SDCard的创建与删除文件权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <!-- 往SDCard写入数据权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <application
         android:name="com.myth.cici.MyApplication"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".activity.MainActivity" >
+        android:theme="@style/CustomerTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CipaiListActivity" />
-        <activity android:name=".activity.CipaiActivity" />
-        <activity android:name=".activity.CiActivity" />
-        <activity android:name=".activity.ShareActivity" />
-        <activity android:name=".activity.EditActivity" />
-        <activity android:name=".activity.YunSearchActivity" />
-        <activity android:name=".activity.CipaiSearchActivity" />
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.ShareEditActivity" />
+        <activity
+            android:name=".activity.CipaiListActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.CipaiActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.CiActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.ShareActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.EditActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.YunSearchActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.CipaiSearchActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.AboutActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.ShareEditActivity"
+            android:theme="@style/AppTheme"></activity>
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="550b99fafd98c544ba0006c6" >
-        </meta-data>
+            android:value="550b99fafd98c544ba0006c6"></meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="xiaomi" />
@@ -112,11 +152,10 @@
         <receiver
             android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
             android:exported="false"
-            android:process=":push" >
-        </receiver>
+            android:process=":push"></receiver>
         <receiver
             android:name="com.umeng.message.SystemReceiver"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -131,14 +170,14 @@
         </receiver>
         <receiver
             android:name="com.umeng.message.MessageReceiver"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
                 <action android:name="org.agoo.android.intent.action.RECEIVE" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="com.umeng.message.ElectionReceiver"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
                 <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4" />
 
@@ -147,12 +186,12 @@
         </receiver>
         <receiver
             android:name="com.umeng.message.RegistrationReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.umeng.community.example.intent.action.COMMAND" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.umeng.message.BootBroadcastReceiver" >
+        <receiver android:name="com.umeng.message.BootBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -162,7 +201,7 @@
             android:name="com.umeng.message.UmengService"
             android:exported="true"
             android:label="PushService"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
                 <action android:name="com.umeng.community.example.intent.action.START" />
             </intent-filter>
@@ -181,7 +220,7 @@
         <service
             android:name="com.umeng.message.UmengMessageIntentReceiverService"
             android:exported="true"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
                 <action android:name="org.android.agoo.client.MessageReceiverService" />
             </intent-filter>
@@ -199,8 +238,7 @@
             android:launchMode="singleTask"
             android:noHistory="true"
             android:theme="@style/Theme.UMDialog"
-            android:windowSoftInputMode="stateVisible|adjustResize" >
-        </activity>
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
 
         <!-- 图片选择相关 -->
         <activity android:name="com.umeng.comm.ui.imagepicker.PhotoSelectorActivity" />
@@ -211,7 +249,7 @@
             android:value="390b471f6bae9bf67170f079b8f75ccc" />
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="9d4f46eee5f2c48fea5ab05b87ad2bfe" />
+            android:value="d9d0b7012b8240035a3cad73ef30efed" />
     </application>
 
 </manifest>
