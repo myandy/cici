@@ -1,0 +1,36 @@
+// 在相同目录下，创建一个名为signing.properties的文件
+// 里面写上相关的签名信息
+// 如:
+//  store_file=/xy/sign/key.store
+//  store_password=storpassword
+//  key_alias=alias
+//  key_password=keypassword
+
+
+
+def Properties props = new Properties()
+def propFile = new File(project.projectDir, 'signing.properties')
+println propFile.absolutePath
+
+if (propFile.canRead()){
+    props.load(new FileInputStream(propFile))
+
+    if (props!=null && props.containsKey('store_file') && props.containsKey('store_password') &&
+            props.containsKey('key_alias') && props.containsKey('key_password')) {
+        android.signingConfigs.release.storeFile = file(props['store_file'])
+        android.signingConfigs.release.storePassword = props['store_password']
+        android.signingConfigs.release.keyAlias = props['key_alias']
+        android.signingConfigs.release.keyPassword = props['key_password']
+        android.buildTypes.debug.signingConfig = android.signingConfigs.release
+        android.buildTypes.release.signingConfig = android.signingConfigs.release
+        println 'signing sated'
+    } else {
+        println 'signing.properties found but some entries are missing'
+        //android.buildTypes.release.signingConfig = null
+        //android.buildTypes.debug.signingConfig = null
+    }
+}else {
+    println 'signing.properties not found'
+    //android.buildTypes.release.signingConfig = null
+    //android.buildTypes.debug.signingConfig = null
+}
