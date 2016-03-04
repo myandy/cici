@@ -88,10 +88,6 @@ public class BaseActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        Rect frame = new Rect();
-        getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-        int statusBarHeight = frame.top;
-        System.out.println(statusBarHeight);
         MobclickAgent.onResume(this);
     }
 

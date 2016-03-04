@@ -104,7 +104,7 @@ public class CiActivity extends BaseActivity {
         LinearLayout topView = (LinearLayout) findViewById(R.id.right);
         LayoutParams param = new LayoutParams(
                 DisplayUtil.dip2px(mActivity, 80), DisplayUtil.dip2px(
-                        mActivity, 120));
+                mActivity, 120));
         editView = new CircleEditView(mActivity);
         topView.addView(editView, 1, param);
         setColor();
@@ -114,14 +114,15 @@ public class CiActivity extends BaseActivity {
         title.setText(cipai.getName());
 
         title.setTextSize(44);
-        
-        if (cipai.getName().length() > 5) {
-            TextView title1 = (TextView) findViewById(R.id.title1);
-            title1.setTypeface(myApplication.getTypeface());
-            title1.setTextSize(44);
 
+        TextView title1 = (TextView) findViewById(R.id.title1);
+        title1.setTypeface(myApplication.getTypeface());
+        if (cipai.getName().length() > 5) {
+            title1.setTextSize(44);
             title1.setText(cipai.getName().substring(0, 5));
             title.setText(cipai.getName().substring(5));
+        } else {
+            title1.setText("");
         }
 
         content = (TextView) findViewById(R.id.content);
@@ -131,10 +132,10 @@ public class CiActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(mActivity).setItems(
-                        new String[] { "复制文本" },
+                        new String[]{"复制文本"},
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
-                                    int which) {
+                                                int which) {
 
                                 if (which == 0) {
                                     OthersUtils.copy(title.getText() + "\n"
@@ -157,10 +158,10 @@ public class CiActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(mActivity).setItems(
-                        new String[] { "复制文本" },
+                        new String[]{"复制文本"},
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
-                                    int which) {
+                                                int which) {
 
                                 if (which == 0) {
                                     OthersUtils.copy(title.getText() + "\n"

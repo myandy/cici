@@ -7,8 +7,7 @@ import android.view.View;
 
 import com.myth.cici.util.DisplayUtil;
 
-public class StoneView extends View
-{
+public class StoneView extends View {
 
     private static final int TYPE_CIRCLE = 10;
 
@@ -26,81 +25,65 @@ public class StoneView extends View
 
     private Context mContext;
 
-    public static String getYunString(int type)
-    {
-        if (type == TYPE_CIRCLE)
-        {
+    public static String getYunString(int type) {
+        if (type == TYPE_CIRCLE) {
             return typeString[0];
-        }
-        else if (type == TYPE_RING)
-        {
+        } else if (type == TYPE_RING) {
             return typeString[1];
-        }
-        else if (type == TYPE_PLUS)
-        {
+        } else if (type == TYPE_PLUS) {
             return typeString[2];
-        }
-        else if (type == TYPE_PLUS1)
-        {
+        } else if (type == TYPE_PLUS1) {
             return typeString[3];
-        }
-        else
-        {
+        } else {
             return "";
         }
     }
 
-    public StoneView(Context context, int type, int color)
-    {
+    private Paint paint;
+
+    public StoneView(Context context, int type, int color) {
         super(context);
         mType = type;
         mColor = color;
         mContext = context;
+        paint = new Paint();
+        paint.setColor(mColor);
+        paint.setAntiAlias(true);
     }
 
-    public StoneView(Context context)
-    {
+    public StoneView(Context context) {
         super(context);
+        mContext = context;
+        paint = new Paint();
+        paint.setColor(mColor);
+        paint.setAntiAlias(true);
     }
 
-    public void setType(int type, int color)
-    {
+    public void setType(int type, int color) {
         mType = type;
         mColor = color;
         invalidate();
     }
 
     @Override
-    protected void onDraw(Canvas canvas)
-    {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        Paint paint = new Paint();
-        paint.setColor(mColor);
-        paint.setAntiAlias(true);
-        if (mType == TYPE_CIRCLE)
-        {
+        if (mType == TYPE_CIRCLE) {
             paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(DisplayUtil.dip2px(mContext, 12), DisplayUtil.dip2px(mContext, 12),
                     DisplayUtil.dip2px(mContext, 10), paint);
-        }
-        else if (mType == TYPE_RING)
-        {
+        } else if (mType == TYPE_RING) {
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(DisplayUtil.dip2px(mContext, 2));
             canvas.drawCircle(DisplayUtil.dip2px(mContext, 12), DisplayUtil.dip2px(mContext, 12),
                     DisplayUtil.dip2px(mContext, 9), paint);
-        }
-        else if (mType == TYPE_PLUS)
-        {
+        } else if (mType == TYPE_PLUS) {
             paint.setStyle(Paint.Style.FILL);
             canvas.drawRect(DisplayUtil.dip2px(mContext, 11), DisplayUtil.dip2px(mContext, 2),
                     DisplayUtil.dip2px(mContext, 13), DisplayUtil.dip2px(mContext, 22), paint);
             canvas.drawRect(DisplayUtil.dip2px(mContext, 2), DisplayUtil.dip2px(mContext, 11),
                     DisplayUtil.dip2px(mContext, 22), DisplayUtil.dip2px(mContext, 13), paint);
-        }
-        else if (mType == TYPE_PLUS1)
-        {
+        } else if (mType == TYPE_PLUS1) {
             paint.setStyle(Paint.Style.FILL);
             canvas.drawRect(DisplayUtil.dip2px(mContext, 11), DisplayUtil.dip2px(mContext, 2),
                     DisplayUtil.dip2px(mContext, 13), DisplayUtil.dip2px(mContext, 22), paint);
