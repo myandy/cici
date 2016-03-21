@@ -47,7 +47,6 @@ public class StoneView extends View {
         mColor = color;
         mContext = context;
         paint = new Paint();
-        paint.setColor(mColor);
         paint.setAntiAlias(true);
     }
 
@@ -55,7 +54,6 @@ public class StoneView extends View {
         super(context);
         mContext = context;
         paint = new Paint();
-        paint.setColor(mColor);
         paint.setAntiAlias(true);
     }
 
@@ -68,6 +66,7 @@ public class StoneView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        paint.setColor(mColor);
         if (mType == TYPE_CIRCLE) {
             paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(DisplayUtil.dip2px(mContext, 12), DisplayUtil.dip2px(mContext, 12),
