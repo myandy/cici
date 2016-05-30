@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="64dp"
+    android:background="@android:color/white"
     android:orientation="vertical" >
 
-    <com.umeng.comm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_active_user_icon"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
@@ -16,20 +17,21 @@
 
     <ToggleButton
         android:id="@+id/umeng_comm_active_user_togglebutton"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="89dp"
+        android:layout_height="31dp"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="18dp"
-        android:background="@drawable/umeng_comm_active_user_togglebutton_bg"
-        android:textColor="@color/umeng_comm_toogle_color"
+        android:singleLine="true"
+        android:background="@drawable/umeng_comm_topic_togglebutton"
+        android:textColor="@color/umeng_comm_topic_toogle_color"
         android:textOff="@string/umeng_comm_follow_topic"
         android:textOn="@string/umeng_comm_topic_followed"
-        android:textSize="@dimen/text_big15_size" />
+        android:textSize="13dp" />
 
     <LinearLayout
-        android:id="@+id/umeng_comm_active_user_layout"
+        android:id="@+id/umeng_commm_active_user_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -41,33 +43,37 @@
         <!-- 用户名‘性别布局 -->
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:gravity="bottom">
 
             <TextView
                 android:id="@+id/umeng_comm_active_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:drawablePadding="@dimen/umeng_comm_dimen_4px"
                 android:singleLine="true"
-                android:textSize="@dimen/text_big18_size" />
+                android:gravity="bottom"
+                android:textColor="@color/umeng_comm_color_666666"
+                android:textSize="14dp"/>
 
-            <ImageView
-                android:id="@+id/umeng_comm_active_user_gender"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginLeft="6dp"
-                android:src="@drawable/umeng_comm_gender_male" />
+            <!--<ImageView-->
+                <!--android:id="@+id/umeng_comm_active_user_gender"-->
+                <!--android:layout_width="14dp"-->
+                <!--android:layout_height="14dp"-->
+                <!--android:layout_marginLeft="6dp"-->
+                <!--android:src="@drawable/umeng_comm_gender_male" />-->
         </LinearLayout>
 
         <TextView
             android:id="@+id/umeng_comm_active_user_msg"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textColor="@color/umeng_comm_text_time"
-            android:textSize="@dimen/text_big13_size" />
+            android:textColor="@color/umeng_comm_color_a5"
+            android:textSize="10dp" />
     </LinearLayout>
 
     <include

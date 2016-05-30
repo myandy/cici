@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_user_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"

@@ -11,22 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/umeng_comm_dimen_100px">
 
-        <LinearLayout
+
+        <ImageView
             android:id="@+id/umeng_comm_title_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="37dp"
-                android:layout_height="37dp"
-                android:layout_marginLeft="@dimen/umeng_comm_dimen_30px"
-                android:layout_marginRight="@dimen/umeng_comm_dimen_10px"
-                android:src="@drawable/umeng_comm_title_back"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside"/>
-
-        </LinearLayout>
+            android:background="@android:color/transparent"
+            android:paddingLeft="@dimen/umeng_comm_dimen_28px"
+            android:paddingRight="@dimen/umeng_comm_dimen_20px"
+            android:scaleType="centerInside"
+            android:src="@drawable/umeng_comm_title_back" />
 
 
         <TextView
@@ -89,7 +83,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/umeng_comm_feed_title_line" />
 
-    <com.umeng.commm.ui.widgets.BaseView
+    <com.umeng.common.ui.widgets.BaseView
         android:id="@+id/umeng_comm_baseview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

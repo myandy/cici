@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/umeng_comm_feed_detail_like_selector" />
+                android:src="@drawable/umeng_commm_feeddetail_like_selector" />
 
             <TextView
                 android:id="@+id/umeng_comm_like_count_tv"
@@ -82,7 +82,7 @@
         android:layout_marginTop="@dimen/umeng_comm_dimen_50px"
         android:background="@color/umeng_comm_color_de" />
 
-    <com.umeng.commm.ui.widgets.LikeView
+    <com.umeng.common.ui.widgets.LikeView
         android:id="@+id/umeng_comm_like_users_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

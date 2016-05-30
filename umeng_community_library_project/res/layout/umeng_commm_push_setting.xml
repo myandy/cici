@@ -19,7 +19,7 @@
             android:text="@string/umeng_comm_setting_push"
             android:textSize="@dimen/text_big16_size" />
 
-        <com.umeng.commm.ui.widgets.SwitchButton
+        <com.umeng.common.ui.widgets.SwitchButton
             android:id="@+id/umeng_common_switch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

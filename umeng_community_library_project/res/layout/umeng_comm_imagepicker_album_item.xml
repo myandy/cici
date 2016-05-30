@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/albumitem_height"
+    android:layout_height="60dp"
+    android:id="@+id/container"
     android:gravity="center_vertical" >
 
     <RelativeLayout
@@ -10,17 +11,17 @@
         android:layout_height="@dimen/albumitem_content_height"
         android:layout_centerVertical="true" >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/umeng_comm_bg_album_border"
-            android:scaleType="fitCenter" />
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/umeng_comm_bg_album_border"-->
+            <!--android:scaleType="fitCenter" />-->
 
         <ImageView
             android:id="@+id/umeng_comm_iv_album_la"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerInParent="true"
             android:layout_marginRight="5dp"
             android:scaleType="centerCrop" />
     </RelativeLayout>
@@ -42,7 +43,7 @@
                 android:id="@+id/umeng_comm_tv_name_la"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
+                android:textColor="@color/umeng_comm_black_color"
                 android:textSize="17sp" />
 
             <TextView
@@ -52,13 +53,13 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/umeng_comm_iv_index_la"
-            android:layout_width="@dimen/albumitem_image_height"
-            android:layout_height="@dimen/albumitem_image_height"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/umeng_comm_ic_choice_green" />
+        <!--<ImageView-->
+            <!--android:id="@+id/umeng_comm_iv_index_la"-->
+            <!--android:layout_width="@dimen/albumitem_image_height"-->
+            <!--android:layout_height="@dimen/albumitem_image_height"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@color/umeng_comm_white_color" />-->
     </RelativeLayout>
 
 </RelativeLayout>

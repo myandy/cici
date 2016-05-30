@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="5dp" >
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_like_user_profile"
         android:layout_width="30dp"
         android:layout_height="30dp"

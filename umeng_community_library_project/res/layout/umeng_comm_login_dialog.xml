@@ -76,6 +76,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/qq_platform_btn"
             android:background="@drawable/umeng_comm_wechat_pressed"
+            android:visibility="gone"
             android:contentDescription="@string/umeng_socialize_login" >
         </ImageView>
     </RelativeLayout>

@@ -6,9 +6,9 @@
 
     <include
         android:id="@+id/umeng_comm_topic_search_title_layout"
-        layout="@layout/umeng_comm_topic_search_title_bar" />
+        layout="@layout/umeng_comm_search_header_view" />
 
-    <com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout
+    <com.umeng.common.ui.widgets.RefreshLvLayout
         android:id="@+id/umeng_comm_topic_refersh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,9 +25,9 @@
             android:listSelector="@android:color/transparent"
             android:scrollbars="none"
             android:scrollingCache="false" />
-    </com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout>
+    </com.umeng.common.ui.widgets.RefreshLvLayout>
 
-    <com.umeng.comm.ui.widgets.BaseView
+    <com.umeng.common.ui.widgets.BaseView
         android:id="@+id/umeng_comm_baseview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

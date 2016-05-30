@@ -5,7 +5,7 @@
 
     <!-- <include layout="@layout/umeng_comm_search_header_view" /> -->
 
-    <com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout
+    <com.umeng.common.ui.widgets.RefreshLvLayout
         android:id="@+id/umeng_comm_swipe_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
@@ -22,6 +22,6 @@
             android:scrollbars="none"
             android:scrollingCache="false" >
         </ListView>
-    </com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout>
+    </com.umeng.common.ui.widgets.RefreshLvLayout>
 
 </FrameLayout>

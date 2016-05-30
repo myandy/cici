@@ -125,7 +125,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <!-- 设置页面activity -->
-        <activity android:name="com.umeng.comm.ui.activities.SettingActivity" />
+        <activity android:name="com.umeng.common.ui.activities.SettingActivity" />
         <!-- 点赞用户Activity -->
         <activity android:name="com.umeng.comm.ui.activities.LikeUsersActivity" />
         <!-- 搜索Activity -->
@@ -139,7 +139,7 @@
         <!-- 显示某个位置Feed的Activity -->
         <activity android:name="com.umeng.comm.ui.activities.LocationFeedActivity" />
         <!-- 相册Activity -->
-        <activity android:name="com.umeng.comm.ui.activities.AlbumActivity" />
+        <activity android:name="com.umeng.common.ui.activities.AlbumActivity" />
         <!-- 已关注的话题Activity -->
         <activity android:name="com.umeng.comm.ui.activities.FollowedTopicActivity" />
         <!-- 通知Activity -->
@@ -231,17 +231,62 @@
         <service android:name="com.umeng.message.UmengDownloadResourceService" />
 
         <!-- ###################分享相关Activity################## -->
+        <!-- ###################分享相关Activity################## -->
         <activity
             android:name="com.umeng.socialize.view.ShareActivity"
             android:configChanges="orientation|keyboard"
             android:launchMode="singleTask"
             android:noHistory="true"
             android:theme="@style/Theme.UMDialog"
-            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:theme="@style/Theme.UMDefault"
+            android:excludeFromRecents="true"/>
 
         <!-- 图片选择相关 -->
-        <activity android:name="com.umeng.comm.ui.imagepicker.PhotoSelectorActivity" />
-        <activity android:name="com.umeng.comm.ui.imagepicker.PhotoPreviewActivity" />
+        <activity android:name="com.umeng.common.ui.imagepicker.PhotoSelectorActivity" />
+        <activity android:name="com.umeng.common.ui.imagepicker.PhotoPreviewActivity" />
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--  配置QQ登录所需的Appid -->
+                <data android:scheme="tencent+你的QQ互联APPID" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <activity
+            android:name=".activity.WBShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        <service
+            android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false">
+        </service>
 
         <meta-data
             android:name="UMENG_MESSAGE_SECRET"

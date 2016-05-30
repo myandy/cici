@@ -6,7 +6,7 @@
     android:background="@color/umeng_comm_default_background_color"
     android:orientation="vertical" >
 
-    <include layout="@layout/umeng_commm_title_layout" />
+    <include layout="@layout/umeng_comm_title_layout" />
 
     <include layout="@layout/umeng_comm_divide_line" />
 

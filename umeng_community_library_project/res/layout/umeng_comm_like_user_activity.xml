@@ -9,7 +9,7 @@
 
     <include layout="@layout/umeng_comm_divide_line" />
 
-    <com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout
+    <com.umeng.common.ui.widgets.RefreshLvLayout
         android:id="@+id/umeng_comm_feed_refresh_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -28,6 +28,6 @@
             android:listSelector="@android:color/transparent"
             android:scrollbars="none"
             android:scrollingCache="false" />
-    </com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout>
+    </com.umeng.common.ui.widgets.RefreshLvLayout>
 
 </LinearLayout>

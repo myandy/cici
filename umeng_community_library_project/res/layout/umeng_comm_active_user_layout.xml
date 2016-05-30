@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center" >
+    android:gravity="center">
 
-    <com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout
+    <com.umeng.common.ui.widgets.RefreshLvLayout
         android:id="@+id/umeng_comm_swipe_layout"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <ListView
             android:id="@+id/umeng_comm_active_user_listview"
@@ -18,8 +18,14 @@
             android:fastScrollEnabled="false"
             android:listSelector="@android:color/transparent"
             android:scrollbars="none"
-            android:scrollingCache="false" >
-        </ListView>
-    </com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout>
+            android:scrollingCache="false"/>
+    </com.umeng.common.ui.widgets.RefreshLvLayout>
+
+
+    <com.umeng.common.ui.widgets.BaseView
+        android:id="@+id/umeng_comm_baseview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

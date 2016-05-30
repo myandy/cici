@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.umeng.common.ui.widgets.RoundImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_centerVertical="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
+    android:id="@+id/like_user_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/like_user_name"
+        android:layout_toRightOf="@id/like_user_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/umeng_comm_color_666666"
+        android:textSize="14dp"
+        />
+</RelativeLayout>

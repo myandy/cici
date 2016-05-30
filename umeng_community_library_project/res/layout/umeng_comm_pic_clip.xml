@@ -33,7 +33,7 @@
             android:textColor="@color/umeng_comm_text_topic_light_color" />
     </RelativeLayout>
 
-    <com.umeng.comm.ui.widgets.ClipImageLayout
+    <com.umeng.common.ui.widgets.ClipImageLayout
         android:id="@+id/umeng_comm_clip_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -13,7 +13,7 @@
         android:layout_marginLeft="@dimen/umeng_comm_dimen_20px"
         android:layout_marginRight="@dimen/umeng_comm_dimen_70px">
 
-        <com.umeng.commm.ui.widgets.RoundImageView
+        <com.umeng.common.ui.widgets.RoundImageView
             android:id="@+id/umeng_comm_chat_other_user_picture"
             android:layout_width="@dimen/umeng_comm_dimen_90px"
             android:layout_height="@dimen/umeng_comm_dimen_90px"
@@ -61,7 +61,7 @@
         android:layout_marginLeft="@dimen/umeng_comm_dimen_70px"
         android:layout_marginRight="@dimen/umeng_comm_dimen_20px">
 
-        <com.umeng.commm.ui.widgets.RoundImageView
+        <com.umeng.common.ui.widgets.RoundImageView
             android:id="@+id/umeng_comm_chat_user_picture"
             android:layout_width="@dimen/umeng_comm_dimen_90px"
             android:layout_height="@dimen/umeng_comm_dimen_90px"

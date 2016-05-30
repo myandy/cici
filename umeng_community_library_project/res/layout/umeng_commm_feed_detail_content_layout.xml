@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants">
 
     <!-- feed类型,公告或者好友feed -->
@@ -15,7 +15,7 @@
         android:contentDescription="@string/umeng_comm_desc"
         android:src="@drawable/umeng_comm_feed_item_top" />
 
-    <com.umeng.commm.ui.emoji.EmojiTextView
+    <com.umeng.common.ui.emoji.EmojiTextView
         android:id="@+id/feed_detail_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
         android:layout_marginLeft="@dimen/umeng_comm_dimen_20px"
         android:layout_marginTop="@dimen/umeng_comm_dimen_20px">
 
-        <com.umeng.commm.ui.widgets.RoundImageView
+        <com.umeng.common.ui.widgets.RoundImageView
             android:id="@+id/user_portrait_img_btn"
             android:layout_width="@dimen/umeng_comm_dimen_80px"
             android:layout_height="@dimen/umeng_comm_dimen_80px"
@@ -68,12 +68,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/umeng_comm_male" />
 
-        <com.umeng.commm.ui.widgets.SquareImageView
-            android:id="@+id/user_portrait_medal_img"
-            android:layout_width="@dimen/umeng_comm_dimen_30px"
-            android:layout_height="@dimen/umeng_comm_dimen_30px"
-            android:layout_alignBottom="@id/user_portrait_img_btn"
-            android:layout_alignRight="@id/user_portrait_img_btn" />
+
 
         <TextView
             android:id="@+id/umeng_comm_msg_user_name"
@@ -88,7 +83,21 @@
             android:text=""
             android:textColor="@color/umeng_comm_color_a5"
             android:textSize="@dimen/umeng_comm_text_26px" />
-
+        <!--<com.umeng.comm.ui.com.umeng.common.ui.widgets.NetworkImageView-->
+            <!--android:id="@+id/user_portrait_medal_img"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/umeng_comm_dimen_30px"-->
+            <!--android:layout_toRightOf="@id/umeng_comm_msg_user_name"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--/>-->
+        <LinearLayout
+            android:id="@+id/user_type_icon_container"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/umeng_comm_dimen_30px"
+            android:layout_toRightOf="@id/umeng_comm_msg_user_name"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"></LinearLayout>
         <TextView
             android:id="@+id/umeng_comm_floor"
             android:layout_width="wrap_content"
@@ -97,7 +106,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/umeng_comm_dimen_20px"
             android:contentDescription="@string/umeng_comm_desc"
-            android:text="1 楼"
+            android:text="@string/umeng_comm_firstfloor"
             android:textColor="@color/umeng_comm_color_a5"
             android:textSize="@dimen/umeng_comm_text_26px" />
 
@@ -109,7 +118,7 @@
             android:layout_marginRight="@dimen/umeng_comm_dimen_20px"
             android:layout_toLeftOf="@id/umeng_comm_floor"
             android:contentDescription="@string/umeng_comm_desc"
-            android:text="楼主"
+            android:text="@string/umeng_comm_header"
             android:textColor="@color/umeng_comm_feed_detail_blue"
             android:textSize="@dimen/umeng_comm_text_26px" />
 
@@ -117,7 +126,7 @@
     </RelativeLayout>
 
 
-    <com.umeng.commm.ui.emoji.EmojiTextView
+    <com.umeng.common.ui.emoji.EmojiTextView
         android:id="@+id/umeng_comm_msg_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,7 +139,15 @@
         android:text=""
         android:textColor="@color/umeng_comm_color_33"
         android:textSize="@dimen/umeng_comm_text_30px" />
-
+    <WebView
+        android:id="@+id/umeng_comm_msg_textweb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/umeng_comm_feed_detail_user_info"
+        android:layout_marginLeft="@dimen/umeng_comm_dimen_20px"
+        android:layout_marginRight="@dimen/umeng_comm_dimen_20px"
+        android:layout_marginTop="@dimen/umeng_comm_dimen_16px"
+        android:layerType="software"></WebView>
     <LinearLayout
         android:id="@+id/umeng_comm_msg_images_gv_viewstub"
         android:layout_width="match_parent"

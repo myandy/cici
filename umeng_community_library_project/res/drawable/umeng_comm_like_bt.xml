@@ -7,8 +7,8 @@
     <item android:drawable="@drawable/umeng_comm_like_pressed" android:state_focused="true"/>
     -->
 
-    <item android:drawable="@drawable/umeng_comm_like_normal" android:state_checked="false"/>
-    <item android:drawable="@drawable/umeng_comm_like_pressed" android:state_checked="true"/>
-    <item android:drawable="@drawable/umeng_comm_like_pressed" android:state_pressed="true" android:state_window_focused="true"/>
+    <item android:drawable="@drawable/umeng_comm_feed_detail_like_n" android:state_checked="false"/>
+    <item android:drawable="@drawable/umeng_comm_feed_detail_like_p" android:state_checked="true"/>
+    <item android:drawable="@drawable/umeng_comm_feed_detail_like_p" android:state_pressed="true" android:state_window_focused="true"/>
 
 </selector>

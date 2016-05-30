@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.umeng.commm.ui.widgets.WrapperGridView
+    <com.umeng.common.ui.widgets.WrapperGridView
         android:id="@+id/umeng_comm_msg_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

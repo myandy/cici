@@ -5,7 +5,7 @@
     android:background="@color/umeng_comm_default_background_color"
     android:orientation="vertical" >
 
-    <include layout="@layout/umeng_comm_fragment_title" />
+    <include layout="@layout/umeng_comm_fragment_title_invalid" />
 
     <FrameLayout
         android:id="@+id/umeng_comm_my_msg_fragment"

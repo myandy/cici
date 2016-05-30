@@ -10,7 +10,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical" >
 
-        <com.umeng.comm.ui.widgets.RoundImageView
+        <com.umeng.common.ui.widgets.RoundImageView
             android:id="@+id/umeng_comm_user_picture"
             android:layout_width="40dp"
             android:layout_height="40dp"

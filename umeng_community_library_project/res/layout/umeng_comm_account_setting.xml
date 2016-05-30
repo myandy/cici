@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:gravity="center" >
 
-        <com.umeng.comm.ui.widgets.SquareImageView
+        <com.umeng.common.ui.widgets.SquareImageView
             android:id="@+id/umeng_comm_user_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"

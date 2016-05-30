@@ -3,17 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.umeng.comm.ui.widgets.WrapperGridView
+    <com.umeng.common.ui.widgets.WrapperGridView
         android:id="@+id/umeng_comm_msg_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
         android:columnWidth="80dp"
         android:focusable="false"
-        android:horizontalSpacing="6dp"
+        android:horizontalSpacing="@dimen/umeng_comm_dimen_4px"
         android:numColumns="3"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="6dp" />
+        android:verticalSpacing="@dimen/umeng_comm_dimen_4px" />
 
     <ViewStub
         android:id="@+id/umeng_comm_progress_viewstub"

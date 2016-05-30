@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_my_msg_icon_view"
         android:layout_width="@dimen/umeng_comm_dimen_80px"
         android:layout_height="@dimen/umeng_comm_dimen_80px"

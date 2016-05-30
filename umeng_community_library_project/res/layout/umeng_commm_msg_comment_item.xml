@@ -5,7 +5,7 @@
     android:background="@color/umeng_comm_comment_item_bg"
     android:descendantFocusability="blocksDescendants">
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_msg_comment_header"
         android:layout_width="@dimen/umeng_comm_dimen_80px"
         android:layout_height="@dimen/umeng_comm_dimen_80px"
@@ -57,7 +57,7 @@
         android:textSize="@dimen/umeng_comm_text_26px" />
 
 
-    <com.umeng.commm.ui.widgets.TextViewFixTouchConsume
+    <com.umeng.common.ui.widgets.TextViewFixTouchConsume
         android:id="@+id/umeng_comm_msg_comment_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         android:textColor="@color/umeng_comm_color_33"
         android:textSize="@dimen/umeng_comm_text_28px" />
 
-    <com.umeng.commm.ui.widgets.SquareImageView
+    <com.umeng.common.ui.widgets.SquareImageView
         android:id="@+id/uemng_comm_comment_img"
         android:layout_width="@dimen/umeng_comm_dimen_170px"
         android:layout_height="@dimen/umeng_comm_dimen_170px"
@@ -114,7 +114,7 @@
 
     <TextView
         android:id="@+id/umeng_comm_msg_comment_like_tv"
-        android:layout_width="@dimen/umeng_comm_dimen_108px"
+        android:layout_width="@dimen/umeng_comm_dimen_134px"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/umeng_comm_comment_time_tv"
         android:layout_marginRight="@dimen/umeng_comm_dimen_20px"
@@ -124,7 +124,7 @@
         android:ellipsize="end"
         android:gravity="left|center_vertical"
         android:singleLine="true"
-        android:text="1000"
+        android:text=""
         android:textColor="@drawable/umeng_comm_feed_detail_tv_yellow_selector"
         android:textSize="@dimen/umeng_comm_text_24px" />
 

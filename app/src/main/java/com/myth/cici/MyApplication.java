@@ -10,6 +10,7 @@ import com.myth.cici.db.ColorDatabaseHelper;
 import com.myth.cici.db.DBManager;
 import com.myth.cici.db.YunDatabaseHelper;
 import com.myth.cici.entity.ColorEntity;
+import com.umeng.socialize.PlatformConfig;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +32,10 @@ public class MyApplication extends Application {
         DBManager.initDatabase(getApplicationContext());
         YunDatabaseHelper.getYunList(this);
         setTypeface(getApplicationContext(), getDefaulTypeface(this));
+
+        PlatformConfig.setWeixin("wx96110a1e3af63a39", "c60e3d3ff109a5d17013df272df99199");
+        PlatformConfig.setSinaWeibo("2655542749", "d3c6e64eb912183bdf2ecc299ddfe3a7");
+        PlatformConfig.setQQZone("1104396282", "KEYwA42NSJxWzHJjHRe");
     }
 
     public static ColorEntity getColorByPos(int pos) {

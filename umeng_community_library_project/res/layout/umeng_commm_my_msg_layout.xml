@@ -24,8 +24,8 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/umeng_comm_new_post"
             android:padding="@dimen/umeng_comm_dimen_20px"
-            android:src="@drawable/umeng_comm_title_back"
-            android:scaleType="centerInside" />
+            android:scaleType="centerInside"
+            android:src="@drawable/umeng_comm_title_back" />
 
         <TextView
             android:id="@+id/umeng_comm_title_tv"
@@ -50,6 +50,10 @@
             android:id="@+id/umeng_comm_my_msg_comment"
             layout="@layout/umeng_comm_my_msg_item_layout" />
 
+
+        <include
+            android:id="@+id/umeng_comm_my_msg_at"
+            layout="@layout/umeng_comm_my_msg_item_layout" />
 
         <include
             android:id="@+id/umeng_comm_my_msg_like"

@@ -17,7 +17,7 @@
 
     <!-- 头像 -->
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/user_portrait_img_btn"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -49,7 +49,7 @@
         android:layout_marginTop="8dp"
         android:layout_toLeftOf="@id/umeng_comm_dialog_btn"
         android:background="@null"
-        android:src="@drawable/umeng_comm_favorites_normal"
+        android:src="@drawable/umeng_comm_feed_detail_favorite_n"
         android:visibility="gone" />
 
     <!-- 头像右边的内容布局 -->
@@ -69,7 +69,7 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <com.umeng.commm.ui.emoji.EmojiTextView
+    <com.umeng.common.ui.emoji.EmojiTextView
         android:id="@+id/umeng_comm_msg_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

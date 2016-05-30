@@ -7,7 +7,7 @@
     android:orientation="vertical" >
 
     <!-- title -->
-    <include layout="@layout/umeng_commm_setting_title_bar" />
+    <include layout="@layout/umeng_comm_setting_title_bar" />
 
     <FrameLayout
         android:id="@+id/umeng_comm_setting_content"

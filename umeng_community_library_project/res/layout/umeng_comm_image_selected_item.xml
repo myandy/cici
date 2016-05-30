@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <com.umeng.comm.ui.widgets.SquareImageView
+    <com.umeng.common.ui.widgets.SquareImageView
         android:id="@+id/umeng_comm_image_selected"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
         android:contentDescription="@string/umeng_comm_desc"
-        android:scaleType="fitXY"
-        android:src="@drawable/umeng_comm_male" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/umeng_comm_add_image" />
 
     <ImageView
         android:id="@+id/umeng_comm_image_delete"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="2dp"
         android:contentDescription="@string/umeng_comm_desc"
-        android:src="@drawable/umeng_comm_remove" />
+        android:src="@drawable/umeng_comm_image_delete" />
 
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:minHeight="64dp"
     android:paddingTop="12dp" >
 
-    <com.umeng.commm.ui.widgets.RoundImageView
+    <com.umeng.common.ui.widgets.RoundImageView
         android:id="@+id/umeng_comm_topic_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"

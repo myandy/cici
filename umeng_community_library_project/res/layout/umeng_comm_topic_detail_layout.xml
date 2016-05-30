@@ -18,14 +18,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="49dp" >
 
-            <include layout="@layout/umeng_comm_topic_info" />
+
             <include layout="@layout/umeng_comm_divide_line" />
         </LinearLayout>
 
-        <com.umeng.comm.ui.widgets.ViewPagerIndicator
+        <com.umeng.common.ui.widgets.TopicIndicator
             android:id="@+id/indicator"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
+            android:background="@color/umeng_comm_feed_list_bg"
             android:orientation="horizontal" />
 
         <android.support.v4.view.ViewPager

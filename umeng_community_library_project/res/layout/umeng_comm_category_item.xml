@@ -5,7 +5,7 @@
     android:background="@color/umeng_comm_white_color"
     android:orientation="vertical">
 
-    <com.umeng.commm.ui.widgets.RoundCornerImageView
+    <com.umeng.common.ui.widgets.RoundCornerImageView
         android:id="@+id/category_item_icon"
         android:layout_width="@dimen/umeng_comm_dimen_90px"
         android:layout_height="@dimen/umeng_comm_dimen_90px"

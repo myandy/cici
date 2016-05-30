@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <include layout="@layout/umeng_comm_topic_search_title_bar" />
 
@@ -13,8 +13,8 @@
         android:id="@+id/umeng_comm_relative_user"
         android:layout_width="match_parent"
         android:layout_height="102dp"
-        android:layout_marginTop="18dp"
-        android:orientation="horizontal" >
+        android:background="@color/umeng_comm_feed_list_bg"
+        android:orientation="horizontal">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/umeng_comm_relative_user_recyclerView"
@@ -22,18 +22,18 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:scrollbars="none" />
-        
+
         <include
             android:id="@+id/search_more_img_view"
+            layout="@layout/umeng_comm_relative_user_gallery_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignRight="@id/umeng_comm_relative_user_recyclerView"
-            android:layout_toRightOf="@id/umeng_comm_relative_user_recyclerView"
             android:layout_gravity="center_horizontal"
-            layout="@layout/umeng_comm_relative_user_gallery_item" />
+            android:layout_toRightOf="@id/umeng_comm_relative_user_recyclerView" />
 
-        <com.umeng.comm.ui.widgets.EmptyView
+        <com.umeng.common.ui.widgets.EmptyView
             android:id="@+id/umeng_comm_user_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,12 +42,17 @@
 
     <include layout="@layout/umeng_comm_divide_line" />
 
-    <include layout="@layout/umeng_comm_feeds_frgm_layout" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--<EmptyView-->
-        <!--android:id="@+id/umeng_comm_feed_empty"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_centerInParent="true" />-->
+        <include layout="@layout/umeng_comm_feeds_frgm_layout" />
+
+        <com.umeng.common.ui.widgets.EmptyView
+            android:id="@+id/umeng_comm_feed_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
 </LinearLayout>

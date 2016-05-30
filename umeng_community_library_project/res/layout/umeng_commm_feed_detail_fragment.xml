@@ -52,7 +52,7 @@
             android:layout_above="@id/umeng_comm_action_layout"
             android:background="@color/umeng_comm_color_de" />
 
-        <com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout
+        <com.umeng.common.ui.widgets.RefreshLvLayout
             android:id="@+id/umeng_comm_feed_refresh_layout"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -72,12 +72,12 @@
                 android:listSelector="@android:color/transparent"
                 android:scrollbars="none"
                 android:scrollingCache="false" />
-        </com.umeng.comm.ui.imagepicker.widgets.RefreshLvLayout>
+        </com.umeng.common.ui.widgets.RefreshLvLayout>
     </RelativeLayout>
 
     <include
         android:id="@+id/umeng_comm_comment_edit_layout"
-        layout="@layout/umeng_commm_comment_layout"
+        layout="@layout/umeng_comm_comment_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"

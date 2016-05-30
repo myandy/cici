@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.umeng.commm.ui.widgets.ViewPagerIndicator
+    <com.umeng.common.ui.widgets.ViewPagerIndicator
         android:id="@+id/umeng_comm_comment_indicator"
         android:layout_width="match_parent"
         android:layout_height="55dp"
