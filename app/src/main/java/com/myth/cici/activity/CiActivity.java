@@ -49,6 +49,8 @@ public class CiActivity extends BaseActivity {
 
     private TextView title;
 
+    private TextView title1;
+
     private CircleEditView editView;
 
     TouchEffectImageView prev;
@@ -107,23 +109,17 @@ public class CiActivity extends BaseActivity {
                 mActivity, 120));
         editView = new CircleEditView(mActivity);
         topView.addView(editView, 1, param);
-        setColor();
 
         title = (TextView) findViewById(R.id.title);
         title.setTypeface(myApplication.getTypeface());
-        title.setText(cipai.getName());
+
 
         title.setTextSize(44);
 
-        TextView title1 = (TextView) findViewById(R.id.title1);
+        title1 = (TextView) findViewById(R.id.title1);
         title1.setTypeface(myApplication.getTypeface());
-        if (cipai.getName().length() > 5) {
-            title1.setTextSize(44);
-            title1.setText(cipai.getName().substring(0, 5));
-            title.setText(cipai.getName().substring(5));
-        } else {
-            title1.setText("");
-        }
+        title1.setTextSize(44);
+
 
         content = (TextView) findViewById(R.id.content);
         content.setTypeface(myApplication.getTypeface());
@@ -206,7 +202,7 @@ public class CiActivity extends BaseActivity {
 
         initBottomRightView();
 
-        initContentView();
+        refreshRandomView();
 
     }
 
@@ -272,6 +268,12 @@ public class CiActivity extends BaseActivity {
 
     private void refreshRandomView() {
         title.setText(cipai.getName());
+        if (cipai.getName().length() > 5) {
+            title1.setText(cipai.getName().substring(0, 5));
+            title.setText(cipai.getName().substring(5));
+        } else {
+            title1.setText("");
+        }
         setColor();
         initContentView();
     }
