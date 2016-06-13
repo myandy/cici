@@ -118,17 +118,20 @@ public class ChangePictureFragment extends Fragment {
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = ((Activity) mContext).getContentResolver().query(selectedImage, filePathColumn, null,
+                Cursor cursor = (mContext).getContentResolver().query(selectedImage, filePathColumn, null,
                         null, null);
-                cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                String picturePath = cursor.getString(columnIndex);
-                cursor.close();
+                if (cursor != null) {
+                    cursor.moveToFirst();
 
-                Bitmap bmp = ImageUtils.getimage(picturePath);
-                srcBitmap = bmp;
-                destBitmap = bmp;
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String picturePath = cursor.getString(columnIndex);
+                    cursor.close();
+
+                    Bitmap bmp = ImageUtils.getimage(picturePath);
+                    srcBitmap = bmp;
+                    destBitmap = bmp;
+                }
             }
         }
     }

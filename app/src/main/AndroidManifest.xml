@@ -147,6 +147,23 @@
         <!-- 新消息Activity -->
         <activity android:name="com.umeng.comm.ui.activities.NewMsgActivity" />
 
+        <activity android:name="com.umeng.common.ui.activities.MessageChatActivity" />
+
+        <!-- 搜索Activity -->
+        <activity
+            android:name="com.umeng.commm.ui.activities.SearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- searchtopic -->
+        <activity
+            android:name="com.umeng.commm.ui.activities.SearchTopicActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.umeng.comm.ui.activities.SearchTopicActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
         <!-- ##################### 推送相关 ##################### -->
         <receiver
             android:name="com.umeng.message.NotificationProxyBroadcastReceiver"

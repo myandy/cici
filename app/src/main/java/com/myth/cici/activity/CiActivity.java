@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -267,12 +268,14 @@ public class CiActivity extends BaseActivity {
     }
 
     private void refreshRandomView() {
-        title.setText(cipai.getName());
-        if (cipai.getName().length() > 5) {
-            title1.setText(cipai.getName().substring(0, 5));
-            title.setText(cipai.getName().substring(5));
-        } else {
-            title1.setText("");
+        if (!TextUtils.isEmpty(cipai.getName())) {
+            title.setText(cipai.getName());
+            if (cipai.getName().length() > 5) {
+                title1.setText(cipai.getName().substring(0, 5));
+                title.setText(cipai.getName().substring(5));
+            } else {
+                title1.setText("");
+            }
         }
         setColor();
         initContentView();
