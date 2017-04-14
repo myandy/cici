@@ -29,26 +29,6 @@
             android:text="@string/sort_count"
             android:textSize="16sp" />
     </LinearLayout>
-    <!--
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/head"
-        android:layout_marginTop="30dp"
-        android:visibility="gone"
-        android:scrollbars="none" >
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp" >
-        </LinearLayout>
-    </HorizontalScrollView>
-    -->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listview"

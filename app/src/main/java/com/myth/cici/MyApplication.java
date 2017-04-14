@@ -10,6 +10,7 @@ import com.myth.cici.db.ColorDatabaseHelper;
 import com.myth.cici.db.DBManager;
 import com.myth.cici.db.YunDatabaseHelper;
 import com.myth.cici.entity.ColorEntity;
+import com.myth.cici.util.ResizeUtil;
 import com.umeng.socialize.PlatformConfig;
 
 import java.util.ArrayList;
@@ -26,9 +27,12 @@ public class MyApplication extends Application {
 
     public static final String TypefaceString[] = {"简体", "繁体"};
 
+    public static MyApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         DBManager.initDatabase(getApplicationContext());
         YunDatabaseHelper.getYunList(this);
         setTypeface(getApplicationContext(), getDefaulTypeface(this));
@@ -36,6 +40,8 @@ public class MyApplication extends Application {
         PlatformConfig.setWeixin("wx96110a1e3af63a39", "c60e3d3ff109a5d17013df272df99199");
         PlatformConfig.setSinaWeibo("2655542749", "d3c6e64eb912183bdf2ecc299ddfe3a7");
         PlatformConfig.setQQZone("1104396282", "KEYwA42NSJxWzHJjHRe");
+
+        ResizeUtil.getInstance().init(this);
     }
 
     public static ColorEntity getColorByPos(int pos) {
@@ -50,7 +56,7 @@ public class MyApplication extends Application {
         }
     }
 
-    public  ColorEntity getColorById(int id) {
+    public ColorEntity getColorById(int id) {
         if (colorMap == null) {
             colorMap = new HashMap<Integer, ColorEntity>();
             ArrayList<ColorEntity> colorList = ColorDatabaseHelper.getAll();

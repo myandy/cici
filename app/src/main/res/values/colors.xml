@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    
-    <color  name="white">#ffffff</color>
-    
-    <color  name="white_light">#e7ede5</color>
-    
-    <color  name="white_hint">#6a6a6a</color>
-    
-    <color  name="black">#000000</color>
-    
-    <color  name="black_light">#666666</color>
-    
-    <color  name="black_hint">#b3b3b3</color>
-    
-    <color  name="pingze_red">#b03b28</color>
-    
-    <color  name="pingze_blue">#0070fb</color>
-    
-    <color  name="pingze_green">#8dc63f</color>
-    
-    <color  name="blue">#0000ff</color>
-    
-    <color  name="yun_white">#8e8e8e</color>
-    
-    <color  name="selected">#66000000</color>
-    
-    <color  name="back1">#d8d8d8</color>
-    
-    <color  name="back2">#f1f1f1</color>
-    
-     <color  name="black_line">#cccccc</color>
-     
-     <color  name="black_text">#444847</color>
-     
-     <color  name="setting_back">#333333</color>
-     
-     <color  name="setting_line">#222222</color>
-     
-     <color  name="edittext_line">#D2D2D2</color>
-     
-      <color name="pptvvas_menu_devide">#787878</color>
-      
-      <color name="pptvvas_gray_light">#EDEDED</color>
-      
-         <color name="pptvvas_white">#FFFFFFFF</color>
-    
+
+
+    <color name="white">#ffffff</color>
+
+    <color name="white_light">#e7ede5</color>
+
+    <color name="white_hint">#6a6a6a</color>
+
+    <color name="black">#000000</color>
+
+    <color name="black_light">#666666</color>
+
+    <color name="black_hint">#b3b3b3</color>
+
+    <color name="pingze_red">#b03b28</color>
+
+    <color name="pingze_blue">#0070fb</color>
+
+    <color name="pingze_green">#8dc63f</color>
+
+    <color name="blue">#0000ff</color>
+
+    <color name="yun_white">#8e8e8e</color>
+
+    <color name="selected">#66000000</color>
+
+    <color name="back1">#d8d8d8</color>
+
+    <color name="back2">#f1f1f1</color>
+
+    <color name="black_line">#cccccc</color>
+
+    <color name="black_text">#444847</color>
+
+    <color name="setting_back">#333333</color>
+
+    <color name="setting_line">#222222</color>
+
+    <color name="edittext_line">#D2D2D2</color>
+
+    <color name="pptvvas_menu_devide">#787878</color>
+
+    <color name="pptvvas_gray_light">#EDEDED</color>
+
+    <color name="pptvvas_white">#FFFFFFFF</color>
+
 </resources>

@@ -26,17 +26,17 @@
     <string name="check_false">不自动检查</string>
     <string name="setting_ad">支持开发者（应用推荐）</string>
     
-    <string name="notice_title">词Ci用户交流请加QQ群：439747099</string>
+    <string name="notice_title">用户交流QQ群：535860726</string>
 
-    <string name="about_qq_toast">QQ群号已复制到剪切板，请打开QQ查找QQ群加入我们</string>
+    <string name="about_qq_toast">QQ群号已复制到剪切板</string>
     <string name="about_qq">439747099</string>
     
     <string name="sort_default">默认排序</string>
     <string name="sort_count">按字数排序</string>
     
-    <string name="about_text">Android版词Ci从IOS同名应用模仿而成。</string>
+    <string name="about_text">词Ci为非盈利应用，Android版来自于iOS版</string>
     
-    <string name="about_text1">原应用的介绍：\nApp来自朋友42|o-@douban的需求，UI设计借鉴了Bamboo Loop、http://niponcolors.com/ 和上海松江醉白池。\n大部分词牌平仄、例词选编、例词注解来自龙榆生纪念网站，龙榆生先生所著的《唐宋词格律》：http://longyusheng.org/cipai/index.html</string>
+    <string name="about_text1">词Ci介绍：\nApp来自朋友42|o-@douban的需求，UI设计借鉴了Bamboo Loop、http://niponcolors.com/ 和上海松江醉白池。\n大部分词牌平仄、例词选编、例词注解来自龙榆生纪念网站，龙榆生先生所著的《唐宋词格律》：http://longyusheng.org/cipai/index.html</string>
     
     <string name="about_text2">方正字库为《词Ci》非商业版本提供字体授权。授权字体为：方正清刻本悦宋。欢迎大家去微博关注@方正字库美丽的字体。</string>
     

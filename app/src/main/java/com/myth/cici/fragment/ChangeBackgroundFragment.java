@@ -1,50 +1,36 @@
 package com.myth.cici.fragment;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.myth.cici.MyApplication;
 import com.myth.cici.R;
 import com.myth.cici.adapter.ImageAdapter;
-import com.myth.cici.entity.Cipai;
-import com.myth.cici.entity.ColorEntity;
 import com.myth.cici.entity.Writing;
 import com.myth.cici.util.ResizeUtil;
 import com.myth.cici.wiget.HorizontalListView;
+import com.myth.cici.wiget.ShareView;
 
 public class ChangeBackgroundFragment extends Fragment {
 
     private Context mContext;
 
-    private LinearLayout content;
-
-    private TextView text;
-
-    private Cipai cipai;
-
     private Writing writing;
 
     private int bg_index = 0;
 
-    private TextView title;
-    private MyApplication myApplication;
+    private ShareView shareView;
 
     public ChangeBackgroundFragment() {
     }
 
-    public static ChangeBackgroundFragment getInstance(Cipai cipai, Writing writing) {
+    public static ChangeBackgroundFragment getInstance(Writing writing) {
         ChangeBackgroundFragment fileViewFragment = new ChangeBackgroundFragment();
-        fileViewFragment.cipai = cipai;
         fileViewFragment.writing = writing;
         return fileViewFragment;
     }
@@ -53,8 +39,7 @@ public class ChangeBackgroundFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = inflater.getContext();
-        myApplication = (MyApplication) ((Activity) mContext).getApplication();
-        View view = inflater.inflate(R.layout.fragment_background, null);
+        View view = inflater.inflate(R.layout.fragment_background, container, false);
         initViews(view);
         return view;
     }
@@ -76,9 +61,7 @@ public class ChangeBackgroundFragment extends Fragment {
     }
 
     private void refresh() {
-        text.setText(writing.getText());
-        content.setBackgroundResource(myApplication.bgimgList[bg_index]);
-        title.setText(cipai.getName());
+        shareView.setWriting(writing);
     }
 
     private void initViews(View view) {
@@ -91,60 +74,14 @@ public class ChangeBackgroundFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 bg_index = position;
-                content.setBackgroundResource(myApplication.bgimgList[position]);
+                shareView.getBackgroundView().setDrawableId(MyApplication.bgimgList[position]);
             }
         });
 
-        content = (LinearLayout) view.findViewById(R.id.content);
-        layoutItemContainer(content);
-        title = (TextView) view.findViewById(R.id.title);
-        text = (TextView) view.findViewById(R.id.text);
-        title.setTypeface(myApplication.getTypeface());
-        text.setTypeface(myApplication.getTypeface());
-
-        setTextSize();
-        setGravity();
-        setPadding();
-        setColor();
+        shareView = (ShareView) view.findViewById(R.id.share_view);
+        shareView.setType(ShareView.TYPE_BACKGROUND);
+        ResizeUtil.getInstance().layoutSquareView(shareView);
     }
 
-    private void layoutItemContainer(View itemContainer) {
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) itemContainer.getLayoutParams();
-        params.width = ResizeUtil.resize(mContext, 720);
-        params.height = ResizeUtil.resize(mContext, 720);
-        itemContainer.setLayoutParams(params);
-    }
 
-    private void setPadding() {
-        int margin = myApplication.getDefaultSharePadding(mContext);
-        LinearLayout.LayoutParams lps = (android.widget.LinearLayout.LayoutParams) text.getLayoutParams();
-        lps.leftMargin = margin;
-        text.setLayoutParams(lps);
-    }
-
-    private void setGravity() {
-        boolean isCenter = myApplication.getDefaultShareGravity(mContext);
-        if (isCenter) {
-            text.setGravity(Gravity.CENTER_HORIZONTAL);
-        } else {
-            text.setGravity(Gravity.LEFT);
-        }
-    }
-
-    private void setTextSize() {
-        int size = myApplication.getDefaultShareSize(mContext);
-        text.setTextSize(size);
-        title.setTextSize(size + 2);
-    }
-
-    private void setColor() {
-
-        ColorEntity colorEntity = myApplication.getColorByPos(myApplication.getDefaultShareColor(mContext));
-        int color = Color.rgb(0, 0, 0);
-        if (colorEntity != null) {
-            color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(), colorEntity.getBlue());
-        }
-        text.setTextColor(color);
-        title.setTextColor(color);
-    }
 }

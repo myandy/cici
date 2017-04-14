@@ -100,7 +100,7 @@ public class CiActivity extends BaseActivity {
             color = Color.rgb(colorEntity.getRed(), colorEntity.getGreen(),
                     colorEntity.getBlue());
         }
-        editView.setmColor(color);
+        editView.setColor(color);
     }
 
     private void initView() {

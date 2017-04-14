@@ -1,8 +1,5 @@
 package com.myth.cici.activity;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -29,6 +26,9 @@ import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.GCDialog;
 import com.myth.cici.wiget.GCDialog.OnCustomDialogListener;
 import com.myth.cici.wiget.TouchEffectImageView;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class EditActivity extends BaseActivity
 {
@@ -188,9 +188,9 @@ public class EditActivity extends BaseActivity
         addBottomCenterView(picture, lps);
 
         // 创建修改实例
-        editFragment = EditFragment.getInstance(cipai, writing);
-        changeBackgroundFrament = ChangeBackgroundFragment.getInstance(cipai, writing);
-        changePictureFragment = ChangePictureFragment.getInstance(cipai, writing);
+        editFragment = EditFragment.getInstance( writing);
+        changeBackgroundFrament = ChangeBackgroundFragment.getInstance(writing);
+        changePictureFragment = ChangePictureFragment.getInstance(writing);
 
         fragments.add(editFragment);
         fragments.add(changeBackgroundFrament);

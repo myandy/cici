@@ -1,6 +1,5 @@
 package com.myth.cici.wiget;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import com.myth.cici.util.ResizeUtil;
 
 public class IntroductionView extends RelativeLayout {
 
-    private MyApplication myApplication;
     private Context mContext;
 
     final int[] mColors = {R.drawable.intro00, R.drawable.intro01, R.drawable.intro02, R.drawable.intro03,
@@ -33,15 +31,7 @@ public class IntroductionView extends RelativeLayout {
     public IntroductionView(Context context) {
         super(context);
         mContext = context;
-        myApplication = (MyApplication) ((Activity) mContext).getApplication();
         initView();
-    }
-
-    private void layoutItemContainer(View itemContainer) {
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) itemContainer.getLayoutParams();
-        params.width = LayoutParams.MATCH_PARENT;
-        params.height = ResizeUtil.resize(mContext, 864);
-        itemContainer.setLayoutParams(params);
     }
 
     private void initView() {
@@ -49,14 +39,13 @@ public class IntroductionView extends RelativeLayout {
         View root = inflater.inflate(R.layout.layout_intro, null);
 
         TextView title = (TextView) root.findViewById(R.id.title);
-        title.setTypeface(myApplication.getTypeface());
+        title.setTypeface(MyApplication.instance.getTypeface());
         final StackView stackView = (StackView) root.findViewById(R.id.stack_view);
-        layoutItemContainer(stackView);
+        ResizeUtil.getInstance().layoutSquareView(stackView);
 
         IntroAdapter colorAdapter = new IntroAdapter(mContext, mColors);
         stackView.setAdapter(colorAdapter);
         stackView.getLayoutParams().height = ResizeUtil.resize(mContext, 600);
-        // stackView.setLayoutParams(new LayoutParams(-1, ));
 
         addView(root, new LayoutParams(-1, -1));
     }

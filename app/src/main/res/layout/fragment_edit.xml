@@ -1,44 +1,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/dust"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:paddingTop="30dp" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:id="@+id/edit_top"
         android:layout_width="match_parent"
-        android:layout_height="35dp" >
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/edit_top_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
 
         <EditText
             android:id="@+id/getfocus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:visibility="visible" />
+            android:visibility="visible"/>
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_keyboard"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:clickable="true"
             android:padding="4dp"
             android:scaleType="fitXY"
-            android:src="@drawable/keyboard" />
+            android:src="@drawable/keyboard"/>
 
         <TextView
             android:id="@+id/edit_title"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/edit_keyboard"
             android:gravity="center_vertical"
             android:text="临江仙"
             android:textColor="@color/black_text"
-            android:textSize="28sp" />
+            android:textSize="28sp"/>
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_dict"
@@ -49,7 +53,7 @@
             android:layout_marginRight="20dp"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/dict" />
+            android:src="@drawable/dict"/>
 
         <com.myth.cici.wiget.TouchEffectImageView
             android:id="@+id/edit_info"
@@ -60,24 +64,39 @@
             android:layout_toLeftOf="@id/edit_dict"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/info" />
+            android:src="@drawable/info"/>
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/edit_top"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
         android:paddingBottom="8dp"
-        android:scrollbars="@null"
-        android:orientation="vertical" >
+        android:scrollbars="none">
 
-        <LinearLayout
-            android:id="@+id/edit_content"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
-        </LinearLayout>
+            android:orientation="vertical">
+
+            <com.myth.cici.wiget.MirrorLoaderView
+                android:id="@+id/background_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:id="@+id/edit_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:paddingLeft="10dp"></LinearLayout>
+
+
+        </FrameLayout>
     </ScrollView>
 
 </RelativeLayout>

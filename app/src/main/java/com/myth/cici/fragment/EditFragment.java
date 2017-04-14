@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ import com.myth.cici.util.CheckUtils;
 import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.GCDialog;
 import com.myth.cici.wiget.GCDialog.OnCustomDialogListener;
+import com.myth.cici.wiget.MirrorLoaderView;
 import com.myth.cici.wiget.PasteEditText;
 import com.myth.cici.wiget.PasteEditText.OnPasteListener;
 import com.myth.cici.wiget.PingzeLinearlayout;
@@ -52,14 +54,17 @@ public class EditFragment extends Fragment {
 
     private Writing writing;
 
-    private MyApplication myApplication;
+    private View keyboard;
+    private MirrorLoaderView editContentBackground;
+
+    private ImageView editTopBackground;
 
     public EditFragment() {
     }
 
-    public static EditFragment getInstance(Cipai cipai, Writing writing) {
+    public static EditFragment getInstance(Writing writing) {
         EditFragment fileViewFragment = new EditFragment();
-        fileViewFragment.cipai = cipai;
+        fileViewFragment.cipai = writing.getCipai();
         fileViewFragment.writing = writing;
         return fileViewFragment;
     }
@@ -70,8 +75,7 @@ public class EditFragment extends Fragment {
 
         super.onCreateView(inflater, container, savedInstanceState);
         mContext = inflater.getContext();
-        myApplication = (MyApplication) ((Activity) mContext).getApplication();
-        root = inflater.inflate(R.layout.fragment_edit, null);
+        root = inflater.inflate(R.layout.fragment_edit, container, false);
         initViews(root);
         return root;
 
@@ -81,8 +85,10 @@ public class EditFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (StringUtils.isNumeric(writing.getBgimg())) {
-            root.setBackgroundResource(myApplication.bgimgList[Integer
-                    .parseInt(writing.getBgimg())]);
+            int id = MyApplication.bgimgList[Integer.parseInt(writing.getBgimg())];
+            editTopBackground.setImageResource(id);
+            editContentBackground.setDrawableId(id);
+
         } else if (writing.getBitmap() != null) {
             root.setBackgroundDrawable(new BitmapDrawable(getResources(),
                     writing.getBitmap()));
@@ -108,7 +114,7 @@ public class EditFragment extends Fragment {
 
     private void initViews(View view) {
         editTexts.clear();
-        final View keyboard = view.findViewById(R.id.edit_keyboard);
+        keyboard = view.findViewById(R.id.edit_keyboard);
         editContent = (LinearLayout) view.findViewById(R.id.edit_content);
 
         if (cipai == null) {
@@ -134,29 +140,21 @@ public class EditFragment extends Fragment {
                 scrollView.setHorizontalScrollBarEnabled(false);
                 View view1 = new PingzeLinearlayout(mContext, sList[i]);
                 scrollView.addView(view1);
-                view1.setPadding(0, 30, 0, 30);
+                if (sList[i].startsWith("\n\n\n")) {
+                    view1.setPadding(0, 150, 0, 30);
+                } else {
+                    view1.setPadding(0, 30, 0, 30);
+
+                }
                 final PasteEditText edittext = (PasteEditText) inflater
                         .inflate(R.layout.edittext, null);
                 if (i != sList.length - 1) {
                     edittext.line = i;
                     edittext.setOnPasteListener(onPasteListener);
                 }
-                edittext.setTypeface(myApplication.getTypeface());
-                final int index = i;
-                edittext.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
-                    @Override
-                    public void onFocusChange(View v, boolean hasFocus) {
-                        if (!hasFocus) {
-                            if (myApplication.getCheckAble(mContext)) {
-                                CheckUtils
-                                        .checkEditText(edittext, sList[index]);
-                            }
-                        } else {
-                            keyboard.setVisibility(View.VISIBLE);
-                            ((BaseActivity) mContext).setBottomGone();
-                        }
-                    }
-                });
+                edittext.setTypeface(MyApplication.instance.getTypeface());
+                edittext.setTag(i);
+                edittext.setOnFocusChangeListener(etOnFocusChangeListener);
                 editContent.addView(scrollView);
                 editContent.addView(edittext);
                 editTexts.add(edittext);
@@ -175,7 +173,7 @@ public class EditFragment extends Fragment {
 
         TextView title = (TextView) view.findViewById(R.id.edit_title);
         title.setText(cipai.getName());
-        title.setTypeface(myApplication.getTypeface());
+        title.setTypeface(MyApplication.instance.getTypeface());
 
         view.findViewById(R.id.edit_dict).setOnClickListener(
                 new OnClickListener() {
@@ -213,7 +211,26 @@ public class EditFragment extends Fragment {
                 getfocus.requestFocusFromTouch();
             }
         });
+
+        editContentBackground = (MirrorLoaderView) view.findViewById(R.id.background_image);
+        editTopBackground = (ImageView) view.findViewById(R.id.edit_top_background);
     }
+
+    private View.OnFocusChangeListener etOnFocusChangeListener = new View.OnFocusChangeListener() {
+
+        @Override
+        public void onFocusChange(View v, boolean hasFocus) {
+            if (!hasFocus) {
+                if (MyApplication.getCheckAble(mContext)) {
+                    int index = (int) v.getTag();
+                    CheckUtils.checkEditText((EditText) v, sList[index]);
+                }
+            } else {
+                keyboard.setVisibility(View.VISIBLE);
+                ((BaseActivity) mContext).setBottomGone();
+            }
+        }
+    };
 
     private OnPasteListener onPasteListener = new OnPasteListener() {
 

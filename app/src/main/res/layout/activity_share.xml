@@ -4,6 +4,9 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <include layout="@layout/layout_share" />
+    <com.myth.cici.wiget.ShareView
+        android:id="@+id/share_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

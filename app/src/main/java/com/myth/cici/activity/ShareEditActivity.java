@@ -1,8 +1,5 @@
 package com.myth.cici.activity;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -25,8 +22,10 @@ import com.myth.cici.util.FileUtils;
 import com.myth.cici.util.StringUtils;
 import com.myth.cici.wiget.TouchEffectImageView;
 
-public class ShareEditActivity extends BaseActivity
-{
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class ShareEditActivity extends BaseActivity {
 
     private Cipai cipai;
 
@@ -43,8 +42,7 @@ public class ShareEditActivity extends BaseActivity
     private int currentIndex = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
@@ -60,29 +58,20 @@ public class ShareEditActivity extends BaseActivity
         down.setImageResource(R.drawable.done);
         down.setScaleType(ScaleType.FIT_XY);
         addBottomRightView(down, new LayoutParams(60, 60));
-        down.setOnClickListener(new OnClickListener()
-        {
+        down.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
-                if (currentIndex == 0)
-                {
+            public void onClick(View v) {
+                if (currentIndex == 0) {
                     changeBackgroundFrament.save();
-                }
-                else
-                {
+                } else {
                     changePictureFragment.save();
                 }
-                if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null)
-                {
-                    try
-                    {
+                if (!StringUtils.isNumeric(writing.getBgimg()) && writing.getBitmap() != null) {
+                    try {
                         String fileName = FileUtils.saveFile(writing.getBitmap());
                         writing.setBgimg(fileName);
-                    }
-                    catch (IOException e)
-                    {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
@@ -98,8 +87,7 @@ public class ShareEditActivity extends BaseActivity
         initView();
     }
 
-    private void initView()
-    {
+    private void initView() {
 
         final ImageView background = new TouchEffectImageView(mActivity, null);
         background.setScaleType(ScaleType.FIT_XY);
@@ -109,24 +97,20 @@ public class ShareEditActivity extends BaseActivity
         picture.setScaleType(ScaleType.FIT_XY);
         picture.setImageResource(R.drawable.layout_bg_album);
 
-        background.setOnClickListener(new OnClickListener()
-        {
+        background.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 changeFragment(0);
                 background.setImageResource(R.drawable.layout_bg_paper_selected);
                 picture.setImageResource(R.drawable.layout_bg_album);
             }
         });
 
-        picture.setOnClickListener(new OnClickListener()
-        {
+        picture.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 changeFragment(1);
                 background.setImageResource(R.drawable.layout_bg_paper);
                 picture.setImageResource(R.drawable.layout_bg_album_sel);
@@ -138,16 +122,15 @@ public class ShareEditActivity extends BaseActivity
         addBottomCenterView(background, lps);
         addBottomCenterView(picture, lps);
 
-        changeBackgroundFrament = ChangeBackgroundFragment.getInstance(cipai, writing);
-        changePictureFragment = ChangePictureFragment.getInstance(cipai, writing);
+        changeBackgroundFrament = ChangeBackgroundFragment.getInstance(writing);
+        changePictureFragment = ChangePictureFragment.getInstance(writing);
 
         fragments.add(changeBackgroundFrament);
         fragments.add(changePictureFragment);
         changeFragment(currentIndex);
     }
 
-    public void changeFragment(int pos)
-    {
+    public void changeFragment(int pos) {
         currentIndex = pos;
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragments.get(pos));
@@ -156,8 +139,7 @@ public class ShareEditActivity extends BaseActivity
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         finish();
     }
 

@@ -1,7 +1,5 @@
 package com.myth.cici.activity;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -29,13 +27,10 @@ import com.myth.cici.wiget.MainView;
 import com.myth.cici.wiget.TouchEffectImageView;
 import com.myth.cici.wiget.WritingView;
 
-/**
- * ViewPager实现画廊效果
- * 
- * @author Trinea 2013-04-03
- */
-public class MainActivity extends BaseActivity
-{
+import java.util.ArrayList;
+
+
+public class MainActivity extends BaseActivity {
 
     private RelativeLayout viewPagerContainer;
 
@@ -50,8 +45,7 @@ public class MainActivity extends BaseActivity
     private boolean firstIn = true;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -69,12 +63,10 @@ public class MainActivity extends BaseActivity
         MyOnPageChangeListener myOnPageChangeListener = new MyOnPageChangeListener();
         viewPager.setOnPageChangeListener(myOnPageChangeListener);
 
-        viewPagerContainer.setOnTouchListener(new OnTouchListener()
-        {
+        viewPagerContainer.setOnTouchListener(new OnTouchListener() {
 
             @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
+            public boolean onTouch(View v, MotionEvent event) {
                 // dispatch the events to the ViewPager, to solve the problem
                 // that we can swipe only the middle view.
                 return viewPager.dispatchTouchEvent(event);
@@ -82,12 +74,10 @@ public class MainActivity extends BaseActivity
         });
 
         getBottomLeftView().setImageResource(R.drawable.add);
-        getBottomLeftView().setOnClickListener(new OnClickListener()
-        {
+        getBottomLeftView().setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(mActivity, CipaiSearchActivity.class);
                 startActivity(intent);
             }
@@ -97,20 +87,17 @@ public class MainActivity extends BaseActivity
         setting.setScaleType(ScaleType.FIT_XY);
         addBottomRightView(setting,
                 new LayoutParams(DisplayUtil.dip2px(mActivity, 48), DisplayUtil.dip2px(mActivity, 48)));
-        setting.setOnClickListener(new OnClickListener()
-        {
+        setting.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(mActivity, SettingActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    private void layoutItemContainer(View itemContainer)
-    {
+    private void layoutItemContainer(View itemContainer) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) itemContainer.getLayoutParams();
         params.width = ResizeUtil.resize(mActivity, 540);
         params.height = LayoutParams.MATCH_PARENT;
@@ -118,12 +105,11 @@ public class MainActivity extends BaseActivity
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         refresh();
     }
-    
+
     @Override
     protected void onStop() {
         // TODO Auto-generated method stub
@@ -132,19 +118,16 @@ public class MainActivity extends BaseActivity
         new BackupTask(this).execute(BackupTask.COMMAND_BACKUP);
     }
 
-    public void refresh()
-    {
+    public void refresh() {
         writings = WritingDatabaseHelper.getAllWriting(mActivity);
         pagerAdapter.setWritings(writings);
         pagerAdapter.notifyDataSetChanged();
 
-        if (firstIn)
-        {
+        if (firstIn) {
             currentpage = pagerAdapter.getCount() - 1;
             firstIn = false;
         }
-        if (currentpage > pagerAdapter.getCount() - 1)
-        {
+        if (currentpage > pagerAdapter.getCount() - 1) {
             currentpage = pagerAdapter.getCount() - 1;
         }
         viewPager.setCurrentItem(currentpage);
@@ -153,38 +136,31 @@ public class MainActivity extends BaseActivity
     /**
      * this is a example fragment, just a imageview, u can replace it with
      * your needs
-     * 
+     *
      * @author Trinea 2013-04-03
      */
-    class MyPagerAdapter extends PagerAdapter
-    {
+    class MyPagerAdapter extends PagerAdapter {
 
         private ArrayList<Writing> datas;
 
         @Override
-        public int getCount()
-        {
-            if (datas == null || datas.size() == 0)
-            {
+        public int getCount() {
+            if (datas == null || datas.size() == 0) {
                 return 2;
             }
             return datas.size() + 1;
         }
 
-        public boolean isNoWriting()
-        {
+        public boolean isNoWriting() {
             return (datas == null || datas.isEmpty());
         }
 
-        public ArrayList<Writing> getWritings()
-        {
+        public ArrayList<Writing> getWritings() {
             return datas;
         }
 
-        public void setWritings(ArrayList<Writing> writings)
-        {
-            if (datas == null)
-            {
+        public void setWritings(ArrayList<Writing> writings) {
+            if (datas == null) {
                 datas = new ArrayList<Writing>();
             }
             datas.clear();
@@ -192,25 +168,18 @@ public class MainActivity extends BaseActivity
         }
 
         @Override
-        public boolean isViewFromObject(View view, Object object)
-        {
+        public boolean isViewFromObject(View view, Object object) {
             return (view == object);
         }
 
         @Override
-        public Object instantiateItem(ViewGroup container, int position)
-        {
+        public Object instantiateItem(ViewGroup container, int position) {
             View view;
-            if (position == getCount() - 1)
-            {
+            if (position == getCount() - 1) {
                 view = new MainView(mActivity);
-            }
-            else if (isNoWriting())
-            {
+            } else if (isNoWriting()) {
                 view = new IntroductionView(mActivity);
-            }
-            else
-            {
+            } else {
                 view = new WritingView(mActivity, datas.get(position));
             }
             ((ViewPager) container).addView(view, 0);
@@ -219,41 +188,33 @@ public class MainActivity extends BaseActivity
         }
 
         @Override
-        public void destroyItem(ViewGroup container, int position, Object object)
-        {
+        public void destroyItem(ViewGroup container, int position, Object object) {
             ((ViewPager) container).removeView((View) object);
         }
 
         @Override
-        public int getItemPosition(Object object)
-        {
+        public int getItemPosition(Object object) {
             return POSITION_NONE;
         }
 
     }
 
-    public class MyOnPageChangeListener implements OnPageChangeListener
-    {
+    public class MyOnPageChangeListener implements OnPageChangeListener {
 
         @Override
-        public void onPageSelected(int position)
-        {
+        public void onPageSelected(int position) {
             currentpage = position;
         }
 
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
-        {
-            // to refresh frameLayout
-            if (viewPagerContainer != null)
-            {
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            if (viewPagerContainer != null) {
                 viewPagerContainer.invalidate();
             }
         }
 
         @Override
-        public void onPageScrollStateChanged(int arg0)
-        {
+        public void onPageScrollStateChanged(int arg0) {
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.myth.cici.util;
 
-import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -10,11 +9,12 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.widget.EditText;
 
+import com.myth.cici.R;
 import com.myth.cici.db.YunDatabaseHelper;
 
 public class CheckUtils {
 
-    public static void checkEditText(EditText edittext, String s) {
+    public static void checkEditText(final EditText edittext, String s) {
         String test = edittext.getEditableText().toString();
         int pos = -1;
         s = s.replaceAll("\\D", "");
@@ -32,13 +32,13 @@ public class CheckUtils {
                         @Override
                         public void updateDrawState(TextPaint ds) {
                             super.updateDrawState(ds);
-                            ds.setColor(Color.RED);
+                            ds.setColor(edittext.getContext().getResources().getColor(R.color.pingze_red));
                         }
                     }, i, i + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                     edittext.setText(ss);
                 } else if (check == 30) {
                     SpannableString ss = new SpannableString(edittext.getText());
-                    ss.setSpan(new ForegroundColorSpan(Color.GREEN), i, i + 1,
+                    ss.setSpan(new ForegroundColorSpan(edittext.getContext().getResources().getColor(R.color.pingze_green)), i, i + 1,
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     edittext.setText(ss);
                 }
@@ -48,7 +48,7 @@ public class CheckUtils {
 
     /**
      * 1验证成功 0验证失败 30 多音
-     * 
+     *
      * @param hanzi
      * @param code
      * @return

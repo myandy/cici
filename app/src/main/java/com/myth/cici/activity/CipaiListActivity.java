@@ -92,6 +92,7 @@ public class CipaiListActivity extends BaseActivity
         try
         {
             listview.smoothScrollToPosition(ciList.size());
+
         }
         catch (Exception e)
         {

@@ -1,10 +1,7 @@
 package com.myth.cici;
 
-import java.lang.reflect.Field;
-
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.umeng.analytics.MobclickAgent;
+
+import java.lang.reflect.Field;
 
 public class BaseActivity extends Activity {
 
@@ -30,7 +29,7 @@ public class BaseActivity extends Activity {
      */
     protected FrameLayout mBottomLayout = null;
 
-    private static int statusBarHeight = 0;
+//    private static int statusBarHeight = 0;
 
     protected MyApplication myApplication;
 
@@ -40,13 +39,13 @@ public class BaseActivity extends Activity {
         super.setContentView(R.layout.activity_base);
         if (VERSION.SDK_INT >= 19) {
             // 透明状态栏
-            getWindow().addFlags(0x4000000);
+//            getWindow().addFlags(0x4000000);
             // 透明导航栏
 //            getWindow().addFlags(0x8000000);
 
-            if (statusBarHeight == 0) {
-                statusBarHeight = getStatusBarHeight(this);
-            }
+//            if (statusBarHeight == 0) {
+//                statusBarHeight = getStatusBarHeight(this);
+//            }
 
         }
         mActivity = this;
@@ -118,14 +117,14 @@ public class BaseActivity extends Activity {
     /**
      * 通过layout名称构建视图
      *
-     * @param layoutResName
+     * @param
      * @see [类、类#方法、类#成员]
      */
     public void setContentView(int layoutId) {
         getLayoutInflater().inflate(layoutId, mContentLayout);
-        if (VERSION.SDK_INT >= 19) {
-            mContentLayout.setPadding(0, statusBarHeight, 0, 0);
-        }
+//        if (VERSION.SDK_INT >= 19) {
+//            mContentLayout.setPadding(0, statusBarHeight, 0, 0);
+//        }
     }
 
 }

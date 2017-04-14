@@ -16,12 +16,12 @@ public class CircleEditView extends View
 
     private Context mContext;
 
-    public int getmColor()
+    public int getColor()
     {
         return mColor;
     }
 
-    public void setmColor(int mColor)
+    public void setColor(int mColor)
     {
         this.mColor = mColor;
         invalidate();
